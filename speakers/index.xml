@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+   <channel>
+      <title>YAPC::Asia 2007 Tokyo Speakers</title>
+      <link>http://tokyo2007.yapcasia.org/speakers/</link>
+      <description></description>
+      <language>en</language>
+      <copyright>Copyright 2007</copyright>
+      <lastBuildDate>Wed, 14 Feb 2007 02:12:06 +0000</lastBuildDate>
+      <generator>http://www.sixapart.com/movabletype/?v=3.2</generator>
+      <docs>http://blogs.law.harvard.edu/tech/rss</docs> 
+
+            <item>
+         <title>Tomohiro Ikebe</title>
+         <description><![CDATA[<p>株式会社ライブドア所属<br />
+若者との飲み会では体がついていかなくなってきてるのを実感する今日この頃です。<br />
+</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/tomohiro_ikebe_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/tomohiro_ikebe_1.html</guid>
+         <category></category>
+         <pubDate>Wed, 14 Feb 2007 02:12:06 +0000</pubDate>
+      </item>
+            <item>
+         <title>Yoshinori Takesako</title>
+         <description><![CDATA[<p>Shibuya Perl Mongers二代目リーダーにして、ppencodeの作者。座右の銘は「いかにコードを書かずして問題を解決するか」。はじめてのパソコンはFM TOWNS。いきなりi386の32bit世代。広島市立大学情報科学部在学中、外資系コンピュータメーカの子会社でソフトウェア開発の現場を経験。独立系ITベンチャーにて大企業向けmod_perlパッケージソフトの開発に従事し、2005年よりサイボウズ・ラボ株式会社に入社。Namazu for Win32、Plagger、Ajaja のコミッターでもある。</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/yoshinori_takesako_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/yoshinori_takesako_1.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:39:17 +0000</pubDate>
+      </item>
+            <item>
+         <title>Kazuhiro Osawa</title>
+         <description><![CDATA[<p>インフォマークス株式会社で会社員をしながらYappoという検索サイトを10年運営している。CatalystとSledgeを元にしたSoozyというWebフレームワークを開発する傍ら、最近では静的コンテンツ量産ツールDishuberをデブサミ2007にて発表した。好きな曲は"マジデ"キスする5秒前。<br />
+ </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/kazuhiro_osawa_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/kazuhiro_osawa_1.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:39:06 +0000</pubDate>
+      </item>
+            <item>
+         <title>Kei-ichi Daiba</title>
+         <description><![CDATA[<p>最近は幽霊PMになっているTokyo.pmのメンバです．最近はVoIP関係で食べてます</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/keiichi_daiba_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/keiichi_daiba_1.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:38:56 +0000</pubDate>
+      </item>
+            <item>
+         <title>Naoya Ito</title>
+         <description></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/naoya_ito.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/naoya_ito.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:38:44 +0000</pubDate>
+      </item>
+            <item>
+         <title>Tokuhiro Matsuno</title>
+         <description><![CDATA[<p>株式会社モバイルファクトリー所属。「コードをかけばなんでもできる」がモットー。うそ。いまかんがえました。</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/tokuhiro_matsuno.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/tokuhiro_matsuno.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:38:31 +0000</pubDate>
+      </item>
+            <item>
+         <title>Tatsuhiko Miyagawa</title>
+         <description><![CDATA[<p>Tatsuhiko Miyagawa is a perl hacker living in San Francisco, CA and working on Vox in Six Apart. He's the founder of Shibuya Perl Mongers and the organizers lead for YAPC::Asia 2006 and 2007.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/tatsuhiko_miyagawa.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/tatsuhiko_miyagawa.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:38:24 +0000</pubDate>
+      </item>
+            <item>
+         <title>Marty Pauley</title>
+         <description><![CDATA[<p>Marty is a Hacker and GNU Guerrilla.  He recently moved to Japan to work as a sysadmin.  He likes playing with Perl and breaking Linux machines.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/marty_pauley_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/marty_pauley_1.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:38:14 +0000</pubDate>
+      </item>
+            <item>
+         <title>Kenichi Ishigaki</title>
+         <description><![CDATA[<p>Kenichi Ishigaki, also known as charsbar and tcool, is a freelance translator/programmer. He maintains a ppm repository for ActivePerl for Win32, and several other websites on cocktails and classical latin, to name a few.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/kenichi_ishigaki.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/kenichi_ishigaki.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:38:04 +0000</pubDate>
+      </item>
+            <item>
+         <title>Kazuho Oku</title>
+         <description><![CDATA[<p>As a developer of the web browser Palmscape (a web browser for Palm OS), his main focus is in introducing new methods of communication to end users, by hacking the web browser and the HTTP protocol.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/kazuho_oku.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/kazuho_oku.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:37:57 +0000</pubDate>
+      </item>
+            <item>
+         <title>Kang-min Liu</title>
+         <description><![CDATA[<p>I'm a freelancer living a small city called "Jhubei" in Taiwan, also the founder of Chupei.pm (Chupei is the old official pinying of Jhubei.) I also started a cafe in Hsin-chu city called OPCafé, and mostly stay there trying to be creative and productive. I have several nice ideas and projects to do, and many blogs (some of them have many co-authors) with all different purposes.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/kangmin_liu.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/kangmin_liu.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:37:50 +0000</pubDate>
+      </item>
+            <item>
+         <title>Jonathan Rockway</title>
+         <description><![CDATA[<p>Jonathan Rockway is just another perl hacker from Chicago, IL.  He's a core Catalyst developer and is currently writing the first Catalyst book.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/jonathan_rockway.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/jonathan_rockway.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:37:06 +0000</pubDate>
+      </item>
+            <item>
+         <title>Jeff Kim</title>
+         <description><![CDATA[<p>Jeff Kim is a Perl Hacker currently living in New York City.  He operates in a freelance / consultanty sort of way.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/jeff_kim_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/jeff_kim_1.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:36:59 +0000</pubDate>
+      </item>
+            <item>
+         <title>Gosuke Miyashita</title>
+         <description><![CDATA[<p>株式会社paperboy&co. 技術責任者（別名技術系何でも屋）。Catalyst をベースとしたウェブAPI の開発をメインでやってましたが、最近はネットワークやサーバまわりなど、幅広く仕事してます。ドクターペッパー大好き。</p>
+
+<p>Gosuke Miyashita is a sysadmin in paperboy&co.He worked in developing web apis based on Catalyst and is recently working on servers and networks widley.He loves Dr.Pepper.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/gosuke_miyashita.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/gosuke_miyashita.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:36:49 +0000</pubDate>
+      </item>
+            <item>
+         <title>Emerson Mills</title>
+         <description><![CDATA[<p>Emerson Mills is a long time Perl developer at Amazon.com and Amazon.co.jp, working on projects like Amazon's mobile website in Japan. Currently he is the web services evangelist for Japan. He lives in nishi-tokyo and when not playing with Perl or linux, enjoys riding bicycles and cooking. </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/speakers/emerson_mills_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/speakers/emerson_mills_1.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Feb 2007 23:36:41 +0000</pubDate>
+      </item>
+      
+   </channel>
+</rss>

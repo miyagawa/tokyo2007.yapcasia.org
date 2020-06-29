@@ -1,0 +1,73 @@
+head	1.4;
+access;
+symbols;
+locks
+	root:1.4;
+comment	@# @;
+
+
+1.4
+date	2007.03.30.22.16.22;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.03.20.22.28.18;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.20.16.59.23;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.16.19.54.02;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@edit_address:12.47.30.10,edit_by:jrockway,edit_by_icon:,edit_time:Fri%20Mar%2030%2022%3A16%3A22%202007,edit_unixtime:1175292982
+@
+text
+@JonathanRockway - Toyoko Inn (Shinjuku) from the evening of Sunday, April 1st to April 8th.  On non-conference days I'll be attempting to bankrupt JR with clever use of my unlimited JR Rail Pass (i.e. travelling).  Anyone that wants to come with, let me know.  
+
+TatsuhikoMiyagawa - I will arrive at Narita on April 2nd, 3:10pm. I know it's a very last minute as an organizer :) I will stay at my own apartment in Tokyo and will leave for Taipei to attend to [http://osdc.tw/ OSDC.tw] on 13th evening.
+@
+
+
+1.3
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Mar%2020%2022%3A28%3A18%202007,edit_unixtime:1174429698
+@
+text
+@d1 1
+a1 1
+JonathanRockway - Toyoko Inn (Shinjuku) from the evening of Sunday, April 1st to April 8th.  On non-conference days I'll be attempting to bankrupt JR with clever use of my unlimited JR Rail Pass (i.e. travelling).  Anyone that wants to come with, let me know.  Travelling by one's self is weird :) 
+@
+
+
+1.2
+log
+@edit_address:12.47.30.10,edit_by:jrockway,edit_by_icon:,edit_time:Tue%20Mar%2020%2016%3A59%3A23%202007,edit_unixtime:1174409963
+@
+text
+@d2 2
+@
+
+
+1.1
+log
+@edit_address:12.47.30.10,edit_by:jrockway,edit_by_icon:,edit_time:Fri%20Mar%2016%2019%3A54%3A02%202007,edit_unixtime:1174074842
+@
+text
+@d1 1
+a1 1
+JonathanRockway - Toyoko Shinjuku from the evening of Sunday, April 1st to April 8th.  On non-conference days I'll be attempting to bankrupt JR with clever use of my unlimited JR Rail Pass (i.e. travelling).  Anyone that wants to come with, let me know.  Travelling by one's self is weird :) 
+@

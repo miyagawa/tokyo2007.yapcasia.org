@@ -1,0 +1,162 @@
+head	1.9;
+access;
+symbols;
+locks
+	root:1.9;
+comment	@# @;
+
+
+1.9
+date	2007.04.03.16.02.36;	author root;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.04.02.01.05.13;	author root;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.03.26.22.13.47;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.03.06.09.14.07;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.03.02.04.26.37;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.02.27.22.03.44;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.02.27.22.03.31;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.02.27.21.57.21;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.02.27.21.55.42;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@edit_address:218.217.159.153,edit_by:,edit_by_icon:,edit_time:Tue%20Apr%20%203%2016%3A02%3A36%202007,edit_unixtime:1175616156
+@
+text
+@Planet !YAPC::Asia (the website that aggregates blog entries mentioning !YAPC::Asia) is being setup using [http://plagger.org/ Plagger] aggregator software.
+
+It'll be configured to aggregate blogs listed on this Wiki page. If you have a blog or journal that you write about !YAPC::Asia, add the URL (for the blog or the RSS feed) here.
+
+!YAPC::Asia について書いている Blog をお持ちの方は、こちらに URL を追加してください。この Wiki ページをベースにして Planet !YAPC::Asia を作成する予定です。
+
+* [http://use.perl.org/~miyagawa/journal miyagawa's journal]
+* [http://blog.bulknews.net/mt/ blog.bulknews.net]
+* [http://blog.plover.com/ The Universe of Discourse]
+* [http://blog.jrock.us/ Content Considered Harmful]
+* [http://brad.livejournal.com/ brad's life]
+* [http://blog.yappo.jp/ YappoLogs]
+* [http://www.kunitake.org/chalow/ 戯れ言]
+@
+
+
+1.8
+log
+@edit_address:221.243.122.122,edit_by:Yappo,edit_by_icon:,edit_time:Mon%20Apr%20%202%2001%3A05%3A13%202007,edit_unixtime:1175475913
+@
+text
+@d13 1
+@
+
+
+1.7
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Mar%2026%2022%3A13%3A47%202007,edit_unixtime:1174947227
+@
+text
+@d12 1
+@
+
+
+1.6
+log
+@edit_address:66.92.134.156,edit_by:jrockway,edit_by_icon:,edit_time:Tue%20Mar%20%206%2009%3A14%3A07%202007,edit_unixtime:1173172447
+@
+text
+@d11 1
+@
+
+
+1.5
+log
+@edit_address:216.158.52.119,edit_by:MJDominus,edit_by_icon:http%3A%2F%2Fperl.plover.com%2Fpics%2Ftpc%2Fplacido2-m.jpg,edit_time:Fri%20Mar%20%202%2004%3A26%3A37%202007,edit_unixtime:1172809597
+@
+text
+@d10 1
+@
+
+
+1.4
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Feb%2027%2022%3A03%3A44%202007,edit_unixtime:1172613824
+@
+text
+@d9 1
+@
+
+
+1.3
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Feb%2027%2022%3A03%3A31%202007,edit_unixtime:1172613811
+@
+text
+@d3 1
+a3 1
+It'll be configured to aggregate blogs listed on this Wiki page. If you have a blog or journal that you write about YAPC::Asia, add the URL (for the blog or the RSS feed) here.
+d5 1
+a5 1
+!YAPC::Asia について書いている Blog をお持ちの方は、こちらに URL を追加してください。この Wiki ページをベースにして Planet YAPC::Asia を作成する予定です。
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Feb%2027%2021%3A57%3A21%202007,edit_unixtime:1172613441
+@
+text
+@d1 1
+a1 1
+Planet YAPC::Asia (the website that aggregates blog entries mentioning YAPC::Asia) is being setup using [http://plagger.org/ Plagger] aggregator software.
+d5 1
+a5 1
+YAPC::Asia について書いている Blog をお持ちの方は、こちらに URL を追加してください。この Wiki ページをベースにして Planet YAPC::Asia を作成する予定です。
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Feb%2027%2021%3A55%3A41%202007,edit_unixtime:1172613341
+@
+text
+@d7 2
+a8 2
+* http://use.perl.org/~miyagawa/journal
+* http://blog.bulknews.net/mt/
+@

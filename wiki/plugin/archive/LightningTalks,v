@@ -1,0 +1,254 @@
+head	1.12;
+access;
+symbols;
+locks
+	root:1.12;
+comment	@# @;
+
+
+1.12
+date	2007.04.05.12.04.00;	author root;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.04.05.11.25.57;	author root;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.04.02.12.17.19;	author root;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.03.30.21.53.47;	author root;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.03.29.20.41.50;	author root;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.03.29.07.28.51;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.03.26.21.57.31;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.03.26.21.41.06;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.03.26.20.49.59;	author miyagawa;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.03.19.02.16.20;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.15.21.34.07;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.01.16.23.17.33;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.12
+log
+@edit_address:222.151.159.30,edit_by:,edit_by_icon:,edit_time:Thu%20Apr%20%205%2012%3A04%3A00%202007,edit_unixtime:1175774640
+@
+text
+@We'll be doing 60 minutes Lightning Talks on April 5th, before the final keynote. 
+
+The call for Lightning Talks is now open, as of March 19th Japan Time. See [http://tokyo2007.yapcasia.org/blog/2007/03/call_for_lightning_talks.html Call For Proposal (English)] [http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_6.html (Japanese)] for details. The deadline is *March 30th* Japan Time (now extended).
+
+== Accepted Talks
+
+Talks are displayed in the order of submission. Actual presentation schedule might change.
+
+We still have slots available! [http://shibuya.pm.org/register/yapc-papers Submit your proposals now.]
+
+=== にぽたん: 正規表現信者の憂鬱
+
+正規表現というカルトに心酔してしまった或る人間が抱えた困難、憂鬱、幸福。※ 布教活動の類ではございませんので、小さなお子さまにも安心してお聞きいただけます
+
+=== Atsushi Kobayashi: Perlbal selector Plugin
+
+Brad Fitzpatrick さんがちょっとPerlbalのお話をするようですが、Perlbalのselectorプラグインについてちょっと。ちょっとちょっと。
+
+=== Ingy döt Net: Bytecode for Wikis
+
+Ingy has figured out how to solve the chaos of !WikiBabel!
+
+=== ma.la: ブラウザ履歴を利用したRSS Auto-discovery 
+
+プライバシーやサーバー負荷も考慮しつつ、普段使っているブラウザの履歴から、高速にRSS Auto-discoveryを行う方法を紹介します。
+
+=== Chia-liang Kao: !BabelBee - Collaborative Translation Tool
+
+Get your po files translated faster by an army of translators! Also come see how this ajax application is written in very little code!
+
+=== ふしはらかん: Moxy - Mobile Development Proxy 
+
+!HTTP::Proxyを使って実装した携帯サイト開発向けのプロキシについて(サイト毎のUA偽装やヘッダの設定、絵文字のタグ置換などをサポートしています)。
+
+=== 堂前清隆: (ミニ)カンファレンス中継のあれこれ
+
+i-revoではいくつかの小規模なテクニカルカンファレンスにおいてインターネット中継を行ってきました。この中継は単なる動画のストリーミングではなく、静止画と動画を組み合わせた変わった見せ方をしています。この中継のために開発したシステムの発展をできるだけperlに絡めつつ紹介します。
+
+=== Jonathan Rockway: Angerwhale
+
+A quick tour of the Angerwhale Blogging System, including a look at the internals.
+
+=== 長野雅広: Expectをつかったサーバ管理レシピ
+
+Expectをつかって複数のサーバにコマンドを送る方法について、実際サーバ管理に使っている方法を紹介します
+
+=== Mark Dominus: Debugging the De Bruijn Sequence
+
+The Extreme Programming nuts say that programming is the art of debugging an empty file.  But adding text to an empty file is much harder than deleting text from a file that already contains every possible sequence.
+
+=== Yappo: !Device::USB::MissileLaunchers (live)
+
+リアルデバイスを操作する無料のWeb APIのご紹介(生Webカメラ中継予定)
+
+=== Thilo Planz: Spidernomic: A self-modifying HTML/Perl/JS file/game
+
+Inspired by the Perlnomic game, Spidernomic is a minimalistic XHTML file with embedded Perl CGI code and Javascript (both client-side and server-side) to enable it to modify itself, with just enough functionality to bootstrap itself into a playable game.
+[http://spidernomic.thilosophy.com/ slides and code]
+@
+
+
+1.11
+log
+@edit_address:222.151.159.30,edit_by:,edit_by_icon:,edit_time:Thu%20Apr%20%205%2011%3A25%3A57%202007,edit_unixtime:1175772357
+@
+text
+@d58 1
+@
+
+
+1.10
+log
+@edit_address:122.209.5.205,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Apr%20%202%2012%3A17%3A19%202007,edit_unixtime:1175516239
+@
+text
+@d57 1
+a57 1
+Inspired by the Perlnomic game, Spidernomic is a minimalistic XHTML file with embedded Perl CGI code and JavaScript (both client-side and server-side) to enable it to modify itself, with just enough functionality to bootstrap itself into a playable game.
+@
+
+
+1.9
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Fri%20Mar%2030%2021%3A53%3A47%202007,edit_unixtime:1175291627
+@
+text
+@d54 4
+@
+
+
+1.8
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Mar%2029%2020%3A41%3A49%202007,edit_unixtime:1175200909
+@
+text
+@d51 1
+a51 1
+=== Yappo: Device::USB::MissileLaunchers (live)
+@
+
+
+1.7
+log
+@edit_address:204.14.154.180,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Mar%2029%2007%3A28%3A51%202007,edit_unixtime:1175153331
+@
+text
+@d50 4
+@
+
+
+1.6
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Mar%2026%2021%3A57%3A31%202007,edit_unixtime:1174946251
+@
+text
+@d42 8
+@
+
+
+1.5
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Mar%2026%2021%3A41%3A06%202007,edit_unixtime:1174945266
+@
+text
+@d3 1
+a3 1
+The call for Lightning Talks is now open, as of March 19th Japan Time. See [http://tokyo2007.yapcasia.org/blog/2007/03/call_for_lightning_talks.html Call For Proposal (English)] [http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_6.html (Japanese)] for details. The deadline is *March 28th* Japan Time.
+d6 2
+@
+
+
+1.4
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Mar%2026%2020%3A49%3A59%202007,edit_unixtime:1174942199
+@
+text
+@d19 1
+a19 1
+Ingy has figured out how to solve the chaos of WikiBabel!
+d25 1
+a25 1
+=== Chia-liang Kao: BabelBee - Collaborative Translation Tool
+@
+
+
+1.3
+log
+@edit_address:204.14.154.180,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Mar%2019%2002%3A16%3A20%202007,edit_unixtime:1174270580
+@
+text
+@d3 37
+a39 1
+The call for Lightning Talks is now open, as of March 19th Japan Time. See [http://tokyo2007.yapcasia.org/blog/2007/03/call_for_lightning_talks.html Call For Proposal (English)] [http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_6.html (Japanese)] for details. The deadline is *March 26th* Japan Time.
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Mar%2015%2021%3A34%3A07%202007,edit_unixtime:1173994447
+@
+text
+@d1 3
+a3 1
+We'll be doing 60 minutes Lightning Talks on April 5th, before the final keynote. CFP will begin on March 19th, 2 weeks before the actual conference.
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Jan%2016%2023%3A17%3A33%202007,edit_unixtime:1168989453
+@
+text
+@d1 1
+a1 1
+We'll be doing 60 minutes Lightning Talks on April 5th, before the final keynote. CFP will begin in the late March, 2 weeks before the actual conference.
+@

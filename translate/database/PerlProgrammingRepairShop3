@@ -1,0 +1,870 @@
+Perl Programming Repair Shop Part III
+
+.pre
+
+[[StartStopRep]]
+****************
+
+#J# さて、いよいよ本題に取りかかることにしよう
+
+* I can no longer put off tackling the real meat of this function
+
+#J# この関数の先頭にはこのような興味深いコードがある
+
+* It starts with this interesting section:
+
+      238     open ( ORAALRTLOG, "$tmpfilealrt" ) or die "Can't open $tmpfilealrt due to $!" ;
+      239     open ( REPORTLOG, "> $reportfile" ) or die "Can't open $reportfile due to $!" ;
+      240
+      241     # Wed Jul 27 17:07:45 2005
+      242
+      243     tie @lines, 'Tie::File', $tmpfilealrt or die "Can't Tie the file $tmpfilealrt: $!" ;
+
+#RTIMG# danger.jpg
+
+#J# 一度はハンドルとしてオープンした[[$tmpfilealrt]]を、今度は[[Tie::File]]を使ってオープンしている
+
+* Notice that this code opens [[$tmpfilealrt]] once as a handle and once with [[Tie::File]]
+
+#J# エラーではないが、ふつうはしない
+
+  * Not an error; just unusual
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# まずは実際の出力は抜きで見ていくことにしよう
+
+* First we'll see the function without any actual output:
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      257  	my $status = 'N' ;
+      258  	until ( $status eq 'Y') {
+      259
+      260              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+      261  		$stpline = $1 ;
+      262  		$status = 'Y' ;
+      263  	   }else{
+      264  		$ndl = $ndl + 1 ;
+      265  	   }
+      266
+      267  	}# End until
+      268
+      283        } # End if
+      285
+      286     } # End While
+
+#J# 論理評価は論理式で
+
+* [G[Let booleans be booleans]G]
+
+#J# [[$status]]は真か偽のはずだ
+
+* [[$status]] should be true or false
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+
+
+----------------------------------------------------------------
+
+#J# フラグ変数
+
+Flag Variables
+**************
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+              } else {
+                $ndl = $ndl + 1;
+              }
+        }
+
+#J# 実は、*フラグ変数*も赤旗なのかなと思うようになってきている
+
+* Actually I'm starting to wonder if *flag variables* are red flags
+
+#J# なぜか?
+
+* Why?
+
+#J# ふつうはなくしてしまうことができるように思えるからだ
+
+* Because it seems to me that you can usually eliminate them
+
+#J# フラグ変数は暗黙の了解の中に埋め込んでしまおう
+
+  * Fold them into the implicit state of the program
+
+#J# その方がふつうは簡潔になる
+
+  * And the result is usually simpler
+
+----------------------------------------------------------------
+
+#J# フラグ変数
+
+Flag Variables
+**************
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+              } else {
+                $ndl = $ndl + 1;
+              }
+        }
+
+#J# 変数には意味のある情報を持たせるようにしよう
+
+* [G[A variable should represent some important piece of information]G]
+
+#J# そうすれば変数の中身が何なのか、簡潔に説明できるはずだ
+
+  * It should be possible to briefly explain what it represents
+
+#J# この[[$status]]は何か?
+
+* What is [[$status]] here?
+
+#J# 「終端行を探している間に終端行が見つかったかどうか」
+
+  * "During the search for the stop line, have we found it yet?"
+
+#J# それなら、終端行が見つかるまで探して、そこで探すのをやめたらどうだろう?
+
+* Well, why not just search until you find it, and then stop?
+
+  	while (1) {
+          if  ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+#*          last;
+          }            
+          $ndl = $ndl + 1;
+        }
+
+#J# これでまた変数が1つなくなった
+
+* Another variable gone
+
+----------------------------------------------------------------
+
+#J# フラグ変数
+
+Flag Variables
+**************
+
+  	while (1) {
+          if  ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+#*          last;
+          }            
+          $ndl = $ndl + 1;
+        }
+
+#J# これでバグになりかねない部分がよりはっきりしてきた
+
+* Now a possible bug becomes much more apparent
+
+#J# 無限ループになりうる条件文が見えている
+
+* The potential infinite loop condition is apparent
+
+#J# そのかわりにこうしたらどうだろう?
+
+* How about this instead?
+
+        my $possible_stop = $. - 4;
+        while ($possible_stop >= 0) {
+          if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+            last;
+          }      
+          $possible_stop--;      
+        }
+
+#J# [[$ndl]]のかわりに[[$possible_stop]]を使うことにしたわけだ
+
+* Here [[$possible_stop]] replaces [[$ndl]]
+
+#J# こんな行も追加した方がよいかもしれない
+
+* We might also want to add:
+
+        die "Couldn't find stop line preceding line $." unless $stpline;
+
+----------------------------------------------------------------
+
+#J# 潜在的な不安
+
+Potential Worry
+***************
+
+        my $possible_stop = $. - 4;
+        while ($possible_stop >= 0) {
+          if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+            last;
+          }      
+          $possible_stop--;      
+        }
+
+#J# もともとのコードでは検索のたびに[[$ndl]]を4にリセットして「いなかった」
+
+* The original code did _not_ reset [[$ndl]] to 4 for each search
+
+#J# バグなのか、仕様なのか?
+
+  * Bug, or feature?
+
+#J# たぶんバグだと「思う」
+
+  * I _think_ it was probably a bug
+
+#J# 作者からサンプルの入力をもらうのは間に合わなかったけれど
+
+  * I was not able to get sample input from the author in time
+
+#J# この部分はコメントアウトされていた
+
+* But this part of the program was commented out
+
+#J# 案外このせいなのかも?
+
+  * Perhaps this is why?
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# さて、出力部分を省いたこの関数の本体はこうだ
+
+* Now here's the body of the function, with printing removed:
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+                       $stpline = $1;
+                       last;
+                     }      
+                     $possible_stop--;      
+                   }
+      
+      283        } # End if
+      284
+      285
+      286     } # End While
+      287
+
+#J# 次に気がついたのは、[[(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/]]というパターンが繰り返されていることだ
+
+* The next thing I notice is the repeated pattern [[(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/]]
+
+#J# メンテナンスプログラマとしてはここを1文字1文字比べていかなくてはならない
+
+* As maintenance programmer, I must now compare these character-by-character
+
+#J# 本当に同じものになっているのだろうか?
+
+* Are they really the same?
+
+#J# （なっている）
+
+  * (Yes.)
+
+----------------------------------------------------------------
+
+#J# コードの繰り返し
+
+Repeated Code
+*************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+
+#J# この評価の繰り返しはなくしたい
+
+* I would like to get rid of the repeated test
+
+#J# ここでしているのは、ファイルをスキャンして関心のある行を探すことだ
+
+* We're scanning over the file, looking for lines of interest
+
+#J# 見つかったら、ファイルをさかのぼって、直前に見つけた部分を探す
+
+* When we find one, we scan backwards in the file looking for the previous one
+
+#J# でも、それはもう見つけてあるはずだ!
+
+* But we've already seen that one!
+
+#J# それなら最初に記憶しておくだけでいいのではあるまいか?
+
+* So why not just make a note of it the first time?
+
+#J# そうすれば必要になったときにまた探しに行かなくてすむ
+
+* Then we won't gave to go hunting for it when we need it again.
+
+----------------------------------------------------------------
+
+#J# コードの繰り返し
+
+Repeated Code
+*************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+
+#J# そのかわりにこうしよう
+
+* Instead, let's do:
+
+        my @start_stop_lines, %start_stop_data;
+        while ( <ORAALRTLOG> ) {
+          if (/(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            push @start_stop_lines, $.;
+            $start_stop_data{$.} = $1;
+     
+          } elsif (/Starting\s+ORACLE\s+instance\s+/) {
+            my ($startl, $stopl) = @start_stop_lines[-1, -2];
+     
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+            } else {
+              # raise some suitable error diagnostics
+            }
+          }
+        }
+
+#J# ここでは関数のロジックの大半を書き換えてしまったけれど
+
+* This replaces most of the logic in the function
+
+#J# これで[[Tie::File]]は使わなくてすむし
+
+* It eliminates the use of [[Tie::File]]
+
+#J# さかのぼって検索する必要もなくなった
+
+* It eliminates the backward search
+
+----------------------------------------------------------------
+
+#J# 出力
+
+Printing
+********
+
+#J# ここまではちょっとお茶を濁して
+
+* I fudged something here
+
+#J# 実際の[[print]]抜きでコードをお見せしてきたわけだけれど
+
+* Remember I was showing the code without the [[print]]ing
+
+#J# 出力は本当に重要だ
+
+* But the [[print]]ing is really important
+
+#J# なにしろこの関数の目的はリポートを出力することなのだから!
+
+* The function's purpose is to print the report!
+
+#J# だから、[[print]]を戻しておくことにしよう
+
+* So I'd better restore the [[print]]s:
+
+        my @start_stop_lines, %start_stop_data;
+        while ( <ORAALRTLOG> ) {
+          if (/(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            push @start_stop_lines, $.;
+            $start_stop_data{$.} = $1;
+     
+          } elsif (/Starting\s+ORACLE\s+instance\s+/) {
+            my ($startl, $stopl) = @start_stop_lines[-1, -2];
+#*          print REPORTLOG "$_\n" ;
+      
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+      
+#*            print REPORTLOG "START> $lines[$start]\n";
+#*            print REPORTLOG "STOP> $stpline\n";
+            } else {
+              # raise some suitable error diagnostics
+            }
+          }
+        }
+
+
+----------------------------------------------------------------
+
+#J# 出力
+
+Printing
+********
+
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+              print REPORTLOG "START> $lines[$start]\n";
+              print REPORTLOG "STOP> $stpline\n";
+
+#J# ええと
+
+* Uh-oh
+
+#J# [[@lines]]はさっき消してしまった（[[Tie::File]]が提供していたものだ）
+
+* I got rid of [[@lines]]  (provided by [[Tie::File]])
+
+#J# でも、大丈夫
+
+* But that's OK:
+
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+#*            print REPORTLOG "START> $matimes[-1]{START}\n";
+#*            print REPORTLOG "STOP> $matimes[-1]{STOP}\n";
+
+----------------------------------------------------------------
+#IMG# redflags-crossed
+
+#J# ブロックの最後のコメント
+
+[R[End-of-Block Comments]R]
+***************************
+
+        267  	}# End until
+            ...
+        282
+        283        } # End if
+        284
+        285
+        286     } # End While
+        287
+
+#J# こういうコメントは赤旗ものだ
+
+* Such comments are red flags
+
+#J# コントロールフローが複雑すぎるということだからだ
+
+* They indicate that your control flow is too complicated
+
+#J# 解決策はいくつかある
+
+* Solutions include:
+
+#J# 書き直してしまう（ここではそうした）
+
+  1. Rewrite it  (That's what we did here)
+
+#J# 内部のブロックを関数にしてしまう
+
+  2. Turn an inner block into a function
+
+#J# もっとましなエディタプログラムを使う
+
+  3. Get a better editor program
+
+#J# 別にひとつに限る必要はない
+
+* These are not exclusive
+----------------------------------------------------------------
+[[StartStopRep]]
+****************
+
+#J# 結果: 37行が22行になった
+
+* Result: 37 lines become 22
+
+#J# 複雑だったコントロールフローが簡潔になった
+
+* Complicated control flow becomes simple
+
+#J# 前方検索と後方検索が混じっていたのが、一方通行になった
+
+  * Mingled forward and backward searching replaced with single pass
+
+#J# 変数の数は12から7に
+
+* 12 variables become 7
+
+#J# [[Tie::File]]は消えた
+
+* [[Tie::File]] eliminated
+
+#J# パフォーマンスもかなりよくなったかも
+
+* Possibly significant performance increase
+
+#J# バグっていそうだったけれど、直ったかな?
+
+* Possible bugs fixed?
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+#J# プログラムの先頭はこうなっている
+
+* The top of the program has:
+
+      36     my $dpattern ;
+      37     my $tmpfilealrt ;
+      38     my $errfile ;
+      39     my $repfile ;
+      40     my %alrtopt ;
+      41     my $read ;
+      42     my $int ;
+
+#J# グローバル変数はだめだ
+
+* I was going to complain about global variables
+
+#J# グローバル変数を使うとモジュール化や再利用がしづらくなるという長い話を入れるつもりだったのだけれど
+
+* I was going to insert a long section about how using global variables wrecks modularity and reuse
+
+#J# 幸い、これらの変数はどれも本当のグローバルではない
+
+* Happily, none of these are truly global
+
+#J# 400行目あたりに移した方がいい
+
+* They should move down to the vicinity of line 400
+
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+#J# この手のものはよく見かけるわけだけれど
+
+* I see this sort of thing a lot:
+
+     398  GetOptions (	"help"=> \$alrtopt{help},
+     399  		"sid=s"=> \$alrtopt{sid},
+     400  		"interactive:i" => \$alrtopt{interactive} );
+     401
+     402
+     409  if ( $alrtopt{interactive} ) {
+     410
+     411     $int = $alrtopt{interactive} ;
+     412
+     413  #   print " the value of the integer is $int\n";
+     414
+     415  }
+     416
+
+#J# いったいこの[[$alrtopt{interactive}]]は何?
+
+* What's [[$alrtopt{interactive}]] for?
+
+#RTIMG# redflag
+
+#J# 直後に一度しか使わない変数を割り当てるな
+
+* [R[Variable use immediately follows assignment]R]
+
+#J# こう書いておけばいい
+
+* Why not just:
+
+      GetOptions (  "help"          => [C[\$help]C],
+                    "sid=s"         => [C[\$read]C],
+                    "interactive:i" => [C[\$int]C] );
+
+#J# これで[[if]]ブロックはなくせる
+
+* And then the [[if]] block vanishes
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+      426     if ( $int ) {
+      428         ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = &GetDateNow( $int ) ;
+      430     }else {
+      432         ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = &GetDateNow ;
+      434     }
+
+#J# ここでもコードが繰り返されている
+
+* Here we have repeated code
+
+#J# 特殊なケースは避けよう
+
+* [G[Avoid special cases]G]
+
+#J# 「わざわざこんな評価をしなかったらどうだろう?」と自問してみよう
+
+* Ask the question "What if I didn't bother with the test?"
+
+#J# 場合によっては「変わらないよ!」という答えが返ってくる
+
+  * Sometimes, the answer is "nothing!"
+
+#J# たとえばここで
+
+* Here, for example:
+
+#J# [[$int]]が偽のときでも[[GetDateNow($int)]]を呼ぶことにしたらどうなるだろう?
+
+  * What if we called [[GetDateNow($int)]] even when [[$int]] was false?
+
+#J# [[GetDateNow]]の中にはすでに「まさにそのケース」を処理するコードがある
+
+  * [[GetDateNow]] already has code in it to handle that _exact_ case
+
+#J# 
+
+#J# そこのコードは「まさに」してほしいことをしてくれる
+
+  * And the code there does _exactly_ what we want it to
+
+      ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = GetDateNow( $int ) ;
+
+#J# これで2行が消えた
+
+* Two lines become zero
+
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+     [C[my]C] ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = GetDateNow( $int ) ;
+
+#J# これで冒頭の宣言4行を消せる
+
+* Now we can eliminate four lines of delcarations from the top of the program
+
+----------------------------------------------------------------
+
+#J# 空の[[if]]ブロック
+
+Empty [[if]] block
+******************
+
+#J# これは変だが、みなさんが思っているほど珍しいものでもない
+
+* This is weird, but not as rare as you might think:
+
+      437  if ( $read ) {
+      438
+      439  }else{
+      440
+          ...
+      447
+      448  }
+
+#J# こうしよう
+
+* Let's use
+
+        unless ($read) { 
+          ...
+        }
+
+#J# [[unless]]が嫌いならこう
+
+* Or, if you don't like [[unless]]:
+
+        if (not $read) {
+          ...
+        }
+
+----------------------------------------------------------------
+
+OK?
+***
+
+#J# たぶんもうタイムオーバーだろう
+
+* I'm sure I'm over time by now
+
+#J# このプログラムの修正は終わっていない
+
+* I didn't finish working over the program
+
+#J# もう一度見直したいと思っている
+
+* I wanted to take another run at it
+
+#J# たとえば、このプログラムは同じ入力を何度か読んでいる
+
+* For example, the program makes several passes over the same input:
+
+#J# [[ProcessAlertLog()]]で読み
+
+  * Once in [[ProcessAlertLog()]]
+
+#J# [[AlrtError()]]で読み
+
+  * Again in [[AlrtError()]]
+
+#J# 有効になっていれば[[StartStopRep()]]でも読む
+
+  * Again in [[StartStopRep()]], if that is enabled
+
+#J# こういう場合はまとめてしまうとコントロールフローが簡潔になってコードを節約できることが多い
+
+* Often you can simplify control flow and save code by merging passes
+
+#J# 何度も実行されていた作業が一度ですむようになるのだ
+
+* Tasks done multiple times get done once instead
+
+#J# [[DateDiffRep()]]には手をつけてもいない
+
+* I didn't even touch [[DateDiffRep()]]
+
+# 見た感じ、いわゆるフォーマット（ゲッ!）を使うにはうってつけの場所かもしれない
+
+  * It looks like it might be a good place to use (gasp!) formats
+
+#J# 大事な教訓
+
+* Important moral:
+
+#J# 見直しは完璧でなくても十分に意味がある
+
+#HTML# <p align=center><font size="+4" color=green>
+Even an incomplete pass has a lot of value
+#HTML# </font></p>
+
+----------------------------------------------------------------
+
+#J# まとめ
+
+Summary
+*******
+
+#J# 作業前: 163行（[[DateDiffReport()]]は勘定していない）
+
+* Before: 163 lines (not counting [[DateDiffReport()]]
+
+#J# 作業後: 101行（同上）
+
+* After: 101 lines (ditto)
+
+#J# 38%の節約
+
+* Reduction: 38%
+
+#J# バグも直した（と思う）
+
+* Bugs fixed (I think)
+
+#J# パフォーマンスもよくなった
+
+* Performance improved 
+
+#J# コードは簡潔に、また短くなった
+
+* Code simpler and smaller
+----------------------------------------------------------------
+
+#J# まとめ
+
+Summary
+*******
+
+#J# たいていのプログラムは長すぎる
+
+* Most programs are too long
+
+#J# コードの繰り返しは特に無駄
+
+* Repeated code is extremely wasteful
+
+#J# 最初に書いたコードで満足しないようにしよう
+
+* Don't be satsified with the first thing you wrote
+
+#J# 完璧なものというのは、これ以上足せないものではない。これ以上引けないものだ
+
+#HTML# <p align=center><font size="+4" color="green">Perfection is achieved not when there is nothing more to add, but when there is nothing more to take away.</font></p>
+
+#IMG# littleprince.jpg
+
+#J# （アントワーヌ・サン＝テグジュペリ）
+
+#HTML# <p align=center>(Antoine de Saint-Exup&eacute;ry)</a>
+
+----------------------------------------------------------------
+
+#J# ご静聴ありがとうございました!
+
+Thanks!
+*******
+
+#IMG# beer.jpg
+
+----------------------------------------------------------------
+
+----------------------------------------------------------------END
+.pre

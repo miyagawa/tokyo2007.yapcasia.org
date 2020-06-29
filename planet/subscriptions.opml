@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<opml version="1.0">
+<head>
+<title>Planet YAPC::Asia 2007</title>
+<dateCreated>Fri, 15 Feb 2008 09:10:37 +0900</dateCreated>
+<ownerName />
+</head>
+<body>
+<outline text="Subscriptions">
+<outline title="Bloglines Search: &quot;bcite:http://conferences.yapcasia.org/&quot;" htmlUrl="http://www.bloglines.com/search?q=bcite%3Ahttp%3A%2F%2Fconferences.yapcasia.org%2F&amp;s=f&amp;pop=l&amp;news=m&amp;n=100" text="support@bloglines.com" type="rss" xmlUrl="http://bloglines.com/search?q=bcite:http:%2F%2Fconferences.yapcasia.org%2F&amp;s=f&amp;pop=l&amp;news=m&amp;format=rss&amp;n=100" />
+<outline title="Technorati Search for: YAPC" htmlUrl="http://technorati.com/search/YAPC" text="support@technorati.com (Technorati Support)" type="rss" xmlUrl="http://technorati.com/watchlists/rss.html?wid=349775" />
+<outline title="YAPC::Asia 2008" htmlUrl="http://conferences.yapcasia.org/ya2008/news?language=en" text="Tatsuhiko Miyagawa" type="rss" xmlUrl="http://feeds.feedburner.com/YapcAsia" />
+<outline title="YAPC::Asia 2008" htmlUrl="http://conferences.yapcasia.org/ya2008/news?language=ja" text="Tatsuhiko Miyagawa" type="rss" xmlUrl="http://feeds.feedburner.com/YapcAsiaJa" />
+<outline title="use Perl Journal Search" htmlUrl="http://use.perl.org/search.pl" text="pudge@perl.org" type="rss" xmlUrl="http://use.perl.org/search.pl?tid=&amp;query=YAPC%3A%3AAsia&amp;author=&amp;op=journals&amp;content_type=rss" />
+<outline title="del.icio.us/tag/yapcasia2008" htmlUrl="http://del.icio.us/tag/yapcasia2008" text="del.icio.us/tag/yapcasia2008" type="rss" xmlUrl="http://feeds.delicious.com/rss/tag/yapcasia2008" />
+<outline title="Google Blog Search: YAPC Asia" htmlUrl="http://blogsearch.google.com/blogsearch?hl=en&amp;scoring=d&amp;ie=ISO-8859-1&amp;num=100&amp;q=YAPC+Asia" text="Google Blog Search: YAPC Asia" type="rss" xmlUrl="http://blogsearch.google.com/blogsearch_feeds?hl=en&amp;q=YAPC+Asia&amp;scoring=d&amp;ie=utf-8&amp;num=100&amp;output=rss" />
+<outline title="[Technorati] Tag results for yapcasia2008" htmlUrl="http://technorati.com/tag/yapcasia2008" text="support@technorati.com (Technorati Support)" type="rss" xmlUrl="http://feeds.technorati.com/feed/posts/tag/yapcasia2008" />
+<outline title="Bloglines Search: &quot;YAPC Asia&quot;" htmlUrl="http://www.bloglines.com/search?q=YAPC%20Asia&amp;ql=any&amp;s=f&amp;pop=l&amp;news=m&amp;n=100" text="support@bloglines.com" type="rss" xmlUrl="http://bloglines.com/search?q=YAPC+Asia&amp;ql=any&amp;s=f&amp;pop=l&amp;news=m&amp;n=100&amp;format=rss" />
+<outline title="はてなダイアリー - 「YAPC」を含む日記" htmlUrl="http://d.hatena.ne.jp/keyworddiary/YAPC" text="はてなダイアリー - 「YAPC」を含む日記" type="rss" xmlUrl="http://d.hatena.ne.jp/keyworddiary/YAPC?mode=rss" />
+<outline title="Twitter updates containing &quot;yapc&quot;" htmlUrl="/twitter/query?query=yapc" text="Twitter updates containing &quot;yapc&quot;" type="rss" xmlUrl="http://terraminds.com/twitter/update-rss?query=yapc" />
+</outline>
+</body>
+</opml>

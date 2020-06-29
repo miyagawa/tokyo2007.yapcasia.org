@@ -1,0 +1,57 @@
+* {
+  outline: 1px solid #F66;
+  -moz-outline: 1px solid #F66;
+  background-color: rgba(0, 255, 0, 0.1);
+  }
+
+div, span, img {
+  outline: 1px solid black;
+  -moz-outline: 1px solid black;
+  }
+
+span[id] {
+  outline: 1px solid red;
+  -moz-outline: 1px solid red;
+  background: rgba(255,0,0,0.1);
+  }
+
+span[class] {
+  outline: 1px solid yellow;
+  -moz-outline: 1px solid yellow;
+  background: rgba(255,255,0,0.1);
+  }
+
+div[id] {
+  outline: 1px solid orange;
+  -moz-outline: 1px solid orange;
+  background: rgba(255,128,0,0.1);
+  }
+
+div[class] {
+  outline: 1px solid blue;
+  -moz-outline: 1px solid blue;
+  background: rgba(0,0,255,0.1);
+  }
+
+table, tr, td {
+  outline: 1px solid #909;
+  -moz-outline: 1px solid #909;
+  background: rgba(150,0,150,0.1);
+  }
+
+table[class], tr[class], td[class] {
+  background: rgba(100, 255, 100, 0.1);
+  outline: 1px solid #6F6;
+  -moz-outline: 1px solid #6F6;
+}
+
+table[id], tr[id], td[id] {
+  background: rgba(100, 100, 255, 0.1);
+  outline: 1px solid #66F;
+  -moz-outline: 1px solid #66F;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  outline: 1px solid black;
+  -moz-outline: 1px solid black;
+  }

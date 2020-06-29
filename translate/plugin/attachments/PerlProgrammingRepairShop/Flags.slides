@@ -1,0 +1,1956 @@
+Perl Program Repair Shop
+************************
+
+#HTML# <img src="bigmed-sigils.gif" align=right>
+
+Mark Dominus ([E[#38518]E][E[#25935]E][E[#20462]E])
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Plover Systems Co.
+++++++++++++++++++
+
+     mjd@plover.com
+
+YAPC::Asia 2007 Edition
++++++++++++++++++++++++
+
+v0.3 (March, 2007)
+++++++++++++++++++
+
+
+* Slides at:
+
+        http://pic.plover.com/slides/YAPC-flags/
+
+* Example code is at:
+
+        http://perl.plover.com/flagbook/yak/YAPC/MonAlert-1.pm [R[BEFORE]R]
+        http://perl.plover.com/flagbook/yak/YAPC/MonAlert-2.pm [G[AFTER]G]
+
+
+----------------------------------------------------------------
+
+What is the book about?
+***********************
+
+* Most programs and modules are incredibly overwritten
+
+* Typically by 50-100%  (!!!)
+
+----------------------------------------------------------------
+What is the book about?
+***********************
+
+* Programmers write the first thing that comes into their heads
+
+* That's OK
+
+* But you should make an editing pass afterwards to clean it up
+
+* There are a couple of dozen really common mistakes most people make
+
+* They are easy to recognize and easy to repair
+
+* Even if you fix just these errors, you code becomes _drastically_ better
+
+* It's a book of case studies of how to do this
+
+----------------------------------------------------------------
+
+
+#RTIMG# redflag2
+
+Red Flags
+*********
+
+* A red flag is a visible sign in the code that something might be suboptimal
+
+================================================================
+
+* *Notice*: [R[might be]R]
+
+* *Notice*: [R[suboptimal]R], not [R[wrong]R]
+
+================================================================
+
+* It is _not_ a sure sign that something is wrong
+
+  * NOT NOT NOT NOT
+
+================================================================
+
+* Instead, it's a sign that you should pause and reflect
+
+  * Ask, "is this really written in the best way?"
+
+  * Try to write it a different way (or two, or three)
+
+  * Compare and evaluate
+
+  * Decide
+
+* And then _perhaps_ replace the code with a different version
+
+----------------------------------------------------------------
+
+Thanks!
+*******
+
+* People all around the world are sending me code to look at
+
+* I also get a lot from Usenet, PerlMonks, CPAN
+
+* Today's example is not unusually bad
+
+* I chose it because it was about the right length for the talk
+
+* Also because it is such a typical and mundane example
+----------------------------------------------------------------
+
+#LTIMG# Scream-narrow.jpg
+
+Horrors
+*******
+
+* However, I know some of you came here to see horrors
+
+* So I'll just show you this little bit of someone else's program:
+
+================================================================
+
+        my $q = join('!', @$p);
+        $q =~ /^(.*)!(.*)$/;
+        my $sorted_key = $1;
+        my $unique_key = $2;
+
+* This is one of those blocks that makes me wonder what I am missing
+
+#RTIMG# redflag
+
+* But it's probably just [R[Taking two steps forward and one step back]R]
+================================================================
+
+* If [[@$p]] has only two elements, I suggest instead:
+
+        my ($sorted_key, $unique_key) = @$p;
+
+* Otherwise, perhaps something like:
+        
+        my @_p = @$p;
+        my $unique_key = pop @_p;        # Last item
+        my $sorted_key = join "!", @_p;  # The rest of the items
+
+----------------------------------------------------------------
+
+Back to our story...
+********************
+
+* You have two versions of today's code
+
+* It's a small program to analyze the Oracle server logs
+
+  * Extract items of interest
+
+* A pretty typical application of Perl  
+
+* [[MonAlert-1.pm]] is the "before" version
+
+  * About 188 lines of code
+
+* [[MonAlert-2.pm]] is the "after" version
+
+  * About 126 lines of code
+
+* Line counts *never* include comments, whitespace, curly braces, etc.
+
+  * I promise nothing underhanded is going on here
+
+----------------------------------------------------------------
+
+Strategy
+********
+
+* Usually, the way I look at these things is:
+
+  1. Glance over the program and see if anything jumps out
+
+  2. Make a longer pass, top to bottom
+
+* If you're the author:
+
+  * Make a quick pass over each bit of code...
+
+  * _Just after you write it_
+
+* Try to notice the same things I notice
+
+* Try to apply the same kind of cleanups
+
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+* The first thing I noticed in my quick pass was:
+
+       303        sub SplitDate {
+            ...
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       314           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       315           elsif ( $mnt eq 'Mar'){$mt = 3 } 
+       316           elsif ( $mnt eq 'Apr'){$mt = 4 } 
+       317           elsif ( $mnt eq 'May'){$mt = 5 } 
+       318           elsif ( $mnt eq 'Jun'){$mt = 6 } 
+       319           elsif ( $mnt eq 'Jul'){$mt = 7 } 
+       320           elsif ( $mnt eq 'Aug'){$mt = 8 } 
+       321           elsif ( $mnt eq 'Sep'){$mt = 9 } 
+       322           elsif ( $mnt eq 'Oct'){$mt = 10 } 
+       323           elsif ( $mnt eq 'Nov'){$mt = 11 } 
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+* This jumps out because it is the World's Biggest Red Flag
+
+#RTIMG# redflag
+
+* [R[Repeated code]R]
+----------------------------------------------------------------
+
+#TITLE# The Cardinal Rule of Computer Programming
+
+#HTML# <p align=center><font>The Cardinal Rule of Computer Programming</font></p>
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+----------------------------------------------------------------
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+* Why?
+
+* Because it is _wasteful_
+
+* Programmers like to think of code as their product
+
+* It's not---The product is _functionality_
+
+* Code is a _liability_
+
+* Twice as much code takes twice as long to read
+
+* Twice as many chances for bugs
+
+* Twice as long to test
+
+* But the functionality is much less than twice in these cases
+
+### David Adler says that Black and Decker says:
+### People don't buy our products because they want a 1/2 inch drill, they
+### buy our products because they want a 1/2 inch hole.
+                             
+----------------------------------------------------------------
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+* Repeated code creates maintenance problems
+
+* Someone is sure to change one part but not the other part
+
+* Then you have a bug
+
+----------------------------------------------------------------
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+* Repeated code is boring to write
+
+* It's hard to keep your brain engaged while writing it
+
+* It's easy to make a mistake and mess it up
+
+----------------------------------------------------------------
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+* Repeated code is hard to read
+
+* The eye skips past similar cases without noticing they are not the same
+
+#IMG# blot
+
+* If you do mess up, you are likely not to notice
+
+* [[SplitDate]] has a bug
+
+* Did *you* notice it?
+
+----------------------------------------------------------------
+
+#TITLE# Repeated Code is a Mistake
+
+Repeated Code Harbors Bugs
+**************************
+
+     Subject: routine on each value
+     Message-ID: <u1v5l1cf8qtv26@corp.supernews.com>
+     
+     if($match) {
+         (($rank = @ranks[0]) && ($percent = "1%")) if $value == 1;
+         (($rank = @ranks[1]) && ($percent = "2%")) if $value == 2;
+         (($rank = @ranks[2]) && ($percent = "3%")) if $value == 3;
+         (($rank = @ranks[3]) && ($percent = "4%")) if $value == 4;
+         (($rank = @ranks[4]) && ($percent = "5%")) if $value == 5;
+         (($rank = @ranks[5]) && ($percent = "6%")) if $value == 6;
+         (($rank = @ranks[5]) && ($percent = "7%")) if $value == 7;
+         (($rank = @ranks[6]) && ($percent = "8%")) if $value == 8;
+         (($rank = @ranks[7]) && ($percent = "9%")) if $value == 9;
+         (($rank = @ranks[8]) && ($percent = "10%")) if $value == 10;
+     }
+
+* Several people 'corrected' this to:
+
+     if ($match) {
+       $rank = $ranks[$value-1];
+       $percent = "$value%";
+     }        
+
+* Either the original code was broken, or the corrections were broken
+
+* Somewhere, there was a bug
+
+* Not a very impressive showing by the Perl community
+----------------------------------------------------------------
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#TITLE# Repeated Code is a Mistake
+
+* It is nearly always possible to eliminate repeated code
+
+
+* Almost _every_ feature of _every_ programming language is an attempt to prevent repeated code
+
+* Tiny example: [[$x->{q} += $y]] instead of [[$x->{q} = $x->{q} + $y]]
+
+* Larger example: Small-scope variables
+
+* Larger still: [[while]] and [[for]] loops
+
+* Larger: Subroutines
+
+* Larger: Object-oriented inheritance
+
+* Larger: Modules
+
+* Larger: Pipes
+
+* Huge: Shared libraries
+
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+* In this case, the right approach is to use a table
+
+* This:
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       314           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       315           elsif ( $mnt eq 'Mar'){$mt = 3 } 
+       316           elsif ( $mnt eq 'Apr'){$mt = 4 } 
+       317           elsif ( $mnt eq 'May'){$mt = 5 } 
+       318           elsif ( $mnt eq 'Jun'){$mt = 6 } 
+       319           elsif ( $mnt eq 'Jul'){$mt = 7 } 
+       320           elsif ( $mnt eq 'Aug'){$mt = 8 } 
+       321           elsif ( $mnt eq 'Sep'){$mt = 9 } 
+       322           elsif ( $mnt eq 'Oct'){$mt = 10 } 
+       323           elsif ( $mnt eq 'Nov'){$mt = 11 } 
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+* Becomes this:
+
+        my %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                   May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                   Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+        $mt = $m2n{$mnt};
+
+* 13 lines (yes, 13) become 4
+
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+* There's another possible problem here
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+           ...
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+* There's no [[else]] clause
+
+#RTIMG# redflag
+
+* [R[Missing 'else' after 'if'-'elsif' series]R]
+
+* Whenever you write one, ask yourself:
+
+  * [G[What if none of the cases were true?]G]
+
+----------------------------------------------------------------
+Missing [[else]]
+****************
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+           ...
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+* Sometimes the answer is "That can't happen"
+
+* But there's "can't happen" and then there's "can't happen"
+
+* In this case, it "can't happen"...
+
+  * _Unless_ the input was malformed or misparsed
+
+* So add:
+
+#*      else { die "Date '$sdat' has malformed month; aborting!" }
+
+* In the hash table formulation, this becomes:
+
+        my %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                   May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                   Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+        $mt = $m2n{$mnt} [C[|| die "Date '$sdat'..."]C];
+
+----------------------------------------------------------------
+[[SplitDate]]
+*************
+
+* The function now looks like this:
+
+     303  sub SplitDate {
+     304        
+     305     # Wed Jul 27 17:07:45 2005
+     306        
+     307     my $sdat = shift ;
+     308     my $mt ;
+     309        
+     310     my ( $dt, $mnt, $dn, $drest, $yr) = split /\s+/, $sdat ;
+     311     my ( $hr, $mi, $sec ) = split /:/, $drest ;
+     
+             %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                     May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                     Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+             $mt = $m2n{$mnt} || die "Date '$sdat' malformed";
+     
+     325         
+     326   #-D   print "THe year is $yr The month is $mt the hour $hr minute $mi and second $sec The day is $dt\n";
+     327        
+     328     return $yr, $mt, $dn, $hr, $mi, $sec ;
+     329        
+     330  }
+
+----------------------------------------------------------------
+
+Comments
+********
+
+     303  sub SplitDate {
+     304        
+     305     # Wed Jul 27 17:07:45 2005
+     306        
+     307     my $sdat = shift ;
+     308     my $mt ;
+     309        
+     310     my ( $dt, $mnt, $dn, $drest, $yr) = split /\s+/, $sdat ;
+     311     my ( $hr, $mi, $sec ) = split /:/, $drest ;
+
+* All too often, comments are used as a crutch to excuse unclear code
+
+* I have a love-hate relationship with comments
+
+* But I _love_ this comment
+
+* It's extremely concise and informative
+
+* Without it, it's impossible to check the following code
+
+  * And difficult to decipher the variable names
+
+* But with it, everything is clear
+
+* Some comments can be obviated by polishing up the code
+
+  * But not this one
+
+----------------------------------------------------------------
+[[SplitDate]]
+*************
+
+* I wouldn't have done the whitespace the way it is
+
+  * But it's not important
+
+* I would have formatted the debugging message differently
+
+  * But it's not important
+
+* The only other change I would make to this function is trivial:
+
+* Eliminate line 308:
+
+     308     my $mt ;
+
+* Put the [[my]] declaration at the place it is used:
+
+     [C[my]C] $mt = $m2n{$mnt} || die "Date '$sdat' malformed";
+
+* With this final change, the function is 9 lines long (down from 19)
+
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+* The function [[GetDateNow]] spans lines 71[E[ndash]E]145
+
+* But there are only 39 lines of whitespace
+
+* I find that makes it hard to read
+
+* It could have fit in one screenful
+
+  * But it's spread out over two
+
+* I'll abbreviate the blank lines in what follows
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+* The first thing wrong with this function is the way it does calendar arithmetic
+
+         98           my $datev = `date '+%a %b %e %m %Y'` ;
+        100            print "The date is $datev\n";
+        101
+        102          my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+        104          my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+        105
+        106          $daynum = $d ;
+        108          my $wday = Day_of_Week( $y, $m, $d ) ;
+        110          my $day2 = Day_of_Week_to_Text( $wday ) ;
+        112          my $m2 = Month_to_Text ($m) ;
+        114          $day = substr( $day2, 0, 3 ) ;
+        116          $mon = substr( $m2, 0, 3 ) ;
+
+
+* This is a lot of work
+
+* The work is mostly unnecessary
+
+----------------------------------------------------------------
+
+Date calculations
+*****************
+
+* There are three formats for dates
+
+* Format A is unreadable, but is easy to calculate with:
+
+        1080891516    # Seconds since 1970
+
+* Format C is human-readable, but useless for calculations:
+
+        Fri Apr  2 02:38:36 2004
+
+* Format B is partway between:
+
+        (36, 38, 2, 2, 4, 2004)
+
+* Funny thing about format B:
+
+  * It is mediocre for both calculation _and_ for display!
+
+  * It's really only useful for converting from A to C or back again
+
+----------------------------------------------------------------
+
+Date calculations
+*****************
+
+        A        1080891516
+        B        (36, 38, 2, 2, 4, 2004)
+        C        Fri Apr  2 02:38:36 2004
+
+* Another thing to remember:
+
+  * A [E[rarr]E] B [E[rarr]E] C         [G[Easy]G]      ("downstream")
+  * C [E[rarr]E] B [E[rarr]E] A         [R[Difficult]R] ("upstream")
+
+    * (C [E[rarr]E] B is by far the hardest of all)
+
+#IMG# upstream.jpg
+
+* So you want to store dates internally in form A whenever possible
+
+* Keep them in form A as long as possible
+
+* Calculate with form A
+
+* Convert to form C only when you have to
+
+----------------------------------------------------------------
+Date calculation cheat sheet
+****************************
+
+        A        1080891516
+        B        (36, 38, 2, 2, 4, 2004)
+        C        Fri Apr  2 02:38:36 2004
+
+* Use format A whenever possible
+
+  * To get it, call [[time()]]
+
+* Use [[localtime()]] and [[gmtime()]] to convert A [E[rarr]E] B
+
+* Use [[POSIX::strftime()]] to convert B [E[rarr]E] C
+
+* Try not to convert upstream
+
+  * [[Date::Parse]] and [[Date::Calc]] are like fish ladders
+
+  * They permit upstream movement
+
+  * That doesn't mean they make it easy
+----------------------------------------------------------------
+
+
+Date calculations
+*****************
+
+* Here's part of [[GetDateNow]]:
+
+         98           my $datev = `date '+%a %b %e %m %Y'` ;
+        100            print "The date is $datev\n";
+        101
+        102          my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+        104          my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+        105
+        106          $daynum = $d ;
+        108          my $wday = Day_of_Week( $y, $m, $d ) ;
+        110          my $day2 = Day_of_Week_to_Text( $wday ) ;
+        112          my $m2 = Month_to_Text ($m) ;
+        114          $day = substr( $day2, 0, 3 ) ;
+        116          $mon = substr( $m2, 0, 3 ) ;
+
+* The author makes a big mistake by calling the Unix [[date]] program
+
+* This returns a human-readable date (format C)
+
+* Recovering from this mistake requires 8 lines of code 
+
+  * And the complex [[Date::Calc]] module
+
+* He has to work hard to get the format B components
+
+  * And then [[Date::Calc]] returns the stuff in the wrong format anyway
+
+* Using format A makes this all easy
+----------------------------------------------------------------
+Date calculations
+*****************
+
+     my $date = time() - $value * 86400;                     # Format A
+     my ($wday, $daynum) = (localtime($date))[6,3];          # A [E[rarr]E] B
+     my $day = strftime("%a", localtime($date));             # B [E[rarr]E] C
+     my $mon = strftime("%b", localtime($date));             # B [E[rarr]E] C
+     $pattern = "$day\\s+$mon\\s+$daynum" ;                  # B [E[rarr]E] C
+
+* [[time()]] returns the format A date
+
+  * It's easy to calculate with
+
+* Then we get the day-of-week, month, and day components with [[localtime]]
+
+* Finally, [[POSIX::strftime]] converts [[5]] to [["Fri"]] and [[9]] to [["Sep"]]
+
+* In fact, we can trim this still more:
+
+     my $date = time() - $value * 86400;                     # Format A
+     my $pattern = strftime "[C[%a]C]\\s+[C[%b]C]\\s+[C[%d]C]", localtime($date);
+
+### XXX Fib here--%d is not quite correct, because as written, $pattern
+### gets a 1-character daynum if possible.  But this was surely a bug.
+
+* 10 lines become 2
+
+----------------------------------------------------------------
+
+Date calculations
+*****************
+
+* Now I wanted to do a corresponding thing in the [[else]] block:
+
+     123     } else {
+     125        my $dfmt = `date '+%a %b %e'` ;
+     127       ( $day, $mon, $daynum ) = split /\s+/, $dfmt ;
+     129       $pattern = "$day\\s+$mon\\s+$daynum" ;
+
+* This becomes:
+
+             } else {
+                my $date = time();
+                my $pattern = strftime "%a\\s+%b\\s+%e", localtime($date);
+
+* We also need to make some corresponding changes farther down:
+
+     133     my $tmpfilealrt = "alert_$daynum\_$day\_$mon.log" ;
+
+* This becomes:
+
+             my $tmpfilealrt = strftime("alert_%e_%a_%m.log", localtime($date));
+
+* This next line is never used, so we can eliminate it:
+
+     136     my $dpattern = "$day\\s+$mon\\s+$daynum" ;
+
+
+----------------------------------------------------------------
+[[GetDateNow]]
+**************
+
+* The bottom part of the function still has:
+
+      my $errdate  = `date '+%d%m%Y'` ;
+      chomp ($errdate) ;
+     
+      my $errorfile = "day_alrt_err_" . "$errdate.log" ;
+     
+      my $reportfile = "day_alrt_rep" . "$errdate.log" ;
+
+
+* Notice that this disregards the looking-into-the-past value
+
+  * Bug?  Or feature?
+
+  * I _think_ it's a bug
+
+* If so, use:
+
+      my $errdate = strftime("%d%m%Y", localtime($date));
+
+* If not:
+
+      my $errdate = strftime("%d%m%Y", localtime());
+
+----------------------------------------------------------------
+
+Refactoring
+***********
+
+* This part of the program now looks like this:
+
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     
+        my $date = time() - $value * 86400;
+        print "The date is $datev\n";
+        $pattern = strftime "%a\\s+%m\\s+%d" , localtime($date);
+     
+     } else {
+          my $date = time();
+          $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+     }
+
+* Hey, both if [[if]] and [[else]] parts are doing the same thing now!
+
+* [G[Don't repeat code]G]
+
+* We can "factor out" the repeated part, turning this:
+
+        if (C) { X; A; }
+        else   { Y; A; }
+
+* Into this:
+
+        if (C) { X; }
+        else   { Y; }
+#*      A;
+
+
+----------------------------------------------------------------
+Refactoring
+***********
+
+* Oh, but wait!
+
+      if (...) {
+        ...
+        $pattern = strftime "%a\\s+%m\\s+[C[%d]C]" , localtime($date);
+      } else {
+        ...
+        $pattern = strftime "%a\\s+%m\\s+[C[%e]C]" , localtime($date);
+      }
+
+* Difference: On March 3, [[%d]] is [["03"]] but [[%e]] is [[" 3"]]
+
+* Hmmm....
+
+  * Bug?   Or feature?
+
+  * I think it _must_ be a bug
+
+  * The format of the pattern changes depending on whether the date is in the past
+
+  * You can't possibly want that
+
+* The original code had:
+
+       98   	my $datev = `date '+%a %b [C[%e]C] %m %Y'` ;
+      102  	my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+      104  	my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+      106          $daynum = $d ;
+
+* I'm going to use [[%e]] throughout, since that seems to be what was intended
+
+----------------------------------------------------------------
+Refactoring
+***********
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     } else {
+#*        $value = 0;
+     }
+     my $date = time() - $value * 86400;
+     print "The date is $datev\n";
+     $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+
+* Here I left in the diagnostic [[print]] line
+
+* More diagnostics now
+----------------------------------------------------------------
+Refactoring
+***********
+
+* We can replace [[my $value]] at the top of the program with an appropriate initialization
+
+        my $value = 0;
+
+* Then we can eliminate the [[else]] block _entirely_
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     }
+                     
+     my $date = time() - $value * 86400;
+     print "The date is $datev\n";
+     $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+
+----------------------------------------------------------------
+Refactoring
+***********
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     }
+
+* Now we can combine the tests on [[$opt]]:
+
+     if ( $opt [C[&&]C] $opt =~ /\d+/ ) {
+          $value = $opt ;
+     } else {
+       print "How many days prior do you want to search upon before the current date: " ;
+       chomp ($value = <>);
+     }
+
+* More code gone
+
+* Notice how simplifying one part of the code creates opportunities for further simplifictations
+----------------------------------------------------------------
+Wrong test
+**********
+
+     if ( $opt && $opt =~ /\d+/ ) {
+          $value = $opt ;
+
+* The code wants [[$value]] to be a number
+
+* But that is not what it is testing for!
+
+* What if [[$opt]] is [["You are #6"]]?
+
+* [G[Say what you mean]G]
+
+     if ( $opt && $opt =~ /[C[^\d+$]C]/ ) {
+          $value = $opt ;
+
+----------------------------------------------------------------
+
+Repeated code
+*************
+
+* We now have:
+
+      my $date = time() - $value * 86400;
+      $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+     
+      my $tmpfilealrt = strftime "alert_%e_%a_%m.log", localtime($date);
+     
+      my $errdate  = strftime "%d%m%Y", localtime($date) ;
+
+* We're calculating [[localtime($date)]] three times
+
+* [G[Don't repeat code]G]
+
+      my [C[@date]C] = [C[localtime(]C]time() - $value * 86400[C[)]C];
+      $pattern = strftime "%a\\s+%m\\s+%e" , [C[@date]C];
+     
+      my $tmpfilealrt = strftime "alert_%e_%a_%m.log", [C[@date]C];
+     
+      my $errdate  = strftime "%d%m%Y", [C[@date]C];
+
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+* Final change:
+
+       75     my ( $day, $daynum, $mon, $pattern ) ;
+
+* [[$day]], [[$daynum]], and [[$mon]] are all gone
+
+* If we declare [[$pattern]] at the place it is used, we can eliminate line 75 entirely
+
+      [C[my]C] $pattern = strftime "%a\\s+%m\\s+%e" , [C[@date]C];
+
+* One last line gone
+
+* Final results:
+
+  * Before: 30 lines of code
+
+  * After: 15
+
+  * (Not counting diagnostic messages)
+
+----------------------------------------------------------------
+
+Main flow
+*********
+
+* I started in on the details, but let's back up for a higher-level view
+
+* [[GetDateNow]] generates some patterns and filenames based on the date
+
+* Then these are passed to [[ProcessAlertLog]]
+
+* This calls [[AlrtError]] and [[StartStopRep]] to generate some reports
+
+* [[StartStopRep]] calls [[DateDiffRep]] to generate part of its report
+
+* So the next logical thing to look at is [[ProcessAlertLog]]
+
+----------------------------------------------------------------
+
+[[ProcessAlertLog]]
+*******************
+
+* First some trivial stuff:
+
+      151  sub ProcessAlertLog {
+      152
+      153     my $falrt = shift ;
+      154     my $tfalrt = shift ;
+      155     my $dpat = shift ;
+      156     my $perrorfile = shift ;
+      157     my $prepfile = shift ;
+      158
+
+
+* We may as well write this as:
+
+        sub ProcessAlertLog {
+          my ($falrt, $tfalrt, $dpat, $perrorfile, $prepfile) = @_;
+
+* Then it opens an input and an output file:
+
+      163     open ( ALERTLOG, $falrt ) or die "Can't open $falrt due to $!" ;
+      164
+      165     open ( TMPALRTLOG, "> $tfalrt" ) or die "Can't open $tmpfilealrt due to $!" ;
+
+* [G[Say what you mean]G]
+
+     open ( ALERTLOG, $falrt ) or die "Can't open $falrt due to $!" ;
+     
+     open ( TMPALRTLOG, "> $tfalrt" ) or die "Can't open [C[$tfalrt]C] due to $!" ;
+----------------------------------------------------------------
+
+[[ProcessAlertLog]]
+*******************
+
+* Now the main logic of the function:
+
+     159  my $LINE ;
+     166
+     167  while ( <ALERTLOG>) {
+     168
+     169    if ( $_=~/$dpat/ ){ $LINE = 'yes'} ;
+     170
+     171    if ($LINE && $LINE eq 'yes' ){ print TMPALRTLOG "$_"} ;
+     172
+     173  }
+     174
+     175  print TMPALRTLOG "Error: ... \n" if ($LINE && $LINE eq [C['no']C] );
+
+* The condition on line 175 can never be true!
+
+* And the test for [[yes]] on line 171 is redundant
+
+* [G[Let booleans be booleans]G]
+
+     my $seen_dpat;
+     
+     while (<ALERTLOG>) {
+  	$seen_dpat = [C[1]C] if /$dpat/[C[o]C];
+     
+  	if ($seen_dpat) { print TMPALRTLOG $_ }
+     }
+     
+     print TMPALRTLOG "Error: ... \n" unless $seen_dpat;
+
+----------------------------------------------------------------
+[[ProcessAlertLog]]
+*******************
+
+     my $seen_dpat;
+     
+     while (<ALERTLOG>) {
+  	$seen_dpat = 1 if /$dpat/o;
+     
+  	if ($seen_dpat) { print TMPALRTLOG $_ }
+     }
+     
+     print TMPALRTLOG "Error: Pattern /$dpat/ was not found \n" unless $seen_dpat;
+
+* But actually, a little thought suggests an alternative
+
+* Once [[$seen_dpat]] is set true, it never changes back to false
+
+* So the [[/$dpat/]] test becomes superfluous
+
+* What's really happening here is that we print out all the records from [[/$dpat/]] onward
+
+* So we might try this alternative:
+
+        while (<ALERTLOG>) { print(TMPALRTLOG), last if /$dpat/o }
+        print TMPALRTLOG while <ALERTLOG>;
+
+* But then we can't generate the error message, so we would need:
+
+#*      my $ok;
+        while (<ALERTLOG>) { [C[$ok = 1]C], print(TMPALRTLOG), last if /$dpat/o }
+        print TMPALRTLOG while <ALERTLOG>;
+        print TMPALRTLOG "Error: Pattern /$dpat/ was not found \n" unless [C[$ok]C];
+
+* Sometimes this works out better, sometimes not
+
+* Which do you prefer?
+
+----------------------------------------------------------------
+[[ProcessAlertLog]]
+*******************
+
+* Related to this is a message at the end of the function:
+
+        183     print "Error: Pattern was not found \n" if (!$LINE eq 'no' );
+
+* This isn't a red flag
+
+* It's just wrong
+
+* The test is backwards [E[ndash]E] it should be [[if $LINE eq 'no']]
+
+* And the precedence is off:
+
+        183     print "Error: Pattern was not found \n" if ([C[(]C]!$LINE[C[)]C] eq 'no' );
+
+* The [[B::Deparse]] module is a great way to investigate such things:
+
+        % perl -MO=Deparse -e 'print "Err" if (!$LINE eq "no")'
+        print 'Err' if !$LINE eq 'no';
+     
+        % perl -MO=Deparse -e 'print "Err" if (!($LINE eq "no"))'
+        print 'Err' if not $LINE eq 'no';
+     
+        % perl -MO=Deparse[C[,-p]C] -le 'print "Err" if (!$LINE eq "no")'
+        (((!$LINE) eq 'no') and print('Err'));
+
+
+----------------------------------------------------------------
+
+Maintenance puzzles
+*******************
+
+* This next line is a real head-scratcher
+
+     181  if ( -r $tfalrt ) { &AlrtError ( $tfalrt, $perrorfile ) } ;
+
+#RTIMG# scratching_head.jpg
+
+* Recall that the program just created [[$tfalrt]] itself:
+
+     165  open ( TMPALRTLOG, "> $tfalrt" ) or die ...
+
+* So what this seems to be testing is the process's umask...
+
+* And what if the test fails?  Then the [[AlrtError()]] function is skipped... 
+
+  * But running [[AlrtError()]] is the whole point of the program...
+
+* Conclusion:  it should probably be just:
+
+      AlrtError ( $tfalrt, $perrorfile );
+
+----------------------------------------------------------------
+[[AlrtError]]
+*************
+
+* The main logic of this function is:
+
+      199     while ( <ORAALRTLOG> ) {
+      201        if ( $_ =~ /(ORA-\d+)\s+/ ) {
+      203  	$errors{$1}++ ;
+      207        }
+      209     }
+      210
+      211     for my $key ( keys %errors ) {
+      213        my $value = $errors{$key} ;
+      215        print "The error code $key appears $value times in this section of the oracle Alert Log\n";
+      217     }
+
+* This is simple enough
+
+* I have only one complaint:
+
+* I don't see any reason why lines 213[E[ndash]E]215 shouldn't be written as
+
+                 print "The error code $key appears [C[$errors{$key}]C] times in this section of the oracle Alert Log\n";
+
+* It seems to me that this couldn't be worse, and might be a bit better
+
+#RTIMG# redflag
+
+* [R[Variable use immediately follows assignment]R]
+
+### Also perhaps sort the keys(%errors)
+----------------------------------------------------------------
+[[AlrtError]]
+*************
+
+* The other puzzle here is the use of the [[$errorfile]] argument:
+
+        192     my $errorfile = shift ;
+        196     open ( ERRORALRTLOG, "> $errorfile" ) or die "Can't open $errorfile due to $!" ;
+        205  	# print ERRORALRTLOG "$_" } ;
+        220     close(ERRORALRTLOG) or die "Cold not close tmpalert due to $!\n" ;
+
+* Nothing is ever written to the file!
+
+* I have no problem with that
+
+* But if you're going to comment out the [[print]], why not the [[open]]?
+
+* I think the _right_ solution here is to get delete all of it
+
+* The code still resides in the source code management system if we need to get it back
+
+  * ... right?
+
+  * This is itself a good argument in favor of a source code management system
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+* The only call to this function (in [[ProcessAlrtLog]]) is commented out
+
+* Nevertheless, it's a significant part of the program, about 37 lines long
+
+* Presumably it was used at one time
+
+  * Or maybe it didn't work and needs to be fixed
+
+* Anyway, it does seem worth some attention
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+* Starting at the top as usual:
+
+      225  sub StartStopRep {
+      226
+      227     my $tmpfilealrt = shift ;
+      228     my $reportfile = shift ;
+      229     my @lines ;
+      230     my $stpline ;
+      231     my $strtline ;
+      232     my $shtdwnlinenum ;
+      233     my $ndl = 4 ;
+      234  #   my %match ;
+      235     my @matimes ;
+      236     my $counter = 0 ;
+      237
+
+* This becomes:
+
+        sub StartStopRep {
+          my ($tmpfilealrt, $reportfile) = @_;
+          my (@lines, $stpline, $strtline, $shtdwnlinenum, @matimes);
+          my $ndl = 4;
+          my $counter = 0;
+
+----------------------------------------------------------------
+
+Variable names
+**************
+
+* In case you hadn't noticed, I don't spend a lot of time talking about how to name variables
+
+  1. It's boring
+
+  2. You've heard it before
+
+     * 87 times
+
+* Nevertheless, the names [[$stpline]] and [[$strtline]] bother me
+
+
+----------------------------------------------------------------
+
+Variable names
+**************
+
+* This kind of silly abbreviating is all through this program
+
+  * What's this guy's problem with vowels?
+
+  * Why [[AlrtError()]] and not [[AlertError()]]?
+
+  * If it needs abrviation, why not [[AlertErr()]]?
+
+* I would have preferred [[$startline]] and [[$stopline]]
+
+* Or, if abbreviation is wanted, how about  [[$startln]] and [[$stopln]]?
+
+* What is gained by this sort of abbreviation, anyway?
+
+* End of rant.
+----------------------------------------------------------------
+[[StartStopRep]]
+****************
+
+        251          $shtdwnlinenum = $. ;
+
+* [[$shtdwnlinenum]] is never used anywhere
+
+* Another line gone
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      247     my %match ;
+          ...
+      274  	$match{START} = $strtline ;
+      275  	$match{STOP} = $stpline ;
+      276
+      277          print REPORTLOG "$. => The start time is $strtline and the stop time is $stpline\n" ;
+      278
+      279        $matimes[$counter] = \%match ;
+      286     } # End While
+
+
+#RTIMG# redflag
+
+* [R[Variable use immediately follows assignment]R]
+
+              while ( <ORAALRTLOG> ) {
+          ...
+                   print REPORTLOG "$. => The start time is $strtline and the stop time is $stpline\n" ;
+             
+                $matimes[$counter] = { START => $strtline, STOP => $stpline };
+              }
+
+* Three more lines and one variable gone
+
+----------------------------------------------------------------
+
+#IMG# redflags-crossed
+
+[R[Array Length Variables]R]
+****************************
+
+      236     my $counter = 0 ;
+          ...
+      279        $matimes[$counter] = { START => $strtline, STOP => $stpline }; ;
+      280  #-D   	print "The $counter start is $matimes[$counter]{START}\n";
+      281        $counter = $counter + 1 ;
+
+* This variable's only purpose is to track the length of [[@matimes]]
+
+* But Perl already tracks the length of [[@matimes]] internally
+
+* Such variables are almost always unnecessary:
+
+        [C[push]C] @matimes, { START => $strtline, STOP => $stpline };
+        #-D   print "The " [C[. @matimes .]C] "start is $matimes[??![C[-1]C]??!]{START}\n";
+
+* Another line and another variable gone
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+* I can no longer put off tackling the real meat of this function
+
+* It starts with this interesting section:
+
+      238     open ( ORAALRTLOG, "$tmpfilealrt" ) or die "Can't open $tmpfilealrt due to $!" ;
+      239     open ( REPORTLOG, "> $reportfile" ) or die "Can't open $reportfile due to $!" ;
+      240
+      241     # Wed Jul 27 17:07:45 2005
+      242
+      243     tie @lines, 'Tie::File', $tmpfilealrt or die "Can't Tie the file $tmpfilealrt: $!" ;
+
+#RTIMG# danger.jpg
+
+* Notice that this code opens [[$tmpfilealrt]] once as a handle and once with [[Tie::File]]
+
+  * Not an error; just unusual
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+* First we'll see the function without any actual output:
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      257  	my $status = 'N' ;
+      258  	until ( $status eq 'Y') {
+      259
+      260              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+      261  		$stpline = $1 ;
+      262  		$status = 'Y' ;
+      263  	   }else{
+      264  		$ndl = $ndl + 1 ;
+      265  	   }
+      266
+      267  	}# End until
+      268
+      283        } # End if
+      285
+      286     } # End While
+
+* [G[Let booleans be booleans]G]
+
+* [[$status]] should be true or false
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+
+
+----------------------------------------------------------------
+Flag Variables
+**************
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+              } else {
+                $ndl = $ndl + 1;
+              }
+        }
+
+
+* Actually I'm starting to wonder if *flag variables* are red flags
+
+* Why?
+
+* Because it seems to me that you can usually eliminate them
+
+  * Fold them into the implicit state of the program
+
+  * And the result is usually simpler
+
+----------------------------------------------------------------
+Flag Variables
+**************
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+              } else {
+                $ndl = $ndl + 1;
+              }
+        }
+
+* [G[A variable should represent some important piece of information]G]
+
+  * It should be possible to briefly explain what it represents
+
+* What is [[$status]] here?
+
+  * "During the search for the stop line, have we found it yet?"
+
+* Well, why not just search until you find it, and then stop?
+
+  	while (1) {
+          if  ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+#*          last;
+          }            
+          $ndl = $ndl + 1;
+        }
+
+* Another variable gone
+
+----------------------------------------------------------------
+Flag Variables
+**************
+
+  	while (1) {
+          if  ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+#*          last;
+          }            
+          $ndl = $ndl + 1;
+        }
+
+* Now a possible bug becomes much more apparent
+
+* The potential infinite loop condition is apparent
+
+* How about this instead?
+
+        my $possible_stop = $. - 4;
+        while ($possible_stop >= 0) {
+          if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+            last;
+          }      
+          $possible_stop--;      
+        }
+
+* Here [[$possible_stop]] replaces [[$ndl]]
+
+* We might also want to add:
+
+        die "Couldn't find stop line preceding line $." unless $stpline;
+
+----------------------------------------------------------------
+Potential Worry
+***************
+
+        my $possible_stop = $. - 4;
+        while ($possible_stop >= 0) {
+          if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+            last;
+          }      
+          $possible_stop--;      
+        }
+
+* The original code did _not_ reset [[$ndl]] to 4 for each search
+
+  * Bug, or feature?
+
+  * I _think_ it was probably a bug
+
+  * I was not able to get sample input from the author in time
+
+* But this part of the program was commented out
+
+  * Perhaps this is why?
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+* Now here's the body of the function, with printing removed:
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+                       $stpline = $1;
+                       last;
+                     }      
+                     $possible_stop--;      
+                   }
+      
+      283        } # End if
+      284
+      285
+      286     } # End While
+      287
+
+* The next thing I notice is the repeated pattern [[(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/]]
+
+* As maintenance programmer, I must now compare these character-by-character
+
+* Are they really the same?
+
+  * (Yes.)
+
+----------------------------------------------------------------
+
+Repeated Code
+*************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+
+* I would like to get rid of the repeated test
+
+* We're scanning over the file, looking for lines of interest
+
+* When we find one, we scan backwards in the file looking for the previous one
+
+* But we've already seen that one!
+
+* So why not just make a note of it the first time?
+
+* Then we won't gave to go hunting for it when we need it again.
+
+----------------------------------------------------------------
+
+Repeated Code
+*************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+
+
+* Instead, let's do:
+
+        my @start_stop_lines, %start_stop_data;
+        while ( <ORAALRTLOG> ) {
+          if (/(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            push @start_stop_lines, $.;
+            $start_stop_data{$.} = $1;
+     
+          } elsif (/Starting\s+ORACLE\s+instance\s+/) {
+            my ($startl, $stopl) = @start_stop_lines[-1, -2];
+     
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+            } else {
+              # raise some suitable error diagnostics
+            }
+          }
+        }
+
+* This replaces most of the logic in the function
+
+* It eliminates the use of [[Tie::File]]
+
+* It eliminates the backward search
+
+----------------------------------------------------------------
+
+Printing
+********
+
+* I fudged something here
+
+* Remember I was showing the code without the [[print]]ing
+
+* But the [[print]]ing is really important
+
+* The function's purpose is to print the report!
+
+* So I'd better restore the [[print]]s:
+
+        my @start_stop_lines, %start_stop_data;
+        while ( <ORAALRTLOG> ) {
+          if (/(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            push @start_stop_lines, $.;
+            $start_stop_data{$.} = $1;
+     
+          } elsif (/Starting\s+ORACLE\s+instance\s+/) {
+            my ($startl, $stopl) = @start_stop_lines[-1, -2];
+#*          print REPORTLOG "$_\n" ;
+      
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+      
+#*            print REPORTLOG "START> $lines[$start]\n";
+#*            print REPORTLOG "STOP> $stpline\n";
+            } else {
+              # raise some suitable error diagnostics
+            }
+          }
+        }
+
+
+----------------------------------------------------------------
+
+Printing
+********
+
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+              print REPORTLOG "START> $lines[$start]\n";
+              print REPORTLOG "STOP> $stpline\n";
+
+* Uh-oh
+
+* I got rid of [[@lines]]  (provided by [[Tie::File]])
+
+* But that's OK:
+
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+#*            print REPORTLOG "START> $matimes[-1]{START}\n";
+#*            print REPORTLOG "STOP> $matimes[-1]{STOP}\n";
+
+----------------------------------------------------------------
+#IMG# redflags-crossed
+
+[R[End-of-Block Comments]R]
+***************************
+
+        267  	}# End until
+            ...
+        282
+        283        } # End if
+        284
+        285
+        286     } # End While
+        287
+
+* Such comments are red flags
+
+* They indicate that your control flow is too complicated
+
+* Solutions include:
+
+  1. Rewrite it  (That's what we did here)
+
+  2. Turn an inner block into a function
+
+  3. Get a better editor program
+
+* These are not exclusive
+----------------------------------------------------------------
+[[StartStopRep]]
+****************
+
+* Result: 37 lines become 22
+
+* Complicated control flow becomes simple
+
+  * Mingled forward and backward searching replaced with single pass
+
+* 12 variables become 7
+
+* [[Tie::File]] eliminated
+
+* Possibly significant performance increase
+
+* Possible bugs fixed?
+----------------------------------------------------------------
+Main program
+************
+
+* The top of the program has:
+
+      36     my $dpattern ;
+      37     my $tmpfilealrt ;
+      38     my $errfile ;
+      39     my $repfile ;
+      40     my %alrtopt ;
+      41     my $read ;
+      42     my $int ;
+
+* I was going to complain about global variables
+
+* I was going to insert a long section about how using global variables wrecks modularity and reuse
+
+* Happily, none of these are truly global
+
+* They should move down to the vicinity of line 400
+
+----------------------------------------------------------------
+Main program
+************
+
+* I see this sort of thing a lot:
+
+     398  GetOptions (	"help"=> \$alrtopt{help},
+     399  		"sid=s"=> \$alrtopt{sid},
+     400  		"interactive:i" => \$alrtopt{interactive} );
+     401
+     402
+     409  if ( $alrtopt{interactive} ) {
+     410
+     411     $int = $alrtopt{interactive} ;
+     412
+     413  #   print " the value of the integer is $int\n";
+     414
+     415  }
+     416
+
+* What's [[$alrtopt{interactive}]] for?
+
+#RTIMG# redflag
+
+* [R[Variable use immediately follows assignment]R]
+
+* Why not just:
+
+      GetOptions (  "help"          => [C[\$help]C],
+                    "sid=s"         => [C[\$read]C],
+                    "interactive:i" => [C[\$int]C] );
+
+
+* And then the [[if]] block vanishes
+----------------------------------------------------------------
+Main program
+************
+
+      426     if ( $int ) {
+      428         ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = &GetDateNow( $int ) ;
+      430     }else {
+      432         ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = &GetDateNow ;
+      434     }
+
+* Here we have repeated code
+
+* [G[Avoid special cases]G]
+
+* Ask the question "What if I didn't bother with the test?"
+
+  * Sometimes, the answer is "nothing!"
+
+* Here, for example:
+
+  * What if we called [[GetDateNow($int)]] even when [[$int]] was false?
+
+  * [[GetDateNow]] already has code in it to handle that _exact_ case
+
+  * And the code there does _exactly_ what we want it to
+
+      ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = GetDateNow( $int ) ;
+
+* Two lines become zero
+
+----------------------------------------------------------------
+Main program
+************
+
+     [C[my]C] ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = GetDateNow( $int ) ;
+
+* Now we can eliminate four lines of delcarations from the top of the program
+
+----------------------------------------------------------------
+
+Empty [[if]] block
+******************
+
+* This is weird, but not as rare as you might think:
+
+      437  if ( $read ) {
+      438
+      439  }else{
+      440
+          ...
+      447
+      448  }
+
+* Let's use
+
+        unless ($read) { 
+          ...
+        }
+
+* Or, if you don't like [[unless]]:
+
+        if (not $read) {
+          ...
+        }
+
+----------------------------------------------------------------
+
+OK?
+***
+
+* I'm sure I'm over time by now
+
+* I didn't finish working over the program
+
+* I wanted to take another run at it
+
+* For example, the program makes several passes over the same input:
+
+  * Once in [[ProcessAlertLog()]]
+
+  * Again in [[AlrtError()]]
+
+  * Again in [[StartStopRep()]], if that is enabled
+
+* Often you can simplify control flow and save code by merging passes
+
+* Tasks done multiple times get done once instead
+
+* I didn't even touch [[DateDiffRep()]]
+
+  * It looks like it might be a good place to use (gasp!) formats
+
+* Important moral:
+
+#HTML# <p align=center><font size="+4" color=green>
+Even an incomplete pass has a lot of value
+#HTML# </font></p>
+
+----------------------------------------------------------------
+
+Summary
+*******
+
+* Before: 163 lines (not counting [[DateDiffReport()]]
+
+* After: 101 lines (ditto)
+
+* Reduction: 38%
+
+* Bugs fixed (I think)
+
+* Performance improved 
+
+* Code simpler and smaller
+----------------------------------------------------------------
+
+Summary
+*******
+
+* Most programs are too long
+
+* Repeated code is extremely wasteful
+
+* Don't be satsified with the first thing you wrote
+
+
+#HTML# <p align=center><font size="+4" color="green">Perfection is achieved not when there is nothing more to add, but when there is nothing more to take away.</font></p>
+
+#IMG# littleprince.jpg
+
+#HTML# <p align=center>(Antoine de Saint-Exup&eacute;ry)</a>
+
+----------------------------------------------------------------
+
+Thanks!
+*******
+
+#IMG# beer.jpg
+
+----------------------------------------------------------------
+
+----------------------------------------------------------------END

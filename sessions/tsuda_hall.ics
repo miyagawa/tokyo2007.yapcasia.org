@@ -1,0 +1,268 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+X-WR-CALNAME:YAPC::Asia 2007 Tokyo Sessions (Tsuda Hall)
+PRODID:-//Yapc Asia 2007 tokyo //MovableType //EN
+X-WR-TIMEZONE:Asia/Tokyo
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Asia/Tokyo
+BEGIN:STANDARD
+DTSTART:19371231T150000
+TZOFFSETTO:+0900
+TZOFFSETFROM:+0000
+TZNAME:JST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19480502T020000
+TZOFFSETTO:+1000
+TZOFFSETFROM:+0900
+TZNAME:JDT
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:19480911T020000
+TZOFFSETTO:+0900
+TZOFFSETFROM:+1000
+TZNAME:JST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19490403T020000
+TZOFFSETTO:+1000
+TZOFFSETFROM:+0900
+TZNAME:JDT
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:19490910T020000
+TZOFFSETTO:+0900
+TZOFFSETFROM:+1000
+TZNAME:JST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19500507T020000
+TZOFFSETTO:+1000
+TZOFFSETFROM:+0900
+TZNAME:JDT
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:19500909T020000
+TZOFFSETTO:+0900
+TZOFFSETFROM:+1000
+TZNAME:JST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19510506T020000
+TZOFFSETTO:+1000
+TZOFFSETFROM:+0900
+TZNAME:JDT
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:19510908T020000
+TZOFFSETTO:+0900
+TZOFFSETFROM:+1000
+TZNAME:JST
+END:STANDARD
+END:VTIMEZONE
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T173500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T184500
+SUMMARY:BoF
+URL:http://tokyo2007.yapcasia.org/sessions/2007/03/bof.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T163000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T173000
+SUMMARY:Lightning Talks
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/lightning_talks.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T093000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T094500
+SUMMARY:Welcome - Tatsuhiko Miyagawa
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/welcome.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T103000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T110000
+SUMMARY:Virtualization and Package Deployment with EC2 - Emerson Mills
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/virtualization_and_package_deployment_with_ec2.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T141500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T143000
+SUMMARY:入門DBIC::Schema::Loader - Atsushi Kobayashi
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/dbic_schema_loader.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T163000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T165000
+SUMMARY:Perl Worst Practices - Marty Pauley
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/perl_worst_practices.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T103500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T105500
+SUMMARY:CLI meets Web Frameworks - Kazuhiro Osawa
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/cli_meets_web_frameworks.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T144500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T153000
+SUMMARY:How we build Vox - Ben Trott
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/everything_vox.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T110000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T120000
+SUMMARY:Higher-Order Parsing techniques for Perl - Mark Jason Dominus
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/higher_order_perl.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T173000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T181500
+SUMMARY:Perl Program Repair Shop and Red Flags - Mark Jason Dominus
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/perl_program_repair_shop_and_r.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T144500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T153000
+SUMMARY:Writing Pluggable software - Tatsuhiko Miyagawa
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/writing_pluggable_software.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T133000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T135000
+SUMMARY:perl I18N in 20 minutes - Dan Kogai
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/perl_i18n_in_20_minutes.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T112500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T114500
+SUMMARY:自文書抽出日本的住所 - Kazuhiro Osawa
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/extract_japanese_street_address.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T165000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T173500
+SUMMARY:Perl 6 Today - Audrey Tang
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/perl_6_today.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T153000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T161500
+SUMMARY:Inside livedoor 2006-2007 - Tomohiro Ikebe
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/inside_livedoor.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T160000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T162000
+SUMMARY:Assurer - a pluggable server testing/monitoring framework - Gosuke Miyashita
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/assurer_a_pluggable_server_tes.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T133500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T135500
+SUMMARY:(Ab)?using Class::C3 - Daisuke Maki
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/abusing_class_c3.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T093000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T101500
+SUMMARY:ふつうのPerl6入門 - Dan Kogai
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/perl6.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T131500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T133500
+SUMMARY:s/ Perl5 Regular Expression / Perl6 Regex and Rule /mixes; - Yoshinori Takesako
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/s_perl5_regular_expression_per.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T135000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T143500
+SUMMARY:Perlネットワークプログラミング再考 - Naoya Ito
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/perl.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070404T094500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070404T103000
+SUMMARY:Kwiki and the Symlink - Ingy döt Net
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/kwiki_and_the_symlink.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T140000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T141500
+SUMMARY:CDBI => DBIC - Tokuhiro Matsuno
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/cdbi_dbic.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T153000
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T160000
+SUMMARY:Way to the NAPC - Kenichi Ishigaki
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/way_to_the_napc.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20070405T101500
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:20070405T103500
+SUMMARY:web apiで遊び倒す - Kei-ichi Daiba
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/web_api.html
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:
+LOCATION: Tsuda Hall
+DTEND;TZID=Asia/Tokyo:
+SUMMARY:Mylingual - There's More Than One Language To Do It - Kazuho Oku
+URL:http://tokyo2007.yapcasia.org/sessions/2007/02/mylingual_theres_more_than_one.html
+END:VEVENT
+
+
+
+END:VCALENDAR

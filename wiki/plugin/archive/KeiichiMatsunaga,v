@@ -1,0 +1,42 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2;
+comment	@# @;
+
+
+1.2
+date	2007.03.20.02.38.05;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.16.04.43.51;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@edit_address:unknown,edit_by:ma2,edit_by_icon:,edit_time:Tue%20Mar%2020%2002%3A38%3A05%202007,edit_unixtime:1174358285
+@
+text
+@普通の人。
+ぱるまに去年のレポート書きました。
+I am a web engineer and a father of two children. both are hard jobs.
+http://jp.rubyist.net/PerlMa/wiki.cgi?page=20060401%2DYAPCAsiaReport
+@
+
+
+1.1
+log
+@edit_address:unknown,edit_by:ma2,edit_by_icon:,edit_time:Fri%20Mar%2016%2004%3A43%3A51%202007,edit_unixtime:1174020231
+@
+text
+@d3 1
+@

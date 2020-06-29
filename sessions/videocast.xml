@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">
+   <channel>
+      <title>YAPC::Asia 2007 Tokyo Sessions Videocast</title>
+      <link>http://tokyo2007.yapcasia.org/sessions/</link>
+      <description></description>
+      <language>en</language>
+      <copyright>Copyright 2007</copyright>
+      <lastBuildDate>Tue, 10 Apr 2007 06:03:57 +0000</lastBuildDate>
+      <generator>http://www.sixapart.com/movabletype/?v=3.2</generator>
+      <docs>http://blogs.law.harvard.edu/tech/rss</docs> 
+
+           <item>
+         <title>Naoya Ito: Perlネットワークプログラミング再考</title>
+         <description>CPANモジュールを使えばネットワークプログラミングもお手の物、Web API も楽々な昨今です。が、そんな今だからこそその下のレイヤで起こっているネットワークプログラミングのその仕組みを探訪すべし。PerlでUNIXネットワークプログラミングの基礎を紹介した後、POE / Event.pm / Danga::Socket / libevent などモダンなライブラリ・フレームワークの詳細までを語ります。</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/perl.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/perl.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/perl.mp4?docid=5696058096514645117&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Jeff Kim: Inside Net::Amazon::EC2</title>
+         <description>Amazon&apos;s Elastic Compute Cloud (EC2) is a revolutionary way to dynamically expand and shrink server capacity.  Net::Amazon::EC2 provides a way to manage your EC2 from Perl. This talk covers the powerful combination of Perl and EC2.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/inside_netamazonec2.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/inside_netamazonec2.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/inside_netamazonec2.mp4?docid=-5624421308761924041&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Yoshinori Takesako: s/ Perl5 Regular Expression / Perl6 Regex and Rule /mixes;</title>
+         <description>Perlの黒魔術の一つであった正規表現。後付の拡張を繰り返した結果、問題解決の強力な武器に成長した反面、人間にも計算機にも読みにくい諸刃の剣にもなってしまいました。そこで再設計されたのがPerl6!正規表現の書き方がPerl5からどのように変わるのか、これからPerl6のプログラムを書いてみようという人向けにわかりやすく解説します。</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/s_perl5_regular_expression_per.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/s_perl5_regular_expression_per.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/s_perl5_regular_expression_per.mp4?docid=6298141592660002645&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Kang-min Liu: Asynapse - The missing links between servers and clients</title>
+         <description>As API-based web services seems to be the way to go, API-based web appdevelopment is still in it&apos;s early age.  Asynapse comes in the waytring to provide a bridge between servers and clients, specifially,javascript. It&apos;ll extend the ability of javascript language to be moreeasily interactive with server.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/asynase_the_missing_links_betw.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/asynase_the_missing_links_betw.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/asynase_the_missing_links_betw.mp4?docid=3306125771451914501&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Dan Kogai: ふつうのPerl6入門</title>
+         <description>残念ながら2006年のクリスマスには間に合いませんでしたが、Perl6のリリースが刻一刻と近づいております。一足先にPerl6に慣れておくのも悪くないのではないでしょうか。 本sessionでは、「複殺」なことは抜きにして、「殺速」使えるPerl6のコードを学んで行きます。</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/perl6.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/perl6.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/perl6.mp4?docid=158464582426150312&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Daisuke Maki: (Ab)?using Class::C3</title>
+         <description>C3アルゴリズムはDBIx::Class、PythonやPerl6でも使われているMRO (Method Resolution Order)を決定するための仕組みです。
+
+Class::C3はどんな挙動をするのか、SUPERやNEXT.pmとの違いはなんなのかから、簡単にClass::C3を使ってコンポーネント化されたフレームワークを作る事に関して。</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/abusing_class_c3.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/abusing_class_c3.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/abusing_class_c3.mp4?docid=927440934317886649&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Jesse Vincent: Abusing Domain Specific Languages for Fun and Profit</title>
+         <description>Ruby isn&apos;t the only lightweight dynamic language that lets you build your own application-specific minilanguage. Come explore a few little languages in Perl 5.  We&apos;ll talk about why DSLs help make your code more readable and writable as well as some of the scarier tricks needed to make Perl do your bidding.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/abusing_domain_specific_langua.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/abusing_domain_specific_langua.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/abusing_domain_specific_langua.mp4?docid=-1609004945572740509&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Ingy döt Net: Kwiki and the Symlink</title>
+         <description>Kwiki 2.0 is alive. Learn how the lowly Unix symbolic link saved the Kwiki project from bit rot.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/kwiki_and_the_symlink.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/kwiki_and_the_symlink.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/kwiki_and_the_symlink.mp4?docid=4765441736116560292&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Tokuhiro Matsuno: CDBI =&gt; DBIC</title>
+         <description>稼働しているサイトを稼働しているまま DBIC に移行するノウハウについて。DBIC に移行してどうだったか、今俺は後悔していないか。費用対効果的にはどうなのか、気合いと根性でなんとかなるのか、問題はなかったのか、二人の愛の行方やいかに。というネタでとりあえず submit!</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/cdbi_dbic.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/cdbi_dbic.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/cdbi_dbic.mp4?docid=6272425301929799562&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Kenichi Ishigaki: Way to the NAPC</title>
+         <description>We don&apos;t doubt CPAN is our source of power. We can&apos;t imagine Perl without modules.
+
+However, CPAN is not always perfect for everyone. Sometimes we want NAPC, an alter ego of CPAN, for ease and efficiency.
+
+As a ppm repository manager, I&apos;ll talk you some basic history and recent updates, solved and unsolved technical issues, and maybe how to build your own repositories.
+
+As always, I&apos;ll talk in Japanese, though slides will be written in English.
+</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/way_to_the_napc.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/way_to_the_napc.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/way_to_the_napc.mp4?docid=8335878297311978200&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Kei-ichi Daiba: web apiで遊び倒す</title>
+         <description>&quot;Sun×RECRUIT Mash Up Award&quot;なんてものもあって，WebAPIも一般的になってきたようです．早速使って遊んでみましょう</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/web_api.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/web_api.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/web_api.mp4?docid=-5100191989102776471&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Kazuho Oku: Mylingual - There&apos;s More Than One Language To Do It</title>
+         <description>Japanize and Mylingual are user-based projects of translating web-based application user interfaces.  The projects have gained more than 25,000 users within five month since its announcement.  The talk will cover technical and social aspects behind its success as well as its future plans. (Japanize と Mylingual は、ウェブアプリケーションを翻訳するユーザーベースのプロジェクトです。Japanize は公開後５ヶ月間で25,000人以上のユーザーが利用するまでになりました。このセッションでは、同プロジェクトの技術的背景と社会的意図、将来の計画についてお話します。)</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/mylingual_theres_more_than_one.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/mylingual_theres_more_than_one.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/mylingual_theres_more_than_one.mp4?docid=1461260488860624596&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Dave Rolsky: Patterns in Perl</title>
+         <description>This talk examines the implementation of some &quot;classic&quot; Gang of Four patterns in Perl, along with some potential pitfalls.These patterns will including Factories, Iterators, Strategies, and Singletons.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/patterns_in_perl.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/patterns_in_perl.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/patterns_in_perl.mp4?docid=-6964536258450881058&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Atsushi Kobayashi: 入門DBIC::Schema::Loader</title>
+         <description>Perlの本命O/RマッパーであるDBIx::Classの使い方にとどまらず、
+DBIx::Class::Schema::Loaderを使うことで
+いかに早く、いかに低コストでスキーマを構築できるか！
+Loaderを使えば煩わしいテーブルごとのスキーマ定義なんて必要なし！
+</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/dbic_schema_loader.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/dbic_schema_loader.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/dbic_schema_loader.mp4?docid=7385892916151702741&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Gosuke Miyashita: Assurer - a pluggable server testing/monitoring framework</title>
+         <description>Plaggerから多くの着想を得た、プラガブルな Perl 製サーバテスティング/モニタリングフレームワーク Assurer (http://assurer.jp/trac) をご紹介します。デブサミ2007では概要しかご紹介できませんでしたが、今回は内部仕様やコードにつっこんだ話をします。
+
+Assurer (http://assurer.jp/trac) is a pluggable server testing/monitoring framework written in Perl inspired by Plagger.This session will show you what it is, why I started developing it, how it works and so on.
+</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/assurer_a_pluggable_server_tes.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/assurer_a_pluggable_server_tes.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/assurer_a_pluggable_server_tes.mp4?docid=-8570585010285466614&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Marty Pauley: Perl Worst Practices</title>
+         <description>Throughout the world many organisations use Perl extensively.  Unfortunately, much of this &quot;working&quot; Perl code is really bad.  Marty has seen a lot of awful Perl, and probably written a lot too.  In this short talk Marty will explain how you too can produce terrible Perl -- the worst Perl code you possibly can.  So please, DO NOT OBEY HIM!</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_worst_practices.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_worst_practices.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/perl_worst_practices.mp4?docid=3828282759372324573&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Audrey Tang: Jifty Now!</title>
+         <description>In a year&apos;s time since its initial release, Jifty has emerged asthe framework of choice for building rich web applications andservices.This talk walks through the implementation of doxory.com, anaddictive community website built within an afternoon, showing offJifty&apos;s comprehensive support for database modelling (without SQL),Ajax effects (without JavaScript), semantic markup (without XML),as well as Web Continuations, REST endpoints, and more!</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/jifty_now.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/jifty_now.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/jifty_now.mp4?docid=-8952669519799894134&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Jonathan Rockway: Building Catalyst Applications</title>
+         <description>In this talk, we&apos;ll learn how to build a database-driven web application with Catalyst, DBIx::Class, and the Template Toolkit.  Along the way, we&apos;ll see how to implement sessions, authentication, authorization, AJAX, caching, and access a RDBMS without writing any SQL.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/building_catalyst_applications.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/building_catalyst_applications.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/building_catalyst_applications.mp4?docid=-5854960129518644625&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Jonathan Rockway: Introduction to DBIx::Class</title>
+         <description>Object-relational mappers (ORMs) are a hot topic today.  In this talk, we&apos;ll learn how to use the DBIx::Class ORM to access nearly any database, simple or complex; brand-new or legacy.  We&apos;ll discuss how to create easily-migratable schemas, and learn how to use resultsets to search, update, and generally make working with relational data fun!</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/introduction_to_dbixclass.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/introduction_to_dbixclass.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/introduction_to_dbixclass.mp4?docid=-559293395597215852&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Chia-liang Kao: Pushmi - Subversion replication system</title>
+         <description>Pushmi allows you to create slave replicas of a master Subversion repository.  The slaves are writable by regular Subversion clients, making the replication mostly seamless to the users.  Come to learn how Pushmi can help developers, especially when there&apos;s earthquake and no network.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/pushmi_subversion_replication.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/pushmi_subversion_replication.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/pushmi_subversion_replication.mp4?docid=-7181301487103062288&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Kazuhiro Osawa: CLI meets Web Frameworks</title>
+         <description>WebフレームワークにCLIサポートを組み込む事で変わる実装手法について、App::CLIを元にして「ここまでやるのかよ!」という事例とともに紹介します。</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/cli_meets_web_frameworks.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/cli_meets_web_frameworks.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/cli_meets_web_frameworks.mp4?docid=-8474902348307779730&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Ben Trott: How we build Vox</title>
+         <description>How we built Vox (http://www.vox.com/) and made it scalable, fully internationalized and Ajaxed with our own Open Source technologies. Including the best practices of using Catalyst, Data::ObjectDriver, memcached, TheSchwartz, Template-Toolkit, JSON-RPC, XML::Atom etc.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/everything_vox.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/everything_vox.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/everything_vox.mp4?docid=-6495068736045701027&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Brad Fitzpatrick: Behind the Scenes at LiveJournal: Scaling Storytime</title>
+         <description>Hear the history and lessons learned while scaling a community site (LiveJournal.com) from a single server with a dozen friends to hundreds of machines and 10M+ users.  What&apos;s worked, what hasn&apos;t, and all the things we&apos;ve had to build ourselves, now in common use thoughout the &quot;Web 2.0&quot; world, including memcached, MogileFS, Perlbal, and our job dispatch systems.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/tbd.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/tbd.html</guid>
+         <category>T101+102</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/tbd.mp4?docid=-8953828243232338732&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Mark Jason Dominus: Higher-Order Parsing techniques for Perl</title>
+         <description>One of Perl&apos;s most valuable (but least-used) features is the ability to use functions as if they were data: to pass functions as arguments to other functions, and to write functions that construct and return new functions on request. One exciting application of this feature is in the development of parser programs.  We can write a few simple parsers, and then a few functions for assembling parsers into more complex parsers.  From this tiny code base, about 25 lines, the parsers snowball to programs that perform dazzlingly complex parsing operations.  
+
+</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/higher_order_perl.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/higher_order_perl.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/higher_order_perl.mp4?docid=6934586065852724316&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Mark Jason Dominus: Perl Program Repair Shop and Red Flags</title>
+         <description>It&apos;s hard to write great code, but it doesn&apos;t have to be hard to write good code. &apos;Red flags&apos; are easy-to-see signs that you have an easy opportunity to make your code better. I&apos;ll show many red flags in real programs I&apos;ve gathered and show easy ways to make these programs smaller, faster, and simpler to understand.
+
+Topics include: Grammars; recursive-descent parsing; trivial and basic parsers; concatenation and alternation of parsers; parsers for optional and repeated items; parsers for lists and blocks; parsers for complete expressions. </description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_program_repair_shop_and_r.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_program_repair_shop_and_r.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/perl_program_repair_shop_and_r.mp4?docid=-4037440245833870135&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Tatsuhiko Miyagawa: Writing Pluggable software</title>
+         <description>This talk will discuss a couple of ways to make a pluggable application in Perl, how to deploy the plugins and how to manage dependencies, based on my expericne about the very successful pluggable feed reader: Plagger.(Slides: English, Talk: Japanese)</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/writing_pluggable_software.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/writing_pluggable_software.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/writing_pluggable_software.mp4?docid=444238686912256458&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Dan Kogai: perl I18N in 20 minutes</title>
+         <description>Encode.pm is just one of &apos;more than one languages to do it&apos;. Get the most out of Perl 5&apos;s Unicode features such as \p{Property} and $人++.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_i18n_in_20_minutes.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_i18n_in_20_minutes.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/perl_i18n_in_20_minutes.mp4?docid=192772202041631649&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Kazuhiro Osawa: 自文書抽出日本的住所</title>
+         <description>非位置情報業界人が自然文章から住所を抜き出すための取り入れた手法や、一般公開されているデータベース/Web APIを用いて抽出精度を高めたりランドマークを抽出する方法を解説します。</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/extract_japanese_street_address.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/extract_japanese_street_address.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/extract_japanese_street_address.mp4?docid=5305604793193679312&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Audrey Tang: Perl 6 Today</title>
+         <description>.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_6_today.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/perl_6_today.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/perl_6_today.mp4?docid=-3876155376103839772&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Tomohiro Ikebe: Inside livedoor 2006-2007</title>
+         <description>livedoor の裏側全部見せます。2006年版
+
+大規模ポータルをオープンソースで構築する方法についてお話しします。
+また、この1年間現場のエンジニアは何を考え、どのようなサービスを産み出してきたのか、何が変化したのか、それらをサービス内部の説明を混じえながらお話しさせて頂きます。
+</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/inside_livedoor.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/inside_livedoor.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/inside_livedoor.mp4?docid=-694264032177935779&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Emerson Mills: Virtualization and Package Deployment with EC2</title>
+         <description>The way we build the new generation of applications and philosophy behind rapid development dictates that we reuse as much code as possible. This, of course, is great since we don&apos;t duplicate the work of our peers but it also adds a new level of complexity to the distribution of our applications. CPAN excels as a package management system but large numbers of dependancies and deep dependancy chains can lead to failures and environments which are not easily duplicated. Using virtualization services like Amazon Web Services’ EC2 you can package not only your application but your enviroment as well. Will this finally bring the &quot;ten minute install&quot; into reality?  I&apos;ll look at what it takes to use virtualization ( In my case EC2 ) to simplify the distribution and reuse of Perl code and applications with large numbers of dependancies.</description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/virtualization_and_package_deployment_with_ec2.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/virtualization_and_package_deployment_with_ec2.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:13:14 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/virtualization_and_package_deployment_with_ec2.mp4?docid=533109294497846318&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Tatsuhiko Miyagawa: Welcome</title>
+         <description><![CDATA[<p>Welcome from organizers.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/02/welcome.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/02/welcome.html</guid>
+         <category>Tsuda Hall</category>
+         <pubDate>Wed, 14 Feb 2007 02:15:51 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/welcome.mp4?docid=8430373269276142600&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+      
+
+      
+
+           <item>
+         <title>にぽたん: 正規表現信者の憂鬱</title>
+         <description><![CDATA[<p>正規表現というカルトに心酔してしまった或る人間が抱えた困難、憂鬱、幸福。※ 布教活動の類ではございませんので、小さなお子さまにも安心してお聞きいただけます </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/post.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/post.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 05:55:53 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/post.mp4?docid=4498027621721759188&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Atsushi Kobayashi: Perlbal selector Plugin</title>
+         <description><![CDATA[<p>Brad Fitzpatrick さんがちょっとPerlbalのお話をするようですが、Perlbalのselectorプラグインについてちょっと。ちょっとちょっと。</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/atsushi_kobayashi_perlbal_sele.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/atsushi_kobayashi_perlbal_sele.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 05:56:27 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/atsushi_kobayashi_perlbal_sele.mp4?docid=-5577178290348947266&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Ingy döt Net: Bytecode for Wikis</title>
+         <description><![CDATA[<p>Ingy has figured out how to solve the chaos of WikiBabel!</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/ingy_doet_net_bytecode_for_wik.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/ingy_doet_net_bytecode_for_wik.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 05:57:13 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/ingy_doet_net_bytecode_for_wik.mp4?docid=-8941285692939172380&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+      
+
+           <item>
+         <title>Chia-liang Kao: BabelBee - Collaborative Translation Tool</title>
+         <description><![CDATA[<p>Get your po files translated faster by an army of translators! Also come see how this ajax application is written in very little code! </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/chialiang_kao_babelbee_collabo.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/chialiang_kao_babelbee_collabo.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 05:58:15 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/chialiang_kao_babelbee_collabo.mp4?docid=-5749251747594536602&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>ふしはらかん: Moxy - Mobile Development Proxy</title>
+         <description><![CDATA[<p>HTTP::Proxyを使って実装した携帯サイト開発向けのプロキシについて(サイト毎のUA偽装やヘッダの設定、絵文字のタグ置換などをサポートしています)。 </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/_moxy_mobile_development_proxy.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/_moxy_mobile_development_proxy.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 05:58:42 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/_moxy_mobile_development_proxy.mp4?docid=-681053720372368507&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title> 堂前清隆: (ミニ)カンファレンス中継のあれこれ</title>
+         <description><![CDATA[<p>i-revoではいくつかの小規模なテクニカルカンファレンスにおいてインターネット中継を行ってきました。この中継は単なる動画のストリーミングではなく、静止画と動画を組み合わせた変わった見せ方をしています。この中継のために開発したシステムの発展をできるだけperlに絡めつつ紹介します。</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/post_1.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/post_1.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 05:59:27 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/post_1.mp4?docid=6627694917802807769&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Jonathan Rockway: Angerwhale</title>
+         <description><![CDATA[<p>A quick tour of the Angerwhale Blogging System, including a look at the internals. </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/jonathan_rockway_angerwhale.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/jonathan_rockway_angerwhale.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 06:00:29 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/jonathan_rockway_angerwhale.mp4?docid=1741058916694988988&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>長野雅広: Expectをつかったサーバ管理レシピ</title>
+         <description><![CDATA[<p>Expectをつかって複数のサーバにコマンドを送る方法について、実際サーバ管理に使っている方法を紹介します </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/_expect.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/_expect.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 06:02:05 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/_expect.mp4?docid=4715674034180487605&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Mark Dominus: Debugging the De Bruijn Sequence</title>
+         <description><![CDATA[<p>The Extreme Programming nuts say that programming is the art of debugging an empty file. But adding text to an empty file is much harder than deleting text from a file that already contains every possible sequence. </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/mark_dominus_debugging_the_de.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/mark_dominus_debugging_the_de.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 06:02:42 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/mark_dominus_debugging_the_de.mp4?docid=6267783675810924557&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Yappo: Device::USB::MissileLaunchers (live)</title>
+         <description><![CDATA[<p>リアルデバイスを操作する無料のWeb APIのご紹介(生Webカメラ中継予定) </p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/yappo_deviceusbmissilelauncher.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/yappo_deviceusbmissilelauncher.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 06:03:08 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/yappo_deviceusbmissilelauncher.mp4?docid=7730756559928121338&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+           <item>
+         <title>Thilo Planz: Spidernomic: A self-modifying HTML/Perl/JS file/game</title>
+         <description><![CDATA[<p>Inspired by the Perlnomic game, Spidernomic is a minimalistic XHTML file with embedded Perl CGI code and Javascript (both client-side and server-side) to enable it to modify itself, with just enough functionality to bootstrap itself into a playable game.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/sessions/2007/04/thilo_planz_spidernomic_a_self.html</link>
+         <guid>http://tokyo2007.yapcasia.org/sessions/2007/04/thilo_planz_spidernomic_a_self.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 06:03:57 +0000</pubDate>
+         <enclosure type="video/mp4" url="http://video.google.com/videofile/thilo_planz_spidernomic_a_self.mp4?docid=-6181297994060316648&amp;itag=7" />
+         <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+      </item>
+
+
+      
+   </channel>
+</rss>

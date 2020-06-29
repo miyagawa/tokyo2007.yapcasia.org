@@ -1,0 +1,32 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.03.21.04.14.48;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:220.218.211.140,edit_by:yuumi3,edit_by_icon:http%3A%2F%2Fd.hatena.ne.jp%2Fimages%2Fdiary%2Fy%2Fyuum3%2Fyuum3_p.gif,edit_time:Wed%20Mar%2021%2004%3A14%3A48%202007,edit_unixtime:1174450488
+@
+text
+@=== Yuumi Yoshida
+
+http://d.hatena.ne.jp/images/diary/y/yuum3/yuum3.jpg
+
+独立して教育／開発やってます。
+
+*  Blog  [http://d.hatena.ne.jp/yuum3]
+* 私のやってる会社　[http://www.ey-office.com]
+@

@@ -1,0 +1,4692 @@
+head	1.18;
+access;
+symbols;
+locks
+	root:1.18;
+comment	@# @;
+
+
+1.18
+date	2007.04.02.04.32.16;	author root;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.03.31.01.00.17;	author root;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.03.30.18.27.29;	author root;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.03.30.18.24.41;	author root;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.03.30.18.20.03;	author root;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.03.30.18.19.23;	author root;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.03.30.10.58.08;	author root;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.03.29.23.08.47;	author miyagawa;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.03.29.23.08.22;	author miyagawa;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.03.29.23.05.24;	author miyagawa;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.03.29.23.02.40;	author miyagawa;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.03.29.22.49.46;	author miyagawa;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.03.29.22.33.31;	author miyagawa;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.03.29.03.55.26;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.03.28.10.40.30;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.03.25.15.08.51;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.25.13.42.56;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.23.22.09.07;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.18
+log
+@edit_address:64.119.92.4,edit_by:nozaki,edit_time:Mon%20Apr%20%202%2004%3A32%3A16%202007,edit_unixtime:1175488336
+@
+text
+@Translators: Daisuke Maki, Atsushi Kato, Makoto Nozaki
+
+.pre
+(p.1)
+
+LiveJournal: Behind The ScenesScaling Storytime
+
+April 2007 
+ 
+
+
+Brad Fitzpatrick
+
+brad@@danga.com 
+
+
+danga.com / livejournal.com / sixapart.com 
+ 
+
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA. 
+
+http://www.danga.com/words/
+---------------
+(p.2)
+
+LiveJournal Overview
+
+* college hobby project, Apr 1999
+#J 大学時代のお遊びプロジェクト
+
+* 4-in-1:
+
+  - blogging
+  #J ブログ
+
+  - forums
+  #J フォーラム
+
+  - social-networking (“friends”)
+  #J SNS (友達)
+
+  - aggregator: “friends page” + RSS/Atom
+  #J RSS/Atomアグレゲーター
+
+* 10M+ accounts
+#J ユーザーは１０００万人強
+
+* Open Source!
+#J もちろんオープンソースで作成！
+
+  - server,
+
+  - infrastructure,
+
+  - original clients,
+
+  - ...
+------------------
+(p.3)
+
+Stuff we've built...
+#J こんなものも作りました：
+
+* memcached
+
+  - distributed caching
+  #J 分散型キャッシングフレームワーク
+
+* MogileFS
+
+  - distributed filesystem
+  #J 分散型ファイルシステム
+
+* Perlbal
+
+  - HTTP load balancer & web server
+  #J HTTPロードバランサー＆Web サーバー
+
+* gearman
+
+  - LB/HA/coalescing low-latency function call “router” 
+
+* TheSchwartz
+
+  - reliable, async job dispatch system
+  #J 非同期ジョブ管理システム
+
+* djabberd
+
+  - the mod_perl/qpsmtpd of XMPP/Jabber servers
+
+* .....
+
+* OpenID
+
+* ....
+-------------------
+(p.4)
+
+LiveJournal Backend: Today
+#J 今のLiveJournalのおおまかな構成
+
+Roughly.
+
+(fig., no need to translate)
+
+User DB Cluster 1
+
+uc1a
+
+uc1b 
+
+
+User DB Cluster 2
+
+uc2a
+
+uc2b 
+
+
+User DB Cluster 3
+
+uc3a
+
+uc3b 
+
+
+User DB Cluster N
+
+ucNa
+
+ucNb 
+
+
+Job Queues (xN)
+
+jqNa
+
+jqNb 
+ 
+
+
+Memcached
+
+mc4
+
+mc3
+
+mc2
+
+mc12
+
+...
+
+mc1
+
+mod_perl
+
+web4
+
+web3
+
+web2
+
+web50
+
+...
+
+web1
+
+BIG-IP
+
+bigip2
+
+bigip1
+
+perlbal (httpd/proxy)
+
+proxy4
+
+proxy3
+
+proxy2
+
+proxy5
+
+proxy1
+
+Global Database
+
+slave1 
+
+
+master_a
+
+master_b
+
+slave2
+
+...
+
+slave5 
+
+
+MogileFS Database 
+
+
+mog_a
+
+mog_b
+
+Mogile Trackers
+
+tracker2
+
+tracker1
+
+Mogile Storage Nodes
+
+...
+
+sto2
+
+sto8
+
+sto1 
+
+net.
+
+djabberd
+
+djabberd
+
+djabberd
+
+gearmand
+
+gearmand1
+
+gearmandN 
+
+“workers”
+
+gearwrkN
+
+theschwkN 
+
+slave1
+
+slaveN 
+--------------------
+(p.5)
+
+The plan...
+
+* Refer to previous presentations for more detail...
+
+* Questions anytime!
+
+* Part I:
+
+  -quick scaling history
+
+* Part II:
+
+  - explain all our software
+
+  - explain all the parts! 
+--------------------
+(p.6)
+
+Part I: Quick Scaling History
+#J スケーラビリティとの闘い：その歴史
+--------------------
+(p.7)
+
+Quick Scaling History
+
+* 1 server to hundreds...
+#J 1台のサーバが数百台に増えるまで
+--------------------
+(p.8)
+
+One Server
+#J サーバ1台
+
+* Simple: 
+#J 構造は単純
+
+(fig.)
+--------------------
+(p.9)
+
+Two Servers 
+#J サーバ2台
+
+(fig.)
+--------------------
+(p.10)
+
+Two Servers - Problems
+#J サーバを2台にしたときの問題
+
+* Two single points of failure
+#J * どっちが落ちても全部が落ちる
+
+* No hot or cold spares
+#J * 予備の機械がない
+
+* Site gets slow again.
+#J * ユーザが増えるとまた遅くなる
+
+  - CPU-bound on web node
+ #J -webサーバがCPUを食う
+
+  - need more web nodes...
+ #J -もっとwebサーバが必要
+
+--------------------
+(p.11)
+
+Four Servers
+#J サーバ4台
+
+* 3 webs, 1 db
+ #J * webサーバ3台、データベース1台
+
+* Now we need to load-balance! 
+ #J * 負荷分散をしよう
+
+(fig.)
+--------------------
+(p.12)
+
+Four Servers - Problems
+#J サーバを4台にしたときの問題
+
+* Now I/O bound...
+#J * 今度はI/Oに時間がかかる
+
+  - ... how to use another database?
+#J - データベースを増やそう
+
+--------------------
+(p.13)
+
+Five Servers
+#J サーバ5台
+
+  introducing MySQL replication
+#J MySQLのレプリケーションを使ってみよう
+
+* We buy a new database server
+#J * 新しいDBサーバを買う
+
+* MySQL replication
+#J * MySQLのレプリケーション
+
+* Writes to DB (master)
+#J * データの書き込みはマスタDB1台へ
+
+* Reads from both 
+#J * データの読み込みは2台から
+
+(fig.)
+----------------------
+(p.14)
+
+More Servers
+#J サーバの数が増えていく
+
+(fig.)
+
+Chaos!
+#J わけがわからない
+----------------------
+(p.15)
+
+Where we're at....
+#J 現状
+
+(fig., no need to translate)
+
+mod_perl
+
+web4
+
+web3
+
+web2
+
+web12
+
+...
+
+web1
+
+BIG-IP
+
+bigip2
+
+bigip1
+
+mod_proxy
+
+proxy3
+
+proxy2
+
+proxy1
+
+Global Database
+
+slave1
+
+slave2
+
+...
+
+slave6 
+
+master 
+
+net.
+----------------------
+(p.16)
+
+Problems with Architecture
+  or,“This don't scale...”
+#J 構造的な問題（スケーラビリティがたりない）
+
+* DB master is SPOF
+#J DBのマスタが落ちるともうだめ
+
+* Adding slaves doesn't scale well...
+#J * スレーブを足してもあまり意味がない
+
+  - only spreads reads, not writes! 
+#J - 読み込みだけ分散、書き込みは分散しない
+
+(fig., maybe no need to translate)
+
+w/ 1 server
+
+500 reads/s
+
+200 writes/s
+
+w/ 2 servers
+
+250 reads/s 
+
+200 write/s
+
+250 reads/s 
+
+200 write/s
+
+--------------------
+(p.17)
+
+Eventually...
+#J やがて
+
+* databases eventual only writing 
+#J データベースは書き込みでいっぱいっぱい
+
+(fig., no need to translate)
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400
+
+write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s
+-------------------
+(p.18)
+
+Spreading Writes
+#J 書き込みの分散
+
+* Our database machines already did RAID
+#J * DBの機械はRAID装備
+
+* We did backups
+#J * バックアップもとっている
+
+* So why put user data on 6+ slave machines? (~12+ disks)
+#J * ユーザのデータは6台以上のスレーブにコピーがある
+#J  ディスク12個以上
+
+  - overkill redundancy
+#J - 冗長すぎ
+
+  - wasting time writing everywhere!
+#J - 全部のディスクに書く時間ももったいない
+------------------
+(p.19)
+
+Partition your data!
+#J データを分割しよう
+
+* Spread your databases out, into “roles”
+
+  - roles that you never need to join between
+#J - それぞれが独立したデータを保持
+
+    + different users
+#J + たとえば違うユーザを違うDBに
+
+    + or accept you'll have to join in app
+#J + 完全に独立させられないときはアプリケーション側で吸収
+
+* Each user assigned to a cluster number
+#J * 各ユーザにクラスタ番号を割り振る
+
+* Each cluster has multiple machines
+#J * 各クラスタを複数の機械で構成
+
+  - writes self-contained in cluster (writing to 2-3 machines, not 6)
+#J - クラスタの中の2、3台に書き込み（6台ではなくなった）
+
+------------------
+(p.20)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob'
+
+-------------------
+(p.21)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2
+--------------------
+(p.22)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2 
+
+SELECT .... FROM ... WHERE userid=839 ... 
+-------------------
+(p.23)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2
+
+SELECT .... FROM ... WHERE userid=839 ... 
+
+OMG i like totally hate my parents they just dont understand me and i h8 the world omg lol rofl *! :^-^^;
+
+
+add me as a friend!!!
+#J 親なんか嫌いだww 友達に加えてね
+
+---------------------
+(p.24)
+
+Details
+#J 詳細
+
+* per-user numberspaces
+#J * ユーザごとに新たな番号を振る
+
+  - don't use AUTO_INCREMENT
+#J - MySQLのAUTO_INCREMENTは使わない
+
+  - PRIMARY KEY (user_id, thing_id)
+
+  - so:
+
+* Can move/upgrade users 1-at-a-time:
+#J * 移動・変更はユーザごとにできる
+
+  - per-user “readonly” flag
+#J - ユーザごとにreadonlyフラグを立てる
+
+  - per-user “schema_ver” property
+#J - ユーザごとにschema_verを記録
+
+  - user-moving harness
+#J - ユーザの移動をするしくみ
+
+    + job server that coordinates, distributed long-lived user-mover clients who ask for tasks
+#J + 負荷の高いクライアントをからユーザを移動させるジョブサーバをつくる
+
+  - balancing disk I/O, disk space
+#J - ディスクI/Oやディスク容量を均衡にできる
+
+-----------------------
+(p.25)
+
+Shared Storage
+  (SAN, SCSI, DRBD...)
+#J 共用ディスク（SAN、SCSI、DRBD）
+
+* Turn pair of InnoDB machines into a cluster
+#J * InnoDBを使った機械のペアをクラスタ化
+
+  - looks like 1 box to outside world. floating IP.
+#J - 外からは1台に見える。ひとつのIPが機械間を移動
+
+* One machine at a time running fs / MySQL
+#J * 1台のみFSとMySQLを運用
+
+* Heartbeat to move IP, {un,}mount filesystem, {stop,start} mysql
+#J * HeartbeatをもとにIPを移動、ファイルシステムの{アン,}マウント、{stop, start} mysql
+
+* No special schema considerations
+#J * 特別にスキーマを設計したりしなくてよい
+
+* MySQL 4.1 w/ binlog sync/flush options
+#J * MySQL 4.1でbinlog sync/flushのオプションで運用
+
+  - good
+#J - いい感じ
+
+  - The cluster can be a master or slave as well
+#J - クラスタはマスタにもスレーブにもなれる
+--------------------
+(p.26)
+
+Shared Storage: DRBD
+#J DRBD
+
+* Linux block device driver
+#J Linux上のブロックデバイスドライバ
+
+  - “Network RAID 1”
+#J - ネットワーク上のRAID 1と呼ばれる
+
+  - Shared storage without sharing!
+#J - 共有ディスクではなくデータを共有
+
+  - sits atop another block device
+#J - ブロックデバイスの上で動作
+
+  - syncs w/ another machine's block device
+#J - ほかの機械のブロックデバイスへミラー
+
+    + cross-over gigabit cable ideal. network is faster than random writes on your disks.
+#J + クロスオーバ・ギガビットケーブルが理想。ネットワークはディスクへのランダム書き込みより速い
+
+* InnoDB on DRBD: HA MySQL!
+#J * InnoDBとDRBDの組み合わせ：MySQLのHA
+  - can hang slaves off floater IP
+#J - スレーブを浮動するIPの上に置ける
+
+---------------------
+(p.27)
+
+MySQL Clustering Options:Pros & Cons
+#J MySQLのクラスタリングの方法いろいろ・長所と短所
+
+* no magic bullet
+#J * 特効薬はない
+
+  - Master/slave
+
+  - Master/master
+
+  - DRBD
+
+  - MySQL Cluster
+
+  - ....
+
+* lots of options!
+#J * やり方はたくさん
+
+  - :)
+
+  - :(
+
+---------------------
+(p.28)
+
+Part II: Our Software...
+---------------------
+(p.29)
+
+Caching
+
+* caching's key to performance
+#J キャッシュこそがパフォーマンスの鍵
+
+  - store result of a computation or I/O for quicker future access
+  #J 計算やI/Oを走らせた後の結果を保存してあとで使う
+
+* Where to cache?
+#J どこでキャッシュすべきか？
+
+  - mod_perl caching
+
+    + memory waste (address space per apache child)
+    #J mod_perl上のキャッシュはメモリの無駄使い
+
+  - shared memory
+
+    + limited to single machine, same with Java/C#/Mono
+    #J 共有メモリは１台のマシン上でしか共有できない
+
+  - MySQL query cache
+
+    + flushed per update, small max size
+    #J MySQLはアップデート毎にディスクI/Oが走るし、容量の限界が小さい
+
+  - HEAP tables
+
+    + fixed length rows, small max size
+    #J メモりヒープテーブルは固定長、容量の限界が小さい
+.pre
+
+Continues to BehindTheScenesAtLiveJournal2
+@
+
+
+1.17
+log
+@edit_address:64.119.92.4,edit_by:nozaki,edit_time:Sat%20Mar%2031%2001%3A00%3A17%202007,edit_unixtime:1175302817
+@
+text
+@d686 1
+a686 1
+#J * ハートビートをもとにIPを移動、ファイルシステムの{アン,}マウント、{stop, start} mysql
+d726 2
+a727 1
+#J - ??
+@
+
+
+1.16
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Fri%20Mar%2030%2018%3A27%3A29%202007,edit_unixtime:1175279249
+@
+text
+@d1 1
+a1 1
+Translators: Daisuke Maki, Atsushi Kato
+@
+
+
+1.15
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Fri%20Mar%2030%2018%3A24%3A41%202007,edit_unixtime:1175279081
+@
+text
+@d306 1
+a306 1
+#J * 障害の確率が2倍
+@
+
+
+1.14
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Fri%20Mar%2030%2018%3A20%3A02%202007,edit_unixtime:1175278802
+@
+text
+@d281 1
+a281 1
+#J サーバ1台・クライアント多数
+@
+
+
+1.13
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Fri%20Mar%2030%2018%3A19%3A23%202007,edit_unixtime:1175278763
+@
+text
+@d1 1
+a1 1
+Translators: (wanted)
+@
+
+
+1.12
+log
+@edit_address:220.156.77.201,edit_by:daisuke,edit_time:Fri%20Mar%2030%2010%3A58%3A08%202007,edit_unixtime:1175252288
+@
+text
+@d47 1
+a47 1
+#J ユーザーは１０万人強
+@
+
+
+1.11
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2023%3A08%3A47%202007,edit_unixtime:1175209727
+@
+text
+@d763 1
+d766 1
+d769 1
+d774 1
+d779 1
+d784 1
+d789 1
+@
+
+
+1.10
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2023%3A08%3A22%202007,edit_unixtime:1175209702
+@
+text
+@d783 1
+a783 1
+ .pre
+@
+
+
+1.9
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2023%3A05%3A23%202007,edit_unixtime:1175209523
+@
+text
+@d783 1
+a783 334
+-------------------------
+(p.30)
+
+memcached
+
+  http://www.danga.com/memcached/
+
+* our Open Source, distributed caching system
+
+* run instances wherever free memory
+
+* two-level hash
+
+  - client hashes to server,
+
+  - server has internal hash table
+
+* no “master node”
+
+* protocol simple, XML-free
+
+  - perl, java, php, python, ruby, ...
+
+* popular.
+
+* fast.
+---------------------
+(p.31)
+
+Perlbal
+---------------------
+(p.32)
+
+Web Load Balancing
+
+* BIG-IP, Alteon, Juniper, Foundry
+
+  - good for L4 or minimal L7
+
+  - not tricky / fun enough. :-)
+
+* Tried a dozen reverse proxies
+
+  - none did what we wanted or were fast enough
+
+* Wrote Perlbal
+
+  - fast, smart, manageable HTTP web server / reverse proxy / LB
+
+  - can do internal redirects
+
+    + and dozen other tricks
+---------------
+(p.33)
+
+Perlbal
+
+* Perl
+
+* single threaded, async event-based
+
+  - uses epoll, kqueue, etc.
+
+* console / HTTP remote management
+
+  - live config changes
+
+* handles dead nodes, smart balancing
+
+* multiple modes
+
+  - static webserver
+
+  - reverse proxy
+
+  - plug-ins (Javascript message bus.....)
+
+* plug-ins
+
+  - GIF/PNG altering, ....
+------------------
+(p.34)
+
+Perlbal: Persistent Connections
+
+* persistent connections
+
+  - perlbal to backends (mod_perls)
+
+    + know exactly when a connection is ready for a new request
+
+      - no complex load balancing logic: just use whatever's free. beats managing “weighted round robin” hell.
+
+  - clients persistent; not tied to backend
+
+* verifies new connections
+
+  - connects often fast, but talking to kernel, not apache (listen queue)
+
+  - send OPTIONs request to see if apache is there
+
+* multiple queues
+
+  - high, normal, low priority (idle, bots) queues
+----------------------
+(p.35)
+
+Perlbal: cooperative large file serving
+
+* large file serving w/ mod_perl bad...
+
+  - mod_perl has better things to do than spoon-feed clients bytes
+
+* internal redirects
+
+  - mod_perl can pass off serving a big file to Perlbal
+
+    + either from disk, or from other URL(s)
+
+  - client sees no HTTP redirect
+
+  - “Friends-only” images
+
+    + one, clean URL
+
+    + mod_perl does auth, and is done.
+
+    + perlbal serves.
+-------------------
+(p.36)
+
+Internal redirect picture 
+
+(fig., no need to translate)
+-------------------
+(p.37)
+
+MogileFS
+-------------------
+(p.38)
+
+MogileFS
+
+* our distributed file system
+
+* open source
+
+* userspace
+
+* hardly unique
+
+  - Google GFS
+
+  - Nutch Distributed File System (NDFS)
+
+* production-quality
+
+  - lot of users
+-------------------
+(p.39)
+
+MogileFS: Why
+
+* alternatives at time were either:
+
+  - closed, non-existent, expensive, in development, complicated, ...
+
+  - scary/impossible when it came to data recovery
+
+    + new/uncommon/unstudied on-disk formats
+
+* because it was easy
+
+  - initial version = 1 weekend
+------------------
+(p.40)
+
+MogileFS: Main Ideas
+
+* MogileFS main ideas:
+
+  - files belong to classes, which dictate:
+
+    + replication policy, min replicas, ...
+
+  - tracks what disks files are on
+
+    + set disk's state (up, temp_down, dead) and host
+
+  - keep replicas on devices on different hosts
+
+    + (default class policy)
+
+    + No RAID! (for this, for databases it's good.)
+
+  - multiple tracker databases
+
+    + all share same database cluster (MySQL, etc..)
+
+  - big, cheap disks
+
+    + dumb storage nodes w/ 12, 16 disks, no RAID
+--------------------
+(p.41)
+
+MogileFS components
+
+* clients
+
+* trackers
+
+* database(s) (MySQL, .... abstract)
+
+* storage nodes
+---------------------
+(p.42)
+
+MogileFS: Clients
+
+* tiny text-based protocol
+
+* Libraries available for:
+
+  - Perl
+
+    + tied filehandles
+
+    + MogileFS::Client
+
+      - my $fh = $mogc->new_file(“key”, [[$class], ...])
+
+  - Java
+
+  - PHP
+
+  - Python?
+
+  - porting to $LANG is be trivial
+
+* doesn't do database access
+--------------------
+(p.43)
+
+MogileFS: Tracker(mogilefsd)
+
+* The Meat
+
+* event-based message bus
+
+  - load balances client requests, world info
+
+* process manager
+
+  - heartbeats/watchdog, respawner, ...
+
+* Child processes:
+
+  - ~30x client interface (“query” process)
+
+    + interfaces client protocol w/ db(s), etc
+
+  - ~5x replicate
+
+  - ~2x delete
+
+  - ~1x monitoring
+
+  - ....
+-------------------
+(p.44)
+
+Trackers' Database(s)
+
+* Abstract as of Mogile 2.x
+
+  - MySQL
+
+  - SQLite (joke/demo)
+
+  - Pg/Oracle coming soon?
+
+  - Also future:
+
+    + wrapper driver, partitioning any above
+
+      - small metadata in one driver (MySQL Cluster?),
+
+      - large tables partitioned over 2-node HA pairs 
+
+* Recommend config:
+
+  - 2xMySQL InnoDB on DRBD
+
+  - 2 slaves underneath HA VIP:
+
+    + 1 for backups
+
+    + read-only slave for during master failover window 
+------------------
+(p.45)
+
+MogileFS storage nodes
+
+* HTTP transport
+
+  - GET
+
+  - PUT
+
+  - DELETE
+
+* Pick a server:
+
+  - mogstored (recommended; “use Perlbal”)
+
+    + side-channel iostat interface, AIO control, ...
+
+  - Apache+mod_dav
+
+  - lighttpd
+
+* files on filesystem, not DB
+
+  - sendfile()! future: splice()
+
+  - filesystem can be any filesystem
+-----------------------
+(p.46)
+
+Large file GET request 
+
+(fig., no need to translate)
+------------------------
+(p.47)
+d785 1
+a785 335
+Large file GET request 
+
+(fig., maybe no need to translate)
+
+Auth: complex, but quick
+
+Spoonfeeding: slow, but event-based
+-----------------------
+(p.48)
+
+And the reverse...
+
+* Now Perlbal can buffer uploads as well..
+
+  - Problems:
+
+    + LifeBlog uploading
+
+      - cellphones are slow
+
+    + LiveJournal/Friendster photo uploads
+
+      - cable/DSL uploads still slow
+
+  - decide to buffer to “disk” (tmpfs, likely)
+
+    + on any of: rate, size, time
+--------------------
+(p.49)
+
+Gearman
+--------------------
+(p.50)
+
+Gearman
+
+* low-latency remote function call “router”
+
+* client wants results. arguments to submit a job:
+
+  - opaque bytes: “function name”
+
+  - opt. opaque: “function args” (Storable, ...)
+
+  - opt. coalescing value
+
+    + can multiplex results of slow call back to multiple waiting callers
+
+* binary protocol
+
+  - future: C server / client.
+
+  - currently: gearmand doesn't use much CPU
+
+    + solution: we need to push it harder! :) 
+--------------------
+(p.51)
+
+Gearman Uses
+
+* Image::Magick outside of your mod_perls!
+
+* DBI connection pooling (DBD::Gofer + Gearman)
+
+* reducing load, improving visibility
+
+* “services”
+
+  - can all be in different languages, too!
+
+* running code in parallel
+
+  - query ten databases at once
+
+* running blocking code from event loops
+
+  - DBI from POE/Danga::Socket apps
+
+* spreading CPU from ev loop daemons
+---------------------
+(p.52)
+
+Gearman Pieces
+
+* gearmand
+
+  - dumb router
+
+  - event-loop. Now: Perl. Future? C?
+
+* workers.
+
+  - Gearman::Worker -- perl
+
+  - register/heartbeat/grab jobs
+
+* clients
+
+  - Gearman::Client[::Async]
+
+  - submit jobs to gearmand
+
+  - hash onto a gearmand
+
+    + optimization for coalescing
+
+    + can use any on failure
+-----------------
+(p.53)
+
+Gearman Picture 
+
+(fig., no need to translate)
+
+gearmand 
+
+gearmand 
+
+gearmand 
+
+gearmand 
+
+client 
+
+client 
+
+client 
+
+worker 
+
+worker
+
+call(“funcA”, “arg”) 
+
+can_do(“funcA”)
+
+can_do(“funcB”)
+---------------------
+(p.54)
+
+Gearman Misc
+
+* Guarantees:
+
+  - none! hah! :)
+
+    + please wait for your results.
+
+    + if client goes away, no promises
+
+* No policy/conventions in gearmand
+
+  - all policy/meaning between clients <-> workers
+
+* ...
+----------------
+(p.55)
+
+Gearman Summary
+
+* Gearman is sexy.
+
+  - especially the coalescing
+
+* Check it out!
+
+  - it's kinda our little unadvertised secret
+
+    + oh crap, did I leak the secret?
+------------------
+(p.56)
+
+TheSchwartz
+------------------
+(p.57)
+
+TheSchwartz
+
+* currently library, not network service
+
+* Reliable job queueing system
+
+* Primitives:
+
+  - insert job
+
+  - “grab” job (atomic grab)
+
+    + for 'n' seconds.
+
+  - mark job done
+
+  - temp fail job for future
+
+    + optional notes, rescheduling details..
+
+  - replace job with 1+ other jobs
+
+    + atomic.
+
+  - ...
+---------------------
+(p.58)
+
+TheSchwartz
+
+* backing store:
+
+  - a database
+
+  - uses Data::ObjectDriver
+
+    + MySQL,
+
+    + Postgres,
+
+    + SQLite,
+
+    + ....
+
+* but HA: you tell it @@dbs, and it finds one to insert job into
+
+  - likewises, workers foreach (@@dbs) to do work
+-------------------
+(p.59)
+
+TheSchwartz uses
+
+* outgoing email (SMTP client)
+
+  - millions of emails per day
+
+* LJ notifications
+
+  - ESN: event, subscription, notification
+
+    + one event (new post, etc) -> thousands of emails, SMSes, XMPP messages, etc...
+
+* pinging external services
+
+* atomstream injection
+
+* .....
+
+* dozens of users
+
+* shared farm for TypePad, Vox, LJ
+-------------------
+(p.60)
+
+gearmand + TheSchwartz
+
+* gearmand: not reliable, low-latency, no disks
+
+* TheSchwartz: latency, reliable, disks
+
+* In TypePad:
+
+  - TheSchwartz, with gearman to fire off TheSchwartz workers.
+
+    + disks, but low-latency
+
+    + future: no disks, SSD/Flash, MySQL Cluster
+---------------
+(p.61)
+
+djabberd
+--------------
+(p.62)
+
+djabberd
+
+* perl, event-based (epoll, etc)
+
+* done 300,000+ conns
+
+* tiny per-conn memory overhead
+
+  - release XML parser state if possible
+
+* everything is a hook
+
+  - not just auth! like, everything.
+
+  - ala mod_perl, qpsmtpd, etc.
+
+  - inter-node communication
+
+* async hooks
+
+  - use Gearman::Client::Async
+
+  - async Gearman client for Danga::Socket-based apps
+-------------------
+(p.63)
+
+Thank you!
+
+Questions to...
+
+brad@@danga.com 
+
+Software:
+
+http://danga.com/
+
+http://code.sixapart.com/ 
+--------------------
+(p.64)
+
+Bonus Slides
+
+* if extra time
+-------------------
+(p.65)
+
+Data Integrity
+
+* Databases depend on fsync()
+
+  - but databases can't send raw SCSI/ATA commands to flush controller caches, etc
+
+* fsync() almost never works work
+
+  - Linux, FS' (lack of) barriers, raid cards, controllers, disks, ....
+
+* Solution: test! & fix
+
+  - disk-checker.pl
+
+    + client/server
+
+    + spew writes/fsyncs, record intentions on alive machine, yank power, checks.
+
+ .pre
+@
+
+
+1.8
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2023%3A02%3A38%202007,edit_unixtime:1175209358
+@
+text
+@a1450 22
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+
+.pre
+@
+
+
+1.7
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2022%3A49%3A46%202007,edit_unixtime:1175208586
+@
+text
+@d1 1
+a1 1
+Translators: Daisuke Maki
+d32 1439
+d1473 2
+@
+
+
+1.6
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2022%3A33%3A31%202007,edit_unixtime:1175207611
+@
+text
+@d1 1
+a1 1
+Translators: (wanted)
+a31 1441
+* 4-in-1:
+
+  - blogging
+  #J ブログ
+
+  - forums
+  #J フォーラム
+
+  - social-networking (“friends”)
+  #J SNS (友達)
+
+  - aggregator: “friends page” + RSS/Atom
+  #J RSS/Atomアグレゲーター
+
+* 10M+ accounts
+#J ユーザーは１０万人強
+
+* Open Source!
+#J もちろんオープンソースで作成！
+
+  - server,
+
+  - infrastructure,
+
+  - original clients,
+
+  - ...
+------------------
+(p.3)
+
+Stuff we've built...
+#J こんなものも作りました：
+
+* memcached
+
+  - distributed caching
+  #J 分散型キャッシングフレームワーク
+
+* MogileFS
+
+  - distributed filesystem
+  #J 分散型ファイルシステム
+
+* Perlbal
+
+  - HTTP load balancer & web server
+  #J HTTPロードバランサー＆Web サーバー
+
+* gearman
+
+  - LB/HA/coalescing low-latency function call “router” 
+
+* TheSchwartz
+
+  - reliable, async job dispatch system
+  #J 非同期ジョブ管理システム
+
+* djabberd
+
+  - the mod_perl/qpsmtpd of XMPP/Jabber servers
+
+* .....
+
+* OpenID
+
+* ....
+-------------------
+(p.4)
+
+LiveJournal Backend: Today
+#J 今のLiveJournalのおおまかな構成
+
+Roughly.
+
+(fig., no need to translate)
+
+User DB Cluster 1
+
+uc1a
+
+uc1b 
+
+
+User DB Cluster 2
+
+uc2a
+
+uc2b 
+
+
+User DB Cluster 3
+
+uc3a
+
+uc3b 
+
+
+User DB Cluster N
+
+ucNa
+
+ucNb 
+
+
+Job Queues (xN)
+
+jqNa
+
+jqNb 
+ 
+
+
+Memcached
+
+mc4
+
+mc3
+
+mc2
+
+mc12
+
+...
+
+mc1
+
+mod_perl
+
+web4
+
+web3
+
+web2
+
+web50
+
+...
+
+web1
+
+BIG-IP
+
+bigip2
+
+bigip1
+
+perlbal (httpd/proxy)
+
+proxy4
+
+proxy3
+
+proxy2
+
+proxy5
+
+proxy1
+
+Global Database
+
+slave1 
+
+
+master_a
+
+master_b
+
+slave2
+
+...
+
+slave5 
+
+
+MogileFS Database 
+
+
+mog_a
+
+mog_b
+
+Mogile Trackers
+
+tracker2
+
+tracker1
+
+Mogile Storage Nodes
+
+...
+
+sto2
+
+sto8
+
+sto1 
+
+net.
+
+djabberd
+
+djabberd
+
+djabberd
+
+gearmand
+
+gearmand1
+
+gearmandN 
+
+“workers”
+
+gearwrkN
+
+theschwkN 
+
+slave1
+
+slaveN 
+--------------------
+(p.5)
+
+The plan...
+
+* Refer to previous presentations for more detail...
+
+* Questions anytime!
+
+* Part I:
+
+  -quick scaling history
+
+* Part II:
+
+  - explain all our software
+
+  - explain all the parts! 
+--------------------
+(p.6)
+
+Part I: Quick Scaling History
+#J スケーラビリティとの闘い：その歴史
+--------------------
+(p.7)
+
+Quick Scaling History
+
+* 1 server to hundreds...
+#J サーバ1台・クライアント多数
+--------------------
+(p.8)
+
+One Server
+#J サーバ1台
+
+* Simple: 
+#J 構造は単純
+
+(fig.)
+--------------------
+(p.9)
+
+Two Servers 
+#J サーバ2台
+
+(fig.)
+--------------------
+(p.10)
+
+Two Servers - Problems
+#J サーバを2台にしたときの問題
+
+* Two single points of failure
+#J * 障害の確率が2倍
+
+* No hot or cold spares
+#J * 予備の機械がない
+
+* Site gets slow again.
+#J * ユーザが増えるとまた遅くなる
+
+  - CPU-bound on web node
+ #J -webサーバがCPUを食う
+
+  - need more web nodes...
+ #J -もっとwebサーバが必要
+
+--------------------
+(p.11)
+
+Four Servers
+#J サーバ4台
+
+* 3 webs, 1 db
+ #J * webサーバ3台、データベース1台
+
+* Now we need to load-balance! 
+ #J * 負荷分散をしよう
+
+(fig.)
+--------------------
+(p.12)
+
+Four Servers - Problems
+#J サーバを4台にしたときの問題
+
+* Now I/O bound...
+#J * 今度はI/Oに時間がかかる
+
+  - ... how to use another database?
+#J - データベースを増やそう
+
+--------------------
+(p.13)
+
+Five Servers
+#J サーバ5台
+
+  introducing MySQL replication
+#J MySQLのレプリケーションを使ってみよう
+
+* We buy a new database server
+#J * 新しいDBサーバを買う
+
+* MySQL replication
+#J * MySQLのレプリケーション
+
+* Writes to DB (master)
+#J * データの書き込みはマスタDB1台へ
+
+* Reads from both 
+#J * データの読み込みは2台から
+
+(fig.)
+----------------------
+(p.14)
+
+More Servers
+#J サーバの数が増えていく
+
+(fig.)
+
+Chaos!
+#J わけがわからない
+----------------------
+(p.15)
+
+Where we're at....
+#J 現状
+
+(fig., no need to translate)
+
+mod_perl
+
+web4
+
+web3
+
+web2
+
+web12
+
+...
+
+web1
+
+BIG-IP
+
+bigip2
+
+bigip1
+
+mod_proxy
+
+proxy3
+
+proxy2
+
+proxy1
+
+Global Database
+
+slave1
+
+slave2
+
+...
+
+slave6 
+
+master 
+
+net.
+----------------------
+(p.16)
+
+Problems with Architecture
+  or,“This don't scale...”
+#J 構造的な問題（スケーラビリティがたりない）
+
+* DB master is SPOF
+#J DBのマスタが落ちるともうだめ
+
+* Adding slaves doesn't scale well...
+#J * スレーブを足してもあまり意味がない
+
+  - only spreads reads, not writes! 
+#J - 読み込みだけ分散、書き込みは分散しない
+
+(fig., maybe no need to translate)
+
+w/ 1 server
+
+500 reads/s
+
+200 writes/s
+
+w/ 2 servers
+
+250 reads/s 
+
+200 write/s
+
+250 reads/s 
+
+200 write/s
+
+--------------------
+(p.17)
+
+Eventually...
+#J やがて
+
+* databases eventual only writing 
+#J データベースは書き込みでいっぱいっぱい
+
+(fig., no need to translate)
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400
+
+write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s
+-------------------
+(p.18)
+
+Spreading Writes
+#J 書き込みの分散
+
+* Our database machines already did RAID
+#J * DBの機械はRAID装備
+
+* We did backups
+#J * バックアップもとっている
+
+* So why put user data on 6+ slave machines? (~12+ disks)
+#J * ユーザのデータは6台以上のスレーブにコピーがある
+#J  ディスク12個以上
+
+  - overkill redundancy
+#J - 冗長すぎ
+
+  - wasting time writing everywhere!
+#J - 全部のディスクに書く時間ももったいない
+------------------
+(p.19)
+
+Partition your data!
+#J データを分割しよう
+
+* Spread your databases out, into “roles”
+
+  - roles that you never need to join between
+#J - それぞれが独立したデータを保持
+
+    + different users
+#J + たとえば違うユーザを違うDBに
+
+    + or accept you'll have to join in app
+#J + 完全に独立させられないときはアプリケーション側で吸収
+
+* Each user assigned to a cluster number
+#J * 各ユーザにクラスタ番号を割り振る
+
+* Each cluster has multiple machines
+#J * 各クラスタを複数の機械で構成
+
+  - writes self-contained in cluster (writing to 2-3 machines, not 6)
+#J - クラスタの中の2、3台に書き込み（6台ではなくなった）
+
+------------------
+(p.20)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob'
+
+-------------------
+(p.21)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2
+--------------------
+(p.22)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2 
+
+SELECT .... FROM ... WHERE userid=839 ... 
+-------------------
+(p.23)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2
+
+SELECT .... FROM ... WHERE userid=839 ... 
+
+OMG i like totally hate my parents they just dont understand me and i h8 the world omg lol rofl *! :^-^^;
+
+
+add me as a friend!!!
+#J 親なんか嫌いだww 友達に加えてね
+
+---------------------
+(p.24)
+
+Details
+#J 詳細
+
+* per-user numberspaces
+#J * ユーザごとに新たな番号を振る
+
+  - don't use AUTO_INCREMENT
+#J - MySQLのAUTO_INCREMENTは使わない
+
+  - PRIMARY KEY (user_id, thing_id)
+
+  - so:
+
+* Can move/upgrade users 1-at-a-time:
+#J * 移動・変更はユーザごとにできる
+
+  - per-user “readonly” flag
+#J - ユーザごとにreadonlyフラグを立てる
+
+  - per-user “schema_ver” property
+#J - ユーザごとにschema_verを記録
+
+  - user-moving harness
+#J - ユーザの移動をするしくみ
+
+    + job server that coordinates, distributed long-lived user-mover clients who ask for tasks
+#J + 負荷の高いクライアントをからユーザを移動させるジョブサーバをつくる
+
+  - balancing disk I/O, disk space
+#J - ディスクI/Oやディスク容量を均衡にできる
+
+-----------------------
+(p.25)
+
+Shared Storage
+  (SAN, SCSI, DRBD...)
+#J 共用ディスク（SAN、SCSI、DRBD）
+
+* Turn pair of InnoDB machines into a cluster
+#J * InnoDBを使った機械のペアをクラスタ化
+
+  - looks like 1 box to outside world. floating IP.
+#J - 外からは1台に見える。ひとつのIPが機械間を移動
+
+* One machine at a time running fs / MySQL
+#J * 1台のみFSとMySQLを運用
+
+* Heartbeat to move IP, {un,}mount filesystem, {stop,start} mysql
+#J * ハートビートをもとにIPを移動、ファイルシステムの{アン,}マウント、{stop, start} mysql
+
+* No special schema considerations
+#J * 特別にスキーマを設計したりしなくてよい
+
+* MySQL 4.1 w/ binlog sync/flush options
+#J * MySQL 4.1でbinlog sync/flushのオプションで運用
+
+  - good
+#J - いい感じ
+
+  - The cluster can be a master or slave as well
+#J - クラスタはマスタにもスレーブにもなれる
+--------------------
+(p.26)
+
+Shared Storage: DRBD
+#J DRBD
+
+* Linux block device driver
+#J Linux上のブロックデバイスドライバ
+
+  - “Network RAID 1”
+#J - ネットワーク上のRAID 1と呼ばれる
+
+  - Shared storage without sharing!
+#J - 共有ディスクではなくデータを共有
+
+  - sits atop another block device
+#J - ブロックデバイスの上で動作
+
+  - syncs w/ another machine's block device
+#J - ほかの機械のブロックデバイスへミラー
+
+    + cross-over gigabit cable ideal. network is faster than random writes on your disks.
+#J + クロスオーバ・ギガビットケーブルが理想。ネットワークはディスクへのランダム書き込みより速い
+
+* InnoDB on DRBD: HA MySQL!
+#J * InnoDBとDRBDの組み合わせ：MySQLのHA
+  - can hang slaves off floater IP
+#J - ??
+---------------------
+(p.27)
+
+MySQL Clustering Options:Pros & Cons
+#J MySQLのクラスタリングの方法いろいろ・長所と短所
+
+* no magic bullet
+#J * 特効薬はない
+
+  - Master/slave
+
+  - Master/master
+
+  - DRBD
+
+  - MySQL Cluster
+
+  - ....
+
+* lots of options!
+#J * やり方はたくさん
+
+  - :)
+
+  - :(
+
+---------------------
+(p.28)
+
+Part II: Our Software...
+---------------------
+(p.29)
+
+Caching
+
+* caching's key to performance
+
+  - store result of a computation or I/O for quicker future access
+
+* Where to cache?
+
+  - mod_perl caching
+
+    + memory waste (address space per apache child)
+
+  - shared memory
+
+    + limited to single machine, same with Java/C#/Mono
+
+  - MySQL query cache
+
+    + flushed per update, small max size
+
+  - HEAP tables
+
+    + fixed length rows, small max size
+-------------------------
+(p.30)
+
+memcached
+
+  http://www.danga.com/memcached/
+
+* our Open Source, distributed caching system
+
+* run instances wherever free memory
+
+* two-level hash
+
+  - client hashes to server,
+
+  - server has internal hash table
+
+* no “master node”
+
+* protocol simple, XML-free
+
+  - perl, java, php, python, ruby, ...
+
+* popular.
+
+* fast.
+---------------------
+(p.31)
+
+Perlbal
+---------------------
+(p.32)
+
+Web Load Balancing
+
+* BIG-IP, Alteon, Juniper, Foundry
+
+  - good for L4 or minimal L7
+
+  - not tricky / fun enough. :-)
+
+* Tried a dozen reverse proxies
+
+  - none did what we wanted or were fast enough
+
+* Wrote Perlbal
+
+  - fast, smart, manageable HTTP web server / reverse proxy / LB
+
+  - can do internal redirects
+
+    + and dozen other tricks
+---------------
+(p.33)
+
+Perlbal
+
+* Perl
+
+* single threaded, async event-based
+
+  - uses epoll, kqueue, etc.
+
+* console / HTTP remote management
+
+  - live config changes
+
+* handles dead nodes, smart balancing
+
+* multiple modes
+
+  - static webserver
+
+  - reverse proxy
+
+  - plug-ins (Javascript message bus.....)
+
+* plug-ins
+
+  - GIF/PNG altering, ....
+------------------
+(p.34)
+
+Perlbal: Persistent Connections
+
+* persistent connections
+
+  - perlbal to backends (mod_perls)
+
+    + know exactly when a connection is ready for a new request
+
+      - no complex load balancing logic: just use whatever's free. beats managing “weighted round robin” hell.
+
+  - clients persistent; not tied to backend
+
+* verifies new connections
+
+  - connects often fast, but talking to kernel, not apache (listen queue)
+
+  - send OPTIONs request to see if apache is there
+
+* multiple queues
+
+  - high, normal, low priority (idle, bots) queues
+----------------------
+(p.35)
+
+Perlbal: cooperative large file serving
+
+* large file serving w/ mod_perl bad...
+
+  - mod_perl has better things to do than spoon-feed clients bytes
+
+* internal redirects
+
+  - mod_perl can pass off serving a big file to Perlbal
+
+    + either from disk, or from other URL(s)
+
+  - client sees no HTTP redirect
+
+  - “Friends-only” images
+
+    + one, clean URL
+
+    + mod_perl does auth, and is done.
+
+    + perlbal serves.
+-------------------
+(p.36)
+
+Internal redirect picture 
+
+(fig., no need to translate)
+-------------------
+(p.37)
+
+MogileFS
+-------------------
+(p.38)
+
+MogileFS
+
+* our distributed file system
+
+* open source
+
+* userspace
+
+* hardly unique
+
+  - Google GFS
+
+  - Nutch Distributed File System (NDFS)
+
+* production-quality
+
+  - lot of users
+-------------------
+(p.39)
+
+MogileFS: Why
+
+* alternatives at time were either:
+
+  - closed, non-existent, expensive, in development, complicated, ...
+
+  - scary/impossible when it came to data recovery
+
+    + new/uncommon/unstudied on-disk formats
+
+* because it was easy
+
+  - initial version = 1 weekend
+------------------
+(p.40)
+
+MogileFS: Main Ideas
+
+* MogileFS main ideas:
+
+  - files belong to classes, which dictate:
+
+    + replication policy, min replicas, ...
+
+  - tracks what disks files are on
+
+    + set disk's state (up, temp_down, dead) and host
+
+  - keep replicas on devices on different hosts
+
+    + (default class policy)
+
+    + No RAID! (for this, for databases it's good.)
+
+  - multiple tracker databases
+
+    + all share same database cluster (MySQL, etc..)
+
+  - big, cheap disks
+
+    + dumb storage nodes w/ 12, 16 disks, no RAID
+--------------------
+(p.41)
+
+MogileFS components
+
+* clients
+
+* trackers
+
+* database(s) (MySQL, .... abstract)
+
+* storage nodes
+---------------------
+(p.42)
+
+MogileFS: Clients
+
+* tiny text-based protocol
+
+* Libraries available for:
+
+  - Perl
+
+    + tied filehandles
+
+    + MogileFS::Client
+
+      - my $fh = $mogc->new_file(“key”, [[$class], ...])
+
+  - Java
+
+  - PHP
+
+  - Python?
+
+  - porting to $LANG is be trivial
+
+* doesn't do database access
+--------------------
+(p.43)
+
+MogileFS: Tracker(mogilefsd)
+
+* The Meat
+
+* event-based message bus
+
+  - load balances client requests, world info
+
+* process manager
+
+  - heartbeats/watchdog, respawner, ...
+
+* Child processes:
+
+  - ~30x client interface (“query” process)
+
+    + interfaces client protocol w/ db(s), etc
+
+  - ~5x replicate
+
+  - ~2x delete
+
+  - ~1x monitoring
+
+  - ....
+-------------------
+(p.44)
+
+Trackers' Database(s)
+
+* Abstract as of Mogile 2.x
+
+  - MySQL
+
+  - SQLite (joke/demo)
+
+  - Pg/Oracle coming soon?
+
+  - Also future:
+
+    + wrapper driver, partitioning any above
+
+      - small metadata in one driver (MySQL Cluster?),
+
+      - large tables partitioned over 2-node HA pairs 
+
+* Recommend config:
+
+  - 2xMySQL InnoDB on DRBD
+
+  - 2 slaves underneath HA VIP:
+
+    + 1 for backups
+
+    + read-only slave for during master failover window 
+------------------
+(p.45)
+
+MogileFS storage nodes
+
+* HTTP transport
+
+  - GET
+
+  - PUT
+
+  - DELETE
+
+* Pick a server:
+
+  - mogstored (recommended; “use Perlbal”)
+
+    + side-channel iostat interface, AIO control, ...
+
+  - Apache+mod_dav
+
+  - lighttpd
+
+* files on filesystem, not DB
+
+  - sendfile()! future: splice()
+
+  - filesystem can be any filesystem
+-----------------------
+(p.46)
+
+Large file GET request 
+
+(fig., no need to translate)
+------------------------
+(p.47)
+
+Large file GET request 
+
+(fig., maybe no need to translate)
+
+Auth: complex, but quick
+
+Spoonfeeding: slow, but event-based
+-----------------------
+(p.48)
+
+And the reverse...
+
+* Now Perlbal can buffer uploads as well..
+
+  - Problems:
+
+    + LifeBlog uploading
+
+      - cellphones are slow
+
+    + LiveJournal/Friendster photo uploads
+
+      - cable/DSL uploads still slow
+
+  - decide to buffer to “disk” (tmpfs, likely)
+
+    + on any of: rate, size, time
+--------------------
+(p.49)
+
+Gearman
+--------------------
+(p.50)
+
+Gearman
+
+* low-latency remote function call “router”
+
+* client wants results. arguments to submit a job:
+
+  - opaque bytes: “function name”
+
+  - opt. opaque: “function args” (Storable, ...)
+
+  - opt. coalescing value
+
+    + can multiplex results of slow call back to multiple waiting callers
+
+* binary protocol
+
+  - future: C server / client.
+
+  - currently: gearmand doesn't use much CPU
+
+    + solution: we need to push it harder! :) 
+--------------------
+(p.51)
+
+Gearman Uses
+
+* Image::Magick outside of your mod_perls!
+
+* DBI connection pooling (DBD::Gofer + Gearman)
+
+* reducing load, improving visibility
+
+* “services”
+
+  - can all be in different languages, too!
+
+* running code in parallel
+
+  - query ten databases at once
+
+* running blocking code from event loops
+
+  - DBI from POE/Danga::Socket apps
+
+* spreading CPU from ev loop daemons
+---------------------
+(p.52)
+
+Gearman Pieces
+
+* gearmand
+
+  - dumb router
+
+  - event-loop. Now: Perl. Future? C?
+
+* workers.
+
+  - Gearman::Worker -- perl
+
+  - register/heartbeat/grab jobs
+
+* clients
+
+  - Gearman::Client[::Async]
+
+  - submit jobs to gearmand
+
+  - hash onto a gearmand
+
+    + optimization for coalescing
+
+    + can use any on failure
+-----------------
+(p.53)
+
+Gearman Picture 
+
+(fig., no need to translate)
+
+gearmand 
+
+gearmand 
+
+gearmand 
+
+gearmand 
+
+client 
+
+client 
+
+client 
+
+worker 
+
+worker
+
+call(“funcA”, “arg”) 
+
+can_do(“funcA”)
+
+can_do(“funcB”)
+---------------------
+(p.54)
+
+Gearman Misc
+
+* Guarantees:
+
+  - none! hah! :)
+
+    + please wait for your results.
+
+    + if client goes away, no promises
+
+* No policy/conventions in gearmand
+
+  - all policy/meaning between clients <-> workers
+
+* ...
+----------------
+(p.55)
+
+Gearman Summary
+
+* Gearman is sexy.
+
+  - especially the coalescing
+
+* Check it out!
+
+  - it's kinda our little unadvertised secret
+
+    + oh crap, did I leak the secret?
+------------------
+(p.56)
+
+TheSchwartz
+------------------
+(p.57)
+
+TheSchwartz
+
+* currently library, not network service
+
+* Reliable job queueing system
+
+* Primitives:
+
+  - insert job
+
+  - “grab” job (atomic grab)
+
+    + for 'n' seconds.
+
+  - mark job done
+
+  - temp fail job for future
+
+    + optional notes, rescheduling details..
+
+  - replace job with 1+ other jobs
+
+    + atomic.
+
+  - ...
+---------------------
+(p.58)
+
+TheSchwartz
+
+* backing store:
+
+  - a database
+
+  - uses Data::ObjectDriver
+
+    + MySQL,
+
+    + Postgres,
+
+    + SQLite,
+
+    + ....
+
+* but HA: you tell it @@dbs, and it finds one to insert job into
+
+  - likewises, workers foreach (@@dbs) to do work
+-------------------
+(p.59)
+
+TheSchwartz uses
+
+* outgoing email (SMTP client)
+
+  - millions of emails per day
+
+* LJ notifications
+
+  - ESN: event, subscription, notification
+
+    + one event (new post, etc) -> thousands of emails, SMSes, XMPP messages, etc...
+
+* pinging external services
+
+* atomstream injection
+
+* .....
+
+* dozens of users
+
+* shared farm for TypePad, Vox, LJ
+-------------------
+(p.60)
+
+gearmand + TheSchwartz
+
+* gearmand: not reliable, low-latency, no disks
+
+* TheSchwartz: latency, reliable, disks
+
+* In TypePad:
+
+  - TheSchwartz, with gearman to fire off TheSchwartz workers.
+
+    + disks, but low-latency
+
+    + future: no disks, SSD/Flash, MySQL Cluster
+---------------
+(p.61)
+
+djabberd
+--------------
+(p.62)
+
+djabberd
+
+* perl, event-based (epoll, etc)
+
+* done 300,000+ conns
+
+* tiny per-conn memory overhead
+
+  - release XML parser state if possible
+
+* everything is a hook
+
+  - not just auth! like, everything.
+
+  - ala mod_perl, qpsmtpd, etc.
+
+  - inter-node communication
+
+* async hooks
+
+  - use Gearman::Client::Async
+
+  - async Gearman client for Danga::Socket-based apps
+-------------------
+(p.63)
+
+Thank you!
+
+Questions to...
+
+brad@@danga.com 
+
+Software:
+
+http://danga.com/
+
+http://code.sixapart.com/ 
+--------------------
+(p.64)
+
+Bonus Slides
+
+* if extra time
+-------------------
+(p.65)
+
+Data Integrity
+
+* Databases depend on fsync()
+
+  - but databases can't send raw SCSI/ATA commands to flush controller caches, etc
+
+* fsync() almost never works work
+
+  - Linux, FS' (lack of) barriers, raid cards, controllers, disks, ....
+
+* Solution: test! & fix
+
+  - disk-checker.pl
+
+    + client/server
+
+    + spew writes/fsyncs, record intentions on alive machine, yank power, checks.
+----------------
+(p.66)
+
+Persistent Connection Woes
+
+* connections == threads == memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+@
+
+
+1.5
+log
+@edit_address:64.119.92.4,edit_by:nozaki,edit_time:Thu%20Mar%2029%2003%3A55%3A26%202007,edit_unixtime:1175140526
+@
+text
+@d78 1
+a78 1
+  #J HTTPロードバランサー＆We（爆）サーバー
+@
+
+
+1.4
+log
+@edit_address:220.156.77.201,edit_by:daisuke,edit_time:Wed%20Mar%2028%2010%3A40%3A29%202007,edit_unixtime:1175078429
+@
+text
+@d274 1
+d281 1
+d286 1
+d289 1
+d296 1
+d303 1
+d306 1
+d309 1
+d312 1
+d315 1
+d318 2
+d324 1
+d327 1
+d330 1
+d337 1
+d340 1
+d343 1
+d349 1
+d352 1
+d355 1
+d358 1
+d361 1
+d364 1
+d371 1
+d376 1
+d381 1
+d431 1
+d434 1
+d437 1
+d440 1
+d464 1
+d467 1
+d532 1
+d535 1
+d538 1
+d541 2
+d545 1
+d548 1
+d553 1
+d558 1
+d561 1
+d564 1
+d567 1
+d570 1
+d573 2
+d579 1
+d589 1
+d602 1
+d617 1
+d631 1
+d633 2
+d639 1
+d642 1
+d645 1
+d652 1
+d655 1
+d658 1
+d661 1
+d664 1
+d667 2
+d674 1
+d677 1
+d680 1
+d683 1
+d686 1
+d689 1
+d692 1
+d695 1
+d698 1
+d703 1
+d706 1
+d709 1
+d712 1
+d715 1
+d718 1
+d721 1
+d724 1
+a724 1
+
+d726 1
+d731 1
+d734 1
+d747 1
+@
+
+
+1.3
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Sun%20Mar%2025%2015%3A08%3A51%202007,edit_unixtime:1174835331
+@
+text
+@d30 1
+d35 1
+d38 1
+d41 1
+d44 1
+d47 1
+d50 1
+d63 1
+d68 1
+d73 1
+d78 1
+d87 1
+d102 1
+@
+
+
+1.2
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Sun%20Mar%2025%2013%3A42%3A56%202007,edit_unixtime:1174830176
+@
+text
+@d93 1
+a93 1
+(drawings, no need to translate)
+d274 1
+a274 1
+(drawings)
+d280 1
+a280 1
+(drawings)
+d304 1
+a304 1
+(drawings)
+d329 1
+a329 1
+(drawings)
+d335 1
+a335 1
+(drawings)
+d343 1
+a343 1
+(drawings, no need to translate)
+d398 1
+a398 1
+(drawings, maybe no need to translate)
+d423 1
+a423 1
+(drawings, no need to translate)
+d519 1
+a519 1
+(drawings, no need to translate)
+d528 1
+a528 1
+(drawings, no need to translate)
+d540 1
+a540 1
+(drawings, no need to translate)
+d554 1
+a554 1
+(drawings, no need to translate)
+d818 1
+a818 1
+(drawings, no need to translate)
+d1016 1
+a1016 1
+(drawings, no need to translate)
+d1022 1
+a1022 1
+(drawings, maybe no need to translate)
+d1132 1
+a1132 1
+(drawings, no need to translate)
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Fri%20Mar%2023%2022%3A09%3A07%202007,edit_unixtime:1174687747
+@
+text
+@d4 1
+a4 1
+http://www.danga.com/words/
+d23 5
+d29 1
+a29 1
+LiveJournal Overview 
+d31 1
+a31 1
+college hobby project, Apr 1999
+d33 1
+a33 1
+4-in-1:
+d35 1
+a35 1
+blogging
+d37 1
+a37 1
+forums
+d39 1
+a39 1
+social-networking (“friends”)
+d41 1
+a41 1
+aggregator: “friends page” + RSS/Atom
+d43 1
+a43 1
+10M+ accounts
+d45 1
+a45 1
+Open Source!
+d47 1
+a47 1
+server,
+d49 1
+a49 1
+infrastructure,
+d51 5
+a55 1
+original clients,
+d57 1
+a57 1
+...
+d59 1
+a59 1
+memcached
+d61 1
+a61 1
+distributed caching
+d63 1
+a63 1
+MogileFS
+d65 1
+a65 1
+distributed filesystem
+d67 1
+a67 1
+Perlbal
+d69 1
+a69 1
+HTTP load balancer & web server
+d71 1
+a71 1
+gearman
+d73 1
+a73 1
+LB/HA/coalescing low-latency function call “router” 
+d75 1
+a75 1
+TheSchwartz
+d77 1
+a77 1
+reliable, async job dispatch system
+d79 1
+a79 1
+djabberd
+d81 1
+a81 1
+the mod_perl/qpsmtpd of XMPP/Jabber servers
+d83 1
+a83 1
+.....
+d85 3
+a87 1
+OpenID
+d89 1
+a89 1
+....
+d91 1
+a91 1
+Stuff we've built...
+d93 1
+a93 1
+LiveJournal Backend: TodayRoughly.
+a190 3
+ 
+ 
+ 
+a214 8
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+a228 2
+ 
+
+a234 7
+ 
+ 
+ 
+ 
+ 
+ 
+
+d239 2
+a240 2
+ 
+
+d244 1
+a244 1
+Refer to previous presentations for more detail...
+d246 1
+a246 1
+Questions anytime!
+d248 1
+a248 1
+Part I:
+d250 1
+a250 1
+quick scaling history
+d252 1
+a252 1
+Part II:
+d254 1
+a254 1
+explain all our software
+d256 3
+a258 1
+explain all the parts! 
+d260 3
+a262 2
+
+Part I:Quick Scaling History
+d266 3
+a268 1
+1 server to hundreds...
+d272 1
+a272 1
+Simple: 
+d274 3
+d280 3
+d286 1
+a286 1
+Two single points of failure
+d288 1
+a288 1
+No hot or cold spares
+d290 1
+a290 1
+Site gets slow again.
+d292 1
+a292 1
+CPU-bound on web node
+d294 3
+a296 1
+need more web nodes...
+d300 1
+a300 1
+3 webs, 1 db
+d302 1
+a302 1
+Now we need to load-balance! 
+d304 3
+d310 3
+a312 1
+Now I/O bound...
+d314 2
+a315 1
+... how to use another database?
+d317 1
+a317 1
+Five Serversintroducing MySQL replication
+d319 1
+a319 1
+We buy a new database server
+d321 1
+a321 1
+MySQL replication
+d323 1
+a323 1
+Writes to DB (master)
+d325 1
+a325 1
+Reads from both 
+d327 5
+d335 2
+d338 2
+d343 2
+a381 3
+ 
+ 
+ 
+d383 1
+d385 3
+a387 4
+master 
+ 
+ 
+ 
+d389 2
+d392 1
+a392 1
+net.
+d394 1
+a394 1
+Problems with Architectureor,“This don't scale...”
+d396 1
+a396 1
+DB master is SPOF
+d398 1
+a398 1
+Adding slaves doesn't scale well...
+d400 1
+a400 2
+only spreads reads, not writes! 
+ 
+d402 1
+d406 1
+a406 3
+200 write/s
+
+500 reads/s
+a409 1
+
+d414 1
+d416 2
+a417 3
+w/ 1 server
+
+w/ 2 servers
+d421 1
+a421 1
+databases eventual only writing 
+d423 1
+d429 1
+a429 4
+
+400
+
+write/s
+a432 1
+
+a436 1
+
+a442 1
+
+d447 1
+a447 4
+
+400
+
+write/s
+a450 1
+
+d455 1
+a455 4
+
+400
+
+write/s
+a458 1
+
+d463 1
+a463 4
+
+400
+
+write/s
+a466 1
+
+d471 1
+a471 4
+
+400
+
+write/s
+a474 1
+
+d479 1
+a479 4
+
+400
+
+write/s
+d482 2
+d487 1
+a487 1
+Our database machines already did RAID
+d489 1
+a489 1
+We did backups
+d491 1
+a491 1
+So why put user data on 6+ slave machines? (~12+ disks)
+d493 1
+a493 1
+overkill redundancy
+d495 3
+a497 1
+wasting time writing everywhere!
+d501 1
+a501 1
+Spread your databases out, into “roles”
+d503 1
+a503 1
+roles that you never need to join between
+d505 1
+a505 1
+different users
+d507 1
+a507 1
+or accept you'll have to join in app
+d509 1
+a509 1
+Each user assigned to a cluster number
+d511 1
+a511 1
+Each cluster has multiple machines
+d513 3
+a515 1
+writes self-contained in cluster (writing to 2-3 machines, not 6)
+d519 1
+d521 1
+a521 4
+SELECT userid,
+
+clusterid FROM user WHERE user='bob' 
+ 
+d523 2
+d528 1
+d530 1
+a530 4
+SELECT userid,
+
+clusterid FROM user WHERE user='bob' 
+
+d534 3
+a536 3
+clusterid: 2 
+ 
+
+d540 1
+d542 1
+a542 4
+SELECT userid,
+
+clusterid FROM user WHERE user='bob' 
+
+d548 3
+a550 6
+
+SELECT .... FROM ...
+
+WHERE userid=839 ... 
+ 
+
+d554 1
+d556 1
+a556 4
+SELECT userid,
+
+clusterid FROM user WHERE user='bob' 
+
+d560 1
+a560 9
+clusterid: 2 
+
+
+SELECT .... FROM ...
+
+WHERE userid=839 ... 
+ 
+ 
+
+d562 1
+a562 1
+OMG i like totally hate my parents they just dont understand me and i h8 the world omg lol rofl *! :^-^^; 
+d564 1
+d567 2
+d572 1
+a572 1
+per-user numberspaces
+d574 1
+a574 1
+don't use AUTO_INCREMENT
+d576 1
+a576 1
+PRIMARY KEY (user_id, thing_id)
+d578 1
+a578 1
+so:
+d580 1
+a580 1
+Can move/upgrade users 1-at-a-time:
+d582 1
+a582 1
+per-user “readonly” flag
+d584 1
+a584 1
+per-user “schema_ver” property
+d586 1
+a586 1
+user-moving harness
+d588 1
+a588 1
+job server that coordinates, distributed long-lived user-mover clients who ask for tasks
+d590 3
+a592 1
+balancing disk I/O, disk space
+d594 2
+a595 1
+Shared Storage(SAN, SCSI, DRBD...)
+d597 1
+a597 1
+Turn pair of InnoDB machines into a cluster
+d599 1
+a599 1
+looks like 1 box to outside world. floating IP.
+d601 1
+a601 1
+One machine at a time running fs / MySQL
+d603 1
+a603 1
+Heartbeat to move IP, {un,}mount filesystem, {stop,start} mysql
+d605 1
+a605 1
+No special schema considerations
+d607 1
+a607 1
+MySQL 4.1 w/ binlog sync/flush options
+d609 1
+a609 1
+good
+d611 3
+a613 1
+The cluster can be a master or slave as well
+d617 1
+a617 1
+Linux block device driver
+d619 1
+a619 1
+“Network RAID 1”
+d621 1
+a621 1
+Shared storage without sharing!
+d623 1
+a623 1
+sits atop another block device
+d625 1
+a625 1
+syncs w/ another machine's block device
+d627 1
+a627 1
+cross-over gigabit cable ideal. network is faster than random writes on your disks.
+d629 1
+a629 1
+InnoDB on DRBD: HA MySQL!
+d631 3
+a633 1
+can hang slaves off floater IP
+d637 1
+a637 1
+no magic bullet
+d639 1
+a639 1
+Master/slave
+d641 1
+a641 1
+Master/master
+d643 1
+a643 1
+DRBD
+d645 1
+a645 1
+MySQL Cluster
+d647 1
+a647 1
+....
+d649 1
+a649 1
+lots of options!
+d651 1
+a651 1
+:)
+d653 1
+a653 1
+:(
+d655 6
+a660 1
+Part II:Our Software...
+d664 1
+a664 1
+caching's key to performance
+d666 1
+a666 1
+store result of a computation or I/O for quicker future access
+d668 1
+a668 1
+Where to cache?
+d670 1
+a670 1
+mod_perl caching
+d672 1
+a672 1
+memory waste (address space per apache child)
+d674 1
+a674 1
+shared memory
+d676 1
+a676 1
+limited to single machine, same with Java/C#/Mono
+d678 1
+a678 1
+MySQL query cache
+d680 1
+a680 1
+flushed per update, small max size
+d682 1
+a682 1
+HEAP tables
+d684 3
+a686 1
+fixed length rows, small max size
+d688 1
+a688 1
+memcachedhttp://www.danga.com/memcached/
+d690 1
+a690 1
+our Open Source, distributed caching system
+d692 1
+a692 1
+run instances wherever free memory
+d694 1
+a694 1
+two-level hash
+d696 1
+a696 1
+client hashes to server,
+d698 1
+a698 1
+server has internal hash table
+d700 1
+a700 1
+no “master node”
+d702 1
+a702 1
+protocol simple, XML-free
+d704 1
+a704 1
+perl, java, php, python, ruby, ...
+d706 1
+a706 1
+popular.
+d708 5
+a712 1
+fast.
+d715 2
+d720 1
+a720 1
+BIG-IP, Alteon, Juniper, Foundry
+d722 1
+a722 1
+good for L4 or minimal L7
+d724 1
+a724 1
+not tricky / fun enough. :-)
+d726 1
+a726 1
+Tried a dozen reverse proxies
+d728 1
+a728 1
+none did what we wanted or were fast enough
+d730 1
+a730 1
+Wrote Perlbal
+d732 1
+a732 1
+fast, smart, manageable HTTP web server / reverse proxy / LB
+d734 1
+a734 1
+can do internal redirects
+d736 3
+a738 1
+and dozen other tricks
+d742 1
+a742 1
+Perl
+d744 1
+a744 1
+single threaded, async event-based
+d746 1
+a746 1
+uses epoll, kqueue, etc.
+d748 1
+a748 1
+console / HTTP remote management
+d750 1
+a750 1
+live config changes
+d752 1
+a752 1
+handles dead nodes, smart balancing
+d754 1
+a754 1
+multiple modes
+d756 1
+a756 1
+static webserver
+d758 1
+a758 1
+reverse proxy
+d760 1
+a760 1
+plug-ins (Javascript message bus.....)
+d762 1
+a762 1
+plug-ins
+d764 3
+a766 1
+GIF/PNG altering, ....
+d770 1
+a770 1
+persistent connections
+d772 1
+a772 1
+perlbal to backends (mod_perls)
+d774 1
+a774 1
+know exactly when a connection is ready for a new request
+d776 1
+a776 1
+no complex load balancing logic: just use whatever's free. beats managing “weighted round robin” hell.
+d778 1
+a778 1
+clients persistent; not tied to backend
+d780 1
+a780 1
+verifies new connections
+d782 1
+a782 1
+connects often fast, but talking to kernel, not apache (listen queue)
+d784 1
+a784 1
+send OPTIONs request to see if apache is there
+d786 1
+a786 1
+multiple queues
+d788 3
+a790 1
+high, normal, low priority (idle, bots) queues
+d794 1
+a794 1
+large file serving w/ mod_perl bad...
+d796 1
+a796 1
+mod_perl has better things to do than spoon-feed clients bytes
+d798 1
+a798 1
+internal redirects
+d800 1
+a800 1
+mod_perl can pass off serving a big file to Perlbal
+d802 1
+a802 1
+either from disk, or from other URL(s)
+d804 1
+a804 1
+client sees no HTTP redirect
+d806 1
+a806 1
+“Friends-only” images
+d808 1
+a808 1
+one, clean URL
+d810 1
+a810 1
+mod_perl does auth, and is done.
+d812 3
+a814 1
+perlbal serves.
+d818 3
+d823 2
+d828 1
+a828 1
+our distributed file system
+d830 1
+a830 1
+open source
+d832 1
+a832 1
+userspace
+d834 1
+a834 1
+hardly unique
+d836 1
+a836 1
+Google GFS
+d838 1
+a838 1
+Nutch Distributed File System (NDFS)
+d840 1
+a840 1
+production-quality
+d842 3
+a844 1
+lot of users
+d848 1
+a848 1
+alternatives at time were either:
+d850 1
+a850 1
+closed, non-existent, expensive, in development, complicated, ...
+d852 1
+a852 1
+scary/impossible when it came to data recovery
+d854 1
+a854 1
+new/uncommon/unstudied on-disk formats
+d856 1
+a856 1
+because it was easy
+d858 3
+a860 1
+initial version = 1 weekend
+d864 1
+a864 1
+MogileFS main ideas:
+d866 1
+a866 1
+files belong to classes, which dictate:
+d868 1
+a868 1
+replication policy, min replicas, ...
+d870 1
+a870 1
+tracks what disks files are on
+d872 1
+a872 1
+set disk's state (up, temp_down, dead) and host
+d874 1
+a874 1
+keep replicas on devices on different hosts
+d876 1
+a876 1
+(default class policy)
+d878 1
+a878 1
+No RAID! (for this, for databases it's good.)
+d880 1
+a880 1
+multiple tracker databases
+d882 1
+a882 1
+all share same database cluster (MySQL, etc..)
+d884 1
+a884 1
+big, cheap disks
+d886 3
+a888 1
+dumb storage nodes w/ 12, 16 disks, no RAID
+d892 1
+a892 1
+clients
+d894 1
+a894 1
+trackers
+d896 1
+a896 1
+database(s) (MySQL, .... abstract)
+d898 3
+a900 1
+storage nodes
+d904 1
+a904 1
+tiny text-based protocol
+d906 1
+a906 1
+Libraries available for:
+d908 1
+a908 1
+Perl
+d910 1
+a910 1
+tied filehandles
+d912 1
+a912 1
+MogileFS::Client
+d914 1
+a914 1
+my $fh = $mogc->new_file(“key”, [[$class], ...])
+d916 1
+a916 1
+Java
+d918 1
+a918 1
+PHP
+d920 1
+a920 1
+Python?
+d922 1
+a922 1
+porting to $LANG is be trivial
+d924 3
+a926 1
+doesn't do database access
+d930 1
+a930 1
+The Meat
+d932 1
+a932 1
+event-based message bus
+d934 1
+a934 1
+load balances client requests, world info
+d936 1
+a936 1
+process manager
+d938 1
+a938 1
+heartbeats/watchdog, respawner, ...
+d940 1
+a940 1
+Child processes:
+d942 1
+a942 1
+~30x client interface (“query” process)
+d944 1
+a944 1
+interfaces client protocol w/ db(s), etc
+d946 1
+a946 1
+~5x replicate
+d948 1
+a948 1
+~2x delete
+d950 1
+a950 1
+~1x monitoring
+d952 3
+a954 1
+....
+d958 1
+a958 1
+Abstract as of Mogile 2.x
+d960 1
+a960 1
+MySQL
+d962 1
+a962 1
+SQLite (joke/demo)
+d964 1
+a964 1
+Pg/Oracle coming soon?
+d966 1
+a966 1
+Also future:
+d968 1
+a968 1
+wrapper driver, partitioning any above
+d970 1
+a970 1
+small metadata in one driver (MySQL Cluster?),
+d972 1
+a972 1
+large tables partitioned over 2-node HA pairs 
+d974 1
+a974 1
+Recommend config:
+d976 1
+a976 1
+2xMySQL InnoDB on DRBD
+d978 1
+a978 1
+2 slaves underneath HA VIP:
+d980 1
+a980 1
+1 for backups
+d982 3
+a984 1
+read-only slave for during master failover window 
+d988 1
+a988 1
+HTTP transport
+d990 1
+a990 1
+GET
+d992 1
+a992 1
+PUT
+d994 1
+a994 1
+DELETE
+d996 1
+a996 1
+Pick a server:
+d998 1
+a998 1
+mogstored (recommended; “use Perlbal”)
+d1000 1
+a1000 1
+side-channel iostat interface, AIO control, ...
+d1002 1
+a1002 1
+Apache+mod_dav
+d1004 1
+a1004 1
+lighttpd
+d1006 1
+a1006 1
+files on filesystem, not DB
+d1008 1
+a1008 1
+sendfile()! future: splice()
+d1010 3
+a1012 1
+filesystem can be any filesystem
+d1016 3
+a1020 2
+ 
+ 
+d1022 1
+d1027 2
+d1032 1
+a1032 1
+Now Perlbal can buffer uploads as well..
+d1034 1
+a1034 1
+Problems:
+d1036 1
+a1036 1
+LifeBlog uploading
+d1038 1
+a1038 1
+cellphones are slow
+d1040 1
+a1040 1
+LiveJournal/Friendster photo uploads
+d1042 1
+a1042 1
+cable/DSL uploads still slow
+d1044 1
+a1044 1
+decide to buffer to “disk” (tmpfs, likely)
+d1046 3
+a1048 1
+on any of: rate, size, time
+d1051 2
+d1056 1
+a1056 1
+low-latency remote function call “router”
+d1058 1
+a1058 1
+client wants results. arguments to submit a job:
+d1060 1
+a1060 1
+opaque bytes: “function name”
+d1062 1
+a1062 1
+opt. opaque: “function args” (Storable, ...)
+d1064 1
+a1064 1
+opt. coalescing value
+d1066 1
+a1066 1
+can multiplex results of slow call back to multiple waiting callers
+d1068 1
+a1068 1
+binary protocol
+d1070 1
+a1070 1
+future: C server / client.
+d1072 1
+a1072 4
+currently: gearmand doesn't use much CPU
+
+solution: we need to push it harder! :) 
+ 
+d1074 3
+d1080 1
+a1080 1
+Image::Magick outside of your mod_perls!
+d1082 1
+a1082 1
+DBI connection pooling (DBD::Gofer + Gearman)
+d1084 1
+a1084 1
+reducing load, improving visibility
+d1086 1
+a1086 1
+“services”
+d1088 1
+a1088 1
+can all be in different languages, too!
+d1090 1
+a1090 1
+running code in parallel
+d1092 1
+a1092 1
+query ten databases at once
+d1094 1
+a1094 1
+running blocking code from event loops
+d1096 1
+a1096 1
+DBI from POE/Danga::Socket apps
+d1098 3
+a1100 1
+spreading CPU from ev loop daemons
+d1104 1
+a1104 1
+gearmand
+d1106 1
+a1106 1
+dumb router
+d1108 1
+a1108 1
+event-loop. Now: Perl. Future? C?
+d1110 1
+a1110 1
+workers.
+d1112 1
+a1112 1
+Gearman::Worker – perl
+d1114 1
+a1114 1
+register/heartbeat/grab jobs
+d1116 1
+a1116 1
+clients
+d1118 1
+a1118 1
+Gearman::Client[::Async]
+d1120 1
+a1120 1
+submit jobs to gearmand
+d1122 1
+a1122 1
+hash onto a gearmand
+d1124 1
+a1124 1
+optimization for coalescing
+d1126 3
+a1128 1
+can use any on failure
+d1132 1
+a1135 1
+
+a1137 1
+
+a1139 1
+
+a1141 1
+
+a1143 1
+
+a1145 1
+
+a1147 1
+
+a1149 1
+
+a1152 7
+ 
+ 
+ 
+ 
+ 
+ 
+
+d1157 2
+d1162 1
+a1162 1
+Guarantees:
+d1164 1
+a1164 1
+none! hah! :)
+d1166 1
+a1166 1
+please wait for your results.
+d1168 1
+a1168 1
+if client goes away, no promises
+d1170 1
+a1170 1
+No policy/conventions in gearmand
+d1172 1
+a1172 1
+all policy/meaning between clients <-> workers
+d1174 3
+a1176 1
+...
+d1180 1
+a1180 1
+Gearman is sexy.
+d1182 1
+a1182 1
+especially the coalescing
+d1184 1
+a1184 1
+Check it out!
+d1186 1
+a1186 1
+it's kinda our little unadvertised secret
+d1188 3
+a1190 1
+oh crap, did I leak the secret?
+d1193 2
+d1198 1
+a1198 1
+currently library, not network service
+d1200 1
+a1200 1
+Reliable job queueing system
+d1202 1
+a1202 1
+Primitives:
+d1204 1
+a1204 1
+insert job
+d1206 1
+a1206 1
+“grab” job (atomic grab)
+d1208 1
+a1208 1
+for 'n' seconds.
+d1210 1
+a1210 1
+mark job done
+d1212 1
+a1212 1
+temp fail job for future
+d1214 1
+a1214 1
+optional notes, rescheduling details..
+d1216 1
+a1216 1
+replace job with 1+ other jobs
+d1218 1
+a1218 1
+atomic.
+d1220 3
+a1222 1
+...
+d1226 1
+a1226 1
+backing store:
+d1228 1
+a1228 1
+a database
+d1230 1
+a1230 1
+uses Data::ObjectDriver
+d1232 1
+a1232 1
+MySQL,
+d1234 1
+a1234 1
+Postgres,
+d1236 1
+a1236 1
+SQLite,
+d1238 1
+a1238 1
+....
+d1240 1
+a1240 1
+but HA: you tell it @@dbs, and it finds one to insert job into
+d1242 3
+a1244 1
+likewises, workers foreach (@@dbs) to do work
+d1248 1
+a1248 1
+outgoing email (SMTP client)
+d1250 1
+a1250 1
+millions of emails per day
+d1252 1
+a1252 1
+LJ notifications
+d1254 1
+a1254 1
+ESN: event, subscription, notification
+d1256 1
+a1256 1
+one event (new post, etc) -> thousands of emails, SMSes, XMPP messages, etc...
+d1258 1
+a1258 1
+pinging external services
+d1260 1
+a1260 1
+atomstream injection
+d1262 1
+a1262 1
+.....
+d1264 1
+a1264 1
+dozens of users
+d1266 3
+a1268 1
+shared farm for TypePad, Vox, LJ
+d1272 1
+a1272 1
+gearmand: not reliable, low-latency, no disks
+d1274 1
+a1274 1
+TheSchwartz: latency, reliable, disks
+d1276 1
+a1276 1
+In TypePad:
+d1278 1
+a1278 1
+TheSchwartz, with gearman to fire off TheSchwartz workers.
+d1280 1
+a1280 1
+disks, but low-latency
+d1282 3
+a1284 1
+future: no disks, SSD/Flash, MySQL Cluster
+d1287 2
+d1292 1
+a1292 1
+perl, event-based (epoll, etc)
+d1294 1
+a1294 1
+done 300,000+ conns
+d1296 1
+a1296 1
+tiny per-conn memory overhead
+d1298 1
+a1298 1
+release XML parser state if possible
+d1300 1
+a1300 1
+everything is a hook
+d1302 1
+a1302 1
+not just auth! like, everything.
+d1304 1
+a1304 1
+ala mod_perl, qpsmtpd, etc.
+d1306 1
+a1306 1
+inter-node communication
+d1308 1
+a1308 1
+async hooks
+d1310 1
+a1310 1
+use Gearman::Client::Async
+d1312 3
+a1314 1
+async Gearman client for Danga::Socket-based apps
+a1321 1
+
+d1327 2
+a1328 3
+ 
+ 
+
+d1332 3
+a1334 1
+if extra time
+d1338 1
+a1338 1
+Databases depend on fsync()
+d1340 1
+a1340 1
+but databases can't send raw SCSI/ATA commands to flush controller caches, etc
+d1342 1
+a1342 1
+fsync() almost never works work
+d1344 1
+a1344 1
+Linux, FS' (lack of) barriers, raid cards, controllers, disks, ....
+d1346 1
+a1346 1
+Solution: test! & fix
+d1348 1
+a1348 1
+disk-checker.pl
+d1350 1
+a1350 1
+client/server
+d1352 3
+a1354 1
+spew writes/fsyncs, record intentions on alive machine, yank power, checks.
+d1358 1
+a1358 1
+connections == threads == memory
+d1360 1
+a1360 1
+My pet peeve:
+d1362 1
+a1362 1
+want connection/thread distinction in MySQL!
+d1364 1
+a1364 1
+w/ max-runnable-threads tunable
+d1366 1
+a1366 1
+max threads
+d1368 1
+a1368 1
+limit max memory/concurrency
+d1370 1
+a1370 1
+DBD::Gofer + Gearman
+d1372 1
+a1372 1
+Ask
+d1374 1
+a1374 1
+Data::ObjectDriver + Gearman
+@

@@ -1,0 +1,564 @@
+From Ingy's email:
+.pre
+>I got my slides done finally. Over 24 hours before my talk. This is surely a
+>record for me.
+>
+>Anyway I need some translation. I put the talk in my SVN repos. Check it out
+>here:
+>
+>    http://svn.kwiki.org/kwiki/trunk/extras/talks/KwikiAndTheSymlink
+>
+>Whoever translates I will give a password to commit it back into svn.
+>
+>Cheers, Ingy
+.pre
+
+.pre
+----
+presentation_topic: Kwiki
+presentation_title: Kwiki and the Symlink
+presentation_place: YAPC::Tokyo
+presentation_date: April 4, 2007
+author_name: Ingy do"t Net
+author_email: ingy@cpan.org
+----
+Welcome To YAPC
+# YAPCへようこそ
+Let Insanity BEGIN
+# 狂気のはじまり
+PERL In The House Yo
+# PERLがやってきたヨ
+----
+WELCOME TO YAPC
+# YAPCへようこそ
+LET INSANITY BEGIN
+# 狂気のはじまり
+PERL IN THE HOUSE YO
+# PERLがやってきたヨ
+----
+Ingy 2.0
+# Ingyが2.0になった
+Kwiki 2.0 as Well
+# Kwikiも2.0
+orz hackers
+----
+Kwiki to Japan
+# Kwikiを日本へ
+Ingy Shows 2.0 Stuff
+# Ingyが2.0を見せます
+A Topic for Spring
+# この春の話題だよ
+----
+Haiku is OK
+# 俳句もいいけど
+But Ingy Likes Limericks
+# Ingyは5行詩のほうが好き
+Please Let Me Explain
+# 説明しよう
+----
+The Poetry Known as Haiku
+# 俳句は
+Leaves a hacker with too much to do.
+# ハッカーには難しい
+  The minding of syllables...
+# 文字数の制約がきつい
+I'd rather watch kill-a-bills.
+# Kill Billを見るほうが楽しい
+Kill Bill has far better Kung Fu.
+# Kill Billのほうがずっといいカンフーだ
+----
+Ingy dot Net was a man,
+# Ingy dot Netは
+Who hacked on weird plan after plan.
+# 次から次へとおかしなものをハックしてきた
+  As hard as he tried,
+# がんばってるんだけど
+  His ideas always died.
+# 失敗続き
+But at least he is big in Japan.
+# とりあえず日本では有名になったけれどね
+----
+There once was a hacker named Ingy
+# むかしIngyというハッカーがいた
+That darned YAPC wiki was his thingy.
+# 使いづらいYAPCのwikiはIngyの書いたもの
+  He went to Japan,
+# 来日したときには
+  And he got a great tan...
+# 思い切り日焼けして
+When they sent him back home in a dingy.
+# 薄汚い我が家に帰ってきた
+----
+This Ingy it often was said,
+# Ingyはよく
+Would hack all day in his bed.
+# 一日中ベッドの中でハックしていると言われていた
+  But the harder he hacked,
+# しかし、一生懸命ハックするほどに
+  The weirder and whacked
+# 変になったりだめになったり
+Were his h@><. zomg orz.
+# それがIngyクオリティ。ZOH MY GOD.  orz.
+----
+...
+----
+* Sometimes old stuff is the best stuff
+# 古いものが一番いいということがある
+* Maybe it's not shiny anymore
+# 新しいものと違って輝いてはいないけれど
+* But a little polishing goes a long way
+# 少し磨けばずっと使える
+* And then you just call it 2.0!
+# そういうものを2.0と呼んでしまおう
+
+Last Year I Made Two Big Upgrades...
+# 去年Ingyは大規模バージョンアップを2つ行った
+----
+== Ingy 2.0
+# Ingy 2.0
+Brian Ingerson
+# Brian Ingerson
+Legally Ingy dot Net
+# Ingy dot Netが正式な姓名に
+Old is New Again
+# 古いものがまた新しく
+----
+* In September I changed my name legally to "Ingy dot Net"
+# 9月に、自分の名前を正式に「Ingy dot Net」にした
+* Ingy is my first name
+# Ingyがファーストネームで
+* "dot Net" is my last name
+# 「dot Net」が姓
+* "dot" is *not* my middle name
+# 「dot」がミドルネームというわけではない
+----
+{image: legal.jpg}
+----
+* But "Ingy dot Net" is not my "real" name
+# だが、「Ingy dot Net」が本当の本名だというわけではない
+* My real name is *Ingy do"t Net*
+# 本当の名前は「Ingy do"t Net」
+* But the US Government is ASCII only
+# だがアメリカ政府はASCIIしかわからない
+* Well more like EBCDIC only
+# EBCDICだけ、といったほうが正しいかも
+----
+== Degrade Gracefully
+# 潔くダウングレード
+* Ingy 2.0 degrades gracefully
+# というわけで潔くダウングレードした
+* In a fully compliant environment it is Ingy do"t Net
+# 環境が対応していればIngy do"t Netが正しい
+* In reality it takes many forms
+# 実世界ではいろいろに表記される
+----
+INGY DOT NET
+----
+{image: passport.jpg}
+----
+DOTNET, INGY
+----
+IngyDotNet
+----
+== Non Graceful Degradation
+# だめなダウングレードもある
+* Sometimes things just go wrong
+# なにかがうまくいかないことがままある
+* 
+----
+Ingy d?t Net
+----
+Ingy dt Net
+----
+Ingy D Net
+----
+Ingy.Net
+----
+Ingy Net
+----
++orz!!
+----
+Thank you Mr. Net
+----
+== Kwiki 2.0
+
+There once was a project called Kwiki,
+# 以前Kwikiというプロジェクトがあった
+Whose maintenance proved to be tricky.
+# メンテのやりにくさは折り紙つき
+  To make the thing go,
+# 前進するため
+  They tacked on "2.0".
+# 「2.0」をつけた
+And now it's one heck of a wiki.
+# いまではすごいwikiになった
+----
+== Kwiki 1.0
+
+Kwiki is to Wiki
+# WikiにとってのKwikiは
+as Perl is to Programming
+# プログラミングにとってのPerl
+
+* Kwiki is not so much about being a wiki
+# Kwikiはwikiそのものというわけではない
+* Kwiki is all about being a Lego set
+# Kwikiはつまりはレゴ
+* Kwiki is about being easy and fun to play with
+# Kwikiはやさしく楽しく遊べる
+* Kwiki is about a community
+# Kwikiはコミュニティ
+----
+== Kwiki 1.0
+
+* Kwiki was a successful CPAN Project
+# KwikiはCPANのプロジェクトとして成功した
+* > 150 CPAN Dists - `Kwiki-*`
+# Kwiki-*というディストリビューションは150以上
+
+----
+== Kwiki 1.0
+
+* Kwiki-0.38 was released April 2005
+# バージョン0.38は2005年4月リリース
+* But Kwiki was too stable
+# Kwikiは超安定していた
+* Stable == Dead
+# 安定＝死亡
+
+----
+== Kwiki 1.0
+
+* But being dead is not always bad
+# 死亡即ち悪、だとは限らない
+* Because you can then be reborn
+# 生まれ変わらせられるから
+* Enter Kwiki 2.0
+# Kwiki2.0の登場
+
+----
+== K2
+
+{image: k2.jpg}
+
+----
+== Kwiki 2.0
+
+* In December 2006 I decided to make Kwiki come back to life
+# 2006年12月、Kwikiにまた生命を吹き込もうと思った
+* I started a new brand new kwiki.org wiki
+# kwiki.orgで新しいwikiをはじめた
+* I set up a Trac for project planning
+# プランニングのためにTracをセットアップし
+* I started a new svn repo
+# 新しいsvnのレポジトリを作り
+* I gave all the #kwiki people commit bits
+# #kwikiの人すべてにコミット権をあげた
+----
+== No CPAN
+# CPANから独立
+* I decided to move away from CPAN for a while
+# 当面CPANは使わないことにした
+* The Kwiki on CPAN is at a stable state
+# CPANにあるKwikiは安定したバージョン
+* Why muck with it?
+# それをわざわざ汚すことはない
+* Hacking on SVN is agile
+# SVNでのハックは速くできる
+----
+== Kwiki Problems
+# Kwikiの問題
+* Too Many Modules to Install
+# モジュールのインストールが多すぎ
+* Kwiki is Slowie
+# Kwikiは遅すぎ
+* No Documentation
+# ドキュメントがない
+* Too many plugins to choose from
+# プラグインの取捨選択が大変
+* Some bad abstractions
+# 抽象化の仕方も変
+
+----
+== Kwiki 2.0 Focus
+# Kwiki 2.0のねらい
+* Too Many Modules to Install
+# モジュールのインストールが多すぎ
+** Make Kwiki Easy To Install
+# インストールを簡単にしよう
+* Kwiki is Slowie
+# Kwikiは遅すぎ
+** Make Kwiki Faster
+# 速くしよう
+* No Documentation
+# ドキュメントがない
+** Document Kwiki
+# ドキュメントを書こう
+* Too many plugins to choose from
+# プラグインの取捨選択が大変
+** Kwiki Flavors
+# Kwikiフレーバー
+* Some bad abstractions
+# 抽象化の仕方が変
+** Kwiki::Boot - TMTOWTDI
+# Kwiki::Boot - TMTOWTDI
+
+----
+== Kwiki Installation
+# Kwikiのインストール
+* Kwiki 2.0 currently comes with over 500 perl modules.
+# Kwiki 2.0はいまのところ500以上のモジュールを使う
+* It takes < 1 minute to install!
+# でもインストールは1分もかからない
+
+----
+== Kwiki Software Installation Instructions
+# Kwikiのインストール方法
+
+    > svn checkout http://svn.kwiki.org/kwiki/trunk ~/src/kwiki
+    > export PATH=~/src/kwiki/bin:$PATH
+
+* That's it.
+# これだけ
+* You get *Spork* for free!
+# Sporkもおまけについてくる
+----
+== Kwiki Wiki Creation Instructions
+# Wikiの作成方法
+
+    > kwiki -new ~/Sites/my-wiki
+
+    > vim ~/Sites/my-wiki/plugins
+    > kwiki -update ~/Sites/my-wiki
+
+    > kwiki -start ~/Sites/my-wiki
+
+----
+== Kwiki Software Upgrade Instructions
+# バージョンアップの方法
+    > svn up
+
+----
+== The Great Kwiki Source Code Reorg
+# ソースコードの再編成
+
+* I gathered all the Kwiki source code:
+# Kwikiの全ソースコードを集めた
+** All Old SVN Kwiki modules - in separate author directories
+# 古いSVNのモジュール群（開発者それぞれのディレクトリに入っているもの）
+** All CPAN Kwiki modules
+# CPANのKwikiモジュール群
+** Some Kwiki hacks lying around on various machines
+# いろいろなマシンに散らばっているコードも拾い
+* I grabbed all the CPAN modules that Kwiki uses
+# Kwikiが使うCPANモジュールも全部持ってきた
+* I stole some modules from Socialtext
+# 一部のモジュールはSocialtextから拝借
+----
+== Enter the Symlink
+# Symlinkの世界へ
+
+* All 500 modules are "preinstalled".
+# この500のモジュールは「プレインストール」してある
+* I made a `lib` tree with symlinks to all the modules in place
+# libの下にツリーを作り、このモジュール群へのsymlinkを作った
+* Kwiki knows where to find this huge module tree
+# Kwikiはどこにこの巨大モジュール群のツリーがあるか知っているので
+* Installing Kwiki has zero dependencies
+# Kwikiのインストールは依存関係がない
+* Installing Kwiki has zero impact on your system
+# Kwikiをインストールしてもシステムは壊れない
+* It is pretty much guaranteed to work
+# 動作は保証つき
+
+----
+== Win32 and Perl
+# Win32とPerl
+
+* Symlinks don't work on MSWin32 (Windows)
+# symlinkはMSWin32（Windows）では動かない
+* Neither does Kwiki
+# だからKwikiも動かない
+* Kwiki is a server app
+# Kwikiはサーバ側アプリケーション
+* Unix is for servers
+# Unixもサーバ側OS
+* Also Kwiki requires Perl 5.8.3
+# KwikiはPerl 5.8.3が必要
++* Why make life so hard?
+# 面倒
+* No CPAN, No old Perl, No Windows == EASY!
+# CPANも古いPerlもWindowsもみんな忘れよう==万歳！
+
+----
+== Kwiki is Kwiker
+# Kwikiはクイックな動作をするようになった
+* Ingy wrote Kwiki::Cache::Formatter
+# IngyがKwiki::Cache::Formatterを書き
+* Miyagawa wrote Kwiki::FastCGI
+# MiyagawaさんがKwiki::FastCGIを書いた
+----
+== Kwiki::FastCGI
+
+* FastCGI Rocks!
+# FastCGIはすごい
+
+== Kwiki::FastCGI
+
+----
+index.cgi
+
+    use Kwiki::Boot;
+    Kwiki::Boot->debug->boot->kwiki->process;
+
++index.fcgi
+
+    use Kwiki::Boot;
+    use CGI::Fast;
+    while ( my $cgi = CGI::Fast->new ) {
+        Kwiki::Boot->debug->boot->kwiki->process;
+    }
+
+----
+== Kwiki Documentation - Doolittle
+# Kwikiのドキュメント：Doolittle
+
+* http://doolittle.kwiki.org
+* Kwiki::Doolittle::Formatter
+** Kwiki::Formatter:Pod
+* Pull all POD out of each module
+# 各モジュールに入っているPODをすべて抽出
+* Symlink into a bi Kwiki database of documentation
+# Kwikiの文書庫へSymlinkする
+
+----
+== Kwiki Flavors
+# Kwikiフレーバー
+
+* There are too many Kwiki plugins
+# プラグインありすぎ
+* Which ones do you want to start with?
+# 最初にどれを使えばいいの
+* Kwiki Flavors are prebuilt configurations
+# Kwikiフレーバーとはあらかじめビルドされた設定の数々
+* You can start with a known flavor
+# はじめは有名なフレーバーを使えばよい
+* And then customize it
+# で、後からカスタマイズする
+* You can save your own flavors
+# その結果は新たにフレーバーとして保存できるし
+* Kwiki flavors are inheritable
+# フレーバーの継承もできる
+
+----
+== Kwiki Configuration Inheritance
+# 設定の継承
+
+* In Kwiki 2.0, Kwiki installations form an inheritance chain.
+#Kwiki 2.0ではインストールをすれば継承の連鎖ができる
+* The following files are inherited:
+# 継承されるファイルの一覧：
+** plugins
+# プラグイン
+** config
+# 設定
+** template
+# テンプレート
+** css
+# CSS
+** javascript
+# javascript
+** theme
+# テーマ
+* Your kwiki inherits from a flavor, which inherits from a base.
+# Kwikiはフレーバーを継承し、フレーバーはオリジナルを継承する
+* You can make subwikis which inherit from your wiki
+# 自分のWikiを継承した子Wikiも作れる
+
+----
+== Kwiki Configuration Inheritance
+# Kwikiの設定の継承
+
+* Inheritance is all done with symlinks.
+# 継承はすべてsymlinkで実現される
+* Every level has `www/__` symlink.
+# すべてのレベルには`www/__`というsymlinkがある
+* `href="www/__/__/css/formatter.css"`
+* Kwiki::Paths knows how to find everything
+# Kwiki::Pathsはファイルを見つける方法を知っている
+
+----
+== Kwiki::Boot
+
+* Kwiki has a certain core set of plugins
+# Kwikiは中核のプラグインをもっている
+* The Kwiki process depends on those plugins
+# Kwikiのプロセスはこれに依存
+* How do I change those core things?
+# どうやってこれを変更する？
+** Without breaking existing Kwiki sites
+# 既存のKwikiサイトを壊すことなく
+----
+== Kwiki::Boot
+
+* I put all the startup code in Kwiki::Boot::V1
+# スタートアップのコードは全部Kwiki::Boot::V1に入れておく
+* Then I can write Kwiki::Boot::V2 to do new stuff
+# これで新しいのをKwiki::Boot::V2に入れられる
+** V2 sets up a different set of core plugins
+# V2はまた別の中核のプラグインをセットアップ
+* The Flavors stuff is all V2
+# フレーバーはすべてV2へ
+* You can write your own Kwiki::Boot module
+# 自分で自前のKwiki::Bootモジュールを書いてもいい
+
+----
+== Kwiki::Boot
+
+* How do you switch to a different Boot module?
+# ブートモジュールの切り替えはどうするか
+* KWIKI_BOOT=V2
+
+    KWIKI_BOOT=V2 kwiki -new ~/Sites/my-wiki
+
+* After `-new`, environment vars are cached in `kwiki.env`
+# -newをつけると環境変数がkwiki.envにキャッシュされる
+
+----
+== Spork
+
+* These slides were done using Spork
+# このスライドはSporkで書いてある
+* The Spork project is related to Kwiki
+# SporkはKwikiの関連プロジェクト
+* They both inherit from Spoon
+# 両方ともSpoonから継承
+** A Spork ISA Spoon
+# SporkはSpoon
+* Spork is now moved into K2
+# SporkはK2に移動した
+* So if you install Kwiki 2.0, then:
+# だから、Kwiki 2.0をインストールしたら
+
+    spork -new KwikiAndTheSymlink
+
+----
+== Future Kwiki Plans
+# これからの計画
+
+* Implement MediaWiki with Kwiki
+# KwikiでMediaWikiを実現
+* Completely Customizable Formatter
+# どこまでもカスタマイズ自由なフォーマッタ
+** Make your own markup
+# 自分でマークアップを定義
+* Get everything back to CPAN
+# またCPANに返す
+----
+The END Draweth Nigh.
+# もうすぐ終わり
+Kwiki Loves You. Love Her Back.
+# Kwikiはみなさんを愛している。みなさんもKwikiをかわいがってあげてください
+Have You A Question?
+# ご質問は？
+.pre

@@ -1,0 +1,447 @@
+
+<font size="+4">Debugging</font></p>
+
+<p align=center>the</p>
+
+<p align=center><font size="+4">de Bruijn Sequence</font></p>
+
+<p align=center><img src="bigmed-sigils-black.gif">
+----------------------------------------------------------------
+
+The Extreme Programming nuts sometimes say:
+
+----------------------------------------------------------------
+
+"Programming is the art of debugging an empty file"
+
+----------------------------------------------------------------
+
+What they really mean is:
+
+----------------------------------------------------------------
+
+They want you to write the tests first.
+
+----------------------------------------------------------------
+
+Then your empty source file fails all the tests.
+
+----------------------------------------------------------------
+
+Then you write some code to fix some test failures.
+
+----------------------------------------------------------------
+
+Then you write some more code and more tests pass.
+
+----------------------------------------------------------------
+
+Eventually, all the tests pass.
+
+----------------------------------------------------------------
+
+Then you are done.
+
+----------------------------------------------------------------
+
+I think that sounds really hard.
+
+----------------------------------------------------------------
+
+I have a better idea.
+
+----------------------------------------------------------------
+
+How do you carve a sculpture of an elephant?
+
+----------------------------------------------------------------
+
+An old joke says:
+
+----------------------------------------------------------------
+
+1. Start with a block of marble.</p>
+
+<p align=center><img src="marble.jpg">
+
+----------------------------------------------------------------
+
+2. Cut away everything that does not look like an elephant.</p>
+
+<p align=center><img src="elephant.jpg">
+----------------------------------------------------------------
+
+Ha ha.
+
+----------------------------------------------------------------
+
+Very funny.
+
+----------------------------------------------------------------
+
+But that approach <i>worked</i> for Michelangelo.<br>
+
+<img src="michelangelo.jpg">
+----------------------------------------------------------------
+
+<img src="unfinished.jpg">
+
+----------------------------------------------------------------
+
+He even said that he could see the statue, latent in the block of marble.
+
+----------------------------------------------------------------
+
+And he said all he did was let it out.
+
+----------------------------------------------------------------
+
+Idea:
+
+----------------------------------------------------------------
+
+Instead of <i>adding</i> code to an empty file until it
+passes the tests...
+
+----------------------------------------------------------------
+
+Why not <i>remove</i> code from a <i>full</i> file?
+
+----------------------------------------------------------------
+
+That's gotta be easier.
+
+----------------------------------------------------------------
+
+It's always easier to delete stuff than to add it.
+
+----------------------------------------------------------------
+
+<img src="Fiery.jpg">
+
+----------------------------------------------------------------
+
+But where do you get a full file to start with?
+
+----------------------------------------------------------------
+
+Optimally, it should contain <i>every</i> possible sequence of characters.
+
+----------------------------------------------------------------
+
+In college, I heard you should always drink beer <i>after</i> whiskey.
+
+----------------------------------------------------------------
+
+Never the other way around.
+
+----------------------------------------------------------------
+
+Similarly, always drink whiskey <i>before</i> wine.
+
+----------------------------------------------------------------
+
+Otherwise, you'll get hung over.
+
+----------------------------------------------------------------
+
+Later, I wanted to test this hypothesis.
+
+----------------------------------------------------------------
+
+Idea: drink every possible combination, see what happens.
+
+----------------------------------------------------------------
+
+Problem:  That's 6 combinations</p>
+
+<table align=center>
+  <tr><td><img src="beer.gif"></td><td><img src="whiskey.gif"></td>
+      <td><img src="beer.gif"></td><td><img src="wine.gif"></td>
+      <td><img src="whiskey.gif"></td><td><img src="beer.gif"></td>
+  </tr>
+  <tr><td><img src="whiskey.gif"></td><td><img src="wine.gif"></td>
+      <td><img src="wine.gif"></td><td><img src="beer.gif"></td>
+      <td><img src="wine.gif"></td><td><img src="whiskey.gif"></td></tr>
+</table>
+
+----------------------------------------------------------------
+
+That's too much booze, even for me.
+
+----------------------------------------------------------------
+
+But wait.
+
+----------------------------------------------------------------
+
+I can mulitask.
+
+----------------------------------------------------------------
+
+I don't need to do this:
+
+<table align=center>
+  <tr><td><img src="whiskey.gif"></td><td><img src="wine.gif"></td>
+  <td><img src="wine.gif"></td><td><img src="beer.gif"></td></tr>
+</table>
+      
+----------------------------------------------------------------
+
+If the theory is correct, I'll get just as sick doing this:
+
+<table align=center>
+  <tr><td><img src="whiskey.gif"></td><td><img src="wine.gif"></td>
+ <td><img src="beer.gif"></td></tr>
+</table>
+      
+----------------------------------------------------------------
+
+And instead of twelve drinks:
+
+<table align=center>
+  <tr><td><img src="beer.gif"></td><td><img src="whiskey.gif"></td>
+      <td><img src="beer.gif"></td><td><img src="wine.gif"></td>
+      <td><img src="whiskey.gif"></td><td><img src="beer.gif"></td>
+  </tr>
+  <tr><td><img src="whiskey.gif"></td><td><img src="wine.gif"></td>
+      <td><img src="wine.gif"></td><td><img src="beer.gif"></td>
+      <td><img src="wine.gif"></td><td><img src="whiskey.gif"></td></tr>
+</table>
+
+
+----------------------------------------------------------------
+
+I need only take seven:<br>
+
+<table align=center>
+  <tr><td><img src="beer.gif"></td><td><img src="whiskey.gif"></td>
+      <td><img src="wine.gif"></td>
+      <td><img src="beer.gif"></td>
+      <td><img src="wine.gif"></td><td>
+      <td><img src="whiskey.gif"></td>
+      <td><img src="beer.gif"></td></tr>
+</table>
+
+----------------------------------------------------------------
+
+There are six pairs of drinks.
+
+----------------------------------------------------------------
+
+This is the shortest possible sequence that contains each of the pairs.<br>
+
+<table align=center>
+  <tr><td><img src="beer.gif"></td><td><img src="whiskey.gif"></td>
+      <td><img src="wine.gif"></td>
+      <td><img src="beer.gif"></td>
+      <td><img src="wine.gif"></td><td>
+      <td><img src="whiskey.gif"></td>
+      <td><img src="beer.gif"></td></tr>
+</table>
+
+----------------------------------------------------------------
+
+It's called the <i>de Bruijn</i> sequence.<br>
+
+<table align=center>
+  <tr><td><img src="beer.gif"></td><td><img src="whiskey.gif"></td>
+      <td><img src="wine.gif"></td>
+      <td><img src="beer.gif"></td>
+      <td><img src="wine.gif"></td><td>
+      <td><img src="whiskey.gif"></td>
+      <td><img src="beer.gif"></td></tr>
+</table>
+
+----------------------------------------------------------------
+
+Named after noted drunk mathematician N.G. de Bruijn:<br>
+
+<img src="deBruijn.gif">
+
+----------------------------------------------------------------
+
+Similarly, I can make files this way.
+
+----------------------------------------------------------------
+
+There are only 97 characters in a program:</p>
+
+<p align=center>
+
+<tt>
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+1234567890_
+\|`~#& () [] {} &lt;&gt; -+*/= '" ;:,.?! $@%
+SPC TAB NL
+</tt>
+
+----------------------------------------------------------------
+
+There are 97<sup>4</sup> = 88,529,281 sequences of 4 characters.
+
+----------------------------------------------------------------
+
+That's over 337 Mib.
+
+----------------------------------------------------------------
+
+But if we use the de Bruijn sequence, we eliminate the duplicates
+
+----------------------------------------------------------------
+
+Now it's only 84 MiB
+
+----------------------------------------------------------------
+
+It's quite feasible to keep a few copies of this around on your
+development machine
+
+----------------------------------------------------------------
+
+Any program can be generated from this file...
+
+----------------------------------------------------------------
+
+Via a suitable sequence of copies and deletes.
+
+----------------------------------------------------------------
+
+Here's what it looks like:
+
+----------------------------------------------------------------
+</font>
+
+<pre>
+aab55bo5oobR5RoRRb454o4R44bp5popRp4ppb858o8R848p88bl5lolRl4lpl8llb959o9R949p989l99bm5momRm4mpm8mlm9mmb353o3R343p383l393m33b]5]o]R]4]p]8]l]9]m]3]]bO5OoORO4OpO8OlO9OmO3O]OObn5nonRn4npn8nln9nmn3n]nOnnb656o6R646p686l696m636]6O6n66bA5AoARA4ApA8AlA9AmA3A]AOAnA6AAbi5ioiRi4ipi8ili9imi3i]iOini6iAiibf5fofRf4fpf8flf9fmf3f]fOfnf6fAfiffb;5;o;R;4;p;8;l;9;m;3;];O;n;6;A;i;f;;b@5@o@R@4@p@8@l@9@m@3@]@O@n@6@A@i@f@;@@b.5.o.R.4.p.8.l.9.m.3.].O.n.6.A.i.f.;.@..b050o0R040p080l090m030]0O0n060A0i0f0;0@0.00bh5hohRh4hph8hlh9hmh3h]hOhnh6hAhihfh;h@h.h0hhbV5VoVRV4VpV8VlV9VmV3V]VOVnV6VAViVfV;V@V.V0VhVVbx5xoxRx4xpx8xlx9xmx3x]xOxnx6xAxixfx;x@x.x0xhxVxxb*5*o*R*4*p*8*l*9*m*3*]*O*n*6*A*i*f*;*@*.*0*h*V*x**b:5:o:R:4:p:8:l:9:m:3:]:O:n:6:A:i:f:;:@:.:0:h:V:x:*::br5rorRr4rpr8rlr9rmr3r]rOrnr6rArirfr;r@r.r0rhrVrxr*r:rrbF5FoFRF4FpF8FlF9FmF3F]FOFnF6FAFiFfF;F@F.F0FhFVFxF*F:FrFFbU5UoURU4UpU8UlU9UmU3U]UOUnU6UAUiUfU;U@U.U0UhUVUxU*U:UrUFUUb`5`o`R`4`p`8`l`9`m`3`]`O`n`6`A`i`f`;`@`.`0`h`V`x`*`:`r`F`U``b(5(o(R(4(p(8(l(9(m(3(](O(n(6(A(i(f(;(@(.(0(h(V(x(*(:(r(F(U(`((bG5GoGRG4GpG8GlG9GmG3G]GOGnG6GAGiGfG;G@G.G0GhGVGxG*G:GrGFGUG`G(GGbI5IoIRI4IpI8IlI9ImI3I]IOInI6IAIiIfI;I@I.I0IhIVIxI*I:IrIFIUI`I(IGIIb&5&o&R&4&p&8&l&9&m&3&]&O&n&6&A&i&f&;&@&.&0&h&V&x&*&:&r&F&U&`&(&G&I&&bc5cocRc4cpc8clc9cmc3c]cOcnc6cAcicfc;c@c.c0chcVcxc*c:crcFcUc`c(cGcIc&ccbH5HoHRH4HpH8HlH9HmH3H]HOHnH6HAHiHfH;H@H.H0HhHVHxH*H:HrHFHUH`H(HGHIH&HcHHb?5?o?R?4?p?8?l?9?m?3?]?O?n?6?A?i?f?;?@?.?0?h?V?x?*?:?r?F?U?`?(?G?I?&?c?H??b
+5
+o
+R
+4
+p
+8
+l
+9
+m
+3
+]
+O
+n
+6
+A
+i
+f
+;
+@
+.
+0
+h
+V
+x
+*
+:
+r
+F
+U
+`
+(
+G
+I
+&
+c
+H
+?
+
+bB5BoBRB4BpB8BlB9BmB3B]BOBnB6BABiBfB;B@B.B0BhBVBxB*B:BrBFBUB`B(BGBIB&BcBHB?B
+BBbs5sosRs4sps8sls9sms3s]sOsns6sAsisfs;s@s.s0shsVsxs*s:srsFsUs`s(sGsIs&scsHs?s
+sBssbv5vovRv4vpv8vlv9vmv3v]vOvnv6vAvivfv;v@v.v0vhvVvxv*v:vrvFvUv`v(vGvIv&vcvHv?v
+vBvsvvb&gt;5&gt;o&gt;R&gt;4&gt;p&gt;8&gt;l&gt;9&gt;m&gt;3&gt;]&gt;O&gt;n&gt;6&gt;A&gt;i&gt;f&gt;;&gt;@&gt;.&gt;0&gt;h&gt;V&gt;x&gt;*&gt;:&gt;r&gt;F&gt;U&gt;`&gt;(&gt;G&gt;I&gt;&&gt;c&gt;H&gt;?&gt;
+&gt;B&gt;s&gt;v&gt;&gt;bW5WoWRW4WpW8WlW9WmW3W]WOWnW6WAWiWfW;W@W.W0WhWVWxW*W:WrWFWUW`W(WGWIW&WcWHW?W
+WBWsWvW&gt;WWbt5totRt4tpt8tlt9tmt3t]tOtnt6tAtitft;t@t.t0thtVtxt*t:trtFtUt`t(tGtIt&tctHt?t
+tBtstvt&gt;tWttb&lt;5&lt;o&lt;R&lt;4&lt;p&lt;8&lt;l&lt;9&lt;m&lt;3&lt;]&lt;O&lt;n&lt;6&lt;A&lt;i&lt;f&lt;;&lt;@&lt;.&lt;0&lt;h&lt;V&lt;x&lt;*&lt;:&lt;r&lt;F&lt;U&lt;`&lt;(&lt;G&lt;I&lt;&&lt;c&lt;H&lt;?&lt;
+&lt;B&lt;s&lt;v&lt;&gt;&lt;W&lt;t&lt;&lt;bk5kokRk4kpk8klk9kmk3k]kOknk6kAkikfk;k@k.k0khkVkxk*k:krkFkUk`k(kGkIk&kckHk?k
+kBkskvk&gt;kWktk&lt;kkb151o1R141p181l191m131]1O1n161A1i1f1;1@1.101h1V1x1*1:1r1F1U1`1(1G1I1&1c1H1?1
+1B1s1v1&gt;1W1t1&lt;1k11bu5uouRu4upu8ulu9umu3u]uOunu6uAuiufu;u@u.u0uhuVuxu*u:uruFuUu`u(uGuIu&ucuHu?u
+uBusuvu&gt;uWutu&lt;uku1uubZ5ZoZRZ4ZpZ8ZlZ9ZmZ3Z]ZOZnZ6ZAZiZfZ;Z@Z.Z0ZhZVZxZ*Z:ZrZFZUZ`Z(ZGZIZ&ZcZHZ?Z
+ZBZsZvZ&gt;ZWZtZ&lt;ZkZ1ZuZZb	5	o	R	4	p	8	l	9	m	3	]	O	n	6	A	i	f	;	@	.	0	h	V	x	*	:	r	F	U	`	(	G	I	&	c	H	?	
+	B	s	v	&gt;	W	t	&lt;	k	1	u	Z		bj5jojRj4jpj8jlj9jmj3j]jOjnj6jAjijfj;j@j.j0jhjVjxj*j:jrjFjUj`j(jGjIj&jcjHj?j
+jBjsjvj&gt;jWjtj&lt;jkj1jujZj	jjb252o2R242p282l292m232]2O2n262A2i2f2;2@2.202h2V2x2*2:2r2F2U2`2(2G2I2&2c2H2?2
+2B2s2v2&gt;2W2t2&lt;2k212u2Z2	2j22bN5NoNRN4NpN8NlN9NmN3N]NONnN6NANiNfN;N@N.N0NhNVNxN*N:NrNFNUN`N(NGNIN&NcNHN?N
+NBNsNvN&gt;NWNtN&lt;NkN1NuNZN	NjN2NNb=5=o=R=4=p=8=l=9=m=3=]=O=n=6=A=i=f=;=@=.=0=h=V=x=*=:=r=F=U=`=(=G=I=&=c=H=?=
+=B=s=v=&gt;=W=t=&lt;=k=1=u=Z=	=j=2=N==bT5ToTRT4TpT8TlT9TmT3T]TOTnT6TATiTfT;T@T.T0ThTVTxT*T:TrTFTUT`T(TGTIT&TcTHT?T
+TBTsTvT&gt;TWTtT&lt;TkT1TuTZT	TjT2TNT=TTb}5}o}R}4}p}8}l}9}m}3}]}O}n}6}A}i}f};}@}.}0}h}V}x}*}:}r}F}U}`}(}G}I}&}c}H}?}
+}B}s}v}&gt;}W}t}&lt;}k}1}u}Z}	}j}2}N}=}T}}b'5'o'R'4'p'8'l'9'm'3']'O'n'6'A'i'f';'@'.'0'h'V'x'*':'r'F'U'`'('G'I'&'c'H'?'
+'B's'v'&gt;'W't'&lt;'k'1'u'Z'	'j'2'N'='T'}''b)5)o)R)4)p)8)l)9)m)3)])O)n)6)A)i)f);)@).)0)h)V)x)*):)r)F)U)`)()G)I)&)c)H)?)
+)B)s)v)&gt;)W)t)&lt;)k)1)u)Z)	)j)2)N)=)T)})'))b+5+o+R+4+p+8+l+9+m+3+]+O+n+6+A+i+f+;+@+.+0+h+V+x+*+:+r+F+U+`+(+G+I+&+c+H+?+
++B+s+v+&gt;+W+t+&lt;+k+1+u+Z+	+j+2+N+=+T+}+'+)++b_5_o_R_4_p_8_l_9_m_3_]_O_n_6_A_i_f_;_@_._0_h_V_x_*_:_r_F_U_`_(_G_I_&_c_H_?_
+_B_s_v_&gt;_W_t_&lt;_k_1_u_Z_	_j_2_N_=_T_}_'_)_+__bP5PoPRP4PpP8PlP9PmP3P]POPnP6PAPiPfP;P@P.P0PhPVPxP*P:PrPFPUP`P(PGPIP&PcPHP?P
+PBPsPvP&gt;PWPtP&lt;PkP1PuPZP	PjP2PNP=PTP}P'P)P+P_PPb#5#o#R#4#p#8#l#9#m#3#]#O#n#6#A#i#f#;#@#.#0#h#V#x#*#:#r#F#U#`#(#G#I#&#c#H#?#
+#B#s#v#&gt;#W#t#&lt;#k#1#u#Z#	#j#2#N#=#T#}#'#)#+#_#P##b%5%o%R%4%p%8%l%9%m%3%]%O%n%6%A%i%f%;%@%.%0%h%V%x%*%:%r%F%U%`%(%G%I%&%c%H%?%
+%B%s%v%&gt;%W%t%&lt;%k%1%u%Z%	%j%2%N%=%T%}%'%)%+%_%P%#%%bX5XoXRX4XpX8XlX9XmX3X]XOXnX6XAXiXfX;X@X.X0XhXVXxX*X:XrXFXUX`X(XGXIX&XcXHX?X
+XBXsXvX&gt;XWXtX&lt;XkX1XuXZX	XjX2XNX=XTX}X'X)X+X_XPX#X%XXb{5{o{R{4{p{8{l{9{m{3{]{O{n{6{A{i{f{;{@{.{0{h{V{x{*{:{r{F{U{`{({G{I{&{c{H{?{
+{B{s{v{&gt;{W{t{&lt;{k{1{u{Z{	{j{2{N{={T{}{'{){+{_{P{#{%{X{{b 5 o R 4 p 8 l 9 m 3 ] O n 6 A i f ; @ . 0 h V x * : r F U ` ( G I & c H ? 
+ B s v &gt; W t &lt; k 1 u Z 	 j 2 N = T } ' ) + _ P # % X {  b!5!o!R!4!p!8!l!9!m!3!]!O!n!6!A!i!f!;!@!.!0!h!V!x!*!:!r!F!U!`!(!G!I!&!c!H!?!
+!B!s!v!&gt;!W!t!&lt;!k!1!u!Z!	!j!2!N!=!T!}!'!)!+!_!P!#!%!X!{! !!bL5LoLRL4LpL8LlL9LmL3L]LOLnL6LALiLfL;L@L.L0LhLVLxL*L:LrLFLUL`L(LGLIL&LcLHL?L
+LBLsLvL&gt;LWLtL&lt;LkL1LuLZL	LjL2LNL=LTL}L'L)L+L_LPL#L%LXL{L L!LLb[5[o[R[4[p[8[l[9[m[3[][O[n[6[A[i[f[;[@[.[0[h[V[x[*[:[r[F[U[`[([G[I[&[c[H[?[
+[B[s[v[&gt;[W[t[&lt;[k[1[u[Z[	[j[2[N[=[T[}['[)[+[_[P[#[%[X[{[ [![L[[bC5CoCRC4CpC8ClC9CmC3C]COCnC6CACiCfC;C@C.C0ChCVCxC*C:CrCFCUC`C(CGCIC&CcCHC?C
+CBCsCvC&gt;CWCtC&lt;CkC1CuCZC	CjC2CNC=CTC}C'C)C+C_CPC#C%CXC{C C!CLC[CCbM5MoMRM4MpM8MlM9MmM3M]MOMnM6MAMiMfM;M@M.M0MhMVMxM*M:MrMFMUM`M(MGMIM&McMHM?M
+MBMsMvM&gt;MWMtM&lt;MkM1MuMZM	MjM2MNM=MTM}M'M)M+M_MPM#M%MXM{M M!MLM[MCMMbQ5QoQRQ4QpQ8QlQ9QmQ3Q]QOQnQ6QAQiQfQ;Q@Q.Q0QhQVQxQ*Q:QrQFQUQ`Q(QGQIQ&QcQHQ?Q
+QBQsQvQ&gt;QWQtQ&lt;QkQ1QuQZQ	QjQ2QNQ=QTQ}Q'Q)Q+Q_QPQ#Q%QXQ{Q Q!QLQ[QCQMQQb~5~o~R~4~p~8~l~9~m~3~]~O~n~6~A~i~f~;~@~.~0~h~V~x~*~:~r~F~U~`~(~G~I~&~c~H~?~
+~B~s~v~&gt;~W~t~&lt;~k~1~u~Z~	~j~2~N~=~T~}~'~)~+~_~P~#~%~X~{~ ~!~L~[~C~M~Q~~b-5-o-R-4-p-8-l-9-m-3-]-O-n-6-A-i-f-;-@-.-0-h-V-x-*-:-r-F-U-`-(-G-I-&-c-H-?-
+-B-s-v-&gt;-W-t-&lt;-k-1-u-Z-	-j-2-N-=-T-}-'-)-+-_-P-#-%-X-{- -!-L-[-C-M-Q-~--b\5\o\R\4\p\8\l\9\m\3\]\O\n\6\A\i\f\;\@\.\0\h\V\x\*\:\r\F\U\`\(\G\I\&\c\H\?\
+\B\s\v\&gt;\W\t\&lt;\k\1\u\Z\	\j\2\N\=\T\}\'\)\+\_\P\#\%\X\{\ \!\L\[\C\M\Q\~\-\\bw5wowRw4wpw8wlw9wmw3w]wOwnw6wAwiwfw;w@w.w0whwVwxw*w:wrwFwUw`w(wGwIw&wcwHw?w
+wBwswvw&gt;wWwtw&lt;wkw1wuwZw	wjw2wNw=wTw}w'w)w+w_wPw#w%wXw{w w!wLw[wCwMwQw~w-w\wwb$5$o$R$4$p$8$l$9$m$3$]$O$n$6$A$i$f$;$@$.$0$h$V$x$*$:$r$F$U$`$($G$I$&$c$H$?$
+$B$s$v$&gt;$W$t$&lt;$k$1$u$Z$	$j$2$N$=$T$}$'$)$+$_$P$#$%$X${$ $!$L$[$C$M$Q$~$-$\$w$$bz5zozRz4zpz8zlz9zmz3z]zOznz6zAzizfz;z@z.z0zhzVzxz*z:zrzFzUz`z(zGzIz&zczHz?z
+zBzszvz&gt;zWztz&lt;zkz1zuzZz	zjz2zNz=zTz}z'z)z+z_zPz#z%zXz{z z!zLz[zCzMzQz~z-z\zwz$zzbq5qoqRq4qpq8qlq9qmq3q]qOqnq6qAqiqfq;q@q.q0qhqVqxq*q:qrqFqUq`q(qGqIq&qcqHq?q
+qBqsqvq&gt;qWqtq&lt;qkq1quqZq	qjq2qNq=qTq}q'q)q+q_qPq#q%qXq{q q!qLq[qCqMqQq~q-q\qwq$qzqqbbacad5dodRd4dpd8dld9dmd3d]dOdnd6dAdidfd;d@d.d0dhdVdxd*d:drdFdUd`d(dGdId&dcdHd?d
+dBdsdvd&gt;dWdtd&lt;dkd1dudZd	djd2dNd=dTd}d'd)d+d_dPd#d%dXd{d d!dLd[dCdMdQd~d-d\dwd$dzdqdbdD5DoDRD4DpD8DlD9DmD3D]DODnD6DADiDfD;D@D.D0DhDVDxD*D:DrDFDUD`D(DGDID&DcDHD?D
+DBDsDvD&gt;DWDtD&lt;DkD1DuDZD	DjD2DND=DTD}D'D)D+D_DPD#D%DXD{D D!DLD[DCDMDQD~D-D\DwD$DzDqDbDDd^5^o^R^4^p^8^l^9^m^3^]^O^n^6^A^i^f^;^@^.^0^h^V^x^*^:^r^F^U^`^(^G^I^&^c^H^?^
+^B^s^v^&gt;^W^t^&lt;^k^1^u^Z^	^j^2^N^=^T^}^'^)^+^_^P^#^%^X^{^ ^!^L^[^C^M^Q^~^-^\^w^$^z^q^b^D^^d|5|o|R|4|p|8|l|9|m|3|]|O|n|6|A|i|f|;|@|.|0|h|V|x|*|:|r|F|U|`|(|G|I|&|c|H|?|
+|B|s|v|&gt;|W|t|&lt;|k|1|u|Z|	|j|2|N|=|T|}|'|)|+|_|P|#|%|X|{| |!|L|[|C|M|Q|~|-|\|w|$|z|q|b|D|^||dJ5JoJRJ4JpJ8JlJ9JmJ3J]JOJnJ6JAJiJfJ;J@J.J0JhJVJxJ*J:JrJFJUJ`J(JGJIJ&JcJHJ?J
+JBJsJvJ&gt;JWJtJ&lt;JkJ1JuJZJ	JjJ2JNJ=JTJ}J'J)J+J_JPJ#J%JXJ{J J!JLJ[JCJMJQJ~J-J\JwJ$JzJqJbJDJ^J|JJde5eoeRe4epe8ele9eme3e]eOene6eAeiefe;e@e.e0eheVexe*e:ereFeUe`e(eGeIe&eceHe?e
+eBeseve&gt;eWete&lt;eke1eueZe	eje2eNe=eTe}e'e)e+e_ePe#e%eXe{e e!eLe[eCeMeQe~e-e\ewe$ezeqebeDe^e|eJeedg5gogRg4gpg8glg9gmg3g]gOgng6gAgigfg;g@g.g0ghgVgxg*g:grgFgUg`g(gGgIg&gcgHg?g
+gBgsgvg&gt;gWgtg&lt;gkg1gugZg	gjg2gNg=gTg}g'g)g+g_gPg#g%gXg{g g!gLg[gCgMgQg~g-g\gwg$gzgqgbgDg^g|gJgeggd"5"o"R"4"p"8"l"9"m"3"]"O"n"6"A"i"f";"@"."0"h"V"x"*":"r"F"U"`"("G"I"&"c"H"?"
+"B"s"v"&gt;"W"t"&lt;"k"1"u"Z"	"j"2"N"="T"}"'")"+"_"P"#"%"X"{" "!"L"["C"M"Q"~"-"\"w"$"z"q"b"D"^"|"J"e"g""dy5yoyRy4ypy8yly9ymy3y]yOyny6yAyiyfy;y@y.y0yhyVyxy*y:yryFyUy`y(yGyIy&ycyHy?y
+yBysyvy&gt;yWyty&lt;yky1yuyZy	yjy2yNy=yTy}y'y)y+y_yPy#y%yXy{y y!yLy[yCyMyQy~y-y\ywy$yzyqybyDy^y|yJyeygy"yydE5EoERE4EpE8ElE9EmE3E]EOEnE6EAEiEfE;E@E.E0EhEVExE*E:ErEFEUE`E(EGEIE&EcEHE?E
+EBEsEvE&gt;EWEtE&lt;EkE1EuEZE	EjE2ENE=ETE}E'E)E+E_EPE#E%EXE{E E!ELE[ECEMEQE~E-E\EwE$EzEqEbEDE^E|EJEeEgE"EyEEdY5YoYRY4YpY8YlY9YmY3Y]YOYnY6YAYiYfY;Y@Y.Y0YhYVYxY*Y:YrYFYUY`Y(YGYIY&YcYHY?Y
+YBYsYvY&gt;YWYtY&lt;YkY1YuYZY	YjY2YNY=YTY}Y'Y)Y+Y_YPY#Y%YXY{Y Y!YLY[YCYMYQY~Y-Y\YwY$YzYqYbYDY^Y|YJYeYgY"YyYEYYddaeafagahaiajakalamanaoapaqarasatauavawaxayazaAaBaCaDaEaFaGaHaIaJaK5KoKRK4KpK8KlK9KmK3K]KOKnK6KAKiKfK;K@K.K0KhKVKxK*K:KrKFKUK`K(KGKIK&KcKHK?K
+KBKsKvK&gt;KWKtK&lt;KkK1KuKZK	KjK2KNK=KTK}K'K)K+K_KPK#K%KXK{K K!KLK[KCKMKQK~K-K\KwK$KzKqKbKDK^K|KJKeKgK"KyKEKYKdK,5,o,R,4,p,8,l,9,m,3,],O,n,6,A,i,f,;,@,.,0,h,V,x,*,:,r,F,U,`,(,G,I,&,c,H,?,
+,B,s,v,&gt;,W,t,&lt;,k,1,u,Z,	,j,2,N,=,T,},',),+,_,P,#,%,X,{, ,!,L,[,C,M,Q,~,-,\,w,$,z,q,b,D,^,|,J,e,g,",y,E,Y,d,,KKaLaMaNaOaPaQaRaS5SoSRS4SpS8SlS9SmS3S]SOSnS6SASiSfS;S@S.S0ShSVSxS*S:SrSFSUS`S(SGSIS&ScSHS?S
+SBSsSvS&gt;SWStS&lt;SkS1SuSZS	SjS2SNS=STS}S'S)S+S_SPS#S%SXS{S S!SLS[SCSMSQS~S-S\SwS$SzSqSbSDS^S|SJSeSgS"SySESYSdS,SKS757o7R747p787l797m737]7O7n767A7i7f7;7@7.707h7V7x7*7:7r7F7U7`7(7G7I7&7c7H7?7
+7B7s7v7&gt;7W7t7&lt;7k717u7Z7	7j727N7=7T7}7'7)7+7_7P7#7%7X7{7 7!7L7[7C7M7Q7~7-7\7w7$7z7q7b7D7^7|7J7e7g7"7y7E7Y7d7,7K77S/5/o/R/4/p/8/l/9/m/3/]/O/n/6/A/i/f/;/@/./0/h/V/x/*/:/r/F/U/`/(/G/I/&/c/H/?/
+/B/s/v/&gt;/W/t/&lt;/k/1/u/Z/	/j/2/N/=/T/}/'/)/+/_/P/#/%/X/{/ /!/L/[/C/M/Q/~/-/\/w/$/z/q/b/D/^/|/J/e/g/"/y/E/Y/d/,/K/7//SSaTaUaVaWaXaYaZa0a1a2a3a4a5a6a7a8a9a,a.a/a&lt;a&gt;a?a;a'a:a"a\a[a]a{a}a`a~a|a!a@a#a$a%a^a&a*a(a)a-a=a_a+a
+a	a a
+</pre>
+
+----------------------------------------------------------------
+
+This file is now &copy; 2005 Mark Jason Dominus
+
+----------------------------------------------------------------
+
+I will expect to receive your royalty checks no later than September
+30 of this year.
+
+----------------------------------------------------------------
+
+ Also, next year's Open Source conference has been cancelled
+----------------------------------------------------------------
+
+ Since I now own all the software.
+----------------------------------------------------------------
+
+ Thank you for your obedient compliance.
+
+----------------------------------------------------------------
+
+ All your base are belong to me.</p>
+
+<p align=center><img src="aybabtu.jpg">
+----------------------------------------------------------------
+
+<img src="mcp.jpg"><br>
+
+(end of line)
+
+----------------------------------------------------------------

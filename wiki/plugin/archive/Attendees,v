@@ -1,0 +1,500 @@
+head	1.28;
+access;
+symbols;
+locks
+	root:1.28;
+comment	@# @;
+
+
+1.28
+date	2007.04.05.12.09.01;	author root;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2007.04.04.08.59.15;	author root;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2007.04.03.07.07.35;	author root;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2007.04.03.04.46.25;	author root;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2007.04.02.07.02.59;	author root;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2007.04.02.03.32.16;	author root;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2007.03.31.11.23.16;	author root;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2007.03.31.08.30.46;	author root;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2007.03.30.03.31.52;	author root;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2007.03.30.03.31.24;	author root;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2007.03.29.21.25.26;	author root;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.03.21.04.09.24;	author root;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.03.20.22.26.59;	author root;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.03.20.15.53.57;	author root;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.03.20.06.41.46;	author root;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.03.20.01.26.23;	author root;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.03.16.04.41.36;	author root;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.03.06.09.15.50;	author root;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.02.21.19.24.59;	author root;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.02.21.00.10.12;	author root;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.02.09.14.18.52;	author root;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.02.09.07.02.29;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.02.01.02.23.33;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.01.17.03.58.42;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.01.17.03.58.29;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.01.16.23.00.07;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.01.16.22.59.50;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.01.16.22.59.19;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.28
+log
+@edit_address:221.106.61.5,edit_by:nipotan,edit_by_icon:,edit_time:Thu%20Apr%20%205%2012%3A09%3A01%202007,edit_unixtime:1175774941
+@
+text
+@Add your name and put some introduction to your user page. 自分の名前を追加して、自己紹介文をユーザページに追加してください。日本語でもOK。
+
+=== A
+* Ao
+=== B
+
+=== C
+
+=== D
+
+* DaveRolsky
+* DaisukeKomatsu
+* DaisukeMaki
+
+=== E
+
+=== F
+
+=== G
+
+* GosukeMiyashita
+* GugodLiu
+
+=== H
+
+* [hiratara]
+
+=== I
+* IngyDötNet
+=== J
+* JonathanRockway
+
+=== K
+
+* KarenPauley
+* KenichiIshigaki
+* KeiichiMatsunaga
+* KensukeKaneko
+* KimAhlstrom
+* KoichiKunitake
+
+=== L
+
+=== M
+
+* MartyPauley
+* MarkJasonDominus
+
+=== N
+
+* nipotan
+
+=== O
+
+=== P
+
+=== Q
+
+=== R
+
+=== S
+
+=== T
+
+* TatsuhikoMiyagawa
+* TakanaoEndoh
+* TakujiAsakura
+* TakatsuguShigeta
+
+=== U
+
+=== V
+
+=== W
+
+=== X
+
+=== Y
+
+* YuumiYoshida
+
+=== Z
+ 
+@
+
+
+1.27
+log
+@edit_address:124.32.114.226,edit_by:,edit_by_icon:,edit_time:Wed%20Apr%20%204%2008%3A59%3A15%202007,edit_unixtime:1175677155
+@
+text
+@d51 2
+@
+
+
+1.26
+log
+@edit_address:61.215.116.5,edit_by:,edit_by_icon:,edit_time:Tue%20Apr%20%203%2007%3A07%3A35%202007,edit_unixtime:1175584055
+@
+text
+@d66 1
+@
+
+
+1.25
+log
+@edit_address:122.17.135.238,edit_by:daisuke_maki,edit_by_icon:,edit_time:Tue%20Apr%20%203%2004%3A46%3A25%202007,edit_unixtime:1175575585
+@
+text
+@d40 1
+@
+
+
+1.24
+log
+@edit_address:221.115.67.42,edit_by:,edit_by_icon:,edit_time:Mon%20Apr%20%202%2007%3A02%3A59%202007,edit_unixtime:1175497379
+@
+text
+@d13 1
+@
+
+
+1.23
+log
+@edit_address:219.101.221.118,edit_by:%E3%81%82%E3%81%8A,edit_by_icon:,edit_time:Mon%20Apr%20%202%2003%3A32%3A16%202007,edit_unixtime:1175484736
+@
+text
+@d38 1
+@
+
+
+1.22
+log
+@edit_address:210.194.208.138,edit_by:mizzy,edit_by_icon:http%3A%2F%2Fmizzy.org%2Fimg%2Fme.jpg,edit_time:Sat%20Mar%2031%2011%3A23%3A16%202007,edit_unixtime:1175340196
+@
+text
+@d4 1
+a4 1
+
+@
+
+
+1.21
+log
+@edit_address:210.147.147.30,edit_by:vkgtaro,edit_by_icon:http%3A%2F%2Fsky.taro-web.com%2Fbnr_img%2Ftaro.jpg,edit_time:Sat%20Mar%2031%2008%3A30%3A46%202007,edit_unixtime:1175329846
+@
+text
+@d20 1
+@
+
+
+1.20
+log
+@edit_address:61.215.205.182,edit_by:,edit_by_icon:,edit_time:Fri%20Mar%2030%2003%3A31%3A52%202007,edit_unixtime:1175225512
+@
+text
+@d12 1
+@
+
+
+1.19
+log
+@edit_address:61.215.205.182,edit_by:,edit_by_icon:,edit_time:Fri%20Mar%2030%2003%3A31%3A24%202007,edit_unixtime:1175225484
+@
+text
+@d60 1
+a60 1
+*TakujiAsakura
+@
+
+
+1.18
+log
+@edit_address:65.103.28.218,edit_by:autarch,edit_by_icon:,edit_time:Thu%20Mar%2029%2021%3A25%3A26%202007,edit_unixtime:1175203526
+@
+text
+@d60 1
+@
+
+
+1.17
+log
+@edit_address:220.218.211.140,edit_by:yuumi3,edit_by_icon:http%3A%2F%2Fd.hatena.ne.jp%2Fimages%2Fdiary%2Fy%2Fyuum3%2Fyuum3_p.gif,edit_time:Wed%20Mar%2021%2004%3A09%3A24%202007,edit_unixtime:1174450164
+@
+text
+@d11 2
+@
+
+
+1.16
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Mar%2020%2022%3A26%3A58%202007,edit_unixtime:1174429618
+@
+text
+@d69 2
+@
+
+
+1.15
+log
+@edit_address:61.213.80.135,edit_by:hiratara,edit_by_icon:,edit_time:Tue%20Mar%2020%2015%3A53%3A57%202007,edit_unixtime:1174406037
+@
+text
+@d21 1
+a21 1
+* hiratara
+@
+
+
+1.14
+log
+@edit_address:218.225.113.180,edit_by:MiCHiLU,edit_by_icon:http%3A%2F%2Fstatic.flickr.com%2F3%2F3491562_48ffdbfe33_o.jpg,edit_time:Tue%20Mar%2020%2006%3A41%3A46%202007,edit_unixtime:1174372906
+@
+text
+@d21 2
+@
+
+
+1.13
+log
+@edit_address:203.131.192.196,edit_by:kyanny,edit_by_icon:,edit_time:Tue%20Mar%2020%2001%3A26%3A23%202007,edit_unixtime:1174353983
+@
+text
+@d55 1
+@
+
+
+1.12
+log
+@edit_address:unknown,edit_by:ma2,edit_by_icon:,edit_time:Fri%20Mar%2016%2004%3A41%3A36%202007,edit_unixtime:1174020096
+@
+text
+@d31 1
+@
+
+
+1.11
+log
+@edit_address:66.92.134.156,edit_by:jrockway,edit_by_icon:,edit_time:Tue%20Mar%20%206%2009%3A15%3A50%202007,edit_unixtime:1173172550
+@
+text
+@d30 1
+@
+
+
+1.10
+log
+@edit_address:71.216.176.58,edit_by:ingydotnet,edit_by_icon:http%3A%2F%2Ftokyo2007.yapcasia.org%2Fspeakers%2Fimages%2Fingy_dot_net.jpg,edit_time:Wed%20Feb%2021%2019%3A24%3A59%202007,edit_unixtime:1172085899
+@
+text
+@d24 1
+@
+
+
+1.9
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Feb%2021%2000%3A10%3A12%202007,edit_unixtime:1172016612
+@
+text
+@d22 1
+a22 1
+
+@
+
+
+1.8
+log
+@edit_address:158.130.13.34,edit_by:MJDominus,edit_by_icon:,edit_time:Fri%20Feb%20%209%2014%3A18%3A52%202007,edit_unixtime:1171030732
+@
+text
+@d1 1
+a1 1
+Add your name and put some introduction to your user page. (日本語でもOK)
+@
+
+
+1.7
+log
+@edit_address:220.150.112.84,edit_by:tcool,edit_by_icon:,edit_time:Fri%20Feb%20%209%2007%3A02%3A29%202007,edit_unixtime:1171004549
+@
+text
+@d35 1
+@
+
+
+1.6
+log
+@edit_address:12.47.208.34,edit_by:marty.pauley,edit_by_icon:,edit_time:Thu%20Feb%20%201%2002%3A23%3A33%202007,edit_unixtime:1170296613
+@
+text
+@d28 1
+@
+
+
+1.5
+log
+@edit_address:60.250.195.146,edit_by:gugod,edit_by_icon:http%3A%2F%2Fstatic.flickr.com%2F33%2F60969161_c4c4976003_t.jpg,edit_time:Wed%20Jan%2017%2003%3A58%3A42%202007,edit_unixtime:1169006322
+@
+text
+@d27 2
+d32 2
+@
+
+
+1.4
+log
+@edit_address:60.250.195.146,edit_by:gugod,edit_by_icon:http%3A%2F%2Fstatic.flickr.com%2F33%2F60969161_c4c4976003_t.jpg,edit_time:Wed%20Jan%2017%2003%3A58%3A28%202007,edit_unixtime:1169006308
+@
+text
+@d17 1
+a17 1
+* Gugod
+@
+
+
+1.3
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Jan%2016%2023%3A00%3A07%202007,edit_unixtime:1168988407
+@
+text
+@d17 2
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Jan%2016%2022%3A59%3A50%202007,edit_unixtime:1168988390
+@
+text
+@d1 1
+a1 1
+Add your name and put some introduction to your user page.
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Jan%2016%2022%3A59%3A19%202007,edit_unixtime:1168988359
+@
+text
+@d1 2
+@

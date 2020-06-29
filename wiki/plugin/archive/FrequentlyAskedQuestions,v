@@ -1,0 +1,194 @@
+head	1.10;
+access;
+symbols;
+locks
+	root:1.10;
+comment	@# @;
+
+
+1.10
+date	2007.03.13.00.23.02;	author root;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.03.12.21.11.39;	author root;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.02.27.21.51.29;	author root;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.02.27.21.50.49;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.02.24.11.02.58;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.02.23.23.56.05;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.02.23.23.55.04;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.02.23.23.52.42;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.02.23.21.53.44;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.02.23.21.52.19;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.10
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Mar%2013%2000%3A23%3A02%202007,edit_unixtime:1173745382
+@
+text
+@If you have a question, add your question here or jump by our [IRC] channel.
+
+=== Who is organizing this event?
+See AboutUs page.
+
+=== I plan to submit a proposal for Lightning Talks. Do I have to register?
+Yes. The only speakers waived of the conference fee are accepted speakers of full-length talks. Thanks for your undersanding. See LightningTalks if you want to apply.
+
+=== What language are the talks done in?
+Official languages for the conference are Japanese and English. Most non-Japanese speakers will do talks in English, with Japanese subtitles or interpretation. Most local speakers will do talks in Japanese and some of them might write slides in English with Japanese spoken. See [http://tokyo2007.yapcasia.org/sessions/ Sessions] page which talk is done in which language.
+
+=== Do we have a party?
+Yes, we plan to have a party as a dinner on the 1st day (April 4th). Look forward to our announcement in mid-March.
+
+=== Is Wi-Fi available in the venue?
+Yes, we're working on it to make the Wi-Fi network available throughout the conference.
+
+=== Will talks be recorded?
+Yes, all talks, except the ones the speakers declined will be recorded and uploaded to the video sharing sites. Audio files will be available as Podcast as well.
+
+=== 日本に住んでいますが、まわりにローソンがなくチケットが購入できません
+その旨を証明する資料を添付の上 team<at>yapcasia.org までご連絡ください。オンライン登録の手続きをいたします。
+
+=== How many people will be attending?
+We excpet 350 attendees and 50+ guests.
+
+=== Are there Hackathon before or after the conference?
+Yes we do. See [Hackathon] for details.
+
+=== What size of T-shirt is available?
+We plan to make S, M, L and XL size T-shirts. They'll be based on Japanese standard, so think that XL means LL in U.S. standard :) We'll have only limited # of shirts available for some sizes, and chances are you can't get the best-fit size. Thanks for your understanding.
+
+=== Do I need to register for individual sessions?
+No, you don't need to register for each session. If you register the conference, or have a paper ticket for the conference, you can attend to any sessions.
+@
+
+
+1.9
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Mar%2012%2021%3A11%3A39%202007,edit_unixtime:1173733899
+@
+text
+@d32 3
+@
+
+
+1.8
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Feb%2027%2021%3A51%3A29%202007,edit_unixtime:1172613089
+@
+text
+@d31 1
+a31 1
+We plan to make M, L and XL size T-shirts. They'll be based on Japanese standard, so think that XL means LL in U.S. standard :) We'll have only limited # of shirts available for some sizes, and chances are you can't get the best-fit size. Thanks for your understanding.
+@
+
+
+1.7
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Feb%2027%2021%3A50%3A49%202007,edit_unixtime:1172613049
+@
+text
+@d31 1
+a31 1
+We plan to make M, L, LL and XL size T-shirts. They'll be based on Japanese standard, so think that XL means LL in U.S. standard :) We'll have only limited # of shirts available for some sizes, and chances are you can't get the best-fit size. Thanks for your understanding.
+@
+
+
+1.6
+log
+@edit_address:204.14.154.180,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Sat%20Feb%2024%2011%3A02%3A58%202007,edit_unixtime:1172314978
+@
+text
+@d31 1
+a31 1
+We plan to make S, M, L and XL size T-shirts. They'll be based on Japanese standard, so think that XL means L in U.S. standard :) We'll have only limited # of shirts available for some sizes, and chances are you can't get the best-fit size. Thanks for your understanding.
+@
+
+
+1.5
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Fri%20Feb%2023%2023%3A56%3A05%202007,edit_unixtime:1172274965
+@
+text
+@d1 2
+@
+
+
+1.4
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Fri%20Feb%2023%2023%3A55%3A04%202007,edit_unixtime:1172274904
+@
+text
+@d29 1
+a29 1
+We plan to make S, M, L, XL and XXL size T-shirts. They'll be based on Japanese standard, so think of XXL means XL in United States standard :) We'll have only limited # of shirts available for some sizes, and chances are you can't get the best-fit size. Thanks for your understanding.
+@
+
+
+1.3
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Fri%20Feb%2023%2023%3A52%3A41%202007,edit_unixtime:1172274761
+@
+text
+@d27 3
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Fri%20Feb%2023%2021%3A53%3A44%202007,edit_unixtime:1172267624
+@
+text
+@d16 3
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Fri%20Feb%2023%2021%3A52%3A18%202007,edit_unixtime:1172267538
+@
+text
+@d8 1
+a8 1
+Official languages for the conference are Japanese and English. Most non-Japanese speakers will do talks in English, with Japanese subtitles or interpretation. Most local speakers will do talks in Japanese and some of them might write slides in English with Japanese spoken.
+@

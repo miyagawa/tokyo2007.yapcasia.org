@@ -1,0 +1,63 @@
+head	1.3;
+access;
+symbols;
+locks
+	root:1.3;
+comment	@# @;
+
+
+1.3
+date	2007.03.20.06.49.14;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.20.06.48.34;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.20.06.46.51;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@edit_address:218.225.113.180,edit_by:MiCHiLU,edit_by_icon:http%3A%2F%2Fstatic.flickr.com%2F3%2F3491562_48ffdbfe33_o.jpg,edit_time:Tue%20Mar%2020%2006%3A49%3A14%202007,edit_unixtime:1174373354
+@
+text
+@=== takanao ENDOH , `MiCHiLU`
+
+http://farm1.static.flickr.com/3/3491562_48ffdbfe33_o.jpg
+
+　YAPC::Asia 初参加の Pythonista !!
+
+* http://michilu.com
+@
+
+
+1.2
+log
+@edit_address:218.225.113.180,edit_by:MiCHiLU,edit_by_icon:http%3A%2F%2Fstatic.flickr.com%2F3%2F3491562_48ffdbfe33_o.jpg,edit_time:Tue%20Mar%2020%2006%3A48%3A34%202007,edit_unixtime:1174373314
+@
+text
+@d1 1
+a1 1
+=== takanao ENDOH , MiCHiLU
+@
+
+
+1.1
+log
+@edit_address:218.225.113.180,edit_by:MiCHiLU,edit_by_icon:http%3A%2F%2Fstatic.flickr.com%2F3%2F3491562_48ffdbfe33_o.jpg,edit_time:Tue%20Mar%2020%2006%3A46%3A50%202007,edit_unixtime:1174373210
+@
+text
+@d5 1
+a5 1
+YAPC::Asia 初参加の Pythonista !!
+@

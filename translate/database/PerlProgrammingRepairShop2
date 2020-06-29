@@ -1,0 +1,855 @@
+Perl Programming Repair Shop Part II
+
+.pre
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+#J# これでこの部分はこんな風になった
+
+* This part of the program now looks like this:
+
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     
+        my $date = time() - $value * 86400;
+        print "The date is $datev\n";
+        $pattern = strftime "%a\\s+%m\\s+%d" , localtime($date);
+     
+     } else {
+          my $date = time();
+          $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+     }
+
+#J# おや、[[if]]と[[else]]の中で同じことをしているぞ!
+
+* Hey, both if [[if]] and [[else]] parts are doing the same thing now!
+#J# コードの繰り返しは避けなくては
+
+* [G[Don't repeat code]G]
+
+#J# 繰り返しの部分を「抽出」すると、こういうコードは
+
+* We can "factor out" the repeated part, turning this:
+
+        if (C) { X; A; }
+        else   { Y; A; }
+
+#J# こう書ける
+
+* Into this:
+
+        if (C) { X; }
+        else   { Y; }
+#*      A;
+
+
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+#J# おっと、でも待てよ!
+
+* Oh, but wait!
+
+      if (...) {
+        ...
+        $pattern = strftime "%a\\s+%m\\s+[C[%d]C]" , localtime($date);
+      } else {
+        ...
+        $pattern = strftime "%a\\s+%m\\s+[C[%e]C]" , localtime($date);
+      }
+
+#J# 違うぞ。3月3日の場合、[[%d]]は[["03"]]だけど、[[%e]]なら[[" 3"]]だ
+
+* Difference: On March 3, [[%d]] is [["03"]] but [[%e]] is [[" 3"]]
+
+#J# うーむ
+
+* Hmmm....
+
+#J# バグだろうか? 仕様だろうか?
+
+  * Bug?   Or feature?
+
+#J# これはバグに「違いない」
+
+  * I think it _must_ be a bug
+
+#J# 日付が過去かどうかで書式が変わるだなんて
+
+  * The format of the pattern changes depending on whether the date is in the past
+
+#J# そんなことをしたがるとは思えない
+
+  * You can't possibly want that
+
+#J# もともとのコードはこうだった
+
+* The original code had:
+
+       98   	my $datev = `date '+%a %b [C[%e]C] %m %Y'` ;
+      102  	my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+      104  	my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+      106          $daynum = $d ;
+
+#J# それなら全部[[%e]]を使うようにしよう。もともとそのつもりだったようだから
+
+* I'm going to use [[%e]] throughout, since that seems to be what was intended
+
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     } else {
+#*        $value = 0;
+     }
+     my $date = time() - $value * 86400;
+     print "The date is $datev\n";
+     $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+
+#J# ここの診断用の[[print]]行は残しておいた
+
+* Here I left in the diagnostic [[print]] line
+
+#J# これで診断情報も増えることになる
+
+* More diagnostics now
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+#J# [[my $value]]はプログラムの先頭に移せる。適切に初期化しておこう
+
+* We can replace [[my $value]] at the top of the program with an appropriate initialization
+
+        my $value = 0;
+
+#J# これで[[else]]ブロックは「完全に」削ることができる
+
+* Then we can eliminate the [[else]] block _entirely_
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     }
+                     
+     my $date = time() - $value * 86400;
+     print "The date is $datev\n";
+     $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     }
+
+#J# これで[[$opt]]の評価も一度にできるようになった
+
+* Now we can combine the tests on [[$opt]]:
+
+     if ( $opt [C[&&]C] $opt =~ /\d+/ ) {
+          $value = $opt ;
+     } else {
+       print "How many days prior do you want to search upon before the current date: " ;
+       chomp ($value = <>);
+     }
+
+#J# さらにコードが減ったぞ
+
+* More code gone
+
+#J# このように、一部のコードを簡潔にすると、ほかの部分も簡潔にできる可能性が生まれるわけだ
+
+* Notice how simplifying one part of the code creates opportunities for further simplifictations
+----------------------------------------------------------------
+
+#J# 評価の誤り
+
+Wrong test
+**********
+
+     if ( $opt && $opt =~ /\d+/ ) {
+          $value = $opt ;
+
+#J# ここでは[[$value]]が数値であってほしいわけだ
+
+* The code wants [[$value]] to be a number
+
+#J# でも、このコードが実際に評価しているものは異なる
+
+* But that is not what it is testing for!
+
+#J# [[$opt]]が[["You are #6"]]だったらどうなるだろうか?
+
+* What if [[$opt]] is [["You are #6"]]?
+
+#J# 意図している通りに書こう
+
+* [G[Say what you mean]G]
+
+     if ( $opt && $opt =~ /[C[^\d+$]C]/ ) {
+          $value = $opt ;
+
+----------------------------------------------------------------
+
+#J# コードの繰り返し
+
+Repeated code
+*************
+
+#J# いま、コードはこのようになっている
+
+* We now have:
+
+      my $date = time() - $value * 86400;
+      $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+     
+      my $tmpfilealrt = strftime "alert_%e_%a_%m.log", localtime($date);
+     
+      my $errdate  = strftime "%d%m%Y", localtime($date) ;
+
+#J# [[localtime($date)]]を3度も計算しているわけだ
+
+* We're calculating [[localtime($date)]] three times
+
+#J# コードの繰り返しは避けよう
+
+* [G[Don't repeat code]G]
+
+      my [C[@date]C] = [C[localtime(]C]time() - $value * 86400[C[)]C];
+      $pattern = strftime "%a\\s+%m\\s+%e" , [C[@date]C];
+     
+      my $tmpfilealrt = strftime "alert_%e_%a_%m.log", [C[@date]C];
+     
+      my $errdate  = strftime "%d%m%Y", [C[@date]C];
+
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+#J# 最後の修正だ
+
+* Final change:
+
+       75     my ( $day, $daynum, $mon, $pattern ) ;
+
+#J# [[$day]]も[[$daynum]]も[[$mon]]もみんななくなった
+
+* [[$day]], [[$daynum]], and [[$mon]] are all gone
+
+#J# [[$pattern]]も実際に使っているところで宣言すれば、75行目は全部削れることになる
+
+* If we declare [[$pattern]] at the place it is used, we can eliminate line 75 entirely
+
+      [C[my]C] $pattern = strftime "%a\\s+%m\\s+%e" , [C[@date]C];
+
+#J# これで最後まで残っていた行もなくなった
+
+* One last line gone
+
+#J# 最終的な結果はこうなる
+
+* Final results:
+
+#J# 修正前: 30行
+
+  * Before: 30 lines of code
+
+#J# 修正後: 15行
+
+  * After: 15
+
+#J# （診断用のメッセージは勘定していない）
+
+  * (Not counting diagnostic messages)
+
+----------------------------------------------------------------
+
+#J# メインフロー
+
+Main flow
+*********
+
+#J# 細かいところから修正を始めてしまったけれど、全体のチェックに戻ろう
+
+* I started in on the details, but let's back up for a higher-level view
+
+#J# [[GetDateNow]]は日付からいくつかのパターンとファイル名を生成する
+
+* [[GetDateNow]] generates some patterns and filenames based on the date
+
+#J# これらは[[ProcessAlertLog]]に渡され
+
+* Then these are passed to [[ProcessAlertLog]]
+
+#J# そこから[[AlrtError]]と[[StartStopRep]]が呼ばれていくつかのリポートが生成される
+
+* This calls [[AlrtError]] and [[StartStopRep]] to generate some reports
+
+#J# また、[[StartStopRep]]は[[DateDiffRep]]を呼んでリポートの一部を生成させている
+
+* [[StartStopRep]] calls [[DateDiffRep]] to generate part of its report
+
+#J# だから、論理的に考えると、次に調べるべきは[[ProcessAlertLog]]だ
+
+* So the next logical thing to look at is [[ProcessAlertLog]]
+
+----------------------------------------------------------------
+
+[[ProcessAlertLog]]
+*******************
+
+#J# まずはつまらないことから
+
+* First some trivial stuff:
+
+      151  sub ProcessAlertLog {
+      152
+      153     my $falrt = shift ;
+      154     my $tfalrt = shift ;
+      155     my $dpat = shift ;
+      156     my $perrorfile = shift ;
+      157     my $prepfile = shift ;
+      158
+
+#J# これはこのように書いた方がよいだろう
+
+* We may as well write this as:
+
+        sub ProcessAlertLog {
+          my ($falrt, $tfalrt, $dpat, $perrorfile, $prepfile) = @_;
+
+#J# 続いて入力用のファイルと出力用のファイルを開いているわけだけれど
+
+* Then it opens an input and an output file:
+
+      163     open ( ALERTLOG, $falrt ) or die "Can't open $falrt due to $!" ;
+      164
+      165     open ( TMPALRTLOG, "> $tfalrt" ) or die "Can't open $tmpfilealrt due to $!" ;
+
+#J# 意図している通りに書こう
+
+* [G[Say what you mean]G]
+
+     open ( ALERTLOG, $falrt ) or die "Can't open $falrt due to $!" ;
+     
+     open ( TMPALRTLOG, "> $tfalrt" ) or die "Can't open [C[$tfalrt]C] due to $!" ;
+----------------------------------------------------------------
+
+[[ProcessAlertLog]]
+*******************
+
+#J# 今度はこの関数のメインのロジック
+
+* Now the main logic of the function:
+
+     159  my $LINE ;
+     166
+     167  while ( <ALERTLOG>) {
+     168
+     169    if ( $_=~/$dpat/ ){ $LINE = 'yes'} ;
+     170
+     171    if ($LINE && $LINE eq 'yes' ){ print TMPALRTLOG "$_"} ;
+     172
+     173  }
+     174
+     175  print TMPALRTLOG "Error: ... \n" if ($LINE && $LINE eq [C['no']C] );
+
+#J# 175行目の条件は絶対に真にはならない!
+
+* The condition on line 175 can never be true!
+
+#J# それから171行目の[[yes]]の評価は冗長だ
+
+* And the test for [[yes]] on line 171 is redundant
+
+#J# 論理評価は論理式で
+
+* [G[Let booleans be booleans]G]
+
+     my $seen_dpat;
+     
+     while (<ALERTLOG>) {
+  	$seen_dpat = [C[1]C] if /$dpat/[C[o]C];
+     
+  	if ($seen_dpat) { print TMPALRTLOG $_ }
+     }
+     
+     print TMPALRTLOG "Error: ... \n" unless $seen_dpat;
+
+----------------------------------------------------------------
+[[ProcessAlertLog]]
+*******************
+
+     my $seen_dpat;
+     
+     while (<ALERTLOG>) {
+  	$seen_dpat = 1 if /$dpat/o;
+     
+  	if ($seen_dpat) { print TMPALRTLOG $_ }
+     }
+     
+     print TMPALRTLOG "Error: Pattern /$dpat/ was not found \n" unless $seen_dpat;
+
+#J# もっとも、実際には少し考えれば別のやり方が思いつく
+
+* But actually, a little thought suggests an alternative
+
+#J# [[$seen_dpat]]は、一度真になったらもう偽に変わることはない
+
+* Once [[$seen_dpat]] is set true, it never changes back to false
+
+#J# だから、それ以降の[[/$dpat/]]の評価は余計だ
+
+* So the [[/$dpat/]] test becomes superfluous
+
+#J# ここで実際にしているのは、[[/$dpat/]]以降のすべてのレコードを出力することなのだから
+
+* What's really happening here is that we print out all the records from [[/$dpat/]] onward
+
+#J# このように変えてみてもよさそうだ
+
+* So we might try this alternative:
+
+        while (<ALERTLOG>) { print(TMPALRTLOG), last if /$dpat/o }
+        print TMPALRTLOG while <ALERTLOG>;
+
+#J# ただし、これだとエラーメッセージを生成できないので、このようにする必要があるだろう
+
+* But then we can't generate the error message, so we would need:
+
+#*      my $ok;
+        while (<ALERTLOG>) { [C[$ok = 1]C], print(TMPALRTLOG), last if /$dpat/o }
+        print TMPALRTLOG while <ALERTLOG>;
+        print TMPALRTLOG "Error: Pattern /$dpat/ was not found \n" unless [C[$ok]C];
+
+#J# こうした方がよくなる場合もあるし、そうでない場合もある
+
+* Sometimes this works out better, sometimes not
+
+#J# どちらがお好みだろうか?
+
+* Which do you prefer?
+
+----------------------------------------------------------------
+[[ProcessAlertLog]]
+*******************
+
+#J# これと関連するのが関数末尾のメッセージだ
+
+* Related to this is a message at the end of the function:
+
+        183     print "Error: Pattern was not found \n" if (!$LINE eq 'no' );
+
+#J# これは赤旗ではない
+
+* This isn't a red flag
+
+#J# 単なる間違い
+
+* It's just wrong
+
+#J# 評価はあべこべだし――[[if $LINE eq 'no']]のはずだ
+
+* The test is backwards [E[ndash]E] it should be [[if $LINE eq 'no']]
+
+#J# 優先順位もズレている
+
+* And the precedence is off:
+
+        183     print "Error: Pattern was not found \n" if ([C[(]C]!$LINE[C[)]C] eq 'no' );
+
+#J# こういうのを調べるのには[[B::Deparse]]モジュールがいい
+
+* The [[B::Deparse]] module is a great way to investigate such things:
+
+        % perl -MO=Deparse -e 'print "Err" if (!$LINE eq "no")'
+        print 'Err' if !$LINE eq 'no';
+     
+        % perl -MO=Deparse -e 'print "Err" if (!($LINE eq "no"))'
+        print 'Err' if not $LINE eq 'no';
+     
+        % perl -MO=Deparse[C[,-p]C] -le 'print "Err" if (!$LINE eq "no")'
+        (((!$LINE) eq 'no') and print('Err'));
+
+
+----------------------------------------------------------------
+
+#J# メンテナンスクイズ
+
+Maintenance puzzles
+*******************
+
+#J# この行には本当に悩まされた
+
+* This next line is a real head-scratcher
+
+     181  if ( -r $tfalrt ) { &AlrtError ( $tfalrt, $perrorfile ) } ;
+
+#RTIMG# scratching_head.jpg
+
+#J# 思い出してほしい。この[[$tfalrt]]はこのプログラムが作ったばかりのものだ
+
+* Recall that the program just created [[$tfalrt]] itself:
+
+     165  open ( TMPALRTLOG, "> $tfalrt" ) or die ...
+
+#J# だから、ここで評価しているのはプロセスのumaskなんだろうけれど...
+
+* So what this seems to be testing is the process's umask...
+
+#J# このテストがコケたらどうなるだろうか。[[AlrtError()]]関数がスキップされるわけだけれど
+
+* And what if the test fails?  Then the [[AlrtError()]] function is skipped... 
+
+#J# この[[AlrtError()]]を実行することこそがプログラムの肝だ
+
+  * But running [[AlrtError()]] is the whole point of the program...
+
+#J# 結論: だから、これはたぶん単にこれでいいのだろう
+
+* Conclusion:  it should probably be just:
+
+      AlrtError ( $tfalrt, $perrorfile );
+
+----------------------------------------------------------------
+[[AlrtError]]
+*************
+
+#J# この関数のメインのロジックはこうだ
+
+* The main logic of this function is:
+
+      199     while ( <ORAALRTLOG> ) {
+      201        if ( $_ =~ /(ORA-\d+)\s+/ ) {
+      203  	$errors{$1}++ ;
+      207        }
+      209     }
+      210
+      211     for my $key ( keys %errors ) {
+      213        my $value = $errors{$key} ;
+      215        print "The error code $key appears $value times in this section of the oracle Alert Log\n";
+      217     }
+
+#J# 十分に簡潔だけれど
+
+* This is simple enough
+
+#J# ひとつだけ不満がある
+
+* I have only one complaint:
+
+#J# どうして213～215行目をこう書いてはいけないのだろうか
+
+* I don't see any reason why lines 213[E[ndash]E]215 shouldn't be written as
+
+                 print "The error code $key appears [C[$errors{$key}]C] times in this section of the oracle Alert Log\n";
+
+#J# 私にはこちらの方が悪くなるとは思えないし、多少はマシなのではないかと思う
+
+* It seems to me that this couldn't be worse, and might be a bit better
+
+#RTIMG# redflag
+
+#J# 直後に一度しか使わない変数を割り当てるな
+
+* [R[Variable use immediately follows assignment]R]
+
+#J# それと、たぶん[[keys(%errors)]]はソートした方がよいだろう
+
+### Also perhaps sort the keys(%errors)
+----------------------------------------------------------------
+[[AlrtError]]
+*************
+
+#J# もうひとつここで悩まされたのが[[$errorfile]]という引数の用途
+
+* The other puzzle here is the use of the [[$errorfile]] argument:
+
+        192     my $errorfile = shift ;
+        196     open ( ERRORALRTLOG, "> $errorfile" ) or die "Can't open $errorfile due to $!" ;
+        205  	# print ERRORALRTLOG "$_" } ;
+        220     close(ERRORALRTLOG) or die "Cold not close tmpalert due to $!\n" ;
+
+#J# このファイルには何も書き込まれないのだ!
+
+* Nothing is ever written to the file!
+
+#J# それはそれでもかまわないが
+
+* I have no problem with that
+
+#J# [[print]]をコメントアウトするなら、どうして[[open]]もそうしないのか
+
+* But if you're going to comment out the [[print]], why not the [[open]]?
+
+#J# ここでは全部消してしまうのが「正しい」解決策のように思える
+
+* I think the _right_ solution here is to get delete all of it
+
+#J# 戻す必要があるなら、ソースコードの管理システムにはまだコードが残っている
+
+* The code still resides in the source code management system if we need to get it back
+
+#J# ……残っているよね?
+
+  * ... right?
+
+#J# これ自体はいい引数だ。ソースコード管理システムを使っているなら
+
+  * This is itself a good argument in favor of a source code management system
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# この関数の唯一の呼び出し元（[[ProcessAlrtLog]]の中にある）はコメントアウトされている
+
+* The only call to this function (in [[ProcessAlrtLog]]) is commented out
+
+#J# でも、これはこのプログラムのかなり部分を占める。37行ほどもあるのだ
+
+* Nevertheless, it's a significant part of the program, about 37 lines long
+
+#J# たぶん以前は使われていたのだろう。
+
+* Presumably it was used at one time
+
+#J# あるいはうまく動かなかったので修正する必要があるのかもしれない
+
+  * Or maybe it didn't work and needs to be fixed
+
+#J# とにかく少し見てみる価値はありそうだ
+
+* Anyway, it does seem worth some attention
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# 例によって先頭から見ていこう
+
+* Starting at the top as usual:
+
+      225  sub StartStopRep {
+      226
+      227     my $tmpfilealrt = shift ;
+      228     my $reportfile = shift ;
+      229     my @lines ;
+      230     my $stpline ;
+      231     my $strtline ;
+      232     my $shtdwnlinenum ;
+      233     my $ndl = 4 ;
+      234  #   my %match ;
+      235     my @matimes ;
+      236     my $counter = 0 ;
+      237
+
+#J# ここはこう書ける
+
+* This becomes:
+
+        sub StartStopRep {
+          my ($tmpfilealrt, $reportfile) = @_;
+          my (@lines, $stpline, $strtline, $shtdwnlinenum, @matimes);
+          my $ndl = 4;
+          my $counter = 0;
+
+----------------------------------------------------------------
+
+#J# 変数名
+
+Variable names
+**************
+
+#J# 念のため書いておくけれど、私は変数の命名についてはあまり時間を使っていない
+
+* In case you hadn't noticed, I don't spend a lot of time talking about how to name variables
+
+#J# 退屈だし
+
+  1. It's boring
+
+#J# みなさんも聞いたことがあるはずだ
+
+  2. You've heard it before
+
+#J# 87回も
+
+     * 87 times
+
+#J# とはいえ、[[$stpline]]と[[$strtline]]という名前は気になる
+
+* Nevertheless, the names [[$stpline]] and [[$strtline]] bother me
+
+
+----------------------------------------------------------------
+
+#J# 変数名
+
+Variable names
+**************
+
+#J# このプログラムにはこの手のバカげた省略が至るところにある
+
+* This kind of silly abbreviating is all through this program
+
+#J# この人は母音に何か恨みでもあるのだろうか?
+
+  * What's this guy's problem with vowels?
+
+#J# どうして[[AlrtError()]]なんだろう、[[AlertError()]]でなく?
+
+  * Why [[AlrtError()]] and not [[AlertError()]]?
+
+#J# どうしても省略したいなら、[[AlertErr()]]にすればいいのに?
+
+  * If it needs abrviation, why not [[AlertErr()]]?
+
+#J# 私なら[[$startline]]や[[$stopline]]のようにしていたと思う
+
+* I would have preferred [[$startline]] and [[$stopline]]
+
+#J# 省略しないといけないのであれば、[[$startln]]とか[[$stopln]]はどうだろう?
+
+* Or, if abbreviation is wanted, how about  [[$startln]] and [[$stopln]]?
+
+#J# とにかくこんな省略をして何になるのだ?
+
+* What is gained by this sort of abbreviation, anyway?
+
+#J# 文句はおしまい
+
+* End of rant.
+----------------------------------------------------------------
+[[StartStopRep]]
+****************
+
+        251          $shtdwnlinenum = $. ;
+
+#J# [[$shtdwnlinenum]]はまったく使われていない
+
+* [[$shtdwnlinenum]] is never used anywhere
+
+#J# これでまた1行減った
+
+* Another line gone
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      247     my %match ;
+          ...
+      274  	$match{START} = $strtline ;
+      275  	$match{STOP} = $stpline ;
+      276
+      277          print REPORTLOG "$. => The start time is $strtline and the stop time is $stpline\n" ;
+      278
+      279        $matimes[$counter] = \%match ;
+      286     } # End While
+
+
+#RTIMG# redflag
+
+#J# 直後に一度しか使わない変数を割り当てるな
+
+* [R[Variable use immediately follows assignment]R]
+
+              while ( <ORAALRTLOG> ) {
+          ...
+                   print REPORTLOG "$. => The start time is $strtline and the stop time is $stpline\n" ;
+             
+                $matimes[$counter] = { START => $strtline, STOP => $stpline };
+              }
+
+#J# これでもう3行減って、変数も1つなくなった
+
+* Three more lines and one variable gone
+
+----------------------------------------------------------------
+
+#IMG# redflags-crossed
+
+#J# 配列長をあらわす変数
+
+[R[Array Length Variables]R]
+****************************
+
+      236     my $counter = 0 ;
+          ...
+      279        $matimes[$counter] = { START => $strtline, STOP => $stpline }; ;
+      280  #-D   	print "The $counter start is $matimes[$counter]{START}\n";
+      281        $counter = $counter + 1 ;
+
+#J# この変数は[[@matimes]]の大きさを追いかけるためのものでしかない
+
+* This variable's only purpose is to track the length of [[@matimes]]
+
+#J# でも、Perlはすでに内部で[[@matimes]]の大きさを追いかけてくれている
+
+* But Perl already tracks the length of [[@matimes]] internally
+
+#J# こういう変数はほぼ例外なく必要ない
+
+* Such variables are almost always unnecessary:
+
+        [C[push]C] @matimes, { START => $strtline, STOP => $stpline };
+        #-D   print "The " [C[. @matimes .]C] "start is $matimes[??![C[-1]C]??!]{START}\n";
+
+#J# これでまた1行減って、変数も1つなくなった
+
+* Another line and another variable gone
+----------------------------------------------------------------
+.pre
+
+[PerlProgrammingRepairShop3]

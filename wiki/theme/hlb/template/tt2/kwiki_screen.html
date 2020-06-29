@@ -1,0 +1,49 @@
+<!-- BEGIN kwiki_screen -->
+[%- INCLUDE kwiki_doctype.html %]
+<!-- BEGIN kwiki_screen.html -->
+[% INCLUDE kwiki_begin.html %]
+
+<div id="group_1">
+<img src="[% logo_image %]" title="[% site_title %]" alt="">
+<h1>[% site_title %]</h1>
+<span class="description">[% site_description %]</span>
+<span style="display: none"><a href="#skip-upper-nav">&gt;&gt;</a></span>
+<div id="widgets_pane">
+[% hub.widgets.html %]
+</div>
+</div>
+
+<div id="group_2">
+<div class="navigation">
+<div id="title_pane">
+<h1>
+[% screen_title || self.class_title %]
+</h1>
+</div>
+
+<div id="toolbar_pane">
+[% hub.toolbar.html %]
+[% IF hub.have_plugin('user_name') %]
+[% INCLUDE user_name_title.html %]
+[% END %]
+</div>
+
+<div id="status_pane">
+[% hub.status.html %]
+</div>
+</div><!-- navigation -->
+
+<hr />
+<div id="content_pane">
+[% INCLUDE $content_pane %]
+</div>
+<hr />
+
+<div class="navigation">
+<div id="toolbar_pane_2">
+[% hub.toolbar.html %]
+</div>
+</div><!-- navigation -->
+</div><!-- group2 -->
+[% INCLUDE kwiki_end.html %]
+<!-- END kwiki_screen -->

@@ -1,0 +1,29 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.03.20.01.47.24;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:203.131.192.196,edit_by:kyanny,edit_by_icon:,edit_time:Tue%20Mar%2020%2001%3A47%3A24%202007,edit_unixtime:1174355244
+@
+text
+@I am a Japanese web application programmer and work at livedoor Co., Ltd.
+
+I will be at the front desk during 2 YAPC days as a clerk (however, I'm sorry I speak English a little)
+
+http://use.perl.org/~kyanny/journal/
+@

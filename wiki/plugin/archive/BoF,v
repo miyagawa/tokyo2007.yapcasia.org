@@ -1,0 +1,118 @@
+head	1.6;
+access;
+symbols;
+locks
+	root:1.6;
+comment	@# @;
+
+
+1.6
+date	2007.03.21.23.14.51;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.03.21.23.14.28;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.03.21.23.14.05;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.03.21.23.06.50;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.21.23.03.02;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.21.23.02.46;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Mar%2021%2023%3A14%3A50%202007,edit_unixtime:1174518890
+@
+text
+@BoF is scheduled on the 1st day, April 4th !17:35 - !18:45 in the main hall. Suggest the specific meetup here to call for attendees.
+
+== Plagger BoF
+
+Are you using Plagger? Any complaints or improvements to be made? The development has been quiet these days and want to know what could be done to bootstrap it again. -- TatsuhikoMiyagawa
+
+== Angerwhale BoF
+
+If you're interested in [http://www.angerwhale.org Angerwhale], let's meet up and talk about it.  Anyone, from end-users to extension-writers, is welcome!
+-- JonathanRockway
+
+== Web Framework BoF
+
+If you're using a web framework and want to meet other framework users, this is the place to be.  Come talk with us about Catalyst, Jifty, or any other Perl framework you're using.
+-- JonathanRockway
+@
+
+
+1.5
+log
+@edit_address:12.47.30.10,edit_by:jrockway,edit_by_icon:,edit_time:Wed%20Mar%2021%2023%3A14%3A28%202007,edit_unixtime:1174518868
+@
+text
+@d1 1
+a1 1
+BoF is scheduled on the 1st day, April 7th !17:35 - !18:45 in the main hall. Suggest the specific meetup here to call for attendees.
+@
+
+
+1.4
+log
+@edit_address:12.47.30.10,edit_by:jrockway,edit_by_icon:,edit_time:Wed%20Mar%2021%2023%3A14%3A05%202007,edit_unixtime:1174518845
+@
+text
+@d3 1
+a3 1
+== Plagger BOF
+d7 1
+a7 1
+== Angerwhale BOF
+@
+
+
+1.3
+log
+@edit_address:12.47.30.10,edit_by:jrockway,edit_by_icon:,edit_time:Wed%20Mar%2021%2023%3A06%3A50%202007,edit_unixtime:1174518410
+@
+text
+@d11 5
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Mar%2021%2023%3A03%3A01%202007,edit_unixtime:1174518181
+@
+text
+@d6 5
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Mar%2021%2023%3A02%3A46%202007,edit_unixtime:1174518166
+@
+text
+@d1 1
+a1 1
+BoF is scheduled on the 1st day, April 7th 17:35 - 18:45 in the main hall. Suggest the specific meetup here to call for attendees.
+@

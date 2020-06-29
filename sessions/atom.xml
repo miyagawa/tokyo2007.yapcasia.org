@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>YAPC::Asia 2007 Tokyo Sessions</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/" />
+    <link rel="self" type="application/atom+xml" href="http://tokyo2007.yapcasia.org/sessions/atom.xml" />
+   <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16</id>
+    <link rel="service.post" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16" title="YAPC::Asia 2007 Tokyo Sessions" />
+    <updated>2007-04-19T23:46:07Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type 3.2</generator>
+ 
+<entry>
+    <title>Thilo Planz: Spidernomic: A self-modifying HTML/Perl/JS file/game</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/thilo_planz_spidernomic_a_self.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2210" title="Thilo Planz: Spidernomic: A self-modifying HTML/Perl/JS file/game" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2210</id>
+    
+    <published>2007-04-10T06:03:57Z</published>
+    <updated>2007-04-19T23:46:07Z</updated>
+    
+    <summary>Inspired by the Perlnomic game, Spidernomic is a minimalistic XHTML file with embedded Perl CGI code and Javascript (both client-side and server-side) to enable it to modify itself, with just enough functionality to bootstrap itself into a playable game....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>Inspired by the Perlnomic game, Spidernomic is a minimalistic XHTML file with embedded Perl CGI code and Javascript (both client-side and server-side) to enable it to modify itself, with just enough functionality to bootstrap itself into a playable game.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Yappo: Device::USB::MissileLaunchers (live)</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/yappo_deviceusbmissilelauncher.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2209" title="Yappo: Device::USB::MissileLaunchers (live)" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2209</id>
+    
+    <published>2007-04-10T06:03:08Z</published>
+    <updated>2007-04-19T23:46:08Z</updated>
+    
+    <summary>リアルデバイスを操作する無料のWeb APIのご紹介(生Webカメラ中継予定)...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>リアルデバイスを操作する無料のWeb APIのご紹介(生Webカメラ中継予定) </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Mark Dominus: Debugging the De Bruijn Sequence</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/mark_dominus_debugging_the_de.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2208" title="Mark Dominus: Debugging the De Bruijn Sequence" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2208</id>
+    
+    <published>2007-04-10T06:02:42Z</published>
+    <updated>2007-04-19T23:46:21Z</updated>
+    
+    <summary>The Extreme Programming nuts say that programming is the art of debugging an empty file. But adding text to an empty file is much harder than deleting text from a file that already contains every possible sequence....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>The Extreme Programming nuts say that programming is the art of debugging an empty file. But adding text to an empty file is much harder than deleting text from a file that already contains every possible sequence. </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>長野雅広: Expectをつかったサーバ管理レシピ</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/_expect.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2207" title="長野雅広: Expectをつかったサーバ管理レシピ" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2207</id>
+    
+    <published>2007-04-10T06:02:05Z</published>
+    <updated>2007-04-19T23:46:24Z</updated>
+    
+    <summary>Expectをつかって複数のサーバにコマンドを送る方法について、実際サーバ管理に使っている方法を紹介します...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>Expectをつかって複数のサーバにコマンドを送る方法について、実際サーバ管理に使っている方法を紹介します </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Jonathan Rockway: Angerwhale</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/jonathan_rockway_angerwhale.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2206" title="Jonathan Rockway: Angerwhale" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2206</id>
+    
+    <published>2007-04-10T06:00:29Z</published>
+    <updated>2007-04-20T07:28:52Z</updated>
+    
+    <summary>A quick tour of the Angerwhale Blogging System, including a look at the internals....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>A quick tour of the Angerwhale Blogging System, including a look at the internals. </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title> 堂前清隆: (ミニ)カンファレンス中継のあれこれ</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/post_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2205" title=" 堂前清隆: (ミニ)カンファレンス中継のあれこれ" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2205</id>
+    
+    <published>2007-04-10T05:59:27Z</published>
+    <updated>2007-04-19T23:46:48Z</updated>
+    
+    <summary>i-revoではいくつかの小規模なテクニカルカンファレンスにおいてインターネット中継を行ってきました。この中継は単なる動画のストリーミングではなく、静止画と動画を組み合わせた変わった見せ方をしています。この中継のために開発したシステムの発展をできるだけperlに絡めつつ紹介します。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>i-revoではいくつかの小規模なテクニカルカンファレンスにおいてインターネット中継を行ってきました。この中継は単なる動画のストリーミングではなく、静止画と動画を組み合わせた変わった見せ方をしています。この中継のために開発したシステムの発展をできるだけperlに絡めつつ紹介します。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>ふしはらかん: Moxy - Mobile Development Proxy</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/_moxy_mobile_development_proxy.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2204" title="ふしはらかん: Moxy - Mobile Development Proxy" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2204</id>
+    
+    <published>2007-04-10T05:58:42Z</published>
+    <updated>2007-04-19T23:46:53Z</updated>
+    
+    <summary>HTTP::Proxyを使って実装した携帯サイト開発向けのプロキシについて(サイト毎のUA偽装やヘッダの設定、絵文字のタグ置換などをサポートしています)。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>HTTP::Proxyを使って実装した携帯サイト開発向けのプロキシについて(サイト毎のUA偽装やヘッダの設定、絵文字のタグ置換などをサポートしています)。 </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Chia-liang Kao: BabelBee - Collaborative Translation Tool</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/chialiang_kao_babelbee_collabo.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2203" title="Chia-liang Kao: BabelBee - Collaborative Translation Tool" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2203</id>
+    
+    <published>2007-04-10T05:58:15Z</published>
+    <updated>2007-04-19T23:46:58Z</updated>
+    
+    <summary>Get your po files translated faster by an army of translators! Also come see how this ajax application is written in very little code!...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>Get your po files translated faster by an army of translators! Also come see how this ajax application is written in very little code! </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>ma.la: ブラウザ履歴を利用したRSS Auto-discovery</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/mala_rss_autodiscovery.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2202" title="ma.la: ブラウザ履歴を利用したRSS Auto-discovery" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2202</id>
+    
+    <published>2007-04-10T05:57:43Z</published>
+    <updated>2007-04-19T23:50:07Z</updated>
+    
+    <summary>プライバシーやサーバー負荷も考慮しつつ、普段使っているブラウザの履歴から、高速にRSS Auto-discoveryを行う方法を紹介します。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>プライバシーやサーバー負荷も考慮しつつ、普段使っているブラウザの履歴から、高速にRSS Auto-discoveryを行う方法を紹介します。 </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Ingy döt Net: Bytecode for Wikis</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/ingy_doet_net_bytecode_for_wik.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2201" title="Ingy döt Net: Bytecode for Wikis" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2201</id>
+    
+    <published>2007-04-10T05:57:13Z</published>
+    <updated>2007-04-19T23:59:35Z</updated>
+    
+    <summary>Ingy has figured out how to solve the chaos of WikiBabel!...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>Ingy has figured out how to solve the chaos of WikiBabel!</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Atsushi Kobayashi: Perlbal selector Plugin</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/atsushi_kobayashi_perlbal_sele.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2200" title="Atsushi Kobayashi: Perlbal selector Plugin" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2200</id>
+    
+    <published>2007-04-10T05:56:27Z</published>
+    <updated>2007-04-19T23:50:18Z</updated>
+    
+    <summary>Brad Fitzpatrick さんがちょっとPerlbalのお話をするようですが、Perlbalのselectorプラグインについてちょっと。ちょっとちょっと。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>Brad Fitzpatrick さんがちょっとPerlbalのお話をするようですが、Perlbalのselectorプラグインについてちょっと。ちょっとちょっと。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>にぽたん: 正規表現信者の憂鬱</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/04/post.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2199" title="にぽたん: 正規表現信者の憂鬱" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2199</id>
+    
+    <published>2007-04-10T05:55:53Z</published>
+    <updated>2007-04-19T23:50:25Z</updated>
+    
+    <summary>正規表現というカルトに心酔してしまった或る人間が抱えた困難、憂鬱、幸福。※ 布教活動の類ではございませんので、小さなお子さまにも安心してお聞きいただけます...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>正規表現というカルトに心酔してしまった或る人間が抱えた困難、憂鬱、幸福。※ 布教活動の類ではございませんので、小さなお子さまにも安心してお聞きいただけます </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>BoF</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/03/bof.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2184" title="BoF" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2184</id>
+    
+    <published>2007-03-21T22:50:18Z</published>
+    <updated>2007-03-21T22:52:02Z</updated>
+    
+    <summary>Birds of a Feather meetup. See the Wiki page for details....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+            <category term="Tsuda Hall" />
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>Birds of a Feather meetup. See <a href="http://tokyo2007.yapcasia.org/wiki/?BoF">the Wiki page</a> for details.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Lightning Talks</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/02/lightning_talks.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2164" title="Lightning Talks" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2164</id>
+    
+    <published>2007-02-14T02:52:56Z</published>
+    <updated>2007-04-20T07:40:20Z</updated>
+    
+    <summary>12 x 5 minute lightning talks. The talks will be both in Japanese and English. にぽたん: 正規表現信者の憂鬱 Atsushi Kobayashi: Perlbal selector Plugin Ingy döt Net: Bytecode for Wikis ma.la: ブラウザ履歴を利用したRSS Auto-discovery Chia-liang Kao: BabelBee - Collaborative Translation Tool ふしはらかん: Moxy...</summary>
+    <author>
+        <name>yapc</name>
+        
+    </author>
+            <category term="Tsuda Hall" />
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>12 x 5 minute lightning talks. The talks will be both in Japanese and English.</p>
+
+<ul>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/post.html">にぽたん: 正規表現信者の憂鬱</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/atsushi_kobayashi_perlbal_sele.html">Atsushi Kobayashi: Perlbal selector Plugin</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/ingy_doet_net_bytecode_for_wik.html">Ingy döt Net: Bytecode for Wikis</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/mala_rss_autodiscovery.html">ma.la: ブラウザ履歴を利用したRSS Auto-discovery</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/chialiang_kao_babelbee_collabo.html">Chia-liang Kao: BabelBee - Collaborative Translation Tool</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/_moxy_mobile_development_proxy.html">ふしはらかん: Moxy - Mobile Development Proxy</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/post_1.html"> 堂前清隆: (ミニ)カンファレンス中継のあれこれ</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/jonathan_rockway_angerwhale.html">Jonathan Rockway: Angerwhale</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/_expect.html">長野雅広: Expectをつかったサーバ管理レシピ</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/mark_dominus_debugging_the_de.html">Mark Dominus: Debugging the De Bruijn Sequence</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/yappo_deviceusbmissilelauncher.html">Yappo: Device::USB::MissileLaunchers (live)</a></li>
+<li><a href="http://tokyo2007.yapcasia.org/sessions/2007/04/thilo_planz_spidernomic_a_self.html">Thilo Planz: Spidernomic: A self-modifying HTML/Perl/JS file/game</a></li>
+</ul>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Welcome</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/sessions/2007/02/welcome.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=16/entry_id=2163" title="Welcome" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/sessions//16.2163</id>
+    
+    <published>2007-02-14T02:15:51Z</published>
+    <updated>2007-04-19T23:50:38Z</updated>
+    
+    <summary>Welcome from organizers....</summary>
+    <author>
+        <name>yapc</name>
+        
+    </author>
+            <category term="Tsuda Hall" />
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/sessions/">
+        <![CDATA[<p>Welcome from organizers.</p>]]>
+        
+    </content>
+</entry>
+
+</feed> 
+

@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/* -------- small text */
+.label, .memo, ul.refer li cite {
+  font-size: 90%;
+}
+
+.memo, cite {
+  margin: 0 0.5em;
+}
+
+/* -------- inline list */
+ul.meta li, 
+ul.ical li, 
+ul.entry-nav li, 
+ul.writeback li, 
+ul.speakers li { 
+  display: inline;
+}
+
+/* -------- source list */
+ul.source {
+  margin: 0.5em 2em 2em 3em;
+  padding: 0;
+  font-size: 90%;
+}
+
+/* -------- search form */
+form#search-form {
+  padding: 0;
+}
+
+form#search-form fieldset {
+  padding: 0;
+}
+
+form#search-form div {
+  margin-top: 0.5em;
+  text-align: right;
+}
+
+/* -------- floating image */
+
+p.lead { 
+  min-height: 120px;
+  text-align:left;
+}
+
+p.lead img { 
+  float:left;
+  clear: left;
+  margin: 0 1.5em 0.8em 0;
+  padding: 0;
+}
+
+/* -------- tab navigation */
+ul#navigation { 
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul#navigation li { 
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+ul#navigation li a { 
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+* html ul#navigation li a { 
+  display: inline-block;
+}
+
+/* -------- float clear */
+div#infomation:after, 
+div#information:after, 
+ul#navigation:after, 
+div#content:after, 
+div#menu:after { 
+  content: ".";
+  visibility: hidden;
+  clear: both;
+  display: block;
+  height: 0;
+}
+
+div#infomation, 
+div#information, 
+ul#navigation, 
+div#container, 
+div#menu {
+  zoom: 1;
+}
+

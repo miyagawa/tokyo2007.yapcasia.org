@@ -1,0 +1,47 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2;
+comment	@# @;
+
+
+1.2
+date	2007.03.22.22.12.01;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.21.23.21.44;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Mar%2022%2022%3A12%3A01%202007,edit_unixtime:1174601521
+@
+text
+@Conference official party is scheduled *April 4th, !7:30 pm* in Shinjuku. We're sorry that it's not free for attendees, but thanks to our sponsors the fee would be very cheap, something around 1,500 Yen. Updates to follow on the blog. (The speakers and guests are free)
+
+Because of the restaurant capacity, we need RSVP for the party. Sign up on http://shibuya.pm.org/register/yapc-party-2007/ 
+
+カンファレンス後の懇親会は、1日目 4/4 の !19:30 から新宿での開催を予定しています。残念ながら全員無料、というわけにはいかないのですがスポンサー様のご協力により食事は無料、飲み物代だけ 1500円程度いただく形になる予定です。
+
+http://shibuya.pm.org/register/yapc-party-2007/ よりご登録ください。
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Mar%2021%2023%3A21%3A44%202007,edit_unixtime:1174519304
+@
+text
+@d3 5
+a7 1
+カンファレンス後の懇親会は、1日目 4/4 の !19:30 から新宿での開催を予定しています。残念ながら全員無料、というわけにはいかないのですがスポンサー様のご協力により食事は無料、飲み物代だけ 1500円程度いただく形になる予定です。詳細は Blog にてアップする予定です。
+@

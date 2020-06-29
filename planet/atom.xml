@@ -1,0 +1,1420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+  <title xmlns="http://www.w3.org/2005/Atom">Planet YAPC::Asia 2007</title>
+  <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://tokyo2007.yapcasia.org/planet/" type="text/html"/>
+  <updated xmlns="http://www.w3.org/2005/Atom">2008-02-15T09:10:36+09:00</updated>
+  <generator xmlns="http://www.w3.org/2005/Atom">Plagger/0.7.17</generator>
+  <subtitle xmlns="http://www.w3.org/2005/Atom">Everything about YAPC::Asia 2007 from the Web</subtitle>
+  <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:smartfeed:all</id>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::NA 2008 Call for Participation</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://use.perl.org/article.pl?sid=08/02/14/1953254" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">The Chicago Perl Mongers are excited to officially open the call for participation for YAPC::NA 2008. To submit your proposal, visit the YAPC site, create an account, and let us know what you'd like to talk about. Submissions will be accepted through March 15th 2008, so get yours in soon. We are currently accepting proposals for conference talks with durations of 20, 45, 70, and 95 minutes. These talks can be directed at any level of Perl programmer, from the noobies to seasoned Perl veterans. I</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">The Chicago Perl Mongers are excited to officially open the call for participation for YAPC::NA 2008. To submit your proposal, visit the YAPC site, create an account, and let us know what you'd like to talk about. Submissions will be accepted through March 15th 2008, so get yours in soon. We are currently accepting proposals for conference talks with durations of 20, 45, 70, and 95 minutes. These talks can be directed at any level of Perl programmer, from the noobies to seasoned Perl veterans. I</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T10:11:00-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T10:11:00-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://use.perl.org/article.pl?sid=08/02/14/1953254&amp;from=rss</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::NA 2008 Call for Participation (2008.02.14 11:49)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://use.perl.org/~jmcada/journal/35656" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">The Chicago Perl Mongers are excited to officially open the call for
+participation for YAPC::NA 2008. To submit your proposal, visit the YAPC
+site, create an account, and let us know what you'd like to talk about.
+Submissions will be accepted through March 15th 2008, so get yours in
+soon.
+
+We are currently accepting proposals for conference talks with durations
+of 20, 45, 70, and 95 minutes. These talks can be directed at any level
+of Perl programmer, from the noobies to seasoned Perl veterans. If you
+want to show off an amazing hack or new framework that youve been
+involved with, this could be your chance. Possibly you just want to
+contribute to the community by giving an introductory talk on regular
+expressions or subroutines; we intend on having something for everyone
+this year.
+
+If 20 minutes is a too intimidating for you right now or if you just dont
+have enough material to fill up that much time, dont fret, we'll be
+opening the call for lighting talks soon. These 5-minute
+mini-presentations are a great way to get a quick point across and to get
+some experience in presenting in front of a crowd. Keep watching this
+news source for more information about the lighting talks.
+
+This year we are also planning on introducing more hands-on
+workshop-style tracks to the conference. These sessions will typically be
+a little longer than a normal presentation and will be much more
+informal. During the workshops, conference attendees will be able to
+interact with presenters to actually do things like compile Parrot or
+create a hello world program in Perl 6. If you are involved in a project
+and would like to host a workshop, please contact Josh McAdams directly
+at joshua dot mcadams at gmail dot com.</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>The Chicago Perl Mongers are excited to officially open the call for participation for YAPC::NA 2008. To submit your proposal, visit <a href="http://yapc.org/America">the YAPC site</a>, create an account, and let us know what you'd like to talk about. Submissions will be accepted through March 15th 2008, so get yours in soon.</p>
+<p>We are currently accepting proposals for conference talks with durations of 20, 45, 70, and 95 minutes. These talks can be directed at any level of Perl programmer, from the noobies to seasoned Perl veterans. If you want to show off an amazing hack or new framework that youve been involved with, this could be your chance. Possibly you just want to contribute to the community by giving an introductory talk on regular expressions or subroutines; we intend on having something for everyone this year.</p>
+<p>If 20 minutes is a too intimidating for you right now or if you just dont have enough material to fill up that much time, dont fret, we'll be opening the call for lighting talks soon. These 5-minute mini-presentations are a great way to get a quick point across and to get some experience in presenting in front of a crowd. Keep watching this news source for more information about the lighting talks.</p>
+<p>This year we are also planning on introducing more hands-on workshop-style tracks to the conference. These sessions will typically be a little longer than a normal presentation and will be much more informal. During the workshops, conference attendees will be able to interact with presenters to actually do things like compile Parrot or create a hello world program in Perl 6. If you are involved in a project and would like to host a workshop, please contact Josh McAdams directly at joshua dot mcadams at gmail dot com.</p></div>
+    </content>
+    <category xmlns="http://www.w3.org/2005/Atom" term="journal"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T16:49:45Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T16:49:45Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">jmcada</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://use.perl.org/~jmcada/journal/35656?from=rss</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::Asia 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://www.perlmania.or.kr/bbs/bbs.html?mode=read&amp;table=free&amp;article=6183" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">올해도 5월에 도쿄에서 YAPC::Asia 2008이 개최되네요.. (작년 마지막 프레젠테이션때 내년에도 할 수 있으려나 비슷한
+말을 들은 듯한 기억이..ㅋㅋ) http://conferences.yapcasia.org/ya2008/ 현재는 스피커 모집중인 듯
+합니다..+_+.</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">올해도 5월에 도쿄에서 <b>YAPC</b>::<b>Asia</b> 2008이 개최되네요.. (작년 마지막 프레젠테이션때 내년에도 할 수 있으려나 비슷한 말을 들은 듯한 기억이..ㅋㅋ) http://conferences.yapcasia.org/ya2008/ 현재는 스피커 모집중인 듯 합니다..+_+.</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T19:07:41+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T19:07:41+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">unknown</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://www.perlmania.or.kr/bbs/bbs.html?mode=read&amp;table=free&amp;article=6183</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Re: YAPC::Asia 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://www.perlmania.or.kr/bbs/bbs.html?mode=read&amp;table=free&amp;article=6184" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">작년에 이어서 올해도 YAPC::Asia2008을 보러갑니다. 올해는 도쿄공업대학에서 한다고 하는군요. :-) 회사에서 스폰서하기로
+해서, 전 공짜로 들어갈 수 있을 듯 합니다. 래리 아저씨도 온다고 하니 사인 받을 준비를 위해, 하얀 맥북도 준비해놨습니다.
+...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">작년에 이어서 올해도 <b>YAPC</b>::Asia2008을 보러갑니다. 올해는 도쿄공업대학에서 한다고 하는군요. :-) 회사에서 스폰서하기로 해서, 전 공짜로 들어갈 수 있을 듯 합니다. 래리 아저씨도 온다고 하니 사인 받을 준비를 위해, 하얀 맥북도 준비해놨습니다. <b>...</b></div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T19:07:41+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T19:07:41+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">unknown</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://www.perlmania.or.kr/bbs/bbs.html?mode=read&amp;table=free&amp;article=6184</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">lestrrat: @daiba 4月初旬に設定してください＞YAPC::Kyoto</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/lestrrat/statuses/710392232" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">lestrrat: &lt;SPAN&gt;&lt;SPAN&gt;&lt;/SPAN&gt;&lt;A HREF="http://twitter.com/daiba"&gt;@daiba&lt;/A&gt;&lt;SPAN&gt; 4月初旬に設定してください＞&lt;B&gt;YAPC&lt;/B&gt;::Kyoto &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">lestrrat: <SPAN><SPAN/><A HREF="http://twitter.com/daiba">@daiba</A><SPAN> 4月初旬に設定してください＞<B>YAPC</B>::Kyoto </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T08:13:42+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T08:13:42+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/lestrrat/statuses/710392232</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">daiba: 来年は YAPC::Asia 2009 Kyoto ってか？</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/daiba/statuses/710387152" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">daiba: &lt;SPAN&gt;&lt;SPAN&gt;来年は &lt;B&gt;YAPC&lt;/B&gt;::Asia 2009 Kyoto ってか？ &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">daiba: <SPAN><SPAN>来年は <B>YAPC</B>::Asia 2009 Kyoto ってか？ </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T08:11:23+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T08:11:23+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/daiba/statuses/710387152</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">serkantoto: YAPC::Asia 2008 will be held May 15-16 in Tokyo: YAPC::Asia 2008 (Yet Another Perl Conference) will be.. http://tinyurl.com/2kdp7o</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/serkantoto/statuses/709820452" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">serkantoto: &lt;SPAN&gt;&lt;SPAN&gt;&lt;B&gt;YAPC&lt;/B&gt;::Asia 2008 will be held May 15-16 in Tokyo: &lt;B&gt;YAPC&lt;/B&gt;::Asia 2008 (Yet Another Perl Conference) will be.. &lt;/SPAN&gt;&lt;A HREF="http://tinyurl.com/2kdp7o"&gt;http://tinyurl.com/2kdp7o&lt;/A&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">serkantoto: <SPAN><SPAN><B>YAPC</B>::Asia 2008 will be held May 15-16 in Tokyo: <B>YAPC</B>::Asia 2008 (Yet Another Perl Conference) will be.. </SPAN><A HREF="http://tinyurl.com/2kdp7o">http://tinyurl.com/2kdp7o</A><SPAN> </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T03:56:42+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T03:56:42+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/serkantoto/statuses/709820452</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::Asia 2008 will be held May 15-16 in Tokyo</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://asiajin.com/blog/2008/02/14/yapcasia-2008-will-be-held-may-15-16-in-tokyo/" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">YAPC::Asia 2008 (Yet Another Perl Conference) will be held May 15-16 at
+Tokyo Institute of Technology. YAPC::Asia is one of the biggest
+technology conference in Japan, and is a bilingual (Japanese/English)
+conference with many speakers ...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><b>YAPC</b>::<b>Asia</b> 2008 (Yet Another Perl Conference) will be held May 15-16 at Tokyo Institute of Technology. <b>YAPC</b>::<b>Asia</b> is one of the biggest technology conference in Japan, and is a bilingual (Japanese/English) conference with many speakers <b>...</b></div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T01:38:47Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T01:38:47Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">shunichi arai</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://asiajin.com/blog/2008/02/14/yapcasia-2008-will-be-held-may-15-16-in-tokyo/</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Lism.in * blog</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/studio-m/20080214" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/studio-m/20080214</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">techlog</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/j7400157/20080214" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/j7400157/20080214</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">public static void main</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/Kishi/20080214" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-14T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-14T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/Kishi/20080214</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">BWT - Leicester LUG - 13/02/2008 (2008.02.13  7:41)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://use.perl.org/~barbie/journal/35645" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Birmingham.pm World Tour 2008 - Leicester LUG - 13th February 2008
+
+Tonight is the second date of the Birmingham Perl Mongers 2008 World Tour.
+We'll be visiting Leicester LUG, where I'll be presenting a talk entitled
+"Understanding Malware". The talk happily coincides with MessageLabs'
+"Know Your Enemy" campaign, which means I have a few freebies to give
+away too.
+
+The event takes place at Leciester University, and the Leicester LUG guys
+have created a meetings page with links to the university pages with maps
+and directions, as well as the necessary info to find room 527 in the Ken
+Edwards Building, where the talk will take place. I am due to start
+sometime between 7.30.pm and 8pm and the talk will be for about an hour,
+with a Q&amp;A session afterwards. They then head to the pub for a debrief.
+
+Remaining Tour Dates
+
+Dates so far confirmed:
+
+  Wed 13 Feb - Leicester LUG
+  Tue 19 Feb - Coventry LUG
+  Wed 27 Feb - Birmingham.pm
+  Wed 26 Mar - Birmingham.pm
+  Tue 8 Apr - Leicester LUG
+  Wed 23 Apr - Birmingham.pm
+  Wed 28 May - Birmingham.pm
+
+More dates to be added, with Birmingham LUG, Cambridge.pm, Wolverhampton
+LUG, MiltonKeynes.pm (tech visit), Edinburgh.pm and London.pm to be
+scheduled. Please feel free to get in touch if you would like us to visit
+your group, and whether you would like us to present a few talks, or just
+share a drink.
+
+Check the Birmingham Perl Mongers website for more details.
+
+Background
+
+In early 2006 Birmingham Perl Mongers took to the road to promote the
+2006 YAPC::Europe Perl Conference, which we hosted at the end of August
+2006. We took it upon ourselves to visit several Perl Monger groups
+around the UK, and proved extremely popular, with several groups asked to
+come back again, and others asking us to visit them too. In 2007 we
+visited both Perl Monger and Linux user groups, this time presenting at
+each groups technical meeting. For 2008 we hope to include several groups
+we never previous got to as well visiting some old friends.</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Birmingham.pm World Tour 2008 - Leicester LUG - 13th February 2008</b></p>
+<p>Tonight is the second date of the <a href="http://birmingham.pm.org/article/bwt2008">Birmingham Perl Mongers 2008 World Tour</a>. We'll be visiting <a href="http://www.leicester.lug.org.uk/">Leicester LUG</a>, where I'll be presenting a talk entitled "Understanding Malware". The talk happily coincides with MessageLabs' <a href="http://www.messagelabs.com/threats?c=WW729BpQp4GLx7X2QWb46g%3D%3D">"Know Your Enemy"</a> campaign, which means I have a few freebies to give away too.</p>
+<p>The event takes place at Leciester University, and the Leicester LUG guys have created a <a href="http://www.leicester.lug.org.uk/next.php">meetings page</a> with links to the university pages with maps and directions, as well as the necessary info to find room 527 in the Ken Edwards Building, where the talk will take place. I am due to start sometime between 7.30.pm and 8pm and the talk will be for about an hour, with a Q&amp;A session afterwards. They then head to the pub for a debrief.</p>
+<p><b>Remaining Tour Dates</b></p>
+<p>Dates so far confirmed:</p>
+<blockquote>
+<div>Wed 13 Feb - Leicester LUG<br/>
+Tue 19 Feb - Coventry LUG<br/>
+Wed 27 Feb - Birmingham.pm<br/>
+Wed 26 Mar - Birmingham.pm<br/>
+Tue 8 Apr - Leicester LUG<br/>
+Wed 23 Apr - Birmingham.pm<br/>
+Wed 28 May - Birmingham.pm</div>
+</blockquote>
+<p>More dates to be added, with Birmingham LUG, Cambridge.pm, Wolverhampton LUG, MiltonKeynes.pm (tech visit), Edinburgh.pm and London.pm to be scheduled. Please feel free to get in touch if you would like us to visit your group, and whether you would like us to present a few talks, or just share a drink.</p>
+<p>Check the <a href="http://birmingham.pm.org/">Birmingham Perl Mongers website</a> for more details.</p>
+<p><b>Background</b></p>
+<p>In early 2006 Birmingham Perl Mongers took to the road to promote the 2006 YAPC::Europe Perl Conference, which we hosted at the end of August 2006. We took it upon ourselves to visit several Perl Monger groups around the UK, and proved extremely popular, with several groups asked to come back again, and others asking us to visit them too. In 2007 we visited both Perl Monger and Linux user groups, this time presenting at each groups technical meeting. For 2008 we hope to include several groups we never previous got to as well visiting some old friends.</p></div>
+    </content>
+    <category xmlns="http://www.w3.org/2005/Atom" term="journal"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-13T12:41:32Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-13T12:41:32Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">barbie</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://use.perl.org/~barbie/journal/35645?from=rss</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://memo.xight.org/2008-02-12-3" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Reference Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN http://conferences.yapcasia.org/ya2008/</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Reference Welcome: <B>YAPC</B>::<B>Asia</B> 2008 - May 15-16th in Tokyo, JAPAN http://conferences.yapcasia.org/ya2008/</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-12T14:59:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-12T14:59:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://memo.xight.org/2008-02-12-3</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">obra: Submitted 3 talks to YAPC::Asia</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/obra/statuses/703872852" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">obra: &lt;SPAN&gt;&lt;SPAN&gt;Submitted 3 talks to &lt;B&gt;YAPC&lt;/B&gt;::Asia &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">obra: <SPAN><SPAN>Submitted 3 talks to <B>YAPC</B>::Asia </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-12T15:43:49+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-12T15:43:49+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/obra/statuses/703872852</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Khaos � Blog Archive � Out and About</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://martian.org/karen/2008/02/11/out-and-about/" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom"> 
+        
+          Khaos � Blog Archive � Out and About      
+       </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"> 
+        
+          Khaos � Blog Archive � Out and About      
+       </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">0</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">0</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://martian.org/karen/2008/02/11/out-and-about/</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">yapcasia: Tip: type "yapcasia.org" in the location bar to go to
+YAPC::Asia 2008 site (since googling YAPC Asia doesn't give you 2008 page
+yet)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/yapcasia/statuses/701572552" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">yapcasia: Tip: type "yapcasia.org" in the location bar to go to
+YAPC::Asia 2008 site (since googling YAPC Asia doesn't give you 2008 page
+yet)</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">yapcasia: Tip: type "yapcasia.org" in the location bar to go to YAPC::Asia 2008 site (since googling <b>YAPC Asia</b> doesn't give you 2008 page yet)</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-12T00:25:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-12T00:25:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/yapcasia/statuses/701572552</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">miyagawa: Google Japan で &amp;quot;&lt;B&gt;YAPC&lt;/B&gt; &lt;B&gt;Asia&lt;/B&gt;&amp;quot; と検索...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/miyagawa/statuses/701481972" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">miyagawa: Google Japan で &amp;quot;&lt;B&gt;YAPC&lt;/B&gt; &lt;B&gt;Asia&lt;/B&gt;&amp;quot; と検索しても2008のページは４位 (日本語のページがbot...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">miyagawa: Google Japan で "<B>YAPC</B> <B>Asia</B>" と検索しても2008のページは４位 (日本語のページがbot...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-11T23:52:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-11T23:52:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/miyagawa/statuses/701481972</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Red’sPAGE on Hatena</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/redrisefirm/20080212" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-12T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-12T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/redrisefirm/20080212</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">serkantoto: Signed up for YAPC Tokyo in May.</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/serkantoto/statuses/695588222" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">serkantoto: &lt;SPAN&gt;&lt;SPAN&gt;Signed up for &lt;B&gt;YAPC&lt;/B&gt; Tokyo in May. &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">serkantoto: <SPAN><SPAN>Signed up for <B>YAPC</B> Tokyo in May. </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-10T09:45:08+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-10T09:45:08+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/serkantoto/statuses/695588222</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Tech Reviewers for Learning Perl 5th Edition (2008.02.09 19:00)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://use.perl.org/~brian_d_foy/journal/35627" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Last week I finished updating Learning Perl for Perl 5.10, and it's time
+for it's technical review before I turn in the book to the publisher at
+the end of the month. Anyone with 5.10 experience interested? Email me
+and I work out the details with you.
+
+I'll have more to say about the newest edition later, but it's not a
+minor update. There's a completely new chapter on smart matching, and
+lots of additions to the regex stuff. Perl 5.10 adds some nice features
+for newbies.
+
+Here are some of the things that we've added:
+
+  * say
+
+  * Named captures in regexes
+
+  * Relative back references in regexes
+
+  * state variables
+
+  * stacked file test operators
+
+  * defined-or
+
+  * smart matching
+
+  * given-when and for-when
+
+
+
+I expect the book might just squeak in by YAPC::NA, but it should
+definitely be at OSCON.</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Last week I finished updating <i>Learning Perl</i> for Perl 5.10, and it's time for it's technical review before I turn in the book to the publisher at the end of the month. Anyone with 5.10 experience interested? Email me and I work out the details with you.<br/>
+<br/>
+I'll have more to say about the newest edition later, but it's not a minor update. There's a completely new chapter on smart matching, and lots of additions to the regex stuff. Perl 5.10 adds some nice features for newbies.<br/>
+<br/>
+Here are some of the things that we've added:<br/>
+<br/>
+<ul>
+<li>say<br/></li>
+<li>Named captures in regexes<br/></li>
+<li>Relative back references in regexes<br/></li>
+<li>state variables<br/></li>
+<li>stacked file test operators<br/></li>
+<li>defined-or<br/></li>
+<li>smart matching<br/></li>
+<li>given-when and for-when<br/></li>
+</ul>
+<br/>
+<br/>
+I expect the book might just squeak in by YAPC::NA, but it should definitely be at OSCON.</div>
+    </content>
+    <category xmlns="http://www.w3.org/2005/Atom" term="journal"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-10T00:00:16Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-10T00:00:16Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">brian_d_foy</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://use.perl.org/~brian_d_foy/journal/35627?from=rss</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">takahashim: YAPC::Asia 2008 Tokyo は 5 月なのか。そうすると 2009 は 6 月になって RubyKaigi と併催になる？（＜たぶんなりません）</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/takahashim/statuses/693295762" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">takahashim: &lt;SPAN&gt;&lt;SPAN&gt;&lt;B&gt;YAPC&lt;/B&gt;::Asia 2008 Tokyo は 5 月なのか。そうすると 2009 は 6 月になって RubyKaigi と併催になる？（＜たぶんなりません） &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">takahashim: <SPAN><SPAN><B>YAPC</B>::Asia 2008 Tokyo は 5 月なのか。そうすると 2009 は 6 月になって RubyKaigi と併催になる？（＜たぶんなりません） </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-09T13:12:55+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-09T13:12:55+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/takahashim/statuses/693295762</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::Asia 2008 開催決定 from:キャリア形成のお手伝い</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://blog.pasonatech.co.jp/counselor/career_blog/104/6261.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">「YAPC::Asia 2007 Tokyo 参加してきました」とこちらのエントリで書いたPerlのカンファレンスのYAPC::Asiaですが、今年は5/15、16に開催されるそうです。（詳しくはYAPC::Asia 2008を）私は、Shibuya Perl Mongers のメーリングリストで開催のお知らせをしったのですが、他の方が書いているブログだったり、YAPC::Asia</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">「YAPC::Asia 2007 Tokyo 参加してきました」とこちらのエントリで書いたPerlのカンファレンスのYAPC::Asiaですが、今年は5/15、16に開催されるそうです。（詳しくはYAPC::Asia 2008を）私は、Shibuya Perl Mongers のメーリングリストで開催のお知らせをしったのですが、他の方が書いているブログだったり、YAPC::Asia</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-09T11:55:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-09T11:55:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://blog.pasonatech.co.jp/counselor/career_blog/104/6261.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">yapcasia: YAPC::Asia calendar is available! http://tinyurl.com/2afc3y (HTML) and http://tinyurl.com/2avamx (ical)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/yapcasia/statuses/692315802" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">yapcasia: YAPC::Asia calendar is available! http://tinyurl.com/2afc3y (HTML) and http://tinyurl.com/2avamx (ical)</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">yapcasia: YAPC::Asia calendar is available! http://tinyurl.com/2afc3y (HTML) and http://tinyurl.com/2avamx (ical)</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-09T01:30:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-09T01:30:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/yapcasia/statuses/692315802</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Perl 6 Today - &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2007 Tokyo Sessions</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://tokyo2007.yapcasia.org/sessions/2007/02/perl_6_today.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">...bookmark this on del.icio.us - posted by foouser to towatch perl audreytang and saved by  people...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">...bookmark this on del.icio.us - posted by foouser to towatch perl audreytang and saved by  people...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-09T10:06:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-09T10:06:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://tokyo2007.yapcasia.org/sessions/2007/02/perl_6_today.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">"本当はコンピュータエンジ|..."</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://yhara.tumblr.com/post/25863444" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">小飼弾のアルファギークに逢いたい♥：#7 &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2007 Hackathonスペシャル（後編</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">小飼弾のアルファギークに逢いたい♥：#7 <B>YAPC</B>::<B>Asia</B> 2007 Hackathonスペシャル（後編</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-08T19:41:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-08T19:41:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://yhara.tumblr.com/post/25863444</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">"確かにWebブラウザって言えば&amp;#..."</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://yhara.tumblr.com/post/25863497" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">小飼弾のアルファギークに逢いたい♥：#7 &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2007 Hackathonスペシャル（後編</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">小飼弾のアルファギークに逢いたい♥：#7 <B>YAPC</B>::<B>Asia</B> 2007 Hackathonスペシャル（後編</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-08T19:41:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-08T19:41:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://yhara.tumblr.com/post/25863497</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 のサイトをオープンしました</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://groups.google.com/group/shibuya-pm/msg/ba5ea61f6222125a" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 のサイトをオープンしました。   [link] プレゼンの応募や事前登録が</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><B>YAPC</B>::<B>Asia</B> 2008 のサイトをオープンしました。   [link] プレゼンの応募や事前登録が</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-08T16:31:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-08T16:31:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://groups.google.co.jp/group/shibuya-pm/msg/ba5ea61f6222125a</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">ネットコミュニケーション2.0（旧称：竹迫...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://labs.cybozu.co.jp/blog/takesako/2008/02/devsumi2008.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">所属：Shibuya Perl Mongers 概要：&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 Tokyo について ■ 5. ネットウォッチ2.0 </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">所属：Shibuya Perl Mongers 概要：<B>YAPC</B>::<B>Asia</B> 2008 Tokyo について ■ 5. ネットウォッチ2.0 </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-08T15:39:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-08T15:39:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://labs.cybozu.co.jp/blog/takesako/2008/02/devsumi2008.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">CodeZine：Perlの一大イベント「&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://codezine.jp/a/article.aspx?aid=2209" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">スパム対策で、トラックバックはデフォルトで非公開とし、編集部チェックを通した上で公開</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">スパム対策で、トラックバックはデフォルトで非公開とし、編集部チェックを通した上で公開</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-08T14:41:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-08T14:41:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://codezine.jp/a/article.aspx?aid=2209</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">tetsunosuke: YAPC::Asiaは東工大でやるのか！</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/tetsunosuke/statuses/688773292" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">tetsunosuke: &lt;SPAN&gt;&lt;SPAN&gt;&lt;B&gt;YAPC&lt;/B&gt;::Asiaは東工大でやるのか！ &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">tetsunosuke: <SPAN><SPAN><B>YAPC</B>::Asiaは東工大でやるのか！ </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-08T01:15:18+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-08T01:15:18+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/tetsunosuke/statuses/688773292</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">2008-02-07のブックマーク</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://www.vakant.biz/it_750.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 Tag [perl]</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Welcome: <B>YAPC</B>::<B>Asia</B> 2008 - May 15-16th in Tokyo, JAPAN <B>YAPC</B>::<B>Asia</B> 2008 Tag [perl]</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-08T00:10:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-08T00:10:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://www.vakant.biz/it_750.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::Asia 2008 は5月15,16日！</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://chalow.net/2008-02-07-3.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">たぶん日本で一番大きな Perl のカンファレンスであろう  YAPC::Asia が今年も東京で開催されます。  例年よりもちょっと遅めの5月中旬です。    - Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, Japan    http://conferences.yapcasia.org/ya2008/    ちなみに去年の YAPC::Asia 2007 のレポートはこちら：  - [を] YAPC::ASIA 2007 Tokyo[2007-04-05-2]      </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">たぶん日本で一番大きな Perl のカンファレンスであろう  YAPC::Asia が今年も東京で開催されます。  例年よりもちょっと遅めの5月中旬です。    - Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, Japan    http://conferences.yapcasia.org/ya2008/    ちなみに去年の YAPC::Asia 2007 のレポートはこちら：  - [を] YAPC::ASIA 2007 Tokyo[2007-04-05-2]      </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T06:39:19-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T06:39:19-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://chalow.net/2008-02-07-3.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::Asia, 今年もやります!</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://blog.livedoor.jp/dankogai/archives/50998197.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom"> Yay!    Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN  
+YAPC::Asia 2008 を 2008/05/15-16 に東京工業大学大岡山キャンパスで開催します。
+    続きを読む </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"> Yay!    Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN  
+YAPC::Asia 2008 を 2008/05/15-16 に東京工業大学大岡山キャンパスで開催します。
+    続きを読む </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T19:17:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T19:17:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://blog.livedoor.jp/dankogai/archives/50998197.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://tumblr.zeg.in/post/25727052" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T13:11:00+05:30</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T13:11:00+05:30</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://tumblr.zeg.in/post/25727052</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">YAPC::Asia 2008, May 15-16 in Tokyo</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://use.perl.org/article.pl?sid=08/02/06/2327249" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">miyagawa writes "YAPC::Asia committee is pleased to announce that YAPC::Asia 2008 is now scheduled on May 15-16, 2008 in Tokyo. We are also announcing the call for presentations and early registration for the conference today. We are looking for 20 and 40 minutes presentations. The deadline for submissions is February 25th, 2008. The conference website uses Act so you can sign in using your existent account if you've been to one of past YAPCs or Perl Workshops in North America or Europe. Special</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">miyagawa writes "YAPC::Asia committee is pleased to announce that YAPC::Asia 2008 is now scheduled on May 15-16, 2008 in Tokyo. We are also announcing the call for presentations and early registration for the conference today. We are looking for 20 and 40 minutes presentations. The deadline for submissions is February 25th, 2008. The conference website uses Act so you can sign in using your existent account if you've been to one of past YAPCs or Perl Workshops in North America or Europe. Special</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T15:47:00-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T15:47:00-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://use.perl.org/article.pl?sid=08/02/06/2327249&amp;from=rss</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">[yapcasia2008][Perl]YAPC::Asia 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/jitsu102/20080207/1202333015" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">■[yapcasia2008][Perl]YAPC::Asia 2008  5月15日から16日。行きたい。。。    Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">■[yapcasia2008][Perl]YAPC::Asia 2008  5月15日から16日。行きたい。。。    Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:23:35-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:23:35-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/jitsu102/20080207/1202333015</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">bookmarks for the day</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/dankogai/20080207/1202322732" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">■bookmarks for the day   404 Blog Not Found:これひど　- オーガズムと男女生み分けの関係  ActionScript最適化　多分その１　ガベージコレクタを攻略する My life as an APE   Reference Counter かわいいよ Reference Counter    404 Blog Not Found:科究者と科教者 - 書評 - はじめよう!科学技術コミュニケーション   最もタメになる「初心者用言語」は Brainf*ck！ - TAKESAKOのはてな出張所   問題は、bracesが予約されちゃっているのでここにソース張れない事だな...    BrainCrash   今までで最も役立つBF++言語    404 Blog Not Found:None of your happiness!  Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN   きたきたやっとキター    404 Blog Not Found:YAPC::Asia, 今年もやりま</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">■bookmarks for the day   404 Blog Not Found:これひど　- オーガズムと男女生み分けの関係  ActionScript最適化　多分その１　ガベージコレクタを攻略する My life as an APE   Reference Counter かわいいよ Reference Counter    404 Blog Not Found:科究者と科教者 - 書評 - はじめよう!科学技術コミュニケーション   最もタメになる「初心者用言語」は Brainf*ck！ - TAKESAKOのはてな出張所   問題は、bracesが予約されちゃっているのでここにソース張れない事だな...    BrainCrash   今までで最も役立つBF++言語    404 Blog Not Found:None of your happiness!  Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN   きたきたやっとキター    404 Blog Not Found:YAPC::Asia, 今年もやりま</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T10:32:12-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T10:32:12-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/dankogai/20080207/1202322732</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in ...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://mark.jolt.jp/pageDetail/116243" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T03:01:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T03:01:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://mark.jolt.jp/pageDetail/116243</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">y_tsuda: @hakobe YAPC</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/y_tsuda/statuses/684257082" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">y_tsuda: &lt;SPAN&gt;&lt;SPAN&gt;&lt;/SPAN&gt;&lt;A HREF="http://twitter.com/hakobe"&gt;@hakobe&lt;/A&gt;&lt;SPAN&gt; &lt;B&gt;YAPC&lt;/B&gt; &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">y_tsuda: <SPAN><SPAN/><A HREF="http://twitter.com/hakobe">@hakobe</A><SPAN> <B>YAPC</B> </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T18:53:23+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T18:53:23+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/y_tsuda/statuses/684257082</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://clip.eventcast.jp/event/cab1aa7fdf62a106b88d55174a7d0ff4" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 を 2008/05/15-16 に東京工業大学大岡山キャンパスで開催します。  </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><B>YAPC</B>::<B>Asia</B> 2008 を 2008/05/15-16 に東京工業大学大岡山キャンパスで開催します。  </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T01:54:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T01:54:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://clip.eventcast.jp/event/cab1aa7fdf62a106b88d55174a7d0ff4</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">[PERL][YAPCASIA2008][&lt;B&gt;YAPC&lt;/B&gt;]Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/hsada/20080207/1202313097" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 を 2008/05/15-16 に東京工業大学大岡山キャンパスで開催します</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><B>YAPC</B>::<B>Asia</B> 2008 を 2008/05/15-16 に東京工業大学大岡山キャンパスで開催します</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:51:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:51:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/hsada/20080207/1202313097</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008、2008年5月15日〜16日に...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://secure.ddo.jp/~kaku/tdiary/20080206.html" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:12:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:12:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://secure.ddo.jp/~kaku/tdiary/20080206.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">404 Hatena::Diary not Found</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/dankogai/20080207" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/dankogai/20080207</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">補天鳥保管庫</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/hsada/20080207" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/hsada/20080207</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Links for 20080206 [はてなブックマーク]</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://b.hatena.ne.jp/y_141/20080206" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Welcome: <B>YAPC</B>::<B>Asia</B> 2008 - May 15-16th in Tokyo, JAPAN Welcome: <B>YAPC</B>::<B>Asia</B> 2008 - May 15-16th in</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://b.hatena.ne.jp/y_141/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">jitsu102の日記</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/jitsu102/20080207" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-07T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/jitsu102/20080207</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">beatinaniwa: おー、YAPC::Asia 2008は東工大で開催されるのかー。ボランティアスタッフでも雑用でも手伝えることがあればお手伝いしたいなあ。</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/beatinaniwa/statuses/683685082" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">beatinaniwa: &lt;SPAN&gt;&lt;SPAN&gt;おー、&lt;B&gt;YAPC&lt;/B&gt;::Asia 2008は東工大で開催されるのかー。ボランティアスタッフでも雑用でも手伝えることがあればお手伝いしたいなあ。 &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">beatinaniwa: <SPAN><SPAN>おー、<B>YAPC</B>::Asia 2008は東工大で開催されるのかー。ボランティアスタッフでも雑用でも手伝えることがあればお手伝いしたいなあ。 </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T15:30:55+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T15:30:55+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/beatinaniwa/statuses/683685082</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://shinyai.tumblr.com/post/25661625" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Welcome: <B>YAPC</B>::<B>Asia</B> 2008 - May 15-16th in Tokyo, JAPAN...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:12:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:12:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://shinyai.tumblr.com/post/25661625</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">今日のニュース 2008.02.07</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://ashitano.blog85.fc2.com/blog-entry-625.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">[14:00][11] ＿ Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN
+[15:00][06] ＿ 本当は匿名問題ではない池田信夫氏の匿名問題 [--:--][06] ＿ 先生に失礼で敬語なんて使えません
+[--:--][06] ＿ 新海監督の「秒速5センチ」と「雲のむこう」 ...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">[14:00][11] ＿ Welcome: <b>YAPC</b>::<b>Asia</b> 2008 - May 15-16th in Tokyo, JAPAN [15:00][06] ＿ 本当は匿名問題ではない池田信夫氏の匿名問題 [--:--][06] ＿ 先生に失礼で敬語なんて使えません [--:--][06] ＿ 新海監督の「秒速5センチ」と「雲のむこう」 <b>...</b></div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:04:22Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:04:22Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">ashitano</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://ashitano.blog85.fc2.com/blog-entry-625.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://xn--ehq70wh6gtwf.dd-fast.com/1/2008/02/post_39.html" type="text/html"/>
+    <category xmlns="http://www.w3.org/2005/Atom" term="perl yapc yapcasia2008"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T23:03:51+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T23:03:51+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">sionmaru</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://xn--ehq70wh6gtwf.dd-fast.com/1/2008/02/post_39.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://sun1984119.tumblr.com/post/25659246" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Welcome: <B>YAPC</B>::<B>Asia</B> 2008 - May 15-16th in Tokyo, JAPAN...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:37:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:37:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://sun1984119.tumblr.com/post/25659246</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008に登録しました</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/mukaken/20080206/1202304229" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">[http://conferences.yapcasia.org/ya2008/:title] &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008のサイトに登録しました。  </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">[http://conferences.yapcasia.org/ya2008/:title] <B>YAPC</B>::<B>Asia</B> 2008のサイトに登録しました。  </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T22:23:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T22:23:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/mukaken/20080206/1202304229</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">tobetchi: YAPC::Asia行きたい！</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/tobetchi/statuses/683447702" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">tobetchi: &lt;SPAN&gt;&lt;SPAN&gt;&lt;B&gt;YAPC&lt;/B&gt;::Asia行きたい！ &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">tobetchi: <SPAN><SPAN><B>YAPC</B>::Asia行きたい！ </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:57:04+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:57:04+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/tobetchi/statuses/683447702</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">kawa0117: regist したよ。YAPC::Asia 楽しみ。 http://conferences.yapcasia.org/ya2008/</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/kawa0117/statuses/683442222" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">kawa0117: &lt;SPAN&gt;&lt;SPAN&gt;regist したよ。&lt;B&gt;YAPC&lt;/B&gt;::Asia 楽しみ。 &lt;/SPAN&gt;&lt;A HREF="http://conferences.yapcasia.org/ya2008/"&gt;http://conferences.yapcasia.org/ya2008/&lt;/A&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">kawa0117: <SPAN><SPAN>regist したよ。<B>YAPC</B>::Asia 楽しみ。 </SPAN><A HREF="http://conferences.yapcasia.org/ya2008/">http://conferences.yapcasia.org/ya2008/</A><SPAN> </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:54:51+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:54:51+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/kawa0117/statuses/683442222</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">hatebu: Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN (50 users) http://tinyurl.com/384cyf</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/hatebu/statuses/683422172" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">hatebu: &lt;SPAN&gt;&lt;SPAN&gt;Welcome: &lt;B&gt;YAPC&lt;/B&gt;::Asia 2008 - May 15-16th in Tokyo, JAPAN (50 users) &lt;/SPAN&gt;&lt;A HREF="http://tinyurl.com/384cyf"&gt;http://tinyurl.com/384cyf&lt;/A&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">hatebu: <SPAN><SPAN>Welcome: <B>YAPC</B>::Asia 2008 - May 15-16th in Tokyo, JAPAN (50 users) </SPAN><A HREF="http://tinyurl.com/384cyf">http://tinyurl.com/384cyf</A><SPAN> </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:46:05+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:46:05+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/hatebu/statuses/683422172</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">yapc::asia 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://sano66.blogspot.com/2008/02/yapcasia-2008.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">もうそんな時期か。 今年もよろしくお願いします。  Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN   Powered by ScribeFire.</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">もうそんな時期か。 今年もよろしくお願いします。  Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN   Powered by ScribeFire.</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T04:34:00-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T04:34:00-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://sano66.blogspot.com/2008/02/yapcasia-2008.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">racoon: YAPC::Asia 2008のオフィシャルサイトで使われてるActというカンファレンス用サイトの構築ツールを今度使ってみよう。 http://act.mongueurs.net/</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/racoon/statuses/683175182" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">racoon: &lt;SPAN&gt;&lt;SPAN&gt;&lt;B&gt;YAPC&lt;/B&gt;::Asia 2008のオフィシャルサイトで使われてるActというカンファレンス用サイトの構築ツールを今度使ってみよう。 &lt;/SPAN&gt;&lt;A HREF="http://act.mongueurs.net/"&gt;http://act.mongueurs.net/&lt;/A&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">racoon: <SPAN><SPAN><B>YAPC</B>::Asia 2008のオフィシャルサイトで使われてるActというカンファレンス用サイトの構築ツールを今度使ってみよう。 </SPAN><A HREF="http://act.mongueurs.net/">http://act.mongueurs.net/</A><SPAN> </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T11:48:43+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T11:48:43+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/racoon/statuses/683175182</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Perlの一大イベント「&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008」 5月...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="/a/article/aid/2209.aspx" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:40:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:40:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://codezine.jp/r.x/ht/aid/2209</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">snews: YAPC::Asia 2008 http://conferences.yapcasia.org/ya2008/ from @miura</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/snews/statuses/682953972" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">snews: &lt;SPAN&gt;&lt;SPAN&gt;&lt;B&gt;YAPC&lt;/B&gt;::Asia 2008 &lt;/SPAN&gt;&lt;A HREF="http://conferences.yapcasia.org/ya2008/"&gt;http://conferences.yapcasia.org/ya2008/&lt;/A&gt;&lt;SPAN&gt; from &lt;/SPAN&gt;&lt;A HREF="http://twitter.com/miura"&gt;@miura&lt;/A&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">snews: <SPAN><SPAN><B>YAPC</B>::Asia 2008 </SPAN><A HREF="http://conferences.yapcasia.org/ya2008/">http://conferences.yapcasia.org/ya2008/</A><SPAN> from </SPAN><A HREF="http://twitter.com/miura">@miura</A><SPAN> </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:48:05+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:48:05+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/snews/statuses/682953972</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">miura: @snews YAPC::Asia 2008 http://conferences.yapcasia.org/ya2008/</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/miura/statuses/682952652" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">miura: &lt;SPAN&gt;&lt;SPAN&gt;&lt;/SPAN&gt;&lt;A HREF="http://twitter.com/snews"&gt;@snews&lt;/A&gt;&lt;SPAN&gt; &lt;B&gt;YAPC&lt;/B&gt;::Asia 2008 &lt;/SPAN&gt;&lt;A HREF="http://conferences.yapcasia.org/ya2008/"&gt;http://conferences.yapcasia.org/ya2008/&lt;/A&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">miura: <SPAN><SPAN/><A HREF="http://twitter.com/snews">@snews</A><SPAN> <B>YAPC</B>::Asia 2008 </SPAN><A HREF="http://conferences.yapcasia.org/ya2008/">http://conferences.yapcasia.org/ya2008/</A><SPAN> </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:47:14+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:47:14+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/miura/statuses/682952652</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://reddiggulo.us/Welcome-YAPC-Asia-2008-May-15-16th-Tokyo-JAPAN.html" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T08:38:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T08:38:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://reddiggulo.us/Welcome-YAPC-Asia-2008-May-15-16th-Tokyo-JAPAN.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">nekotank: YAPC::ASIA2008は東工大の大岡山キャンパスでやるのか</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/nekotank/statuses/682810782" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">nekotank: &lt;SPAN&gt;&lt;SPAN&gt;&lt;B&gt;YAPC&lt;/B&gt;::ASIA2008は東工大の大岡山キャンパスでやるのか &lt;/SPAN&gt;&lt;/SPAN&gt; </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">nekotank: <SPAN><SPAN><B>YAPC</B>::ASIA2008は東工大の大岡山キャンパスでやるのか </SPAN></SPAN> </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T08:30:26+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T08:30:26+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/nekotank/statuses/682810782</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Perlの一大イベント「&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008」 5月...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://codezine.jp/a/article/aid/2209.aspx" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Perl開発者のためのカンファレンス「&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt;」が今年も開催される。    </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Perl開発者のためのカンファレンス「<B>YAPC</B>::<B>Asia</B>」が今年も開催される。    </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T16:07:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T16:07:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://rss.rssad.jp/rss/artclk/2TB9U9IZvLkn/1cd504ccd694f4f3ef0bf6e2a1a1194b?ul=fhhrk6iLAHctZ5B08vEDQDgu7xeuMySbWCfayE3a2EpptL4eNIKiurfSkOnp89S450.pfMm</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/yappo/20080206/1202276599" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">TODO: 20分トークの応募する内容を考える</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">TODO: 20分トークの応募する内容を考える</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:43:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:43:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/yappo/20080206/1202276599</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://buzzurl.jp/entry/http://conferences.yapcasia.org/ya2008/" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:22:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T14:22:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://buzzurl.jp/entry/http://conferences.yapcasia.org/ya2008/</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">miyagawa: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 started CFP http://yapcasia.org/</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://twitter.com/miyagawa/statuses/682459552" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">...miyagawa: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 started CFP http://yapcasia.org/</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">...miyagawa: <B>YAPC</B>::<B>Asia</B> 2008 started CFP http://yapcasia.org/</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T04:33:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T04:33:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://twitter.com/miyagawa/statuses/682459552</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://conferences.yapcasia.org/ya2008/" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">We'er working on redesigning the site as well as localizint the UI and content into Japanese as well.  </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">We'er working on redesigning the site as well as localizint the UI and content into Japanese as well.  </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T05:22:00+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T05:22:00+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://conferences.yapcasia.org/ya2008/</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://b.hatena.ne.jp/naoya/20080206" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 5月</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><B>YAPC</B>::<B>Asia</B> 2008 5月</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:22:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:22:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://b.hatena.ne.jp/naoya/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://b.hatena.ne.jp/jazzanova/20080206" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:20:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:20:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://b.hatena.ne.jp/jazzanova/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">&lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://b.hatena.ne.jp/miyagawa/20080206" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:20:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T13:20:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://b.hatena.ne.jp/miyagawa/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">News: YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://conferences.yapcasia.org/ya2008/news" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Attending to the conference will cost 4000 JPY (we're planning academic discount) including our original schwag bag.  </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Attending to the conference will cost 4000 JPY (we're planning academic discount) including our original schwag bag.  </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T04:53:00+01:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T04:53:00+01:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://conferences.yapcasia.org/ya2008/news</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Finally learning Maven</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://wcwc7.org/post/25623225" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Finally learning Maven  Finally learning Maven. Talks On Oregon Coast Paranormal Legends Given in Newport, Seaside. Oregon Coast Town Turns Murder Into a Festival of Fun. Commit to be Fit.  Volunteer Software. Selfridges to sell pricey iPod lessons. Sell solder capacitor. Cisco selects Intact Integrated Services as sole Advanced Services partner for NAC deployment in Europe. Eagan Fire Department offers free housing at station to volunteer recruits. TiVo HD (20 HD hours). Sell plywood. Targa Res</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Finally learning Maven  Finally learning Maven. Talks On Oregon Coast Paranormal Legends Given in Newport, Seaside. Oregon Coast Town Turns Murder Into a Festival of Fun. Commit to be Fit.  Volunteer Software. Selfridges to sell pricey iPod lessons. Sell solder capacitor. Cisco selects Intact Integrated Services as sole Advanced Services partner for NAC deployment in Europe. Eagan Fire Department offers free housing at station to volunteer recruits. TiVo HD (20 HD hours). Sell plywood. Targa Res</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-05T19:51:53-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-05T19:51:53-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://wcwc7.org/post/25623225</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">セッションの募集を開始しました</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="/ya2008/news" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">YAPC::Asia 2008 Tokyo を 2008 年 5月 に開催します。
+
+日時: 2008/05/15-16 (Thu-Fri) 9:00-18:00 （予定）
+会場: 東京工業大学大岡山キャンパス
+費用: 4000円 (カンファレンスノベルティグッズ付き)
+チケット: 3月上旬よりオンライン販売
+主催: YAPC::Asia 2008 実行委員会 / Shibuya Perl Mongers
+
+2006, 2007年につづき、海外からのゲストスピーカーも多数予定しています。
+
+また、スピーカーの募集とカンファレンスへの事前登録も本日より開始しています。20分、40分のプレゼンテーションの登録を受け付けます。プレゼンの応募を行う方は、タイトル・アブストラクトをつけて、フォームからサブミットをお願いします。フォームは共用のため英語となっていますが、タイトル、アブストラクトなどは日本語で記述していただいて
+OK です。複数のトークを登録されてもかまいません。
+
+プレゼン登録の〆切は、2008/02/25 を予定しています。ライトニングトークはカンファレンスが近づいた4月下旬ごろから募集する予定です。</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>YAPC::Asia 2008 Tokyo を 2008 年 5月 に開催します。</p>
+<p>日時: 2008/05/15-16 (Thu-Fri) 9:00-18:00 （予定）<br/>
+会場: 東京工業大学大岡山キャンパス<br/>
+費用: 4000円 (カンファレンスノベルティグッズ付き)<br/>
+チケット: 3月上旬よりオンライン販売<br/>
+主催: YAPC::Asia 2008 実行委員会 / Shibuya Perl Mongers<br/></p>
+<p>2006, 2007年につづき、海外からのゲストスピーカーも多数予定しています。</p>
+<p>また、スピーカーの募集とカンファレンスへの事前登録も本日より開始しています。20分、40分のプレゼンテーションの登録を受け付けます。プレゼンの応募を行う方は、タイトル・アブストラクトをつけて、<a href="/ya2008/newtalk">フォームから</a>サブミットをお願いします。フォームは共用のため英語となっていますが、タイトル、アブストラクトなどは日本語で記述していただいて OK です。複数のトークを登録されてもかまいません。</p>
+<p>プレゼン登録の〆切は、2008/02/25 を予定しています。ライトニングトークはカンファレンスが近づいた4月下旬ごろから募集する予定です。</p></div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T02:20:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T02:20:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">Tatsuhiko Miyagawa</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://conferences.yapcasia.org/ya2008/ja/75</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">[Perl] &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/boscono/20080206/p1" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">[http://conferences.yapcasia.org/ya2008/:title] 今年もあるみたいなんで行ければ行きます．</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">[http://conferences.yapcasia.org/ya2008/:title] 今年もあるみたいなんで行ければ行きます．</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/boscono/20080206/p1</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Welcome: &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2008 - May 15-16th in Tokyo, Japan</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/yto/20080206/p8" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">...http://conferences.yapcasia.org/ya2008/...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">...http://conferences.yapcasia.org/ya2008/...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T09:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/yto/20080206/p8</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">chromatic: Perl 6 Design Minutes for 23 January 2008</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://use.perl.org/~chromatic/journal/35491" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom"> The Perl 6 design team met by phone on 23 January 2008.  Larry, Allison, Patrick, Jerry, Will, Jesse, Nicholas, and chromatic attended. 
+
+   Larry:   
+
+ 
+ just fudging things 
+ developing the  fudge  preprocessor and making sure it's in the right place such that it's usable by different</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"> The Perl 6 design team met by phone on 23 January 2008.  Larry, Allison, Patrick, Jerry, Will, Jesse, Nicholas, and chromatic attended. 
+
+   Larry:   
+
+ 
+ just fudging things 
+ developing the  fudge  preprocessor and making sure it's in the right place such that it's usable by different</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-05T20:07:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-05T20:07:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://use.perl.org/~chromatic/journal/35491?from=rss</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">ヲハニュース</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/yto/20080206" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/yto/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">てきとうなメモ</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/boscono/20080206" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/boscono/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Yappo::Hatena::Diary</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/yappo/20080206" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/yappo/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">mukakenの日記</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/mukaken/20080206" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/mukaken/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Web技術系クリップ</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://d.hatena.ne.jp/ringod/20080206" type="text/html"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-06T00:00:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://d.hatena.ne.jp/ringod/20080206</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Miami-Dade slots vote could lead to widespread gambling in Florida</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://wcwc7.org/post/25525326" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Miami-Dade slots vote could lead to widespread gambling in Florida  Miami-Dade slots vote could lead to widespread gambling in Florida. Avex DVD to Zune Video Suite 4.0 ($ 45) (By Avex DVD Software). Deathbed. 162-acre retail proposal floated in Hillsborough. Tea Party!. Sprechstunde des Bildungsstadtrates. Portland Code Camp 2.0 : Session 01 - Introduction to Ruby on Rails with Lucas Carlson. NCHELP and JustIQ Provide Relief to Lenders Free CommonLinereg Testing Tools. Reform Movement Disproves</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Miami-Dade slots vote could lead to widespread gambling in Florida  Miami-Dade slots vote could lead to widespread gambling in Florida. Avex DVD to Zune Video Suite 4.0 ($ 45) (By Avex DVD Software). Deathbed. 162-acre retail proposal floated in Hillsborough. Tea Party!. Sprechstunde des Bildungsstadtrates. Portland Code Camp 2.0 : Session 01 - Introduction to Ruby on Rails with Lucas Carlson. NCHELP and JustIQ Provide Relief to Lenders Free CommonLinereg Testing Tools. Reform Movement Disproves</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-04T19:08:08-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-04T19:08:08-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://wcwc7.org/post/25525326</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">More Perl Events, More Act! Translations</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://news.perlfoundation.org/2008/02/more_yapcs_more_act_translatio.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom"> A bunch of new requests for Act -hosted conference sites have gone in to the Act developers and each has offered to update translation files. This is great news as it provides even more Perl events, keeps the Act translation files up-to-date, and it shows the investment by people all over the world to keep Perl vibrant. It also shows the world-wide reach of the Perl community.  Some of the latest translations include Russian and Belarusian and these coincide with a surge in the Perl community i</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"> A bunch of new requests for Act -hosted conference sites have gone in to the Act developers and each has offered to update translation files. This is great news as it provides even more Perl events, keeps the Act translation files up-to-date, and it shows the investment by people all over the world to keep Perl vibrant. It also shows the world-wide reach of the Perl community.  Some of the latest translations include Russian and Belarusian and these coincide with a surge in the Perl community i</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-04T05:53:04-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-04T05:53:04-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://news.perlfoundation.org/2008/02/more_yapcs_more_act_translatio.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Strawberry Perl talk submitted for OSCON 2008 (2008.02.04  1:04)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://use.perl.org/~Alias/journal/35567" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">After pondering what would be suitable, I've submitted a Strawberry Perl
+talk for OSCON. It should be mostly an all-inclusive talk, covering a
+little history and lessons learned, current state (there should be
+another 2 releases before OSCON) and future direction, and provide an
+introduction to rolling your own Perl with Perl::Dist and building a
+product install for a Perl product (hopefully).
+
+Other options included reruns of YAPC-esk talks like the PITA talk and
+Nothing Can Possibly Go Wrong (which I've already given in the US) but I
+get the impression that OSCON has a pretty full schedule, so I've just
+gone with the most current talk.
+
+For YAPC::NA, where there's a bit more room for multiple talks, I will
+probably also add a talk I trialed at YAPC::AU called simply "::Tiny",
+and (assuming I can figure out an appropriate set of problems) I hope to
+present a sequel to one of my previous YAPC talks, which I plan to call
+"Nothing Can Possibly Go Wrong... Again".
+
+This time around I plan to take a 3-10 year view of failure, and focus
+mostly on Economics and Biology (how to make your project violate the
+laws of nature, and lose).</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">After pondering what would be suitable, I've submitted a Strawberry Perl talk for OSCON. It should be mostly an all-inclusive talk, covering a little history and lessons learned, current state (there should be another 2 releases before OSCON) and future direction, and provide an introduction to rolling your own Perl with Perl::Dist and building a product install for a Perl product (hopefully).<br/>
+<br/>
+Other options included reruns of YAPC-esk talks like the PITA talk and Nothing Can Possibly Go Wrong (which I've already given in the US) but I get the impression that OSCON has a pretty full schedule, so I've just gone with the most current talk.<br/>
+<br/>
+For YAPC::NA, where there's a bit more room for multiple talks, I will probably also add a talk I trialed at YAPC::AU called simply "::Tiny", and (assuming I can figure out an appropriate set of problems) I hope to present a sequel to one of my previous YAPC talks, which I plan to call "Nothing Can Possibly Go Wrong... Again".<br/>
+<br/>
+This time around I plan to take a 3-10 year view of failure, and focus mostly on Economics and Biology (how to make your project violate the laws of nature, and lose).</div>
+    </content>
+    <category xmlns="http://www.w3.org/2005/Atom" term="journal"/>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-04T06:04:03Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-04T06:04:03Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">Alias</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://use.perl.org/~Alias/journal/35567?from=rss</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom">
+    <title xmlns="http://www.w3.org/2005/Atom">Short Term Forecast - Mason (Illinois)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://wcwc7.org/post/25435527" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">Short Term Forecast - Mason (Illinois)  Short Term Forecast - Mason (Illinois). £5 million to improve the nation’s health. Java Petstore 2.0 Reference Application. Bill Gates bids London farewell. 100% Polyester Solid Satin. Pursuit arrest believed to solve multiple burglaries. Imaging the City workshop. Continental pilots say they’re planning for consolidation.  Spyware &amp; Adware Info - Best Anti Spyware Software. El Sotano - programa 92 - 30ene2008 - Early female rockabilly. Eugene Hunt ann</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" type="text">Short Term Forecast - Mason (Illinois)  Short Term Forecast - Mason (Illinois). £5 million to improve the nation’s health. Java Petstore 2.0 Reference Application. Bill Gates bids London farewell. 100% Polyester Solid Satin. Pursuit arrest believed to solve multiple burglaries. Imaging the City workshop. Continental pilots say they’re planning for consolidation.  Spyware &amp; Adware Info - Best Anti Spyware Software. El Sotano - programa 92 - 30ene2008 - Early female rockabilly. Eugene Hunt ann</content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-03T13:14:26-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-03T13:14:26-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://wcwc7.org/post/25435527</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">『美神ルナ』伊藤佳澄のトイレ</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://runa.zjrn.net/2008/02/post_161.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom"> パイパン・プリンセス 12コーナー4時間 美神ルナ パイパン・プリンセス 12コーナー4時間 美神ルナパイパン・プリンセス 12コーナー4時間 美神ルナ 定価： 2,980円 販売価格： 2,235円 発売日： 2006/06/01 発売元番組や各局パーソナリティのインタビューを中心とした雑誌 www.sansaibooks.co.jp Planet YAPC::Asia 画像 ＢＵＭＰ美神ルナ 日本沈没 映画 </summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"> パイパン・プリンセス 12コーナー4時間 美神ルナ パイパン・プリンセス 12コーナー4時間 美神ルナパイパン・プリンセス 12コーナー4時間 美神ルナ 定価： 2,980円 販売価格： 2,235円 発売日： 2006/06/01 発売元番組や各局パーソナリティのインタビューを中心とした雑誌 www.sansaibooks.co.jp Planet YAPC::Asia 画像 ＢＵＭＰ美神ルナ 日本沈没 映画 </div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-03T13:13:28-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-03T13:13:28-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://runa.zjrn.net/2008/02/post_161.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">JavaScript::Writer + Template::Declare</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://blog.gugod.org/2008/02/javascriptwriter-templatedeclare.html" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">That feels like an assignment to myself in the coming OSDC.tw and &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt;.</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">That feels like an assignment to myself in the coming OSDC.tw and <B>YAPC</B>::<B>Asia</B>.</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-03T13:03:00Z</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-03T13:03:00Z</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://blog.gugod.org/2008/02/javascriptwriter-templatedeclare.html</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">Lightning Talks: Would I be brave enough to give one?</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://martian.org/karen/2008/02/02/lightning-talks-would-i-be-brave-enough-to-give-one/" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom"> I always thought that Perl conferences had lightning talks to encourage new speakers. I had a look at the description that MJD wrote when he was organising them and he mentions how they are a good place to start speaking. Geoff, who now runs most of them, also states that they are a “great choice for your first speaking experience”. But I’m not convinced that is true anymore.  In Vienna and Houston last year the lightning talks were held in the main hall in front of the whole conference. The on</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"> I always thought that Perl conferences had lightning talks to encourage new speakers. I had a look at the description that MJD wrote when he was organising them and he mentions how they are a good place to start speaking. Geoff, who now runs most of them, also states that they are a “great choice for your first speaking experience”. But I’m not convinced that is true anymore.  In Vienna and Houston last year the lightning talks were held in the main hall in front of the whole conference. The on</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-02T05:45:45-08:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-02T05:45:45-08:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://martian.org/karen/2008/02/02/lightning-talks-would-i-be-brave-enough-to-give-one/</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">う〜(&gt;_&amp;#060;)？ - パソコンインストラクター...</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://blog.goo.ne.jp/kankara1969/e/ae4ded9564277c2a9846e620ce7217f2" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">...mixiはいかにして増え続けるトラフィックに対処してきたか」 &lt;B&gt;YAPC&lt;/B&gt;::&lt;B&gt;Asia&lt;/B&gt; 2006 Tokyo [画像</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">...mixiはいかにして増え続けるトラフィックに対処してきたか」 <B>YAPC</B>::<B>Asia</B> 2006 Tokyo [画像</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-01T16:51:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-01T16:51:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://blog.goo.ne.jp/kankara1969/e/ae4ded9564277c2a9846e620ce7217f2</id>
+  </entry>
+  <entry xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml">
+    <title xmlns="http://www.w3.org/2005/Atom">ブログが続かないわけ | 僕の感じるPerlとPHPの最大の違い(差と言ってもいいかもしれない)</title>
+    <link xmlns="http://www.w3.org/2005/Atom" rel="alternate" href="http://en.yummy.stripper.jp/?eid=811810" type="text/html"/>
+    <summary xmlns="http://www.w3.org/2005/Atom">■PHPが悪いのか Matzさんの「PHPがいかに駄目な言語か、という話。」に端を発した、相変わらずの水掛け...</summary>
+    <content xmlns="http://www.w3.org/2005/Atom" xmlns:default="http://www.w3.org/1999/xhtml" type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">■PHPが悪いのか Matzさんの「PHPがいかに駄目な言語か、という話。」に端を発した、相変わらずの水掛け...</div>
+    </content>
+    <published xmlns="http://www.w3.org/2005/Atom">2008-02-01T11:50:00+09:00</published>
+    <updated xmlns="http://www.w3.org/2005/Atom">2008-02-01T11:50:00+09:00</updated>
+    <author xmlns="http://www.w3.org/2005/Atom">
+      <name xmlns="http://www.w3.org/2005/Atom">nobody</name>
+    </author>
+    <id xmlns="http://www.w3.org/2005/Atom">tag:tokyo2007.yapcasia.org,2006:http://en.yummy.stripper.jp/?eid=811810</id>
+  </entry>
+</feed>

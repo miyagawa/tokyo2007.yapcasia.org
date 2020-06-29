@@ -1,0 +1,58 @@
+head	1.3;
+access;
+symbols;
+locks
+	root:1.3;
+comment	@# @;
+
+
+1.3
+date	2007.03.04.10.37.13;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.02.24.00.32.33;	author miyagawa;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.02.24.00.32.02;	author miyagawa;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@edit_address:216.158.52.119,edit_by:MJDominus,edit_by_icon:http%3A%2F%2Fperl.plover.com%2Fpics%2Ftpc%2Fplacido2-m.jpg,edit_time:Sun%20Mar%20%204%2010%3A37%3A12%202007,edit_unixtime:1173004632
+@
+text
+@{gmaps: 548 4th Street, San Francisco}
+
+_underscores_ -hyphens- *stars* ''quotes'' /slashes/ **double stars**
+`backticks` \backslashes\ [brackets]
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Sat%20Feb%2024%2000%3A32%3A33%202007,edit_unixtime:1172277153
+@
+text
+@d2 3
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Sat%20Feb%2024%2000%3A32%3A02%202007,edit_unixtime:1172277122
+@
+text
+@d1 1
+a1 1
+{gmaps: San Francisco}
+@

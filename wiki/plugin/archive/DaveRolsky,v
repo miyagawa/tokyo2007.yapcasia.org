@@ -1,0 +1,27 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.03.29.21.26.41;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:65.103.28.218,edit_by:autarch,edit_by_icon:,edit_time:Thu%20Mar%2029%2021%3A26%3A41%202007,edit_unixtime:1175203601
+@
+text
+@Works for [http://www.livetext.com/ LiveText].
+
+Works on [http://www.masonhq.com/ Mason], among many other [http://search.cpan.org/author/drolsky Perl modules].
+@

@@ -1,0 +1,25 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.03.06.09.16.28;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:66.92.134.156,edit_by:jrockway,edit_by_icon:,edit_time:Tue%20Mar%20%206%2009%3A16%3A28%202007,edit_unixtime:1173172588
+@
+text
+@[http://blog.jrock.us]
+@

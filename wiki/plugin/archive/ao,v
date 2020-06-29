@@ -1,0 +1,25 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.04.02.03.31.37;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:219.101.221.118,edit_by:%E3%81%82%E3%81%8A,edit_by_icon:,edit_time:Mon%20Apr%20%202%2003%3A31%3A37%202007,edit_unixtime:1175484697
+@
+text
+@Perl is Best!
+@

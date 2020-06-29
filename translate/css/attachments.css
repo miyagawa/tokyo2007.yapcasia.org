@@ -1,0 +1,13 @@
+table.attachments {
+    color: #999;
+}
+th.delete { text-align: left;width: 15% }
+th.file   { text-align: left;width: 35% }
+th.size   { text-align: left;width: 15% }
+th.date   { text-align: left; }
+th.thumb  { text-align: left; }
+td.delete { text-align: left;width: 15% }
+td.file   { text-align: left;width: 35% }
+td.size   { text-align: left;width: 15% }
+td.thumb  { text-align: left; }
+

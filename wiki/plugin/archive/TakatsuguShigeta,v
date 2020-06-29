@@ -1,0 +1,30 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.04.04.09.14.09;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:124.32.114.226,edit_by:,edit_by_icon:,edit_time:Wed%20Apr%20%204%2009%3A14%3A09%202007,edit_unixtime:1175678049
+@
+text
+@http://www.s14u.info/DSC00151.jpg
+
+I am standing on the shoulder of giants.
+
+* http://www.s14u.info/mt/
+* http://tshigeta.vox.com/
+@

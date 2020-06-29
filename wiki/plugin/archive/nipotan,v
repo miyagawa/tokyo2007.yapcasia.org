@@ -1,0 +1,51 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2;
+comment	@# @;
+
+
+1.2
+date	2007.04.05.12.11.25;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.04.05.12.10.34;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@edit_address:221.106.61.5,edit_by:nipotan,edit_by_icon:,edit_time:Thu%20Apr%20%205%2012%3A11%3A25%202007,edit_unixtime:1175775085
+@
+text
+@nipoDan the Suspenders
+
+* http://blog.livedoor.jp/nipotan/
+* http://d.hatena.ne.jp/nipotan/
+* http://search.cpan.org/~taniguchi/
+@
+
+
+1.1
+log
+@edit_address:221.106.61.5,edit_by:nipotan,edit_by_icon:,edit_time:Thu%20Apr%20%205%2012%3A10%3A34%202007,edit_unixtime:1175775034
+@
+text
+@d1 1
+a1 1
+subtech
+d3 3
+a5 4
+
+http://blog.livedoor.jp/nipotan/
+http://d.hatena.ne.jp/nipotan/
+http://search.cpan.org/~taniguchi/
+@

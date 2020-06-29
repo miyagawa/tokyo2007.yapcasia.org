@@ -1,0 +1,26 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.03.31.14.12.36;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:218.227.40.37,edit_by:,edit_by_icon:,edit_time:Sat%20Mar%2031%2014%3A12%3A35%202007,edit_unixtime:1175350355
+@
+text
+@* http://search.cpan.org/~asakura/
+* http://asakura.g.hatena.ne.jp/asakura-t/
+@

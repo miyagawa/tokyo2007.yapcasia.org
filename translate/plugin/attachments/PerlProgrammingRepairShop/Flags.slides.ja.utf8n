@@ -1,0 +1,2875 @@
+Perl Program Repair Shop
+************************
+
+#HTML# <img src="bigmed-sigils.gif" align=right>
+
+Mark Dominus ([E[#38518]E][E[#25935]E][E[#20462]E])
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Plover Systems Co.
+++++++++++++++++++
+
+     mjd@plover.com
+
+YAPC::Asia 2007 Edition
++++++++++++++++++++++++
+
+v0.3 (March, 2007)
+++++++++++++++++++
+
+#J# スライドはこちら
+
+* Slides at:
+
+        http://pic.plover.com/slides/YAPC-flags/
+
+#J# 添削したコードはこちら
+
+* Example code is at:
+
+        http://perl.plover.com/flagbook/yak/YAPC/MonAlert-1.pm [R[BEFORE]R]
+        http://perl.plover.com/flagbook/yak/YAPC/MonAlert-2.pm [G[AFTER]G]
+
+
+----------------------------------------------------------------
+
+#J# 今日のテーマ
+
+What is the book about?
+***********************
+
+#J# プログラムやモジュールというのは信じられないほど無駄が多いものだ
+
+* Most programs and modules are incredibly overwritten
+
+#J# 50～100%も余分だなんてことはザラにある
+
+* Typically by 50-100%  (!!!)
+
+----------------------------------------------------------------
+
+#J# 今日のテーマ
+
+What is the book about?
+***********************
+
+#J# 最初に思いついたコードを書く
+
+* Programmers write the first thing that comes into their heads
+
+#J# それはかまわない
+
+* That's OK
+
+#J# ただし、あとで編集してきれいにした方がいい
+
+* But you should make an editing pass afterwards to clean it up
+
+#J# たいていの人がハマる、本当によくある間違いというのが何十個かあるのだ
+
+* There are a couple of dozen really common mistakes most people make
+
+#J# 見ればすぐにわかるし、直すのも簡単
+
+* They are easy to recognize and easy to repair
+
+#J# でも、そんな間違いを直すだけで「劇的に」コードはよくなる
+
+* Even if you fix just these errors, you code becomes _drastically_ better
+
+#J# この話はそのためのケーススタディだ
+
+* It's a book of case studies of how to do this
+
+----------------------------------------------------------------
+
+
+#RTIMG# redflag2
+
+#J# 赤旗
+
+Red Flags
+*********
+
+#J# ここでいう赤旗というのは最適とは言えないかもしれないコードに見られる特徴のこと
+
+* A red flag is a visible sign in the code that something might be suboptimal
+
+================================================================
+
+#J# *注意*: あくまでも「かもしれない」だ
+
+* *Notice*: [R[might be]R]
+
+#J# *注意*: 「最適とは言えない」だけ。「間違っている」わけではない
+
+* *Notice*: [R[suboptimal]R], not [R[wrong]R]
+
+================================================================
+
+#J# 絶対に間違っていると言っているわけでは「ない」
+
+* It is _not_ a sure sign that something is wrong
+
+#J# 断じて違うのでお間違えなく
+
+  * NOT NOT NOT NOT
+
+================================================================
+
+#J# ただ、立ち止まって、よく考えてほしい
+
+* Instead, it's a sign that you should pause and reflect
+
+#J# 「本当にこれが最適な書き方なんだろうか」
+
+  * Ask, "is this really written in the best way?"
+
+#J# (いくつか)別のやり方で書いて
+
+  * Try to write it a different way (or two, or three)
+
+#J# 比べて、どちらがいいか評価してから
+
+  * Compare and evaluate
+
+#J# 判断しよう
+
+  * Decide
+
+#J# 「たぶん」別のバージョンでコードを書き換えることになるはずだ
+
+* And then _perhaps_ replace the code with a different version
+----------------------------------------------------------------
+
+#J# あらかじめ感謝!
+
+Thanks!
+*******
+
+#J# 世界中の人がコードを添削してほしいと送ってきてくれる
+
+* People all around the world are sending me code to look at
+
+#J# UsenetやPerlMonks、CPANからもたくさん例を取った
+
+* I also get a lot from Usenet, PerlMonks, CPAN
+
+#J# 今日取り上げる例は特に悪いというわけではない
+
+* Today's example is not unusually bad
+
+#J# 話すのにちょうどいい長さだから
+
+* I chose it because it was about the right length for the talk
+
+#J# そして、本当によくある、ありふれた例だから選んだだけ
+
+* Also because it is such a typical and mundane example
+----------------------------------------------------------------
+
+#LTIMG# Scream-narrow.jpg
+
+#J# これはひどい
+
+Horrors
+*******
+
+#J# でも、中には怖いもの見たさに来てくれた人もいるはず
+
+* However, I know some of you came here to see horrors
+
+#J# だから、別の人が書いたプログラムなんだけど、ほんの一部だけ紹介しよう
+
+* So I'll just show you this little bit of someone else's program:
+================================================================
+
+        my $q = join('!', @$p);
+        $q =~ /^(.*)!(.*)$/;
+        my $sorted_key = $1;
+        my $unique_key = $2;
+
+#J# これ、何か見落としているんだろうかと悩んだ箇所のひとつなんだけれど
+
+* This is one of those blocks that makes me wonder what I am missing
+
+#RTIMG# redflag
+
+#J# たぶん単に「2歩進んで1歩下がっている」だけなんだろう
+
+* But it's probably just [R[Taking two steps forward and one step back]R]
+================================================================
+
+#J# [[@$p]]の要素が2つだけなら、こうした方がいい
+
+* If [[@$p]] has only two elements, I suggest instead:
+
+        my ($sorted_key, $unique_key) = @$p;
+
+#J# そうでないなら、こんな感じになるのかな
+
+* Otherwise, perhaps something like:
+
+        my @_p = @$p;
+        my $unique_key = pop @_p;        # Last item
+        my $sorted_key = join "!", @_p;  # The rest of the items
+
+----------------------------------------------------------------
+
+#J# 話をもとに戻すと
+
+Back to our story...
+********************
+
+#J# 今日のサンプルコードには2つのバージョンがある
+
+* You have two versions of today's code
+
+#J# お題はOracleのサーバログを解析する小さなプログラム
+
+* It's a small program to analyze the Oracle server logs
+
+#J# 関心のある部分だけを抽出するという
+
+  * Extract items of interest
+
+#J# 実によくあるPerlアプリケーションだ
+
+* A pretty typical application of Perl  
+
+#J# [[MonAlert-1.pm]]は「修正前」のバージョン
+
+* [[MonAlert-1.pm]] is the "before" version
+
+#J# コードは188行ほど
+
+  * About 188 lines of code
+
+#J# [[MonAlert-2.pm]]は「修正後」のバージョン
+
+* [[MonAlert-2.pm]] is the "after" version
+
+#J# コードは126行ほど
+
+  * About 126 lines of code
+
+#J# この行数には、コメントや空白、中括弧の類は*一切*含めていない
+
+* Line counts *never* include comments, whitespace, curly braces, etc.
+
+#J# 裏で何かしているわけではないことはお約束しておこう
+
+  * I promise nothing underhanded is going on here
+----------------------------------------------------------------
+
+#J# 方針
+
+Strategy
+********
+
+#J# 私が添削するときはふつうこうする
+
+* Usually, the way I look at these things is:
+
+#J# 全体を見てパッと目につくところがないか確認する
+
+  1. Glance over the program and see if anything jumps out
+
+#J# 最初から最後まで飛ばしながら見ていく
+
+  2. Make a longer pass, top to bottom
+
+#J# 自分でコードを書いているなら
+
+* If you're the author:
+
+#J# コードを書くたびにざっと見直してほしい
+
+  * Make a quick pass over each bit of code...
+
+#J# 書いた直後にね
+
+  * _Just after you write it_
+
+#J# 私が注意するようなところに気をつけて
+
+* Try to notice the same things I notice
+
+#J# 同じようにきれいにしてみよう
+
+* Try to apply the same kind of cleanups
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+#J# ざっと見て最初に気になったのがこれ
+
+* The first thing I noticed in my quick pass was:
+
+       303        sub SplitDate {
+            ...
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       314           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       315           elsif ( $mnt eq 'Mar'){$mt = 3 } 
+       316           elsif ( $mnt eq 'Apr'){$mt = 4 } 
+       317           elsif ( $mnt eq 'May'){$mt = 5 } 
+       318           elsif ( $mnt eq 'Jun'){$mt = 6 } 
+       319           elsif ( $mnt eq 'Jul'){$mt = 7 } 
+       320           elsif ( $mnt eq 'Aug'){$mt = 8 } 
+       321           elsif ( $mnt eq 'Sep'){$mt = 9 } 
+       322           elsif ( $mnt eq 'Oct'){$mt = 10 } 
+       323           elsif ( $mnt eq 'Nov'){$mt = 11 } 
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# なにしろ世界最大の赤旗ものだから目立つのだ
+
+* This jumps out because it is the World's Biggest Red Flag
+
+#RTIMG# redflag
+
+#J# コードの繰り返し
+
+* [R[Repeated code]R]
+----------------------------------------------------------------
+
+#J# コンピュータプログラミングの大原則
+
+#TITLE# The Cardinal Rule of Computer Programming
+
+#HTML# <p align=center><font>The Cardinal Rule of Computer Programming</font></p>
+
+#J# コードを繰り返すのは間違っている
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# なぜか
+
+* Why?
+
+#J# 無駄だからだ
+
+* Because it is _wasteful_
+
+#J# プログラマはコードこそが製品だと思いがち
+
+* Programmers like to think of code as their product
+
+#J# そうではないんだ――製品は「機能」の方なのである
+
+* It's not---The product is _functionality_
+
+#J# コードというのは重荷でしかない
+
+* Code is a _liability_
+
+#J# コードが倍になったら、読むのにかかる時間も倍
+
+* Twice as much code takes twice as long to read
+
+#J# バグる可能性も倍
+
+* Twice as many chances for bugs
+
+#J# テストにかかる時間も倍
+
+* Twice as long to test
+
+#J# それでいて機能が倍になるなんてことはない
+
+* But the functionality is much less than twice in these cases
+
+#J# David AdlerによるとBlack and Deckerはこんなことを言っているそうだ
+#J# 人がうちの製品を買うのは0.5インチのドリルがほしいからではない
+#J# 0.5インチの穴を開けたいからだ
+
+### David Adler says that Black and Decker says:
+### People don't buy our products because they want a 1/2 inch drill, they
+### buy our products because they want a 1/2 inch hole.
+
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# コードを繰り返すとメンテナンスのときに問題が起こる
+
+* Repeated code creates maintenance problems
+
+#J# かならず誰かが一部だけ直して、ほかを直さないせいで
+
+* Someone is sure to change one part but not the other part
+
+#J# バグることになるのだ
+
+* Then you have a bug
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# コードの繰り返しは書く方もうんざりする
+
+* Repeated code is boring to write
+
+#J# 同じコードを書いているときに頭を働かせ続けるのは大変
+
+* It's hard to keep your brain engaged while writing it
+
+#J# だから、ミスってわけがわからなくなってしまいがち
+
+* It's easy to make a mistake and mess it up
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# コードの繰り返しは読む方も大変
+
+* Repeated code is hard to read
+
+#J# 同じようなものが続くと、本当は同じじゃないのに気づかず読み飛ばしてしまう
+
+* The eye skips past similar cases without noticing they are not the same
+
+#IMG# blot
+
+#J# 本当にわけがわからなくなっているときは気づかないもの
+
+* If you do mess up, you are likely not to notice
+
+#J# [[SplitDate]]にはひとつバグがある
+
+* [[SplitDate]] has a bug
+
+#J# *みなさんは*気づけただろうか?
+
+* Did *you* notice it?
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#J# コードの繰り返しはバグの温床
+
+Repeated Code Harbors Bugs
+**************************
+
+     Subject: routine on each value
+     Message-ID: <u1v5l1cf8qtv26@corp.supernews.com>
+     
+     if($match) {
+         (($rank = @ranks[0]) && ($percent = "1%")) if $value == 1;
+         (($rank = @ranks[1]) && ($percent = "2%")) if $value == 2;
+         (($rank = @ranks[2]) && ($percent = "3%")) if $value == 3;
+         (($rank = @ranks[3]) && ($percent = "4%")) if $value == 4;
+         (($rank = @ranks[4]) && ($percent = "5%")) if $value == 5;
+         (($rank = @ranks[5]) && ($percent = "6%")) if $value == 6;
+         (($rank = @ranks[5]) && ($percent = "7%")) if $value == 7;
+         (($rank = @ranks[6]) && ($percent = "8%")) if $value == 8;
+         (($rank = @ranks[7]) && ($percent = "9%")) if $value == 9;
+         (($rank = @ranks[8]) && ($percent = "10%")) if $value == 10;
+     }
+
+#J# 何人かの人はこれをこんな風に「修正」した
+
+* Several people 'corrected' this to:
+
+     if ($match) {
+       $rank = $ranks[$value-1];
+       $percent = "$value%";
+     }        
+
+#J# もともとのコードが壊れていたというか、直したものが壊れているというか
+
+* Either the original code was broken, or the corrections were broken
+
+#J# どこかに、バグがある
+
+* Somewhere, there was a bug
+
+#J# Perlコミュニティの仕事としてはあまりほめられたものではない
+
+* Not a very impressive showing by the Perl community
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#TITLE# Repeated Code is a Mistake
+
+#J# コードの繰り返しはほとんどの場合なくすことができる
+
+* It is nearly always possible to eliminate repeated code
+
+#J# 「あらゆる」プログラミング言語のほぼ「あらゆる」機能は、コードの繰り返しを避けるためのものだ
+
+* Almost _every_ feature of _every_ programming language is an attempt to prevent repeated code
+
+#J# ささやかなところでは、[[$x->{q} += $y]]。これは、[[$x->{q} = $x->{q} + $y]]のかわりだ
+
+* Tiny example: [[$x->{q} += $y]] instead of [[$x->{q} = $x->{q} + $y]]
+
+#J# もう少し大きなところでは、スコープの小さな変数がそう
+
+* Larger example: Small-scope variables
+
+#J# もっと大きなところでは、[[while]] や [[for]]のループ
+
+* Larger still: [[while]] and [[for]] loops
+
+#J# さらに大きくなると、サブルーチン
+
+* Larger: Subroutines
+
+#J# さらに大きくなると、オブジェクト指向の継承
+
+* Larger: Object-oriented inheritance
+
+#J# さらに大きくなると、モジュール
+
+* Larger: Modules
+
+#J# さらに大きくなると、パイプ
+
+* Larger: Pipes
+
+#J# 大がかりなものとしては共有ライブラリがそう
+
+* Huge: Shared libraries
+
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+#J# この例の場合はテーブルを使うのが正しいアプローチ
+
+* In this case, the right approach is to use a table
+
+#J# これを
+
+* This:
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       314           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       315           elsif ( $mnt eq 'Mar'){$mt = 3 } 
+       316           elsif ( $mnt eq 'Apr'){$mt = 4 } 
+       317           elsif ( $mnt eq 'May'){$mt = 5 } 
+       318           elsif ( $mnt eq 'Jun'){$mt = 6 } 
+       319           elsif ( $mnt eq 'Jul'){$mt = 7 } 
+       320           elsif ( $mnt eq 'Aug'){$mt = 8 } 
+       321           elsif ( $mnt eq 'Sep'){$mt = 9 } 
+       322           elsif ( $mnt eq 'Oct'){$mt = 10 } 
+       323           elsif ( $mnt eq 'Nov'){$mt = 11 } 
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# こうする
+
+* Becomes this:
+
+        my %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                   May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                   Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+        $mt = $m2n{$mnt};
+
+#J# これで13行（そう、13行あったのだ）が4行になった
+
+* 13 lines (yes, 13) become 4
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+#J# ここにはもうひとつ問題になりそうな箇所がある
+
+* There's another possible problem here
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+           ...
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# [[else]]節がないのだ
+
+* There's no [[else]] clause
+
+#RTIMG# redflag
+
+#J# 'if'～'elsif'のあとに'else'がない
+
+* [R[Missing 'else' after 'if'-'elsif' series]R]
+
+#J# こういうのを書くときはいつでも自問してほしい
+
+* Whenever you write one, ask yourself:
+
+#J# 「どれにもあてはまらなかったらどうしよう」
+
+  * [G[What if none of the cases were true?]G]
+
+----------------------------------------------------------------
+#J# [[else]]がない
+
+Missing [[else]]
+****************
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+           ...
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# 「そんなことはありえない」と思うこともあるだろう
+
+* Sometimes the answer is "That can't happen"
+
+#J# でも、実際には「ありえない」はずのことが次から次へと起こるのだ
+
+* But there's "can't happen" and then there's "can't happen"
+
+#J# この場合、「ありえない」と言えるのは
+
+* In this case, it "can't happen"...
+
+#J# 入力がおかしかったり解析に失敗していないときだけ
+
+  * _Unless_ the input was malformed or misparsed
+
+#J# だから、追加しておこう
+
+* So add:
+
+#*      else { die "Date '$sdat' has malformed month; aborting!" }
+
+#J# ハッシュテーブルを使って書くとこうなる
+
+* In the hash table formulation, this becomes:
+
+        my %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                   May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                   Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+        $mt = $m2n{$mnt} [C[|| die "Date '$sdat'..."]C];
+
+----------------------------------------------------------------
+[[SplitDate]]
+*************
+
+#J# これでこの関数はこんな風になった
+
+* The function now looks like this:
+
+     303  sub SplitDate {
+     304        
+     305     # Wed Jul 27 17:07:45 2005
+     306        
+     307     my $sdat = shift ;
+     308     my $mt ;
+     309        
+     310     my ( $dt, $mnt, $dn, $drest, $yr) = split /\s+/, $sdat ;
+     311     my ( $hr, $mi, $sec ) = split /:/, $drest ;
+     
+             %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                     May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                     Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+             $mt = $m2n{$mnt} || die "Date '$sdat' malformed";
+     
+     325         
+     326   #-D   print "THe year is $yr The month is $mt the hour $hr minute $mi and second $sec The day is $dt\n";
+     327        
+     328     return $yr, $mt, $dn, $hr, $mi, $sec ;
+     329        
+     330  }
+
+----------------------------------------------------------------
+
+#J# コメント
+
+Comments
+********
+
+     303  sub SplitDate {
+     304        
+     305     # Wed Jul 27 17:07:45 2005
+     306        
+     307     my $sdat = shift ;
+     308     my $mt ;
+     309        
+     310     my ( $dt, $mnt, $dn, $drest, $yr) = split /\s+/, $sdat ;
+     311     my ( $hr, $mi, $sec ) = split /:/, $drest ;
+
+#J# コメントは見通しの悪いコードの言い訳になっていることが多すぎる
+
+* All too often, comments are used as a crutch to excuse unclear code
+
+#J# だからコメントには愛憎半ばする思いがある
+
+* I have a love-hate relationship with comments
+
+#J# でも、このコメントは「いい」
+
+* But I _love_ this comment
+
+#J# 実に簡潔で中身がある
+
+* It's extremely concise and informative
+
+#J# このコメントがなかったらそのあとのコードはチェックのしようがない
+
+* Without it, it's impossible to check the following code
+
+#J# 変数名の解読にも苦労させられるだろう
+
+  * And difficult to decipher the variable names
+
+#J# このコメントがあるおかげで見通しがよくなっている
+
+* But with it, everything is clear
+
+#J# コードを磨けばなくせるコメントもあるけれど
+
+* Some comments can be obviated by polishing up the code
+
+#J# これは違う
+
+  * But not this one
+
+----------------------------------------------------------------
+[[SplitDate]]
+*************
+
+#J# 私ならこんなスペースの使い方はしない
+
+* I wouldn't have done the whitespace the way it is
+
+#J# でも、それはどうでもいい
+
+  * But it's not important
+
+#J# デバッグメッセージの見せ方も変えるだろう
+
+* I would have formatted the debugging message differently
+
+#J# でも、それもどうでもいい
+
+  * But it's not important
+
+#J# この関数で私がもうひとつだけ変えるとしたら、ささやかなことだけれど
+
+* The only other change I would make to this function is trivial:
+
+#J# 308行目を削って
+
+* Eliminate line 308:
+
+     308     my $mt ;
+
+#J# [[my]]の宣言を実際に使われているところに移す
+
+* Put the [[my]] declaration at the place it is used:
+
+     [C[my]C] $mt = $m2n{$mnt} || die "Date '$sdat' malformed";
+
+#J# これでこの関数は（19行から）9行になった
+
+* With this final change, the function is 9 lines long (down from 19)
+
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+#J# [[GetDateNow]]関数は71行目から145行目まで続いているが
+
+* The function [[GetDateNow]] spans lines 71[E[ndash]E]145
+
+#J# 空白だけの行が39行もある
+
+* But there are only 39 lines of whitespace
+
+#J# これは読みづらい
+
+* I find that makes it hard to read
+
+#J# 1画面に収めることもできたはずなのに
+
+* It could have fit in one screenful
+
+#J# 2画面にまたがってしまう
+
+  * But it's spread out over two
+
+#J# 私ならこれからお見せするように空行を省略する
+
+* I'll abbreviate the blank lines in what follows
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+#J# この関数がまず間違っているのはカレンダーの計算の仕方だ
+
+* The first thing wrong with this function is the way it does calendar arithmetic
+
+         98           my $datev = `date '+%a %b %e %m %Y'` ;
+        100            print "The date is $datev\n";
+        101
+        102          my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+        104          my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+        105
+        106          $daynum = $d ;
+        108          my $wday = Day_of_Week( $y, $m, $d ) ;
+        110          my $day2 = Day_of_Week_to_Text( $wday ) ;
+        112          my $m2 = Month_to_Text ($m) ;
+        114          $day = substr( $day2, 0, 3 ) ;
+        116          $mon = substr( $m2, 0, 3 ) ;
+
+#J# いろんなことをしているが
+
+* This is a lot of work
+
+#J# ここの計算はほとんど必要ない
+
+* The work is mostly unnecessary
+
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+#J# 日付には3つの書式がある
+
+* There are three formats for dates
+
+#J# 書式Aは、人間には意味不明だが計算は簡単というもの
+
+* Format A is unreadable, but is easy to calculate with:
+
+        1080891516    # Seconds since 1970
+
+#J# 書式Cは、人間には読みやすいが計算のときには役に立たない
+
+* Format C is human-readable, but useless for calculations:
+
+        Fri Apr  2 02:38:36 2004
+
+#J# 書式Bはその折衷案
+
+* Format B is partway between:
+
+        (36, 38, 2, 2, 4, 2004)
+
+#J# でも、書式Bは変だ
+
+* Funny thing about format B:
+
+#J# 計算するにしても表示するにしてもイマイチ
+
+  * It is mediocre for both calculation _and_ for display!
+
+#J# 実際には書式Aから書式Cに、あるいはその逆に変換するときくらいしか役に立たない
+
+  * It's really only useful for converting from A to C or back again
+
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+        A        1080891516
+        B        (36, 38, 2, 2, 4, 2004)
+        C        Fri Apr  2 02:38:36 2004
+
+#J# もうひとつ覚えておいた方がいいことがある
+
+* Another thing to remember:
+
+#J# A [E[rarr]E] B [E[rarr]E] C は簡単 (下流への変換)
+
+  * A [E[rarr]E] B [E[rarr]E] C         [G[Easy]G]      ("downstream")
+#J# C [E[rarr]E] B [E[rarr]E] A は困難 (上流への変換)
+
+  * C [E[rarr]E] B [E[rarr]E] A         [R[Difficult]R] ("upstream")
+
+#J# 中でも C [E[rarr]E] B は特にむずかしい
+
+    * (C [E[rarr]E] B is by far the hardest of all)
+
+#IMG# upstream.jpg
+
+#J# だから、内部的な日付情報はなるべく書式Aの形で持つようにしたい
+
+* So you want to store dates internally in form A whenever possible
+
+#J# ぎりぎりまで書式Aの形で持ち続けて
+
+* Keep them in form A as long as possible
+
+#J# 書式Aのまま計算をして
+
+* Calculate with form A
+
+#J# どうしても必要なところでだけ書式Cに変換しよう
+
+* Convert to form C only when you have to
+
+----------------------------------------------------------------
+
+#J# 日付の計算、虎の巻
+
+Date calculation cheat sheet
+****************************
+
+        A        1080891516
+        B        (36, 38, 2, 2, 4, 2004)
+        C        Fri Apr  2 02:38:36 2004
+
+#J# なるべく書式Aを使うこと
+
+* Use format A whenever possible
+
+#J# 書式Aの値を取得するときは[[time()]]を使う
+
+  * To get it, call [[time()]]
+
+#J# 書式AをBに変換するときは[[localtime()]]や[[gmtime()]]を使おう
+
+* Use [[localtime()]] and [[gmtime()]] to convert A [E[rarr]E] B
+
+#J# 書式BからCに変換するときは[[POSIX::strftime()]]だ
+
+* Use [[POSIX::strftime()]] to convert B [E[rarr]E] C
+
+#J# 上流への変換は避けよう
+
+* Try not to convert upstream
+
+#J# [[Date::Parse]]や[[Date::Calc]]は河を遡上するための階段のようなものだ
+
+  * [[Date::Parse]] and [[Date::Calc]] are like fish ladders
+
+#J# あれば上流にさかのぼっていくことはできるが
+
+  * They permit upstream movement
+
+#J# だからといって簡単にさかのぼれるようになるわけではない
+
+  * That doesn't mean they make it easy
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+#J# [[GetDateNow]]の一部を再掲する
+
+* Here's part of [[GetDateNow]]:
+
+         98           my $datev = `date '+%a %b %e %m %Y'` ;
+        100            print "The date is $datev\n";
+        101
+        102          my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+        104          my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+        105
+        106          $daynum = $d ;
+        108          my $wday = Day_of_Week( $y, $m, $d ) ;
+        110          my $day2 = Day_of_Week_to_Text( $wday ) ;
+        112          my $m2 = Month_to_Text ($m) ;
+        114          $day = substr( $day2, 0, 3 ) ;
+        116          $mon = substr( $m2, 0, 3 ) ;
+
+#J# この作者はUnixの[[date]]プログラムを呼ぶという大きなミスをしている
+
+* The author makes a big mistake by calling the Unix [[date]] program
+
+#J# これは人間が読みやすい日付（書式C）を返してくるものだ
+
+* This returns a human-readable date (format C)
+
+#J# ここでミスをしているから、挽回するのに8行ものコードと
+
+* Recovering from this mistake requires 8 lines of code 
+
+#J# 複雑な[[Date::Calc]]モジュールが必要になる
+
+  * And the complex [[Date::Calc]] module
+
+#J# おかげで書式Bの要素を求めるのにえらい苦労をさせられるし
+
+* He has to work hard to get the format B components
+
+#J# いずれにしても[[Date::Calc]]が返す値は書式がいけない
+
+  * And then [[Date::Calc]] returns the stuff in the wrong format anyway
+
+#J# 書式Aを使えばこんなに簡単になる
+
+* Using format A makes this all easy
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+     my $date = time() - $value * 86400;                     # Format A
+     my ($wday, $daynum) = (localtime($date))[6,3];          # A [E[rarr]E] B
+     my $day = strftime("%a", localtime($date));             # B [E[rarr]E] C
+     my $mon = strftime("%b", localtime($date));             # B [E[rarr]E] C
+     $pattern = "$day\\s+$mon\\s+$daynum" ;                  # B [E[rarr]E] C
+
+#J# [[time()]]は書式Aの日付を返す
+
+* [[time()]] returns the format A date
+
+#J# これなら計算は簡単だ
+
+  * It's easy to calculate with
+
+#J# 曜日や月、日は[[localtime]]で取得する
+
+* Then we get the day-of-week, month, and day components with [[localtime]]
+
+#J# 最後に[[POSIX::strftime]]で[[5]]を[["Fri"]]に、[[9]]を[["Sep"]]に変換している
+
+* Finally, [[POSIX::strftime]] converts [[5]] to [["Fri"]] and [[9]] to [["Sep"]]
+
+#J# 実はさらに切り詰めることも可能だ
+
+* In fact, we can trim this still more:
+
+     my $date = time() - $value * 86400;                     # Format A
+     my $pattern = strftime "[C[%a]C]\\s+[C[%b]C]\\s+[C[%d]C]", localtime($date);
+
+#J# 実はこれはちょっとウソ。%dはいささか不正確だ。書いてある通りにするなら
+#J# 1桁の日付は1文字にしないといけない。ただし、これは間違いなくバグだろう
+
+### XXX Fib here--%d is not quite correct, because as written, $pattern
+### gets a 1-character daynum if possible.  But this was surely a bug.
+#J# これで10行が2行になった
+
+* 10 lines become 2
+
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+#J# 今度は[[else]]ブロックの方も同じようにしておこう
+
+* Now I wanted to do a corresponding thing in the [[else]] block:
+
+     123     } else {
+     125        my $dfmt = `date '+%a %b %e'` ;
+     127       ( $day, $mon, $daynum ) = split /\s+/, $dfmt ;
+     129       $pattern = "$day\\s+$mon\\s+$daynum" ;
+
+こうなる
+
+* This becomes:
+
+             } else {
+                my $date = time();
+                my $pattern = strftime "%a\\s+%b\\s+%e", localtime($date);
+
+#J# その下も同じように修正する必要がある
+
+* We also need to make some corresponding changes farther down:
+
+     133     my $tmpfilealrt = "alert_$daynum\_$day\_$mon.log" ;
+
+#J# こう
+
+* This becomes:
+
+             my $tmpfilealrt = strftime("alert_%e_%a_%m.log", localtime($date));
+
+#J# 次の行はまったく使われていないから削除してもいいだろう
+
+* This next line is never used, so we can eliminate it:
+
+     136     my $dpattern = "$day\\s+$mon\\s+$daynum" ;
+
+
+----------------------------------------------------------------
+[[GetDateNow]]
+**************
+
+#J# この関数の最後にはまたこんなのがある
+
+* The bottom part of the function still has:
+
+      my $errdate  = `date '+%d%m%Y'` ;
+      chomp ($errdate) ;
+     
+      my $errorfile = "day_alrt_err_" . "$errdate.log" ;
+     
+      my $reportfile = "day_alrt_rep" . "$errdate.log" ;
+
+#J# これでは過去の履歴を調べているときに日付が無視されてしまう
+
+* Notice that this disregards the looking-into-the-past value
+
+#J# バグだろうか? 仕様だろうか?
+
+  * Bug?  Or feature?
+
+#J# 私はバグだと「思う」
+
+  * I _think_ it's a bug
+
+#J# バグだとしたら、こうしよう
+
+* If so, use:
+
+      my $errdate = strftime("%d%m%Y", localtime($date));
+
+#J# 仕様なら、こうだ
+
+* If not:
+
+      my $errdate = strftime("%d%m%Y", localtime());
+
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+#J# これでこの部分はこんな風になった
+
+* This part of the program now looks like this:
+
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     
+        my $date = time() - $value * 86400;
+        print "The date is $datev\n";
+        $pattern = strftime "%a\\s+%m\\s+%d" , localtime($date);
+     
+     } else {
+          my $date = time();
+          $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+     }
+
+#J# おや、[[if]]と[[else]]の中で同じことをしているぞ!
+
+* Hey, both if [[if]] and [[else]] parts are doing the same thing now!
+#J# コードの繰り返しは避けなくては
+
+* [G[Don't repeat code]G]
+
+#J# 繰り返しの部分を「抽出」すると、こういうコードは
+
+* We can "factor out" the repeated part, turning this:
+
+        if (C) { X; A; }
+        else   { Y; A; }
+
+#J# こう書ける
+
+* Into this:
+
+        if (C) { X; }
+        else   { Y; }
+#*      A;
+
+
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+#J# おっと、でも待てよ!
+
+* Oh, but wait!
+
+      if (...) {
+        ...
+        $pattern = strftime "%a\\s+%m\\s+[C[%d]C]" , localtime($date);
+      } else {
+        ...
+        $pattern = strftime "%a\\s+%m\\s+[C[%e]C]" , localtime($date);
+      }
+
+#J# 違うぞ。3月3日の場合、[[%d]]は[["03"]]だけど、[[%e]]なら[[" 3"]]だ
+
+* Difference: On March 3, [[%d]] is [["03"]] but [[%e]] is [[" 3"]]
+
+#J# うーむ
+
+* Hmmm....
+
+#J# バグだろうか? 仕様だろうか?
+
+  * Bug?   Or feature?
+
+#J# これはバグに「違いない」
+
+  * I think it _must_ be a bug
+
+#J# 日付が過去かどうかで書式が変わるだなんて
+
+  * The format of the pattern changes depending on whether the date is in the past
+
+#J# そんなことをしたがるとは思えない
+
+  * You can't possibly want that
+
+#J# もともとのコードはこうだった
+
+* The original code had:
+
+       98   	my $datev = `date '+%a %b [C[%e]C] %m %Y'` ;
+      102  	my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+      104  	my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+      106          $daynum = $d ;
+
+#J# それなら全部[[%e]]を使うようにしよう。もともとそのつもりだったようだから
+
+* I'm going to use [[%e]] throughout, since that seems to be what was intended
+
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     } else {
+#*        $value = 0;
+     }
+     my $date = time() - $value * 86400;
+     print "The date is $datev\n";
+     $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+
+#J# ここの診断用の[[print]]行は残しておいた
+
+* Here I left in the diagnostic [[print]] line
+
+#J# これで診断情報も増えることになる
+
+* More diagnostics now
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+#J# [[my $value]]はプログラムの先頭に移せる。適切に初期化しておこう
+
+* We can replace [[my $value]] at the top of the program with an appropriate initialization
+
+        my $value = 0;
+
+#J# これで[[else]]ブロックは「完全に」削ることができる
+
+* Then we can eliminate the [[else]] block _entirely_
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     }
+                     
+     my $date = time() - $value * 86400;
+     print "The date is $datev\n";
+     $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+
+----------------------------------------------------------------
+
+#J# リファクタリング
+
+Refactoring
+***********
+
+     if ( $opt ) {
+     
+        if ( $opt =~ /\d+/ ) {
+          $value = $opt ;
+        } else {
+          print "How many days prior do you want to search upon before the current date: " ;
+          chomp ( $value = <>);
+        }
+     }
+
+#J# これで[[$opt]]の評価も一度にできるようになった
+
+* Now we can combine the tests on [[$opt]]:
+
+     if ( $opt [C[&&]C] $opt =~ /\d+/ ) {
+          $value = $opt ;
+     } else {
+       print "How many days prior do you want to search upon before the current date: " ;
+       chomp ($value = <>);
+     }
+
+#J# さらにコードが減ったぞ
+
+* More code gone
+
+#J# このように、一部のコードを簡潔にすると、ほかの部分も簡潔にできる可能性が生まれるわけだ
+
+* Notice how simplifying one part of the code creates opportunities for further simplifictations
+----------------------------------------------------------------
+
+#J# 評価の誤り
+
+Wrong test
+**********
+
+     if ( $opt && $opt =~ /\d+/ ) {
+          $value = $opt ;
+
+#J# ここでは[[$value]]が数値であってほしいわけだ
+
+* The code wants [[$value]] to be a number
+
+#J# でも、このコードが実際に評価しているものは異なる
+
+* But that is not what it is testing for!
+
+#J# [[$opt]]が[["You are #6"]]だったらどうなるだろうか?
+
+* What if [[$opt]] is [["You are #6"]]?
+
+#J# 意図している通りに書こう
+
+* [G[Say what you mean]G]
+
+     if ( $opt && $opt =~ /[C[^\d+$]C]/ ) {
+          $value = $opt ;
+
+----------------------------------------------------------------
+
+#J# コードの繰り返し
+
+Repeated code
+*************
+
+#J# いま、コードはこのようになっている
+
+* We now have:
+
+      my $date = time() - $value * 86400;
+      $pattern = strftime "%a\\s+%m\\s+%e" , localtime($date);
+     
+      my $tmpfilealrt = strftime "alert_%e_%a_%m.log", localtime($date);
+     
+      my $errdate  = strftime "%d%m%Y", localtime($date) ;
+
+#J# [[localtime($date)]]を3度も計算しているわけだ
+
+* We're calculating [[localtime($date)]] three times
+
+#J# コードの繰り返しは避けよう
+
+* [G[Don't repeat code]G]
+
+      my [C[@date]C] = [C[localtime(]C]time() - $value * 86400[C[)]C];
+      $pattern = strftime "%a\\s+%m\\s+%e" , [C[@date]C];
+     
+      my $tmpfilealrt = strftime "alert_%e_%a_%m.log", [C[@date]C];
+     
+      my $errdate  = strftime "%d%m%Y", [C[@date]C];
+
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+#J# 最後の修正だ
+
+* Final change:
+
+       75     my ( $day, $daynum, $mon, $pattern ) ;
+
+#J# [[$day]]も[[$daynum]]も[[$mon]]もみんななくなった
+
+* [[$day]], [[$daynum]], and [[$mon]] are all gone
+
+#J# [[$pattern]]も実際に使っているところで宣言すれば、75行目は全部削れることになる
+
+* If we declare [[$pattern]] at the place it is used, we can eliminate line 75 entirely
+
+      [C[my]C] $pattern = strftime "%a\\s+%m\\s+%e" , [C[@date]C];
+
+#J# これで最後まで残っていた行もなくなった
+
+* One last line gone
+
+#J# 最終的な結果はこうなる
+
+* Final results:
+
+#J# 修正前: 30行
+
+  * Before: 30 lines of code
+
+#J# 修正後: 15行
+
+  * After: 15
+
+#J# （診断用のメッセージは勘定していない）
+
+  * (Not counting diagnostic messages)
+
+----------------------------------------------------------------
+
+#J# メインフロー
+
+Main flow
+*********
+
+#J# 細かいところから修正を始めてしまったけれど、全体のチェックに戻ろう
+
+* I started in on the details, but let's back up for a higher-level view
+
+#J# [[GetDateNow]]は日付からいくつかのパターンとファイル名を生成する
+
+* [[GetDateNow]] generates some patterns and filenames based on the date
+
+#J# これらは[[ProcessAlertLog]]に渡され
+
+* Then these are passed to [[ProcessAlertLog]]
+
+#J# そこから[[AlrtError]]と[[StartStopRep]]が呼ばれていくつかのリポートが生成される
+
+* This calls [[AlrtError]] and [[StartStopRep]] to generate some reports
+
+#J# また、[[StartStopRep]]は[[DateDiffRep]]を呼んでリポートの一部を生成させている
+
+* [[StartStopRep]] calls [[DateDiffRep]] to generate part of its report
+
+#J# だから、論理的に考えると、次に調べるべきは[[ProcessAlertLog]]だ
+
+* So the next logical thing to look at is [[ProcessAlertLog]]
+
+----------------------------------------------------------------
+
+[[ProcessAlertLog]]
+*******************
+
+#J# まずはつまらないことから
+
+* First some trivial stuff:
+
+      151  sub ProcessAlertLog {
+      152
+      153     my $falrt = shift ;
+      154     my $tfalrt = shift ;
+      155     my $dpat = shift ;
+      156     my $perrorfile = shift ;
+      157     my $prepfile = shift ;
+      158
+
+#J# これはこのように書いた方がよいだろう
+
+* We may as well write this as:
+
+        sub ProcessAlertLog {
+          my ($falrt, $tfalrt, $dpat, $perrorfile, $prepfile) = @_;
+
+#J# 続いて入力用のファイルと出力用のファイルを開いているわけだけれど
+
+* Then it opens an input and an output file:
+
+      163     open ( ALERTLOG, $falrt ) or die "Can't open $falrt due to $!" ;
+      164
+      165     open ( TMPALRTLOG, "> $tfalrt" ) or die "Can't open $tmpfilealrt due to $!" ;
+
+#J# 意図している通りに書こう
+
+* [G[Say what you mean]G]
+
+     open ( ALERTLOG, $falrt ) or die "Can't open $falrt due to $!" ;
+     
+     open ( TMPALRTLOG, "> $tfalrt" ) or die "Can't open [C[$tfalrt]C] due to $!" ;
+----------------------------------------------------------------
+
+[[ProcessAlertLog]]
+*******************
+
+#J# 今度はこの関数のメインのロジック
+
+* Now the main logic of the function:
+
+     159  my $LINE ;
+     166
+     167  while ( <ALERTLOG>) {
+     168
+     169    if ( $_=~/$dpat/ ){ $LINE = 'yes'} ;
+     170
+     171    if ($LINE && $LINE eq 'yes' ){ print TMPALRTLOG "$_"} ;
+     172
+     173  }
+     174
+     175  print TMPALRTLOG "Error: ... \n" if ($LINE && $LINE eq [C['no']C] );
+
+#J# 175行目の条件は絶対に真にはならない!
+
+* The condition on line 175 can never be true!
+
+#J# それから171行目の[[yes]]の評価は冗長だ
+
+* And the test for [[yes]] on line 171 is redundant
+
+#J# 論理評価は論理式で
+
+* [G[Let booleans be booleans]G]
+
+     my $seen_dpat;
+     
+     while (<ALERTLOG>) {
+  	$seen_dpat = [C[1]C] if /$dpat/[C[o]C];
+     
+  	if ($seen_dpat) { print TMPALRTLOG $_ }
+     }
+     
+     print TMPALRTLOG "Error: ... \n" unless $seen_dpat;
+
+----------------------------------------------------------------
+[[ProcessAlertLog]]
+*******************
+
+     my $seen_dpat;
+     
+     while (<ALERTLOG>) {
+  	$seen_dpat = 1 if /$dpat/o;
+     
+  	if ($seen_dpat) { print TMPALRTLOG $_ }
+     }
+     
+     print TMPALRTLOG "Error: Pattern /$dpat/ was not found \n" unless $seen_dpat;
+
+#J# もっとも、実際には少し考えれば別のやり方が思いつく
+
+* But actually, a little thought suggests an alternative
+
+#J# [[$seen_dpat]]は、一度真になったらもう偽に変わることはない
+
+* Once [[$seen_dpat]] is set true, it never changes back to false
+
+#J# だから、それ以降の[[/$dpat/]]の評価は余計だ
+
+* So the [[/$dpat/]] test becomes superfluous
+
+#J# ここで実際にしているのは、[[/$dpat/]]以降のすべてのレコードを出力することなのだから
+
+* What's really happening here is that we print out all the records from [[/$dpat/]] onward
+
+#J# このように変えてみてもよさそうだ
+
+* So we might try this alternative:
+
+        while (<ALERTLOG>) { print(TMPALRTLOG), last if /$dpat/o }
+        print TMPALRTLOG while <ALERTLOG>;
+
+#J# ただし、これだとエラーメッセージを生成できないので、このようにする必要があるだろう
+
+* But then we can't generate the error message, so we would need:
+
+#*      my $ok;
+        while (<ALERTLOG>) { [C[$ok = 1]C], print(TMPALRTLOG), last if /$dpat/o }
+        print TMPALRTLOG while <ALERTLOG>;
+        print TMPALRTLOG "Error: Pattern /$dpat/ was not found \n" unless [C[$ok]C];
+
+#J# こうした方がよくなる場合もあるし、そうでない場合もある
+
+* Sometimes this works out better, sometimes not
+
+#J# どちらがお好みだろうか?
+
+* Which do you prefer?
+
+----------------------------------------------------------------
+[[ProcessAlertLog]]
+*******************
+
+#J# これと関連するのが関数末尾のメッセージだ
+
+* Related to this is a message at the end of the function:
+
+        183     print "Error: Pattern was not found \n" if (!$LINE eq 'no' );
+
+#J# これは赤旗ではない
+
+* This isn't a red flag
+
+#J# 単なる間違い
+
+* It's just wrong
+
+#J# 評価はあべこべだし――[[if $LINE eq 'no']]のはずだ
+
+* The test is backwards [E[ndash]E] it should be [[if $LINE eq 'no']]
+
+#J# 優先順位もズレている
+
+* And the precedence is off:
+
+        183     print "Error: Pattern was not found \n" if ([C[(]C]!$LINE[C[)]C] eq 'no' );
+
+#J# こういうのを調べるのには[[B::Deparse]]モジュールがいい
+
+* The [[B::Deparse]] module is a great way to investigate such things:
+
+        % perl -MO=Deparse -e 'print "Err" if (!$LINE eq "no")'
+        print 'Err' if !$LINE eq 'no';
+     
+        % perl -MO=Deparse -e 'print "Err" if (!($LINE eq "no"))'
+        print 'Err' if not $LINE eq 'no';
+     
+        % perl -MO=Deparse[C[,-p]C] -le 'print "Err" if (!$LINE eq "no")'
+        (((!$LINE) eq 'no') and print('Err'));
+
+
+----------------------------------------------------------------
+
+#J# メンテナンスクイズ
+
+Maintenance puzzles
+*******************
+
+#J# この行には本当に悩まされた
+
+* This next line is a real head-scratcher
+
+     181  if ( -r $tfalrt ) { &AlrtError ( $tfalrt, $perrorfile ) } ;
+
+#RTIMG# scratching_head.jpg
+
+#J# 思い出してほしい。この[[$tfalrt]]はこのプログラムが作ったばかりのものだ
+
+* Recall that the program just created [[$tfalrt]] itself:
+
+     165  open ( TMPALRTLOG, "> $tfalrt" ) or die ...
+
+#J# だから、ここで評価しているのはプロセスのumaskなんだろうけれど...
+
+* So what this seems to be testing is the process's umask...
+
+#J# このテストがコケたらどうなるだろうか。[[AlrtError()]]関数がスキップされるわけだけれど
+
+* And what if the test fails?  Then the [[AlrtError()]] function is skipped... 
+
+#J# この[[AlrtError()]]を実行することこそがプログラムの肝だ
+
+  * But running [[AlrtError()]] is the whole point of the program...
+
+#J# 結論: だから、これはたぶん単にこれでいいのだろう
+
+* Conclusion:  it should probably be just:
+
+      AlrtError ( $tfalrt, $perrorfile );
+
+----------------------------------------------------------------
+[[AlrtError]]
+*************
+
+#J# この関数のメインのロジックはこうだ
+
+* The main logic of this function is:
+
+      199     while ( <ORAALRTLOG> ) {
+      201        if ( $_ =~ /(ORA-\d+)\s+/ ) {
+      203  	$errors{$1}++ ;
+      207        }
+      209     }
+      210
+      211     for my $key ( keys %errors ) {
+      213        my $value = $errors{$key} ;
+      215        print "The error code $key appears $value times in this section of the oracle Alert Log\n";
+      217     }
+
+#J# 十分に簡潔だけれど
+
+* This is simple enough
+
+#J# ひとつだけ不満がある
+
+* I have only one complaint:
+
+#J# どうして213～215行目をこう書いてはいけないのだろうか
+
+* I don't see any reason why lines 213[E[ndash]E]215 shouldn't be written as
+
+                 print "The error code $key appears [C[$errors{$key}]C] times in this section of the oracle Alert Log\n";
+
+#J# 私にはこちらの方が悪くなるとは思えないし、多少はマシなのではないかと思う
+
+* It seems to me that this couldn't be worse, and might be a bit better
+
+#RTIMG# redflag
+
+#J# 直後に一度しか使わない変数を割り当てるな
+
+* [R[Variable use immediately follows assignment]R]
+
+#J# それと、たぶん[[keys(%errors)]]はソートした方がよいだろう
+
+### Also perhaps sort the keys(%errors)
+----------------------------------------------------------------
+[[AlrtError]]
+*************
+
+#J# もうひとつここで悩まされたのが[[$errorfile]]という引数の用途
+
+* The other puzzle here is the use of the [[$errorfile]] argument:
+
+        192     my $errorfile = shift ;
+        196     open ( ERRORALRTLOG, "> $errorfile" ) or die "Can't open $errorfile due to $!" ;
+        205  	# print ERRORALRTLOG "$_" } ;
+        220     close(ERRORALRTLOG) or die "Cold not close tmpalert due to $!\n" ;
+
+#J# このファイルには何も書き込まれないのだ!
+
+* Nothing is ever written to the file!
+
+#J# それはそれでもかまわないが
+
+* I have no problem with that
+
+#J# [[print]]をコメントアウトするなら、どうして[[open]]もそうしないのか
+
+* But if you're going to comment out the [[print]], why not the [[open]]?
+
+#J# ここでは全部消してしまうのが「正しい」解決策のように思える
+
+* I think the _right_ solution here is to get delete all of it
+
+#J# 戻す必要があるなら、ソースコードの管理システムにはまだコードが残っている
+
+* The code still resides in the source code management system if we need to get it back
+
+#J# ……残っているよね?
+
+  * ... right?
+
+#J# これ自体はいい引数だ。ソースコード管理システムを使っているなら
+
+  * This is itself a good argument in favor of a source code management system
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# この関数の唯一の呼び出し元（[[ProcessAlrtLog]]の中にある）はコメントアウトされている
+
+* The only call to this function (in [[ProcessAlrtLog]]) is commented out
+
+#J# でも、これはこのプログラムのかなり部分を占める。37行ほどもあるのだ
+
+* Nevertheless, it's a significant part of the program, about 37 lines long
+
+#J# たぶん以前は使われていたのだろう。
+
+* Presumably it was used at one time
+
+#J# あるいはうまく動かなかったので修正する必要があるのかもしれない
+
+  * Or maybe it didn't work and needs to be fixed
+
+#J# とにかく少し見てみる価値はありそうだ
+
+* Anyway, it does seem worth some attention
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# 例によって先頭から見ていこう
+
+* Starting at the top as usual:
+
+      225  sub StartStopRep {
+      226
+      227     my $tmpfilealrt = shift ;
+      228     my $reportfile = shift ;
+      229     my @lines ;
+      230     my $stpline ;
+      231     my $strtline ;
+      232     my $shtdwnlinenum ;
+      233     my $ndl = 4 ;
+      234  #   my %match ;
+      235     my @matimes ;
+      236     my $counter = 0 ;
+      237
+
+#J# ここはこう書ける
+
+* This becomes:
+
+        sub StartStopRep {
+          my ($tmpfilealrt, $reportfile) = @_;
+          my (@lines, $stpline, $strtline, $shtdwnlinenum, @matimes);
+          my $ndl = 4;
+          my $counter = 0;
+
+----------------------------------------------------------------
+
+#J# 変数名
+
+Variable names
+**************
+
+#J# 念のため書いておくけれど、私は変数の命名についてはあまり時間を使っていない
+
+* In case you hadn't noticed, I don't spend a lot of time talking about how to name variables
+
+#J# 退屈だし
+
+  1. It's boring
+
+#J# みなさんも聞いたことがあるはずだ
+
+  2. You've heard it before
+
+#J# 87回も
+
+     * 87 times
+
+#J# とはいえ、[[$stpline]]と[[$strtline]]という名前は気になる
+
+* Nevertheless, the names [[$stpline]] and [[$strtline]] bother me
+
+
+----------------------------------------------------------------
+
+#J# 変数名
+
+Variable names
+**************
+
+#J# このプログラムにはこの手のバカげた省略が至るところにある
+
+* This kind of silly abbreviating is all through this program
+
+#J# この人は母音に何か恨みでもあるのだろうか?
+
+  * What's this guy's problem with vowels?
+
+#J# どうして[[AlrtError()]]なんだろう、[[AlertError()]]でなく?
+
+  * Why [[AlrtError()]] and not [[AlertError()]]?
+
+#J# どうしても省略したいなら、[[AlertErr()]]にすればいいのに?
+
+  * If it needs abrviation, why not [[AlertErr()]]?
+
+#J# 私なら[[$startline]]や[[$stopline]]のようにしていたと思う
+
+* I would have preferred [[$startline]] and [[$stopline]]
+
+#J# 省略しないといけないのであれば、[[$startln]]とか[[$stopln]]はどうだろう?
+
+* Or, if abbreviation is wanted, how about  [[$startln]] and [[$stopln]]?
+
+#J# とにかくこんな省略をして何になるのだ?
+
+* What is gained by this sort of abbreviation, anyway?
+
+#J# 文句はおしまい
+
+* End of rant.
+----------------------------------------------------------------
+[[StartStopRep]]
+****************
+
+        251          $shtdwnlinenum = $. ;
+
+#J# [[$shtdwnlinenum]]はまったく使われていない
+
+* [[$shtdwnlinenum]] is never used anywhere
+
+#J# これでまた1行減った
+
+* Another line gone
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      247     my %match ;
+          ...
+      274  	$match{START} = $strtline ;
+      275  	$match{STOP} = $stpline ;
+      276
+      277          print REPORTLOG "$. => The start time is $strtline and the stop time is $stpline\n" ;
+      278
+      279        $matimes[$counter] = \%match ;
+      286     } # End While
+
+
+#RTIMG# redflag
+
+#J# 直後に一度しか使わない変数を割り当てるな
+
+* [R[Variable use immediately follows assignment]R]
+
+              while ( <ORAALRTLOG> ) {
+          ...
+                   print REPORTLOG "$. => The start time is $strtline and the stop time is $stpline\n" ;
+             
+                $matimes[$counter] = { START => $strtline, STOP => $stpline };
+              }
+
+#J# これでもう3行減って、変数も1つなくなった
+
+* Three more lines and one variable gone
+
+----------------------------------------------------------------
+
+#IMG# redflags-crossed
+
+#J# 配列長をあらわす変数
+
+[R[Array Length Variables]R]
+****************************
+
+      236     my $counter = 0 ;
+          ...
+      279        $matimes[$counter] = { START => $strtline, STOP => $stpline }; ;
+      280  #-D   	print "The $counter start is $matimes[$counter]{START}\n";
+      281        $counter = $counter + 1 ;
+
+#J# この変数は[[@matimes]]の大きさを追いかけるためのものでしかない
+
+* This variable's only purpose is to track the length of [[@matimes]]
+
+#J# でも、Perlはすでに内部で[[@matimes]]の大きさを追いかけてくれている
+
+* But Perl already tracks the length of [[@matimes]] internally
+
+#J# こういう変数はほぼ例外なく必要ない
+
+* Such variables are almost always unnecessary:
+
+        [C[push]C] @matimes, { START => $strtline, STOP => $stpline };
+        #-D   print "The " [C[. @matimes .]C] "start is $matimes[??![C[-1]C]??!]{START}\n";
+
+#J# これでまた1行減って、変数も1つなくなった
+
+* Another line and another variable gone
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# さて、いよいよ本題に取りかかることにしよう
+
+* I can no longer put off tackling the real meat of this function
+
+#J# この関数の先頭にはこのような興味深いコードがある
+
+* It starts with this interesting section:
+
+      238     open ( ORAALRTLOG, "$tmpfilealrt" ) or die "Can't open $tmpfilealrt due to $!" ;
+      239     open ( REPORTLOG, "> $reportfile" ) or die "Can't open $reportfile due to $!" ;
+      240
+      241     # Wed Jul 27 17:07:45 2005
+      242
+      243     tie @lines, 'Tie::File', $tmpfilealrt or die "Can't Tie the file $tmpfilealrt: $!" ;
+
+#RTIMG# danger.jpg
+
+#J# 一度はハンドルとしてオープンした[[$tmpfilealrt]]を、今度は[[Tie::File]]を使ってオープンしている
+
+* Notice that this code opens [[$tmpfilealrt]] once as a handle and once with [[Tie::File]]
+
+#J# エラーではないが、ふつうはしない
+
+  * Not an error; just unusual
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# まずは実際の出力は抜きで見ていくことにしよう
+
+* First we'll see the function without any actual output:
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      257  	my $status = 'N' ;
+      258  	until ( $status eq 'Y') {
+      259
+      260              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+      261  		$stpline = $1 ;
+      262  		$status = 'Y' ;
+      263  	   }else{
+      264  		$ndl = $ndl + 1 ;
+      265  	   }
+      266
+      267  	}# End until
+      268
+      283        } # End if
+      285
+      286     } # End While
+
+#J# 論理評価は論理式で
+
+* [G[Let booleans be booleans]G]
+
+#J# [[$status]]は真か偽のはずだ
+
+* [[$status]] should be true or false
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+
+
+----------------------------------------------------------------
+
+#J# フラグ変数
+
+Flag Variables
+**************
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+              } else {
+                $ndl = $ndl + 1;
+              }
+        }
+
+#J# 実は、*フラグ変数*も赤旗なのかなと思うようになってきている
+
+* Actually I'm starting to wonder if *flag variables* are red flags
+
+#J# なぜか?
+
+* Why?
+
+#J# ふつうはなくしてしまうことができるように思えるからだ
+
+* Because it seems to me that you can usually eliminate them
+
+#J# フラグ変数は暗黙の了解の中に埋め込んでしまおう
+
+  * Fold them into the implicit state of the program
+
+#J# その方がふつうは簡潔になる
+
+  * And the result is usually simpler
+
+----------------------------------------------------------------
+
+#J# フラグ変数
+
+Flag Variables
+**************
+
+  	my $status;
+  	until ( $status ) {
+     
+              if ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+  		$stpline = $1 ;
+  		$status = 1 ;
+              } else {
+                $ndl = $ndl + 1;
+              }
+        }
+
+#J# 変数には意味のある情報を持たせるようにしよう
+
+* [G[A variable should represent some important piece of information]G]
+
+#J# そうすれば変数の中身が何なのか、簡潔に説明できるはずだ
+
+  * It should be possible to briefly explain what it represents
+
+#J# この[[$status]]は何か?
+
+* What is [[$status]] here?
+
+#J# 「終端行を探している間に終端行が見つかったかどうか」
+
+  * "During the search for the stop line, have we found it yet?"
+
+#J# それなら、終端行が見つかるまで探して、そこで探すのをやめたらどうだろう?
+
+* Well, why not just search until you find it, and then stop?
+
+  	while (1) {
+          if  ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+#*          last;
+          }            
+          $ndl = $ndl + 1;
+        }
+
+#J# これでまた変数が1つなくなった
+
+* Another variable gone
+
+----------------------------------------------------------------
+
+#J# フラグ変数
+
+Flag Variables
+**************
+
+  	while (1) {
+          if  ($lines[$. -$ndl ] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+#*          last;
+          }            
+          $ndl = $ndl + 1;
+        }
+
+#J# これでバグになりかねない部分がよりはっきりしてきた
+
+* Now a possible bug becomes much more apparent
+
+#J# 無限ループになりうる条件文が見えている
+
+* The potential infinite loop condition is apparent
+
+#J# そのかわりにこうしたらどうだろう?
+
+* How about this instead?
+
+        my $possible_stop = $. - 4;
+        while ($possible_stop >= 0) {
+          if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+            last;
+          }      
+          $possible_stop--;      
+        }
+
+#J# [[$ndl]]のかわりに[[$possible_stop]]を使うことにしたわけだ
+
+* Here [[$possible_stop]] replaces [[$ndl]]
+
+#J# こんな行も追加した方がよいかもしれない
+
+* We might also want to add:
+
+        die "Couldn't find stop line preceding line $." unless $stpline;
+
+----------------------------------------------------------------
+
+#J# 潜在的な不安
+
+Potential Worry
+***************
+
+        my $possible_stop = $. - 4;
+        while ($possible_stop >= 0) {
+          if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            $stpline = $1;
+            last;
+          }      
+          $possible_stop--;      
+        }
+
+#J# もともとのコードでは検索のたびに[[$ndl]]を4にリセットして「いなかった」
+
+* The original code did _not_ reset [[$ndl]] to 4 for each search
+
+#J# バグなのか、仕様なのか?
+
+  * Bug, or feature?
+
+#J# たぶんバグだと「思う」
+
+  * I _think_ it was probably a bug
+
+#J# 作者からサンプルの入力をもらうのは間に合わなかったけれど
+
+  * I was not able to get sample input from the author in time
+
+#J# この部分はコメントアウトされていた
+
+* But this part of the program was commented out
+
+#J# 案外このせいなのかも?
+
+  * Perhaps this is why?
+
+----------------------------------------------------------------
+
+[[StartStopRep]]
+****************
+
+#J# さて、出力部分を省いたこの関数の本体はこうだ
+
+* Now here's the body of the function, with printing removed:
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+                       $stpline = $1;
+                       last;
+                     }      
+                     $possible_stop--;      
+                   }
+      
+      283        } # End if
+      284
+      285
+      286     } # End While
+      287
+
+#J# 次に気がついたのは、[[(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/]]というパターンが繰り返されていることだ
+
+* The next thing I notice is the repeated pattern [[(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/]]
+
+#J# メンテナンスプログラマとしてはここを1文字1文字比べていかなくてはならない
+
+* As maintenance programmer, I must now compare these character-by-character
+
+#J# 本当に同じものになっているのだろうか?
+
+* Are they really the same?
+
+#J# （なっている）
+
+  * (Yes.)
+
+----------------------------------------------------------------
+
+#J# コードの繰り返し
+
+Repeated Code
+*************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+
+#J# この評価の繰り返しはなくしたい
+
+* I would like to get rid of the repeated test
+
+#J# ここでしているのは、ファイルをスキャンして関心のある行を探すことだ
+
+* We're scanning over the file, looking for lines of interest
+
+#J# 見つかったら、ファイルをさかのぼって、直前に見つけた部分を探す
+
+* When we find one, we scan backwards in the file looking for the previous one
+
+#J# でも、それはもう見つけてあるはずだ!
+
+* But we've already seen that one!
+
+#J# それなら最初に記憶しておくだけでいいのではあるまいか?
+
+* So why not just make a note of it the first time?
+
+#J# そうすれば必要になったときにまた探しに行かなくてすむ
+
+* Then we won't gave to go hunting for it when we need it again.
+
+----------------------------------------------------------------
+
+#J# コードの繰り返し
+
+Repeated Code
+*************
+
+      245     while ( <ORAALRTLOG> ) {
+      246
+      248        if ( $_ =~ /Starting\s+ORACLE\s+instance\s+/ ) {
+      249
+      252          my $diff = $. - 2 ;
+      253          $strtline = $lines[$diff] if ($lines[$diff] =~ /\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4}/) ;
+      256
+                   my $possible_stop = $. - 4;
+                   while ($possible_stop >= 0) {
+                     if  ($lines[$possible_stop] =~ /(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+
+#J# そのかわりにこうしよう
+
+* Instead, let's do:
+
+        my @start_stop_lines, %start_stop_data;
+        while ( <ORAALRTLOG> ) {
+          if (/(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            push @start_stop_lines, $.;
+            $start_stop_data{$.} = $1;
+     
+          } elsif (/Starting\s+ORACLE\s+instance\s+/) {
+            my ($startl, $stopl) = @start_stop_lines[-1, -2];
+     
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+            } else {
+              # raise some suitable error diagnostics
+            }
+          }
+        }
+
+#J# ここでは関数のロジックの大半を書き換えてしまったけれど
+
+* This replaces most of the logic in the function
+
+#J# これで[[Tie::File]]は使わなくてすむし
+
+* It eliminates the use of [[Tie::File]]
+
+#J# さかのぼって検索する必要もなくなった
+
+* It eliminates the backward search
+
+----------------------------------------------------------------
+
+#J# 出力
+
+Printing
+********
+
+#J# ここまではちょっとお茶を濁して
+
+* I fudged something here
+
+#J# 実際の[[print]]抜きでコードをお見せしてきたわけだけれど
+
+* Remember I was showing the code without the [[print]]ing
+
+#J# 出力は本当に重要だ
+
+* But the [[print]]ing is really important
+
+#J# なにしろこの関数の目的はリポートを出力することなのだから!
+
+* The function's purpose is to print the report!
+
+#J# だから、[[print]]を戻しておくことにしよう
+
+* So I'd better restore the [[print]]s:
+
+        my @start_stop_lines, %start_stop_data;
+        while ( <ORAALRTLOG> ) {
+          if (/(\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+\s+\d{4})/) {
+            push @start_stop_lines, $.;
+            $start_stop_data{$.} = $1;
+     
+          } elsif (/Starting\s+ORACLE\s+instance\s+/) {
+            my ($startl, $stopl) = @start_stop_lines[-1, -2];
+#*          print REPORTLOG "$_\n" ;
+      
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+      
+#*            print REPORTLOG "START> $lines[$start]\n";
+#*            print REPORTLOG "STOP> $stpline\n";
+            } else {
+              # raise some suitable error diagnostics
+            }
+          }
+        }
+
+
+----------------------------------------------------------------
+
+#J# 出力
+
+Printing
+********
+
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+              print REPORTLOG "START> $lines[$start]\n";
+              print REPORTLOG "STOP> $stpline\n";
+
+#J# ええと
+
+* Uh-oh
+
+#J# [[@lines]]はさっき消してしまった（[[Tie::File]]が提供していたものだ）
+
+* I got rid of [[@lines]]  (provided by [[Tie::File]])
+
+#J# でも、大丈夫
+
+* But that's OK:
+
+            if (defined($startl) && $startl <= $. - 2 
+             && defined($stopl)  && $stopl  <= $startl - 2) {
+              push @matimes, { START => $start_stop_data{$startl}, 
+                               STOP  => $start_stop_data{$stopl}, };
+     
+#*            print REPORTLOG "START> $matimes[-1]{START}\n";
+#*            print REPORTLOG "STOP> $matimes[-1]{STOP}\n";
+
+----------------------------------------------------------------
+#IMG# redflags-crossed
+
+#J# ブロックの最後のコメント
+
+[R[End-of-Block Comments]R]
+***************************
+
+        267  	}# End until
+            ...
+        282
+        283        } # End if
+        284
+        285
+        286     } # End While
+        287
+
+#J# こういうコメントは赤旗ものだ
+
+* Such comments are red flags
+
+#J# コントロールフローが複雑すぎるということだからだ
+
+* They indicate that your control flow is too complicated
+
+#J# 解決策はいくつかある
+
+* Solutions include:
+
+#J# 書き直してしまう（ここではそうした）
+
+  1. Rewrite it  (That's what we did here)
+
+#J# 内部のブロックを関数にしてしまう
+
+  2. Turn an inner block into a function
+
+#J# もっとましなエディタプログラムを使う
+
+  3. Get a better editor program
+
+#J# 別にひとつに限る必要はない
+
+* These are not exclusive
+----------------------------------------------------------------
+[[StartStopRep]]
+****************
+
+#J# 結果: 37行が22行になった
+
+* Result: 37 lines become 22
+
+#J# 複雑だったコントロールフローが簡潔になった
+
+* Complicated control flow becomes simple
+
+#J# 前方検索と後方検索が混じっていたのが、一方通行になった
+
+  * Mingled forward and backward searching replaced with single pass
+
+#J# 変数の数は12から7に
+
+* 12 variables become 7
+
+#J# [[Tie::File]]は消えた
+
+* [[Tie::File]] eliminated
+
+#J# パフォーマンスもかなりよくなったかも
+
+* Possibly significant performance increase
+
+#J# バグっていそうだったけれど、直ったかな?
+
+* Possible bugs fixed?
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+#J# プログラムの先頭はこうなっている
+
+* The top of the program has:
+
+      36     my $dpattern ;
+      37     my $tmpfilealrt ;
+      38     my $errfile ;
+      39     my $repfile ;
+      40     my %alrtopt ;
+      41     my $read ;
+      42     my $int ;
+
+#J# グローバル変数はだめだ
+
+* I was going to complain about global variables
+
+#J# グローバル変数を使うとモジュール化や再利用がしづらくなるという長い話を入れるつもりだったのだけれど
+
+* I was going to insert a long section about how using global variables wrecks modularity and reuse
+
+#J# 幸い、これらの変数はどれも本当のグローバルではない
+
+* Happily, none of these are truly global
+
+#J# 400行目あたりに移した方がいい
+
+* They should move down to the vicinity of line 400
+
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+#J# この手のものはよく見かけるわけだけれど
+
+* I see this sort of thing a lot:
+
+     398  GetOptions (	"help"=> \$alrtopt{help},
+     399  		"sid=s"=> \$alrtopt{sid},
+     400  		"interactive:i" => \$alrtopt{interactive} );
+     401
+     402
+     409  if ( $alrtopt{interactive} ) {
+     410
+     411     $int = $alrtopt{interactive} ;
+     412
+     413  #   print " the value of the integer is $int\n";
+     414
+     415  }
+     416
+
+#J# いったいこの[[$alrtopt{interactive}]]は何?
+
+* What's [[$alrtopt{interactive}]] for?
+
+#RTIMG# redflag
+
+#J# 直後に一度しか使わない変数を割り当てるな
+
+* [R[Variable use immediately follows assignment]R]
+
+#J# こう書いておけばいい
+
+* Why not just:
+
+      GetOptions (  "help"          => [C[\$help]C],
+                    "sid=s"         => [C[\$read]C],
+                    "interactive:i" => [C[\$int]C] );
+
+#J# これで[[if]]ブロックはなくせる
+
+* And then the [[if]] block vanishes
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+      426     if ( $int ) {
+      428         ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = &GetDateNow( $int ) ;
+      430     }else {
+      432         ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = &GetDateNow ;
+      434     }
+
+#J# ここでもコードが繰り返されている
+
+* Here we have repeated code
+
+#J# 特殊なケースは避けよう
+
+* [G[Avoid special cases]G]
+
+#J# 「わざわざこんな評価をしなかったらどうだろう?」と自問してみよう
+
+* Ask the question "What if I didn't bother with the test?"
+
+#J# 場合によっては「変わらないよ!」という答えが返ってくる
+
+  * Sometimes, the answer is "nothing!"
+
+#J# たとえばここで
+
+* Here, for example:
+
+#J# [[$int]]が偽のときでも[[GetDateNow($int)]]を呼ぶことにしたらどうなるだろう?
+
+  * What if we called [[GetDateNow($int)]] even when [[$int]] was false?
+
+#J# [[GetDateNow]]の中にはすでに「まさにそのケース」を処理するコードがある
+
+  * [[GetDateNow]] already has code in it to handle that _exact_ case
+
+#J# 
+
+#J# そこのコードは「まさに」してほしいことをしてくれる
+
+  * And the code there does _exactly_ what we want it to
+
+      ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = GetDateNow( $int ) ;
+
+#J# これで2行が消えた
+
+* Two lines become zero
+
+----------------------------------------------------------------
+
+#J# メインプログラム
+
+Main program
+************
+
+     [C[my]C] ( $dpattern, $tmpfilealrt, $errfile, $repfile ) = GetDateNow( $int ) ;
+
+#J# これで冒頭の宣言4行を消せる
+
+* Now we can eliminate four lines of delcarations from the top of the program
+
+----------------------------------------------------------------
+
+#J# 空の[[if]]ブロック
+
+Empty [[if]] block
+******************
+
+#J# これは変だが、みなさんが思っているほど珍しいものでもない
+
+* This is weird, but not as rare as you might think:
+
+      437  if ( $read ) {
+      438
+      439  }else{
+      440
+          ...
+      447
+      448  }
+
+#J# こうしよう
+
+* Let's use
+
+        unless ($read) { 
+          ...
+        }
+
+#J# [[unless]]が嫌いならこう
+
+* Or, if you don't like [[unless]]:
+
+        if (not $read) {
+          ...
+        }
+
+----------------------------------------------------------------
+
+OK?
+***
+
+#J# たぶんもうタイムオーバーだろう
+
+* I'm sure I'm over time by now
+
+#J# このプログラムの修正は終わっていない
+
+* I didn't finish working over the program
+
+#J# もう一度見直したいと思っている
+
+* I wanted to take another run at it
+
+#J# たとえば、このプログラムは同じ入力を何度か読んでいる
+
+* For example, the program makes several passes over the same input:
+
+#J# [[ProcessAlertLog()]]で読み
+
+  * Once in [[ProcessAlertLog()]]
+
+#J# [[AlrtError()]]で読み
+
+  * Again in [[AlrtError()]]
+
+#J# 有効になっていれば[[StartStopRep()]]でも読む
+
+  * Again in [[StartStopRep()]], if that is enabled
+
+#J# こういう場合はまとめてしまうとコントロールフローが簡潔になってコードを節約できることが多い
+
+* Often you can simplify control flow and save code by merging passes
+
+#J# 何度も実行されていた作業が一度ですむようになるのだ
+
+* Tasks done multiple times get done once instead
+
+#J# [[DateDiffRep()]]には手をつけてもいない
+
+* I didn't even touch [[DateDiffRep()]]
+
+# 見た感じ、いわゆるフォーマット（ゲッ!）を使うにはうってつけの場所かもしれない
+
+  * It looks like it might be a good place to use (gasp!) formats
+
+#J# 大事な教訓
+
+* Important moral:
+
+#J# 見直しは完璧でなくても十分に意味がある
+
+#HTML# <p align=center><font size="+4" color=green>
+Even an incomplete pass has a lot of value
+#HTML# </font></p>
+
+----------------------------------------------------------------
+
+#J# まとめ
+
+Summary
+*******
+
+#J# 作業前: 163行（[[DateDiffReport()]]は勘定していない）
+
+* Before: 163 lines (not counting [[DateDiffReport()]]
+
+#J# 作業後: 101行（同上）
+
+* After: 101 lines (ditto)
+
+#J# 38%の節約
+
+* Reduction: 38%
+
+#J# バグも直した（と思う）
+
+* Bugs fixed (I think)
+
+#J# パフォーマンスもよくなった
+
+* Performance improved 
+
+#J# コードは簡潔に、また短くなった
+
+* Code simpler and smaller
+----------------------------------------------------------------
+
+#J# まとめ
+
+Summary
+*******
+
+#J# たいていのプログラムは長すぎる
+
+* Most programs are too long
+
+#J# コードの繰り返しは特に無駄
+
+* Repeated code is extremely wasteful
+
+#J# 最初に書いたコードで満足しないようにしよう
+
+* Don't be satsified with the first thing you wrote
+
+#J# 完璧なものというのは、これ以上足せないものではない。これ以上引けないものだ
+
+#HTML# <p align=center><font size="+4" color="green">Perfection is achieved not when there is nothing more to add, but when there is nothing more to take away.</font></p>
+
+#IMG# littleprince.jpg
+
+#J# （アントワーヌ・サン＝テグジュペリ）
+
+#HTML# <p align=center>(Antoine de Saint-Exup&eacute;ry)</a>
+
+----------------------------------------------------------------
+
+#J# ご静聴ありがとうございました!
+
+Thanks!
+*******
+
+#IMG# beer.jpg
+
+----------------------------------------------------------------
+
+----------------------------------------------------------------END

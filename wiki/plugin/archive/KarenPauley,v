@@ -1,0 +1,27 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.02.25.06.58.02;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:221.113.28.232,edit_by:kasei_firestar,edit_by_icon:,edit_time:Sun%20Feb%2025%2006%3A58%3A02%202007,edit_unixtime:1172386682
+@
+text
+@Member of [http://belfast.pm.org/ Belfast.pm] and [http://birmingham.pm.org/ Birmingham.pm], and organiser of YAPC Europe 2004.  Now lives in Tokyo with her husband MartyPauley.
+
+* Personal Blog - [http://martian.org/karen/ Khaos]
+@

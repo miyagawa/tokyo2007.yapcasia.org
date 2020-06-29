@@ -1,0 +1,27 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.04.02.07.50.35;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:221.115.67.42,edit_by:,edit_by_icon:,edit_time:Mon%20Apr%20%202%2007%3A50%3A34%202007,edit_unixtime:1175500234
+@
+text
+@Swede living in Tokyo studying Japanese and running a Catalyst based Japanese<->English dictionary, http://jisho.org/
+
+Personal blog: http://kimtaro.se/
+@

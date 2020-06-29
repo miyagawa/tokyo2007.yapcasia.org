@@ -1,0 +1,39 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2;
+comment	@# @;
+
+
+1.2
+date	2007.04.18.18.12.20;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.04.17.16.25.27;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@edit_address:158.130.13.34,edit_by:MJDominus,edit_by_icon:http%3A%2F%2Fperl.plover.com%2Fpics%2Ftpc%2Fplacido2-m.jpg,edit_time:Wed%20Apr%2018%2018%3A12%3A20%202007,edit_unixtime:1176919940
+@
+text
+@@
+
+
+1.1
+log
+@edit_address:91.124.145.179,edit_by:ItalianCharms,edit_by_icon:,edit_time:Tue%20Apr%2017%2016%3A25%3A27%202007,edit_unixtime:1176827127
+@
+text
+@a0 1
+We are proud to offer you big selection of [Italian charms http://elitecharms.org] and bracelets from famous and popular brand- [http://elitecharms.org/zoppini-charms-c33/ Zoppini]. Every item you see in this category is manufactured in Zoppini factories is the work of skilled artisans taught from master goldsmiths that is constantly revived in the land of Tuscany: a land whose people have magic fingers and an iron will. Those Italian charms and bracelets are made in Italy and imported specially for you. Those gorgeous and amazing items are really wonderful pieces of jewelry.
+@

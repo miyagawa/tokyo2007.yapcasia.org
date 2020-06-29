@@ -1,0 +1,28 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.02.09.07.21.47;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:220.150.112.84,edit_by:tcool,edit_by_icon:,edit_time:Fri%20Feb%20%209%2007%3A21%3A47%202007,edit_unixtime:1171005707
+@
+text
+@A freelance translator and programmer and more. Also known as tcool/charsbar at several irc channels.
+
+* http://ppm.tcool.org/
+* http://use.perl.org/~ishigaki/journal
+@

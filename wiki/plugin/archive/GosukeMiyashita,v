@@ -1,0 +1,58 @@
+head	1.3;
+access;
+symbols;
+locks
+	root:1.3;
+comment	@# @;
+
+
+1.3
+date	2007.03.31.11.27.05;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.31.11.26.10;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.31.11.22.44;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@edit_address:210.194.208.138,edit_by:mizzy,edit_by_icon:http%3A%2F%2Fmizzy.org%2Fimg%2Fme.jpg,edit_time:Sat%20Mar%2031%2011%3A27%3A05%202007,edit_unixtime:1175340425
+@
+text
+@http://a3.vox.com/6a00c2251d3841549d00c2251d3963604a-200pi/jpg
+
+* [http://mizzy.org/]
+* [http://mizzy.vox.com/]
+@
+
+
+1.2
+log
+@edit_address:210.194.208.138,edit_by:mizzy,edit_by_icon:http%3A%2F%2Fmizzy.org%2Fimg%2Fme.jpg,edit_time:Sat%20Mar%2031%2011%3A26%3A10%202007,edit_unixtime:1175340370
+@
+text
+@d3 2
+a4 1
+http://mizzy.org/
+@
+
+
+1.1
+log
+@edit_address:210.194.208.138,edit_by:mizzy,edit_by_icon:http%3A%2F%2Fmizzy.org%2Fimg%2Fme.jpg,edit_time:Sat%20Mar%2031%2011%3A22%3A43%202007,edit_unixtime:1175340163
+@
+text
+@d1 3
+@

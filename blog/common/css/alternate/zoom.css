@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import url("common.css"); /* common stylesheet */
+@import url("fonts.css"); /* font stylesheet */
+
+* {
+  background-image: none ! important;
+  background-color: black ! important;
+  color: white ! important;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #9cc ! important;
+  text-decoration: underline ! important;
+}
+
+a:hover {
+  color: black ! important;
+  text-decoration: none ! important;
+  background-color: #9cc ! important;
+}
+
+h1 a {
+  text-indent: none ! important;
+  font-size: 180% ! important;
+  width: 120px ! important;
+  height: 60px ! important;
+}
+
+h1 a img {
+  display: block;
+  background-color: white ! important;
+}
+
+body {
+  margin: 0;
+  font-size: 140%;
+}
+
+div#container {
+  min-width: 650px;
+  max-width: 65em;
+}
+
+div#menu {
+  display: none;
+}
+
+div.section {
+  margin: 0 0 3em 12px;
+  padding: 0;
+}

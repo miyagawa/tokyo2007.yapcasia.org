@@ -1,0 +1,58 @@
+We'll be doing 60 minutes Lightning Talks on April 5th, before the final keynote. 
+
+The call for Lightning Talks is now open, as of March 19th Japan Time. See [http://tokyo2007.yapcasia.org/blog/2007/03/call_for_lightning_talks.html Call For Proposal (English)] [http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_6.html (Japanese)] for details. The deadline is *March 30th* Japan Time (now extended).
+
+== Accepted Talks
+
+Talks are displayed in the order of submission. Actual presentation schedule might change.
+
+We still have slots available! [http://shibuya.pm.org/register/yapc-papers Submit your proposals now.]
+
+=== にぽたん: 正規表現信者の憂鬱
+
+正規表現というカルトに心酔してしまった或る人間が抱えた困難、憂鬱、幸福。※ 布教活動の類ではございませんので、小さなお子さまにも安心してお聞きいただけます
+
+=== Atsushi Kobayashi: Perlbal selector Plugin
+
+Brad Fitzpatrick さんがちょっとPerlbalのお話をするようですが、Perlbalのselectorプラグインについてちょっと。ちょっとちょっと。
+
+=== Ingy döt Net: Bytecode for Wikis
+
+Ingy has figured out how to solve the chaos of !WikiBabel!
+
+=== ma.la: ブラウザ履歴を利用したRSS Auto-discovery 
+
+プライバシーやサーバー負荷も考慮しつつ、普段使っているブラウザの履歴から、高速にRSS Auto-discoveryを行う方法を紹介します。
+
+=== Chia-liang Kao: !BabelBee - Collaborative Translation Tool
+
+Get your po files translated faster by an army of translators! Also come see how this ajax application is written in very little code!
+
+=== ふしはらかん: Moxy - Mobile Development Proxy 
+
+!HTTP::Proxyを使って実装した携帯サイト開発向けのプロキシについて(サイト毎のUA偽装やヘッダの設定、絵文字のタグ置換などをサポートしています)。
+
+=== 堂前清隆: (ミニ)カンファレンス中継のあれこれ
+
+i-revoではいくつかの小規模なテクニカルカンファレンスにおいてインターネット中継を行ってきました。この中継は単なる動画のストリーミングではなく、静止画と動画を組み合わせた変わった見せ方をしています。この中継のために開発したシステムの発展をできるだけperlに絡めつつ紹介します。
+
+=== Jonathan Rockway: Angerwhale
+
+A quick tour of the Angerwhale Blogging System, including a look at the internals.
+
+=== 長野雅広: Expectをつかったサーバ管理レシピ
+
+Expectをつかって複数のサーバにコマンドを送る方法について、実際サーバ管理に使っている方法を紹介します
+
+=== Mark Dominus: Debugging the De Bruijn Sequence
+
+The Extreme Programming nuts say that programming is the art of debugging an empty file.  But adding text to an empty file is much harder than deleting text from a file that already contains every possible sequence.
+
+=== Yappo: !Device::USB::MissileLaunchers (live)
+
+リアルデバイスを操作する無料のWeb APIのご紹介(生Webカメラ中継予定)
+
+=== Thilo Planz: Spidernomic: A self-modifying HTML/Perl/JS file/game
+
+Inspired by the Perlnomic game, Spidernomic is a minimalistic XHTML file with embedded Perl CGI code and Javascript (both client-side and server-side) to enable it to modify itself, with just enough functionality to bootstrap itself into a playable game.
+[http://spidernomic.thilosophy.com/ slides and code]

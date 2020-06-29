@@ -1,0 +1,318 @@
+head	1.17;
+access;
+symbols;
+locks
+	root:1.17;
+comment	@# @;
+
+
+1.17
+date	2007.04.04.21.19.55;	author root;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.04.04.15.26.08;	author root;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.03.30.00.25.25;	author miyagawa;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.03.29.23.05.38;	author miyagawa;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.03.29.22.20.32;	author root;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.03.27.10.14.28;	author root;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.03.23.22.08.39;	author root;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.03.20.22.31.25;	author root;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.03.20.17.47.21;	author root;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.03.20.04.37.06;	author root;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.03.20.04.36.54;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.03.20.04.34.46;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.03.20.04.19.34;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.03.20.03.55.15;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.03.20.03.54.28;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.20.03.48.10;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.20.03.47.02;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.17
+log
+@edit_address:202.231.68.11,edit_by:Dominus,edit_time:Wed%20Apr%20%204%2021%3A19%3A55%202007,edit_unixtime:1175721595
+@
+text
+@== !YAPC::Asia 2007 Translators Wiki
+
+This wiki was setup with the objective for us Japanese volunraty !YAPC::Asia translators to collaborate on translating English talks so that we can make most of the talks easier for attendees to understand.
+
+== How-To
+
+Speakers: paste your manuscript (slides text portion) as plain text on the Wiki page. Include the format you'd like translators to annotate.
+
+Translators: [http://tokyo2007.yapcasia.org/translate/index.cgi?action=user_preferences Set your username first] and edit the manuscript to add Japanese translation. You're welcome to fix someone else's mistakes.
+
+To avoid duplicate efforts, announce on speakers mailing list before starting to translate the whole talk. Or you can update the Wiki page adding "Translator: your name (working)" on the top.
+
+!!! Kwiki doesn't have an auto-save feature and if there's a conflict your edit may be lost without actually saving it. *Always use Firefox or your offline text editor to edit the translation* !!!
+
+=== Talks @@ Tsuda Hall
+
+Talks in the main "Tsuda Hall" needs to be fully subtitled (or live interpreted) by someone responsible. Here is the list of the talks.
+
+* [KwikiAndTheSymlink] Ingy dot Net
+* [HigherOrderParsingTechniques] Mark Jason Dominus
+* [EverythingVox] Ben Trott
+* [PerlWorstPractices] Marty Pauley
+* [Perl6Today] Audrey Tang
+* [PerlProgrammingRepairShop] Mark Jason Dominus
+* [DebuggingtheDeBruijnSequence] Mark Jason Dominus
+
+=== Other talks
+
+Other talks in T101+102 room are not necessarily translated, but voluntary translators will be welcomed to work on them. 
+
+* [BehindTheScenesAtLiveJournal] Brad Fitzpatrick
+* [Pushmi] clkao
+* [DomainSpecificLanguagesInPerl] Jesse Vincent
+* (Add your talk here)
+
+=== Misc
+
+* SandBox
+@
+
+
+1.16
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Wed%20Apr%20%204%2015%3A26%3A08%202007,edit_unixtime:1175700368
+@
+text
+@d25 1
+d29 1
+a29 1
+Other talks in T101+102 room are not necessarily translated, but volutary translators will be welcomed to work on them. 
+@
+
+
+1.15
+log
+@edit_address:71.216.176.58,edit_by:IngyDotNet,edit_time:Fri%20Mar%2030%2000%3A25%3A25%202007,edit_unixtime:1175214325
+@
+text
+@d32 1
+@
+
+
+1.14
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2023%3A05%3A38%202007,edit_unixtime:1175209538
+@
+text
+@d19 1
+a19 1
+* [KwikiAndTheSymLink] Ingy dot Net
+@
+
+
+1.13
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2022%3A20%3A32%202007,edit_unixtime:1175206832
+@
+text
+@d33 4
+@
+
+
+1.12
+log
+@edit_address:82.71.53.28,edit_by:ChiaLiangKao,edit_time:Tue%20Mar%2027%2010%3A14%3A28%202007,edit_unixtime:1174990468
+@
+text
+@d7 1
+a7 1
+Speakers: paste your manuscript (slides text portion) as plain text on the Wiki page.
+@
+
+
+1.11
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Fri%20Mar%2023%2022%3A08%3A39%202007,edit_unixtime:1174687719
+@
+text
+@d31 1
+@
+
+
+1.10
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2022%3A31%3A25%202007,edit_unixtime:1174429885
+@
+text
+@d30 1
+@
+
+
+1.9
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2017%3A47%3A21%202007,edit_unixtime:1174412841
+@
+text
+@d13 1
+a13 1
+!!! Kwiki doesn't have an auto-save feature and if there's a conflict your edit may be lost without actually saving it. Always use Firefox or your offline text editor to edit the translation !!!
+@
+
+
+1.8
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2004%3A37%3A06%202007,edit_unixtime:1174365426
+@
+text
+@d11 2
+@
+
+
+1.7
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2004%3A36%3A54%202007,edit_unixtime:1174365414
+@
+text
+@d9 1
+a9 1
+Translators: [http://tokyo2007.yapcasia.org/translate/index.cgi?action=user_preferences Set your username first] and edit the transcript to add Japanese translation. You're welcome to fix someone else's mistakes.
+@
+
+
+1.6
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2004%3A34%3A46%202007,edit_unixtime:1174365286
+@
+text
+@d7 1
+a7 1
+Speakers: paste your transcript (slides text portion) as plain text on the Wiki page.
+@
+
+
+1.5
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2004%3A19%3A34%202007,edit_unixtime:1174364374
+@
+text
+@d3 1
+a3 1
+This wiki aims to collaborate for us Japanese volunraty !YAPC::Asia translators to do better jobs on translating English talks so that we can make most of the talks easier for attendees to understand.
+@
+
+
+1.4
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2003%3A55%3A15%202007,edit_unixtime:1174362915
+@
+text
+@d5 1
+a5 1
+== Howto
+d10 2
+@
+
+
+1.3
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2003%3A54%3A28%202007,edit_unixtime:1174362868
+@
+text
+@d3 1
+a3 1
+This wiki aims to collaborate for us Japanese volunraty !YAPC::Asia translate to do better jobs on translating English talks so that it would be easier for attendees to understand.
+@
+
+
+1.2
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2003%3A48%3A10%202007,edit_unixtime:1174362490
+@
+text
+@d15 6
+a20 6
+* [KwikiAndTheSymLink Kwiki and the Symlink (Ingy dot Net)]
+* [HigherOrderParsingTechniques Higher Order Parsing Techniques for Perl (Mark Jason Dominus)]
+* [EverythingVox Everything Vox (Ben Trott)]
+* [PerlWorstPractices Perl Worst Practices (Marty Pauley)]
+* [Perl6Today Perl6 Today (Audrey Tang)]
+* [PerlProgrammingRepairShop Perl Programming Repair Shop and Red Flags (Mark Jason Dominus)]
+@
+
+
+1.1
+log
+@edit_address:204.14.154.180,edit_by:AnonymousGnome,edit_time:Tue%20Mar%2020%2003%3A47%3A02%202007,edit_unixtime:1174362422
+@
+text
+@d7 1
+a7 1
+*Speakers:* paste your transcript (slides text portion) as plain text on the Wiki page.
+d9 1
+a9 1
+*Translators:* [http://tokyo2007.yapcasia.org/translate/index.cgi?action=user_preferences Set your username first] and edit the transcript to add Japanese translation. You're welcome to fix someone else's mistakes.
+@

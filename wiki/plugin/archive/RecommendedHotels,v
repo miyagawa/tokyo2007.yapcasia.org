@@ -1,0 +1,92 @@
+head	1.4;
+access;
+symbols;
+locks
+	root:1.4;
+comment	@# @;
+
+
+1.4
+date	2007.01.31.23.07.36;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.01.25.02.54.21;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.01.16.23.28.42;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.01.16.23.28.11;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Jan%2031%2023%3A07%3A36%202007,edit_unixtime:1170284856
+@
+text
+@We'll update the list of recommneded hotels which are close to the conference venue and also in an useful location to get around Tokyo.
+
+カンファレンス会場 (千駄ヶ谷・国立競技場) に近いホテルの情報を掲載していきます。比較的低予算でオススメのホテル情報がありましたら、このページをアップデートするか、team at yapcasia.org までお知らせください。
+
+== Hotels in Shinjuku
+
+The conference venue is in Sendagaya (千駄ヶ谷) and it's 2 stops from Shinjuku (新宿) using JR Chuo-Sobu line, or Oedo line subway to Kokuritsu Kyogijo (国立競技場).
+
+=== Kadoya Hotel
+
+3 minute walk from Shinjuku station. Single room starts from 7,560 JPY and double room is 13,650 JPY. All rooms have ADSL internet connection. They accept VISA, Master, AMEX and other credit cards.
+
+http://www.kadoya-hotel.co.jp/e_index.html
+
+=== Toyoko Inn
+
+9 minutes walk to JR Shinjuku station. Single rooms are 6,800 JPY and Double rooms are 8,800 JPY (plus taxes). Internet is available in all rooms and the lobby has Wi-Fi. They accept VISA, Master and other credit cards.
+
+http://www.toyoko-inn.com/e_hotel/00078/index.html
+
+== Cheap Places
+
+From SimonCozens -- "When I'm in Tokyo I stay at http://www.libertyhouse.gr.jp/
+It's very basic, but very very cheap!"
+@
+
+
+1.3
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Jan%2025%2002%3A54%3A21%202007,edit_unixtime:1169693661
+@
+text
+@d20 5
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Jan%2016%2023%3A28%3A42%202007,edit_unixtime:1168990122
+@
+text
+@d4 16
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Jan%2016%2023%3A28%3A11%202007,edit_unixtime:1168990091
+@
+text
+@d3 1
+a3 1
+カンファレンス会場 (千駄ヶ谷・国立競技場) に近いホテルの情報を掲載していきます。比較的低予算でオススメのホテル情報がありましたら、このページをアップデートするか、team[at]yapcasia.org までお知らせください。
+@

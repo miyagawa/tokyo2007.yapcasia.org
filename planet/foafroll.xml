@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:rss="http://purl.org/rss/1.0/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+<foaf:Group>
+  <foaf:name>Planet YAPC::Asia 2007</foaf:name>
+  <foaf:homepage>http://tokyo2007.yapcasia.org/planet/</foaf:homepage>
+  <rdfs:seeAlso rdf:resource="http://tokyo2007.yapcasia.org/planet/foafroll.xml" />
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name>support@bloglines.com</foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://www.bloglines.com/search?q=bcite%3Ahttp%3A%2F%2Fconferences.yapcasia.org%2F&amp;s=f&amp;pop=l&amp;news=m&amp;n=100">
+          <dc:title>Bloglines Search: &quot;bcite:http://conferences.yapcasia.org/&quot;</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://bloglines.com/search?q=bcite:http:%2F%2Fconferences.yapcasia.org%2F&amp;s=f&amp;pop=l&amp;news=m&amp;format=rss&amp;n=100" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name>support@technorati.com (Technorati Support)</foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://technorati.com/search/YAPC">
+          <dc:title>Technorati Search for: YAPC</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://technorati.com/watchlists/rss.html?wid=349775" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name>Tatsuhiko Miyagawa</foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://conferences.yapcasia.org/ya2008/news?language=en">
+          <dc:title>YAPC::Asia 2008</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://feeds.feedburner.com/YapcAsia" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name>Tatsuhiko Miyagawa</foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://conferences.yapcasia.org/ya2008/news?language=ja">
+          <dc:title>YAPC::Asia 2008</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://feeds.feedburner.com/YapcAsiaJa" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name>pudge@perl.org</foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://use.perl.org/search.pl">
+          <dc:title>use Perl Journal Search</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://use.perl.org/search.pl?tid=&amp;query=YAPC%3A%3AAsia&amp;author=&amp;op=journals&amp;content_type=rss" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name></foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://del.icio.us/tag/yapcasia2008">
+          <dc:title>del.icio.us/tag/yapcasia2008</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://feeds.delicious.com/rss/tag/yapcasia2008" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name></foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://blogsearch.google.com/blogsearch?hl=en&amp;scoring=d&amp;ie=ISO-8859-1&amp;num=100&amp;q=YAPC+Asia">
+          <dc:title>Google Blog Search: YAPC Asia</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://blogsearch.google.com/blogsearch_feeds?hl=en&amp;q=YAPC+Asia&amp;scoring=d&amp;ie=utf-8&amp;num=100&amp;output=rss" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name>support@technorati.com (Technorati Support)</foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://technorati.com/tag/yapcasia2008">
+          <dc:title>[Technorati] Tag results for yapcasia2008</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://feeds.technorati.com/feed/posts/tag/yapcasia2008" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name>support@bloglines.com</foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://www.bloglines.com/search?q=YAPC%20Asia&amp;ql=any&amp;s=f&amp;pop=l&amp;news=m&amp;n=100">
+          <dc:title>Bloglines Search: &quot;YAPC Asia&quot;</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://bloglines.com/search?q=YAPC+Asia&amp;ql=any&amp;s=f&amp;pop=l&amp;news=m&amp;n=100&amp;format=rss" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name></foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="http://d.hatena.ne.jp/keyworddiary/YAPC">
+          <dc:title>はてなダイアリー - 「YAPC」を含む日記</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://d.hatena.ne.jp/keyworddiary/YAPC?mode=rss" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+    <foaf:member>
+      <foaf:Person>
+        <foaf:name></foaf:name>
+        <foaf:weblog>
+          <foaf:Document rdf:about="/twitter/query?query=yapc">
+          <dc:title>Twitter updates containing &quot;yapc&quot;</dc:title>
+          <rdfs:seeAlso>
+            <rss:channel rdf:about="http://terraminds.com/twitter/update-rss?query=yapc" />
+            </rdfs:seeAlso>
+          </foaf:Document>
+        </foaf:weblog>
+      </foaf:Person>
+    </foaf:member>
+
+  </foaf:Group>
+</rdf:RDF>
+
+
+

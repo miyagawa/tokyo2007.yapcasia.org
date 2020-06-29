@@ -1,0 +1,62 @@
+<!-- BEGIN kwiki_screen -->
+[%- INCLUDE kwiki_doctype.html %]
+[% INCLUDE kwiki_begin.html %]
+<div class="container">
+    <div class="header">
+        <div id="logo"><img src="[% logo_image %]" /></div>
+	<div class="navigation">
+           <div id="title_pane">
+             <h1>[% screen_title || self.class_title %]</h1>
+           </div>
+    [%
+       IF hub.have_plugin('toolbar');
+          hub.toolbar.html;
+       END;
+       IF hub.have_plugin('navigation_toolbar');
+          hub.navigation_toolbar.html;
+       END;
+     %]
+	</div>
+    </div>
+
+[% IF hub.have_plugin('config_blocks') && hub.config_blocks.pageconf.no_left_column %]
+<style type="text/css">
+#centercontent {
+   width: auto;
+   padding:10px;
+   border-left: none;
+}
+</style>
+[% ELSE %]
+<div id="leftcontent">
+[% hub.widgets.html %]
+[% IF hub.have_plugin('infobox'); hub.infobox.html; END; %]
+</div>
+[% END %]
+
+[% IF hub.have_plugin('config_blocks') && hub.config_blocks.pageconf.show_right_column %]
+<div id="rightcontent">
+[% IF hub.have_plugin('infobox'); hub.infobox.right; END; %]
+</div>
+[% ELSE %]
+<style type="text/css">
+#centercontent {
+    width: auto;
+    margin-right:10px;
+    border-right: none;
+}
+</style>
+[% END %]
+
+<div id="centercontent">
+[% INCLUDE $content_pane %]
+</div>
+
+<br clear="all" />
+<div class="footer">
+</div>
+
+</div>
+
+[% INCLUDE kwiki_end.html %]
+<!-- END kwiki_screen -->

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+   <channel>
+      <title>YAPC::Asia 2007 Tokyo - April 4-5 2007</title>
+      <link>http://tokyo2007.yapcasia.org/blog/</link>
+      <description></description>
+      <language>en</language>
+      <copyright>Copyright 2008</copyright>
+      <lastBuildDate>Mon, 25 Feb 2008 09:13:24 +0900</lastBuildDate>
+      <generator>http://www.sixapart.com/movabletype/?v=3.2</generator>
+      <docs>http://blogs.law.harvard.edu/tech/rss</docs> 
+
+            <item>
+         <title>YAPC::Asia 2008</title>
+         <description><![CDATA[<p>Just in case you come to this site by looking for YAPC::Asia 2008, <a href="http://conferences.yapcasia.org/ya2008">here is the link</a>.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2008/02/yapcasia_2008.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2008/02/yapcasia_2008.html</guid>
+         <category></category>
+         <pubDate>Mon, 25 Feb 2008 09:13:24 +0900</pubDate>
+      </item>
+            <item>
+         <title>Now it&apos;s time for Video!</title>
+         <description><![CDATA[<p>2 weeks since we made <a href="http://tokyo2007.yapcasia.org/blog/2007/04/audio_recordings_available_for.html">audio recordings available as a Podcast</a>. Now it's time for Video!</p>
+
+<p>All video files are available on <a href="http://www.i-revo.jp/yapcasia/archive/01.html">i-revo site (as WMV streaming)</a> and <a href="http://video.google.com/videosearch?q=yapc+asia+2007&amp;num=50&amp;so=1&amp;start=0">Google Video (as Flash/DivX/MP4)</a> and actually integrated with our <a href="http://tokyo2007.yapcasia.org/sessions/">Sessions details page</a>. You can find the session you'd like to watch again, or didn't attend to during the conference from <a href="http://tokyo2007.yapcasia.org/sessions/">the timetable</a> and watch videos inline, using Google Video embeded flash player.</p>
+
+<p>We created <a href="http://tokyo2007.yapcasia.org/sessions/videocast.xml">Videocast feed</a> for MP4 files as well, so you can download movie files and syncronize them to mobile devices like iPod or PSP. Just drop the link to iTunes, Democracy or whatever your favorite media player.</p>
+
+<p>Tons of thanks to <a href="http://www.i-revo.jp/yapcasia/">i-revo</a> for their great work on ripping and encoding movie files.</p>
+
+<p>Enjoy!</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/04/now_its_time_for_video.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/04/now_its_time_for_video.html</guid>
+         <category></category>
+         <pubDate>Tue, 24 Apr 2007 06:26:20 +0900</pubDate>
+      </item>
+            <item>
+         <title>Audio recordings available for downloads!</title>
+         <description><![CDATA[<p><a href="http://tokyo2007.yapcasia.org/sessions/index.xml">Podcast feed</a> for the audio recordings at YAPC::Asia 2007 is now ready! Audio files are ripped and encoded as 128kbps mp3 files so they're iPod-ready out of the box.  The feed also contains Creative Commons license as item metadata.</p>
+
+<p>The feed is now imported on <a href="http://odeo.com/channel/376983/view">Odeo</a> as well so you can listen to the recordings just on your favorite browsers without actually downloading the files.</p>
+
+<p>Enjoy the recordings with <a href="http://tokyo2007.yapcasia.org/wiki/?SlidesFromTalks">Slides from the talks</a>. We're currently working on the video recordings as well, which will be available on <a href="http://www.i-revo.jp/yapcasia/">i-revo site</a> and Google Video.</p>
+
+<p>Thanks to <a href="http://www.tsudahall.com/">Tsuda Hall</a> staff and folks from <a href="http://www.i-revo.jp/">i-revo</a> for recording and ripping audio files!</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/04/audio_recordings_available_for.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/04/audio_recordings_available_for.html</guid>
+         <category></category>
+         <pubDate>Tue, 10 Apr 2007 16:48:44 +0900</pubDate>
+      </item>
+            <item>
+         <title>How to get to the venue</title>
+         <description><![CDATA[<p>The nearest station to the venue <a href="http://www.tsudahall.com/">Tsuda Hall</a> is either JR Sendagaya station (千駄ヶ谷) or Subway Oedo-sen Kokuristu Kyogijo Station (大江戸線 国立競技場). </p>
+
+<p>Oedo-sen would be handy if you come from stations like Roppongi, Shiodome or Shimbashi. JR would be useful if you're from Tokyo, Shinjuku or other JR stations.</p>
+
+<p><img alt="yapc_map_en.gif" src="http://tokyo2007.yapcasia.org/blog/yapc_map_en.gif" width="400" height="146" /><br />
+</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/04/how_to_get_to_the_venue.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/04/how_to_get_to_the_venue.html</guid>
+         <category></category>
+         <pubDate>Tue, 03 Apr 2007 19:27:04 +0900</pubDate>
+      </item>
+            <item>
+         <title>1st day: Registration Opens 9:00 AM</title>
+         <description><![CDATA[<p>Time is flying so fast. Now it's less than one day to the conference!</p>
+
+<p>On the 1st day April 4th, we'll open the venue registration on <strong>9:00AM</strong>. The first welcome session starts on 9:30 so let's get it real quick. All you need is a ticket purchased from Lawson. If you paid via PayPal, bring the copy of the receipt online. If you pay at the venue, just say your name and pay 4500 JPY there.</p>
+
+<p>See you soon!</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/04/1st_day_registration_opens_900.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/04/1st_day_registration_opens_900.html</guid>
+         <category></category>
+         <pubDate>Tue, 03 Apr 2007 18:39:17 +0900</pubDate>
+      </item>
+            <item>
+         <title>Wiki auth unlocked till 4/5</title>
+         <description><![CDATA[<p>Since some people have been complaining that the TypeKey auth is one of the big barriers for them to edit <a href="http://tokyo2007.yapcasia.org/wiki/">YAPC::Asia Wiki</a>, so today I made the TypeKey auth as optional. Anynone can now update any page without authentication. (If you want to, you can still login to TypeKey to claim your identity)</p>
+
+<p>It'll be enabled back once the conference is over, but for now, edit away!</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/03/wiki_auth_unlocked_till_45.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/03/wiki_auth_unlocked_till_45.html</guid>
+         <category></category>
+         <pubDate>Fri, 30 Mar 2007 06:17:50 +0900</pubDate>
+      </item>
+            <item>
+         <title>Lightning Talks accepted</title>
+         <description><![CDATA[<p>We got 8 Lightning Talks proposals and they all looked good and are now accepted. See <a href="http://tokyo2007.yapcasia.org/wiki/?LightningTalks">LightningTalks</a> wiki page for the details. </p>
+
+<p>Since there are a couple of slots available, we are extending the deadline for a few days. If you have something in your mind to talk about in 5 minutes, <a href="http://shibuya.pm.org/register/yapc-papers">submit your proposal now</a>.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/03/lightning_talks_accepted.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/03/lightning_talks_accepted.html</guid>
+         <category></category>
+         <pubDate>Tue, 27 Mar 2007 06:34:23 +0900</pubDate>
+      </item>
+            <item>
+         <title>RSVP required for Conference Party</title>
+         <description><![CDATA[<p>As last year, we're organizing the big conference party in the evening of April 4th, the 1st day of the conference.</p>
+
+<p>Thanks to our sponsors, the food there are <strong>FREE</strong> and all we need from you is a fee for drinks, which is 1500 Yen. Due to the capacity limitation of the restaurant, we need to call RSVPs for the party. If you're interested, sign up <a href="http://shibuya.pm.org/register/yapc-party-2007/ "><strong>using the web form</strong></a>.</p>
+
+<p>(The speakers and guests are already counted and are free to attend. No need to sign-up!) </p>
+
+<p>The party wil be held <strong>April 4th, 7:30 pm at <a href="http://r.gnavi.co.jp/g696442/">ジョン万次郎 アトレ信濃町店</a> (John Manjiro, Shinano-cho)</strong>. You need to pay the fee in the YAPC::Asia registration, not in the restaurant.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/03/rsvp_required_for_conference_p.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/03/rsvp_required_for_conference_p.html</guid>
+         <category></category>
+         <pubDate>Fri, 23 Mar 2007 07:13:33 +0900</pubDate>
+      </item>
+            <item>
+         <title>Call For Lightning Talks</title>
+         <description><![CDATA[<p>The call for Lightning Talks for YAPC::Asia 2007 is now open. The Lightning Talks will be held on April 5th, right before the final keynote.  We want 11 talks of five minutes each to fill 60 minutes session.</p>
+
+<p>Submit your proposal today using <a href="http://shibuya.pm.org/register/yapc-papers/"><strong>the web form</strong></a>. The deadline for submissions is: <strong>March 26th, 2007 23:59 JST (+0900)</strong><br />
+</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/03/call_for_lightning_talks.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/03/call_for_lightning_talks.html</guid>
+         <category></category>
+         <pubDate>Mon, 19 Mar 2007 11:03:26 +0900</pubDate>
+      </item>
+            <item>
+         <title>Contribute to the Wiki</title>
+         <description><![CDATA[<p>We have a <a href="http://tokyo2007.yapcasia.org/wiki/">Wiki site</a> for YAPC::Asia 2007 and there we update lots of useful information about the conference.</p>
+
+<p>If you're going to participate in the conference, <a href="http://tokyo2007.yapcasia.org/wiki/?Attendees">Sign up on the Attendees page</a> and add your blog to <a href="http://tokyo2007.yapcasia.org/wiki/?Planet">Planet blog aggregator</a>.</p>
+
+<p>Oh, by the way, the 350 tickets have been sold out and we're now officially closing the registration. See you in Tokyo in a few weeks!</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/03/contribute_to_the_wiki.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/03/contribute_to_the_wiki.html</guid>
+         <category></category>
+         <pubDate>Fri, 16 Mar 2007 06:30:39 +0900</pubDate>
+      </item>
+            <item>
+         <title>Recap of YAPC::Asia 2006</title>
+         <description><![CDATA[<p>Now it's less than a month to YAPC::Asia 2007, I guess it's time to revisit the last year's excitement.</p>
+
+<p>We re-imported the audio files on <a href="http://odeo.com/channel/328063/view">Odeo</a>. It has Podcast feeds and flash based audio player so that you can listen to the session on your favorite web browser.</p>
+
+<p>The video files are on <a href="http://www.archive.org/search.php?query=subject:yapc">Archive.org</a> and I found that recently they added a new beta flash player feature, which also allows you to watch videos without actually downloading the whole content.</p>
+
+<p>Slides for the talks are available on <a href="http://tokyo.yapcasia.org/wiki/?SlidesList">the Wiki page</a>.</p>
+
+<p>We're working hard to make sure that we can distribute audio/video files this year as well, sometime after the conference. But note that it doesn't mean you don't need to come to the conference venue. Nothing is compared to the experience of being in the venue, talking face-to-face with folks from everywhere Japan and all over the world.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/03/recap_of_yapcasia_2006.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/03/recap_of_yapcasia_2006.html</guid>
+         <category></category>
+         <pubDate>Tue, 13 Mar 2007 06:17:03 +0900</pubDate>
+      </item>
+            <item>
+         <title>Registration closing soon</title>
+         <description><![CDATA[<p>Now we sold 300 tickets for domestic attendees and will sell extra 50 tickets by increasing the # of seats this weekend. For international attendees we're still accepting the registration via the web form, but we'll close the registration soon after the extra tickets being sold out, maybe in 2 weeks or so.</p>
+
+<p>If you haven't done, go <a href="http://shibuya.pm.org/register/yapc-register/">register</a> the conference now.</p>
+
+<p><strong>UPDATE:</strong> We're going to close the registration on <strong>March 15th 23:59</strong>, Japanese standard time.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/02/registration_closing_soon.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/02/registration_closing_soon.html</guid>
+         <category></category>
+         <pubDate>Wed, 28 Feb 2007 05:17:59 +0900</pubDate>
+      </item>
+            <item>
+         <title>Sessions and Timetable are out</title>
+         <description><![CDATA[<p><a href="http://tokyo2007.yapcasia.org/sessions/">Sessions along with Timetable</a> and <a href="http://tokyo2007.yapcasia.org/speakers/">Speakers profile</a> for YAPC::Asia 2007 are now published.</p>
+
+<p>We publish iCal files for sessions (Kudos to <a href="http://2xup.org/">Taichi Kaminogoya</a> for his MT-fu) as well, so that you can subscribe to the schedule using iCal, Sunbird, 30boxes or Google Calendar.</p>
+
+<p>You might notice that some talks are marked as TBD and some speakers' proflie are empty. We're working on updating the data and I hope it will be completed anytime soon.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/02/sessions_and_timetable_are_out.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/02/sessions_and_timetable_are_out.html</guid>
+         <category></category>
+         <pubDate>Fri, 23 Feb 2007 15:59:11 +0900</pubDate>
+      </item>
+            <item>
+         <title>Registration Opens</title>
+         <description><![CDATA[<p>We're happy to announce that the registratin for YAPC::Asia 2007 has now opened! Use <a href="http://shibuya.pm.org/register/yapc-register/">our web-based registration form (shibuya.pm.org site)</a> to register yourself and pay the conference fee using PayPal to get the 500 JPY off.</p>
+
+<p>If you consider visiting to Tokyo for this YAPC but are still looking for the accommodation, go check out <a href="http://tokyo2007.yapcasia.org/wiki/?RecommendedHotels">the recommended hotels</a> near the venue.</p>
+
+<p>(Note: This registration form is only for international attendees and people having difficulties buying tickets online. Japanese attendees should <a href="http://www2.lawsonticket.com/pc/P40/WM80.asp?SI=yap">buy tickets from Lawson Ticket</a>)</p>
+
+<p>We're looking forward to seeing you in Tokyo!</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/02/registration_opens.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/02/registration_opens.html</guid>
+         <category></category>
+         <pubDate>Fri, 16 Feb 2007 10:50:20 +0900</pubDate>
+      </item>
+            <item>
+         <title>Announcement: Speakers and Sponsors</title>
+         <description><![CDATA[<p>Shibuya Perl Mongers are happy to announce the chosen speakers and our sponsors for YAPC::Asia 2007.</p>
+
+<h3>YAPC::Asia 2007 Tokyo</h3>
+
+<dl>
+<dt>Date</dt><dd>April 4-5th, 2007 (Wed-Thu) 9:30-18:00</dd>
+<dt>Venue</dt><dd><a href="http://www.tsudahall.com/">Tsuda Hall</a>, Sendagaya, Tokyo</dd>
+<dt>Fee</dt><dd>4000 JPY (2 Days including T-shirt)</dd>
+<dt>Organizer</dt><dd>YAPC::Asia 2007 Committee / <a href="http://shibuya.pm.org/">Shibuya Perl Mongers</a></dd>
+<dt>Registration</dt><dd><a href="http://shibuya.pm.org/register/yapc-register/">Register Now</a></dd>
+</dl>
+
+<p>See the right side bar of this blog for the full list of sponsors.</p>
+
+<h3>Speakers</h3>
+
+<ul>
+<li>Audrey Tang</li>
+<li>Mark Jason Dominus</li>
+<li>Jesse Vincent</li>
+<li>Ben Trott</li>
+<li>Brad Fitzpatrick</li>
+<li>Chia-liang Kao</li>
+<li>Ingy döt Net</li>
+<li>Dave Rolsky</li>
+<li>Jeff Kim</li>
+<li>Jonathan Rockway</li>
+<li>José Alves de Castro</li>
+<li>Kang-min Liu</li>
+<li>Dan Kogai</li>
+<li>Daisuke Maki</li>
+<li>Atsushi Kobayashi</li>
+<li>Emerson Mills</li>
+<li>Naoya Ito</li>
+<li>Gosuke Miyashita</li>
+<li>Kazuho Oku</li>
+<li>Kenichi Ishigaki</li>
+<li>Marty Pauley</li>
+<li>Tatsuhiko Miyagawa</li>
+<li>Tokuhiro Matsuno</li>
+<li>Kei-ichi Daiba</li>
+<li>Kazuhiro Osawa</li>
+<li>Yoshinori Takesako</li>
+</ul>
+
+<p>* Speakers and other schedules are not yet finalized. They might be changed without notice before the conference. We'll publish the finalized program and time table along with sessions title and abstracts in the beginning of March, 2007.</p>
+
+<p>* Conference official languages are Japanese and English. International speakers will do their talks mostly in English.</p>]]></description>
+         <link>http://tokyo2007.yapcasia.org/blog/2007/02/announcement_speakers_selected.html</link>
+         <guid>http://tokyo2007.yapcasia.org/blog/2007/02/announcement_speakers_selected.html</guid>
+         <category></category>
+         <pubDate>Wed, 14 Feb 2007 16:48:46 +0900</pubDate>
+      </item>
+      
+   </channel>
+</rss>

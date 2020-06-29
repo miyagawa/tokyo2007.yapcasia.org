@@ -1,0 +1,1043 @@
+.pre
+
+-------------------------
+(p.30)
+
+memcached
+
+  http://www.danga.com/memcached/
+
+* our Open Source, distributed caching system
+#J オープンソースの分散型キャッシュシステム
+
+* run instances wherever free memory
+#J どのマシンでもいいからメモリが余ってるところで走らせればいい
+
+* two-level hash
+#J 2段階のハッシュ
+
+  - client hashes to server,
+#J クライアントはどのサーバに接続すればよいかのハッシュを持っており
+
+  - server has internal hash table
+#J サーバも内部的なハッシュテーブルを持っている
+
+* no “master node”
+#J 「マスター」は存在しない
+
+* protocol simple, XML-free
+#J シンプルなプロトコール、XMLなんか使わないよ！
+
+  - perl, java, php, python, ruby, ...
+
+* popular.
+#J 皆に好評だし…
+
+* fast.
+#J 速い！
+---------------------
+(p.31)
+
+Perlbal
+---------------------
+(p.32)
+
+Web Load Balancing
+#J ロードバランサー
+
+* BIG-IP, Alteon, Juniper, Foundry
+
+  - good for L4 or minimal L7
+  #J L4や最小限のL7には対応しているんだけど…
+
+  - not tricky / fun enough. :-)
+  #J ちょっと物足りなかった :-)
+
+* Tried a dozen reverse proxies
+#J リバースプロキシも色々試してみた
+
+  - none did what we wanted or were fast enough
+  #J どれもやりたかった事が実現できなかったり、遅すぎたりした。
+
+* Wrote Perlbal
+#J 結果的にPerlbalを書く事に
+
+  - fast, smart, manageable HTTP web server / reverse proxy / LB
+  #J 高速で、頭が良くて、管理も簡単な ウェブサーバー／プロキシ／ロードバランサー
+
+  - can do internal redirects
+  #J 内部でのリダイレクトにも対応！
+
+    + and dozen other tricks
+    #J もちろんその他に色々細かい技を使える
+
+---------------
+(p.33)
+
+Perlbal
+
+* Perl
+
+* single threaded, async event-based
+
+#J シングルスレッド、非同期イベントベース
+
+  - uses epoll, kqueue, etc.
+  #J epoll, kqueue etc
+
+* console / HTTP remote management
+
+#J コンソール / HTTP リモートマネージメント
+
+  - live config changes
+
+  #J 動的設定変更
+
+* handles dead nodes, smart balancing
+
+#J 死んだノードを処理できる。かしこい分散
+
+* multiple modes
+
+#J 複数のモード
+
+  - static webserver
+
+  #J 静的Webサーバ
+
+  - reverse proxy
+
+  #J リバースプロキシ
+
+  - plug-ins (Javascript message bus.....)
+
+  #J プラグイン(Javascript メッセージバス)
+
+* plug-ins
+
+  - GIF/PNG altering, ....
+
+  #J GIF/PNGのパレットを変換したり
+------------------
+(p.34)
+
+Perlbal: Persistent Connections
+
+* persistent connections
+#J 永続的な接続
+
+  - perlbal to backends (mod_perls)
+  #J perlbalからアプリサーバー
+
+    + know exactly when a connection is ready for a new request
+    #J アプリサーバーがいつ新しいリクエストを処理できるのか分かってる
+
+      - no complex load balancing logic: just use whatever's free. beats managing “weighted round robin” hell.
+      #J 小難しいロードバランスはしないでただ次に使える接続を使う
+
+  - clients persistent; not tied to backend
+  #J クライアント側も永続的な接続を使う。でもアプリサーバと永続的に接続をするとは限らない
+
+* verifies new connections
+#J 新規接続のチェックも行う
+
+  - connects often fast, but talking to kernel, not apache (listen queue)
+#J アプリサーバが接続に応答しても、カーネルに接続しているだけでApacheが応答したとは限らない
+
+  - send OPTIONs request to see if apache is there
+  #J OPTIONリクエストを投げて、Apacheが応答しているか確認する
+
+* multiple queues
+#J 複数レベルのキュー
+
+  - high, normal, low priority (idle, bots) queues
+#J キューの優先度が高いものから低いもの（ボットや待機状態のもの）
+
+----------------------
+(p.35)
+
+Perlbal: cooperative large file serving
+
+* large file serving w/ mod_perl bad...
+#J mod_perlで大きいファイルを送信するのは良くない
+
+  - mod_perl has better things to do than spoon-feed clients bytes
+  #J mod_perlサーバーにはデータをそのまま送るような簡単な仕事よりもっと重要な事をしてもらいたい
+
+* internal redirects
+#J 内部リダイレクト
+
+  - mod_perl can pass off serving a big file to Perlbal
+  #J 大きいファイルはPerlbalに処理してもらう
+
+    + either from disk, or from other URL(s)
+    #J ディスクからでも、他のURLからでも
+
+  - client sees no HTTP redirect
+  #J クライアント自体はリダイレクトされたとわからない
+
+  - “Friends-only” images
+  #J 例えば友達しか見れない画像とか
+
+    + one, clean URL
+    #J 変なURLを使う必要なし。
+
+    + mod_perl does auth, and is done.
+    #J mod_perlは認証をするだけ
+
+    + perlbal serves.
+    #J 画像自体はperlbalが処理する
+
+-------------------
+(p.36)
+
+Internal redirect picture 
+
+(fig., no need to translate)
+-------------------
+(p.37)
+
+MogileFS
+-------------------
+(p.38)
+
+MogileFS
+
+* our distributed file system
+
+#J 分散ファイルシステム
+
+* open source
+
+#J オープンソース
+
+* userspace
+
+#J ユーザースペース
+
+* hardly unique
+
+#J 同様の仕組み
+
+  - Google GFS
+
+  - Nutch Distributed File System (NDFS)
+
+* production-quality
+
+#J 製品レベルの品質
+
+  - lot of users
+
+  #J ユーザーも多い
+-------------------
+(p.39)
+
+MogileFS: Why
+
+* alternatives at time were either:
+
+#J 開発前の選択肢はいずれも
+
+  - closed, non-existent, expensive, in development, complicated, ...
+
+  #J クローズドな, 今までにない, 高価な, 開発中の, 複雑な ...
+
+  - scary/impossible when it came to data recovery
+
+  #J データのリカバリが恐ろしい/不可能 
+
+    + new/uncommon/unstudied on-disk formats
+
+    #J 新しい、普通でない、考え抜かれていないディスク上のフォーマット
+
+* because it was easy
+
+#J 簡単だったから
+
+  - initial version = 1 weekend
+
+  #J 最初のバージョン = 週末で完成
+------------------
+(p.40)
+
+MogileFS: Main Ideas
+
+* MogileFS main ideas:
+
+#J MogileFSの考え方:
+
+  - files belong to classes, which dictate:
+
+  #J ファイルはクラスに属している, クラスで決めているのは:
+
+    + replication policy, min replicas, ...
+
+    #J レプリケーションポリシー, レプリカの最小数, ...
+
+  - tracks what disks files are on
+
+  #J ファイルがどのディスクにあるかを調べて
+
+    + set disk's state (up, temp_down, dead) and host
+
+    #J ディスクの状態(up, 一時的なdown, 死亡)とホストをセットする
+
+  - keep replicas on devices on different hosts
+
+  #J 別のホストのデバイスにレプリカをもつ
+
+    + (default class policy)
+
+    #J (デフォルトのクラスポリシー)
+
+    + No RAID! (for this, for databases it's good.)
+
+    #J RAID不要!
+
+  - multiple tracker databases
+
+  #J 複数のトラッカーデータベース
+
+    + all share same database cluster (MySQL, etc..)
+
+    #J トラッカーは同じデータベースクラスタを共有(MySQL他)
+
+  - big, cheap disks
+
+  #J 大きい、安いディスクを並べる
+
+    + dumb storage nodes w/ 12, 16 disks, no RAID
+
+    #J 12, 16ディスクの大きいストレージノード。RAIDは無し
+--------------------
+(p.41)
+
+MogileFS components
+
+* clients
+
+* trackers
+
+* database(s) (MySQL, .... abstract)
+
+* storage nodes
+---------------------
+(p.42)
+
+MogileFS: Clients
+
+* tiny text-based protocol
+
+#J 小さい、テキストベースのプロトコル
+
+* Libraries available for:
+
+#J 使えるライブラリ:
+
+  - Perl
+
+    + tied filehandles
+
+    #J tieされたファイルハンドル
+
+    + MogileFS::Client
+
+      - my $fh = $mogc->new_file(“key”, [[$class], ...])
+
+  - Java
+
+  - PHP
+
+  - Python?
+
+  - porting to $LANG is be trivial
+
+  #J 移植は簡単
+
+* doesn't do database access
+
+#J データーべースアクセス不要
+--------------------
+(p.43)
+
+MogileFS: Tracker(mogilefsd)
+
+* The Meat
+#J 心臓部
+
+* event-based message bus
+
+#J イベントベースのメッセージバス
+
+  - load balances client requests, world info
+
+  #J クライアントの要求を負荷分散する、world info
+
+* process manager
+
+#J プロセスマネージャー
+
+  - heartbeats/watchdog, respawner, ...
+
+* Child processes:
+
+#J 子プロセス:
+
+  - ~30x client interface (“query” process)
+
+    + interfaces client protocol w/ db(s), etc
+
+  - ~5x replicate
+
+  - ~2x delete
+
+  - ~1x monitoring
+
+  - ....
+-------------------
+(p.44)
+
+Trackers' Database(s)
+
+#J トラッカーのデータベース
+
+* Abstract as of Mogile 2.x
+
+#J Mogile 2.x 時点の抜粋
+
+  - MySQL
+
+  - SQLite (joke/demo)
+
+  - Pg/Oracle coming soon?
+
+  #J Pg/Oracle ももうすぐ？
+
+  - Also future:
+
+  #J これもそのうち:
+
+    + wrapper driver, partitioning any above
+
+      - small metadata in one driver (MySQL Cluster?),
+
+      #J 一つのドライバに小さいメタデータ(MySQL Cluster?),
+
+      - large tables partitioned over 2-node HA pairs 
+
+      #J 2ノードのHAペア上のパーティション分けされた大きいテーブル 
+
+* Recommend config:
+
+#J 推奨設定
+
+  - 2xMySQL InnoDB on DRBD
+
+  #J DRBDで2台のMySQL InnoDB
+
+  - 2 slaves underneath HA VIP:
+
+  #J HAの大物の下に、2つのスレーブ
+
+    + 1 for backups
+
+    #J 一つはバックアップに
+
+    + read-only slave for during master failover window 
+
+    # マスターがフェイルオーバーしている間のリードオンリーのスレーブ
+------------------
+(p.45)
+
+MogileFS storage nodes
+
+#J MogileFS ストレージノード
+
+* HTTP transport
+
+#J HTTPトランスポート
+
+  - GET
+
+  - PUT
+
+  - DELETE
+
+* Pick a server:
+
+#J サーバの選択:
+
+  - mogstored (recommended; “use Perlbal”)
+
+  #J mogstored (推奨; “Perlbalを使う”)
+
+    + side-channel iostat interface, AIO control, ...
+
+  - Apache+mod_dav
+
+  - lighttpd
+
+* files on filesystem, not DB
+
+#J ファイルシステムにファイルがある、DBではない
+
+  - sendfile()! future: splice()
+
+  - filesystem can be any filesystem
+
+  #J どんなファイルシステムでもOK
+-----------------------
+(p.46)
+
+Large file GET request 
+
+(fig., no need to translate)
+------------------------
+(p.47)
+
+Large file GET request 
+
+(fig., maybe no need to translate)
+
+Auth: complex, but quick
+
+#J 認証: 複雑、でも速い
+
+Spoonfeeding: slow, but event-based
+
+#J スプーンフィーディング: 遅いけど、イベントベース
+-----------------------
+(p.48)
+
+And the reverse...
+
+#J 逆に...
+
+* Now Perlbal can buffer uploads as well..
+
+#J Perlbalはアップロードをバッファできるが...
+
+  - Problems:
+
+  #J 問題:
+
+    + LifeBlog uploading
+
+    #J 日記ブログのアップロード
+
+      - cellphones are slow
+
+      #J 携帯電話は遅い
+
+    + LiveJournal/Friendster photo uploads
+
+    #J LiveJournal/Friendster の写真アップロード
+
+      - cable/DSL uploads still slow
+
+      #J ケーブル/DSLアップロードもまだ遅い
+
+  - decide to buffer to “disk” (tmpfs, likely)
+
+  #J “disk”にバッファすることに決めた (tmpfsが有望)
+
+    + on any of: rate, size, time
+
+    #J いずれも: rate, サイズ、時間
+--------------------
+(p.49)
+
+Gearman
+--------------------
+(p.50)
+
+Gearman
+
+* low-latency remote function call “router”
+
+#J 待ち時間の少ないリモートファンクションコール  “ルータ”
+
+* client wants results. arguments to submit a job:
+
+#J クライアントは結果がほしい。引数にジョブをあたえる:
+
+  - opaque bytes: “function name”
+
+  #J 第一引数に“関数名”
+
+  - opt. opaque: “function args” (Storable, ...)
+
+  #J (オプション)第二引数に“関数の引数” (Storable, ...)
+
+  - opt. coalescing value
+
+  #J (オプション) 値をくっつける
+
+    + can multiplex results of slow call back to multiple waiting callers
+
+    #J 複数の待っているクライアントへ、複数の遅延コールバックの結果を多重送信できる
+
+* binary protocol
+
+#J バイナリプロトコル
+
+  - future: C server / client.
+
+  #J 将来: C サーバ/クライアント
+
+  - currently: gearmand doesn't use much CPU
+
+  #J 現在: gearmand はCPUをそんなに使わない
+
+    + solution: we need to push it harder! :) 
+
+    #J 解決: もっと使い倒さないと!:)
+--------------------
+(p.51)
+
+Gearman Uses
+
+#J Gearman を使うと... 
+
+* Image::Magick outside of your mod_perls!
+
+#J Image::*Magickをmod_perlから追い出せる!
+
+* DBI connection pooling (DBD::Gofer + Gearman)
+
+#J DBI接続のプーリング(DBD::Gofer + Gearman)
+
+* reducing load, improving visibility
+
+#J 負荷が減る、improving visibility(?)
+
+* “services”
+
+#J “サービス”
+
+  - can all be in different languages, too!
+
+* running code in parallel
+
+#J 並列にコードが動く
+
+  - query ten databases at once
+
+  #J 一回で10のデータベースに問い合わせる
+
+* running blocking code from event loops
+
+#J イベントループからブロッキングコードを実行
+
+  - DBI from POE/Danga::Socket apps
+
+  #J POE/Danga::SocketアプリケーションからDBIを
+
+* spreading CPU from ev loop daemons
+
+#J イベントループデーモンからCPUを拡散する
+---------------------
+(p.52)
+
+Gearman Pieces
+
+* gearmand
+
+  - dumb router
+
+  #J 頭の悪いルータ
+
+  - event-loop. Now: Perl. Future? C?
+
+  #J イベントループ。現在:Perl。そのうち? C?
+
+* workers.
+
+  - Gearman::Worker -- perl
+
+  - register/heartbeat/grab jobs
+
+  - ジョブの登録/監視/取得
+
+* clients
+
+  - Gearman::Client[::Async]
+
+  - submit jobs to gearmand
+
+  #J gearmandにジョブを投げる
+
+  - hash onto a gearmand
+
+    + optimization for coalescing
+
+    #J くっつけるのに最適化している
+
+    + can use any on failure
+
+    #J 失敗時に何でも使える
+-----------------
+(p.53)
+
+Gearman Picture 
+
+(fig., no need to translate)
+
+gearmand 
+
+gearmand 
+
+gearmand 
+
+gearmand 
+
+client 
+
+client 
+
+client 
+
+worker 
+
+worker
+
+call(“funcA”, “arg”) 
+
+can_do(“funcA”)
+
+can_do(“funcB”)
+---------------------
+(p.54)
+
+Gearman Misc
+
+* Guarantees:
+
+#J 保証:
+
+  - none! hah! :)
+
+  #J 無し! w! :)
+
+    + please wait for your results.
+
+    #J 結果を待ってください
+
+    + if client goes away, no promises
+
+    #J クライアントが停止しても、特に保証はない。
+
+* No policy/conventions in gearmand
+
+#J gearmandにはポリシーも約束もない
+
+  - all policy/meaning between clients <-> workers
+
+  #J 全てのポリシー/意味は、 clients <-> workersの間にある
+
+* ...
+----------------
+(p.55)
+
+Gearman Summary
+
+* Gearman is sexy.
+
+#J Gearmanはセクシー
+
+  - especially the coalescing
+
+  #J 特に、coalescing
+
+* Check it out!
+
+#J チェック!
+
+  - it's kinda our little unadvertised secret
+
+  # これはちょっとあんまり宣伝してない秘密
+
+    + oh crap, did I leak the secret?
+
+    # やばい、秘密を漏らしちゃったかな?
+------------------
+(p.56)
+
+TheSchwartz
+------------------
+(p.57)
+
+TheSchwartz
+
+* currently library, not network service
+
+#J 現在はライブラリ、ネットワークサービスではない
+
+* Reliable job queueing system
+
+#J 信頼できるジョブのキューシステム
+
+* Primitives:
+
+  - insert job
+
+  #J ジョブの挿入
+
+  - “grab” job (atomic grab)
+
+  #J ジョブを“つかむ”(atomic grab)
+
+    + for 'n' seconds.
+
+    #J 'n'秒間
+
+  - mark job done
+
+  #J ジョブに終わった印を付ける
+
+  - temp fail job for future
+
+  #J 一時的な失敗
+
+    + optional notes, rescheduling details..
+
+    #J 備考や再スケジュール
+
+  - replace job with 1+ other jobs
+
+    #J 一つ以上の他のジョブへリプレース
+
+    + atomic.
+
+    #J アトミック
+
+  - ...
+---------------------
+(p.58)
+
+TheSchwartz
+
+* backing store:
+
+#J ストレージ
+
+  - a database
+  #J データベース
+
+  - uses Data::ObjectDriver
+
+    + MySQL,
+
+    + Postgres,
+
+    + SQLite,
+
+    + ....
+
+* but HA: you tell it @dbs, and it finds one to insert job into
+
+  - likewises, workers foreach (@dbs) to do work
+-------------------
+(p.59)
+
+TheSchwartz uses
+
+* outgoing email (SMTP client)
+
+#J メール配信(SMTP クライアント)
+
+  - millions of emails per day
+
+  #J 一日に数百万のメール
+
+* LJ notifications
+
+#J LiveJournalの通知
+
+  - ESN: event, subscription, notification
+
+  #J ESN: イベント(Event)、サブスクリプション(Subscription)、通知(Notification)
+
+    + one event (new post, etc) -> thousands of emails, SMSes, XMPP messages, etc...
+
+    #J あるイベント(新しい投稿など) -> 数千のメール、ショートメッセージ、XMPPメッセージ、他
+
+* pinging external services
+
+#J 他のサービスへのping
+
+* atomstream injection
+
+#J atomstreamの挿入
+
+* .....
+
+* dozens of users
+
+#J 数十のユーザー
+
+* shared farm for TypePad, Vox, LJ
+
+#J TypePad, Vox, LiveJournalで共有のファーム
+-------------------
+(p.60)
+
+gearmand + TheSchwartz
+
+* gearmand: not reliable, low-latency, no disks
+
+#J gearmand: 保証無し、少ない待ち時間、ディスク不要
+
+* TheSchwartz: latency, reliable, disks
+
+#J TheSchwartz: 待ち時間、信頼できる、ディスクを使う
+
+* In TypePad:
+
+#J TypePad では:
+
+  - TheSchwartz, with gearman to fire off TheSchwartz workers.
+
+  #J GearmanがTheSchwartz ワーカーを起動させる
+
+    + disks, but low-latency
+
+    #J ディスクを使うが、待ち時間は少ない
+
+    + future: no disks, SSD/Flash, MySQL Cluster
+
+    #J そのうち: ディスクを使わずに、SSD/Flash、MySQL Cluster
+---------------
+(p.61)
+
+djabberd
+--------------
+(p.62)
+
+djabberd
+
+* perl, event-based (epoll, etc)
+
+#J perl、イベントベース(epoll など)
+
+* done 300,000+ conns
+
+#J 300,000以上の接続を行う
+
+* tiny per-conn memory overhead
+
+#J 接続ごとのメモリのオーバーヘッドが小さい
+
+  - release XML parser state if possible
+
+  #J 可能なら、XMLパーサーの状態を更新する
+
+* everything is a hook
+
+#J 全てはフック
+
+  - not just auth! like, everything.
+
+  #J 認証だけでない! 全部
+
+  - ala mod_perl, qpsmtpd, etc.
+
+  #J mod_perlやqpsmtpdなどのように
+
+  - inter-node communication
+
+  #J ノード間のコミュニケーション
+
+* async hooks
+
+#J 非同期のフック
+
+  - use Gearman::Client::Async
+
+  - async Gearman client for Danga::Socket-based apps
+
+  #J Dnaga::Socketベースのアプリ用の非同期のGearmanクライアント
+-------------------
+(p.63)
+
+Thank you!
+
+Questions to...
+
+brad@danga.com 
+
+Software:
+
+http://danga.com/
+
+http://code.sixapart.com/ 
+--------------------
+(p.64)
+
+Bonus Slides
+
+* if extra time
+-------------------
+(p.65)
+
+Data Integrity
+
+#J データのインテグリティ
+
+* Databases depend on fsync()
+
+#J データベースはfsync()に依存している
+
+  - but databases can't send raw SCSI/ATA commands to flush controller caches, etc
+
+  #J だが、コントローラーキャッシュなどをフラッシュするのに、データベースはSCSI/ATAコマンドを送れない
+
+* fsync() almost never works work
+
+#J fsync()はほとんどまったく仕事をしない
+
+  - Linux, FS' (lack of) barriers, raid cards, controllers, disks, ....
+
+  #J Linux、FSの障壁(がない)、RAIDカード、コントローラー、ディスク ...
+
+* Solution: test! & fix
+
+#J 解決: テスト! と修正
+
+  - disk-checker.pl
+
+    + client/server
+
+    + spew writes/fsyncs, record intentions on alive machine, yank power, checks.
+    #J 書き込み、fysnc()等のデータをチェックする
+
+----------------
+Persistent Connection Woes
+
+#J 永続接続の苦悩
+
+* connections = threads = memory
+
+#J 接続数 = スレッド数 = メモリ
+
+ - My pet peeve:
+
+   + want connection/thread distinction in MySQL!
+   #J MySQLで接続とスレッドが別々だったらいいのに！
+
+   + w/ max-runnable-threads tunable
+   #J max-runnable-threadsも微調整したい
+
+* max threads
+
+ - limit max memory/concurrency
+ #J 最大使用メモリと同時実行可能プロセス数を制限したい
+
+* DBD::Gofer + Gearman
+
+ - Ask
+
+* Data::ObjectDriver + Gearman
+
+.pre

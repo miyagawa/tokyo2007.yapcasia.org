@@ -1,0 +1,1254 @@
+Translator: Ken-ichi Ishigaki (charsbar) Reviewed by Makoto Nozaki
+
+.pre
+
+Please insert the subtitles like this:
+
+* I'm a piece of text in English
+
+#J I'm the corresponding piece of text in Japanese
+
+
+
+
+#RTIMG# cover-med.jpg
+
+Higher-Order Parsing
+********************
+
+Mark Dominus
+++++++++++++
+
+Plover Systems Co.
+++++++++++++++++++
+
+     mjd-perl-hop@plover.com
+
+Version 1.2
++++++++++++
+
+March, 2007
++++++++++++
+
+Slides online: http://perl.plover.com/yak/parsing/
+
+----------------------------------------------------------------
+
+#SECTION#
+
+Parsing 
+#J 構文解析とは
+*******
+
+* _Parsing_ is the process of taking an unstructured input
+#J 構文解析というのは構造化されていない入力、
+
+  * Such as a sequence of characters
+  #J つまり、たとえばただの文字列とかを
+
+* and turning it into a data structure
+#J 構造化されたデータ、
+
+  * Such as a record
+  #J つまり、レコードとか
+
+  * or an object
+  #J オブジェクトとか
+
+  * or a value
+  #J 意味のある値とかにすること
+
+* For example, read the configuration file
+#J たとえば、設定ファイルを読んで
+
+  * and build an object that represents the configuration
+  #J その設定をあらわすオブジェクトをつくるのが構文解析
+----------------------------------------------------------------
+
+Open vs. closed systems
+#J オープンvsクローズド
+***********************
+
+* Some people like _closed_ systems
+#J 「クローズド」なシステムのほうが好きな人もいる
+
+  * The system should just do all the stuff you need it to
+  #J したいことはなんでもしてくれて
+
+  * It should have a feature for every use-case
+  #J どんな用途にも対応できる機能がついていて
+
+  * You should be able to use it without understanding what it is doing
+  #J 中でなにが起こっているか知らなくても使える
+
+  * Example: Microsoft Windows
+  #J いわば MS Windows だ
+----------------------------------------------------------------
+
+Open vs. closed systems
+#J オープンvsクローズド
+***********************
+
+* I prefer _open_ systems 
+#J 私は「オープン」なシステムの方が好き
+
+  * The system should provide modules for doing simple common things
+  #J システム標準のモジュールは単純なことしかできないけれど
+
+  * The modules should be composable into specialized assemblages
+  #J 組み合わせて専門的なモジュールも作れるし
+
+  * It should be possible to assemble a solution for every use-case
+  #J 組み合わせればどんな用途にも対応できる
+
+  * It should be easy to build new modules
+  #J 新しいモジュールをつくるのも簡単
+
+  * Example: Unix
+  #J いわば Unix だ
+----------------------------------------------------------------
+
+Open vs. closed systems
+#J オープンvsクローズド
+***********************
+
+* Benefit of open systems:
+#J オープンなシステムの長所
+
+  * Flexible, powerful, unlimited
+  #J 柔軟、強力、無制限
+
+* Drawback:
+#J 短所
+
+  * Requires more understanding
+  #J ある程度中身がわからないと使えない
+
+* [[Parse::RecDescent]] is a really excellent closed system
+#J [[Parse::RecDescent]]は本当にすぐれているけれど、クローズド
+
+* We're going to see an open one, [[HOP::Parser]]
+#J ここではオープンな[[HOP::Parser]]を紹介する
+----------------------------------------------------------------
+
+Example: graphing program
+#J 例：グラフを描いてみる
+*************************
+
+* Suppose we want to read a web user's input 
+#J ユーザがウェブから式を入力する
+
+  * It will be a mathematical function, like
+  #J こんな感じの数式を読んで
+
+        (x^2 + 3*x)* sin(x * 2) + 14
+
+* We will emit a web page with a graph of their function
+#J その数式のグラフを出力したい
+
+* Easy solution:
+#J 手軽なやり方
+
+  * Use [[eval]] to turn user input into compiled Perl code
+  #J [[eval]]を使って入力をPerlコードにコンパイルする
+----------------------------------------------------------------
+
+Example: graphing program
+#J 例：グラフを描いてみる
+*************************
+
+        my $function = eval $code;
+        my $y = $function->($x);
+
+* I don't need to explain all the things that can go wrong here, do I?
+#J これの欠点はいちいち説明しなくていいよね
+
+* Even if it could be made safe, it has some problems:
+#J サニタイズとかをしたとしても、まだ問題がある
+
+        (x^2 + 3*x)* sin(x * 2) + 14
+
+* In Perl, [[^]] means bitwise exclusive or
+#J Perlの[[^]]はビット単位のXORだ
+
+  * Not exponentiation
+  #J べき乗じゃない
+
+* Alternative: implement an evaluator for expressions
+#J もうひとつのやり方：式の評価システムを実装する
+
+  * Input: string
+  #J 入力：文字列
+
+  * Output:
+  #J 出力：
+
+    * Compiled code
+    #J コンパイル済みのコード
+    * Or abstract syntax tree
+    #J 抽象構文木
+    * Or specialized data structure
+    #J 特殊なデータ構造
+    * Or [[Expression]] object
+    #J [[数式]]オブジェクト
+    * ...
+
+----------------------------------------------------------------
+
+Grammars
+#J 文法
+********
+
+        expression [E[rarr]E] "(" expression ")" 
+                    | term ("+" expression | nothing)
+
+        term [E[rarr]E] factor ("*" term | nothing)
+
+        factor [E[rarr]E] atom ("^" NUMBER | nothing)
+        
+        atom [E[rarr]E] NUMBER | VAR | FUNCTION "(" expression ")"
+
+----------------------------------------------------------------
+
+Lexing
+#J 字句解析
+******
+
+* First, our program must identify things like [[NUMBER]]
+#J まず[[NUMBER]]のようなものを見つける必要がある
+
+* Idea: preprocess the input
+#J 考え方：入力を前処理する
+
+  * Turn it from a character string into a list of _tokens_
+  # 文字列を「トークン」の集合に分解する
+
+  * Each token is an atomic piece of input
+  #J トークンというのはこれ以上分解できないかたまり
+
+  * Examples: [[sin]], [[x]], [[+]], [[12345]]
+  #J 例：[[sin]], [[x]], [[+]], [[12345]]
+
+* Humans do this when they read
+#J みなさんもしていることだ
+
+  * First, turn the sequence of characters into a sequence of words
+  #J 文字の羅列を単語の羅列に変換して
+
+  * Then, try to understand the structure of the sentence based on meanings of words
+  #J その単語の意味から文の構造を理解する
+
+* This is called _lexing_
+#J これが字句解析
+----------------------------------------------------------------
+
+Lexing
+#J 字句解析
+******
+
+* Lexing is mostly a matter of simple pattern matching
+#J 字句解析の大半は単純なパターンマッチの問題
+
+* Perl actually has special regex features just for this purpose
+#J Perlにはまさにうってつけの正規表現がある
+
+  * Most of which alas, I have no time to explain
+  #J 時間の都合でほとんど説明できないけれど
+
+  * It is in the book, though
+  #J 『Higher-Order Perl』に書いておいたので読んでね
+
+  * Also in Friedl's book
+  #J 『詳説 正規表現』にも書いてあるよ
+
+* We will assume that [[@tokens]] looks something like this:
+#J こんな感じの[[@tokens]]があるとしよう
+
+        # (x^2 + 3*x) * sin(x * 2) + 14
+        (["("], ["VAR", "x"], ["^"], ["NUMBER", 2], ["+"],
+         ["NUMBER", 3], ["*"],  ["VAR", "x"], [")"],
+         ["FUNCTION", "sin"], ["("], ["VAR", "x"], ["*"],
+         ["NUMBER", 2], [")"], ["+"], ["NUMBER", 14])
+
+
+* Also:
+#J それから
+
+        sub type  { my $token = shift; $token->[0] }
+        sub value { my $token = shift; $token->[1] }
+----------------------------------------------------------------
+
+Recursive-descent parsing
+#J 再帰降下型の解析
+*************************
+
+* This is the method used by [[Parse::RecDescent]] too
+#J これは[[Parse::RecDescent]]も使っているやり方
+
+* Idea: each grammar rule becomes a function
+#J 考え方：ひとつひとつの文法規則を関数にする
+
+  * The job of the function [[expression]] is to parse an expression
+  #J [[expression]]という関数の仕事は式を解析すること
+
+  * If it succeeds, it returns a data structure representing the expression
+  #J 成功したらその式のデータ構造を返す
+
+  * If not, it returns [[undef]]
+  #J 失敗したら[[undef]]
+
+* If you have a rule like this:
+#J こんな規則があるとする
+
+        expression [E[rarr]E] "(" expression ")" 
+                    | term ("+" expression | nothing)
+
+* You have functions called [[expression]] and [[term]]
+#J ここでは[[expression]]と[[term]]という関数を使っている
+
+* [[expression]] looks to see if the next token is [[(]]
+#J まず、[[expression]]で次のトークンが[[(]]か調べる
+
+  * If so, it calls itself recursively, and then looks for the [[)]]
+  #J そうなら自分を再帰呼び出ししたあとで、[[)]]を探す
+
+* Otherwise it calls [[term]] to look for a term
+#J 違った場合は、[[term]]でタームを探す
+
+  * If [[term]] fails, [[expression]] does too
+  #J [[term]]が失敗したら[[expression]]も失敗
+
+  * Otherwise it looks to see if there's a [[+]] sign and another expression
+  #J 失敗しなかったら[[+]]記号と次の式があるか調べる
+
+----------------------------------------------------------------
+
+Recursive-descent parsing
+#J 再帰降下型の解析
+*************************
+
+* The description on the previous slide sounds complicated
+#J さっきの説明は難しそうに聞こえたかもしれない
+
+* But there are only a few fundamental operations:
+#J でも、やっていることはいくつかの基本的なことだけ
+
+  * Look for a certain token
+  #J 特定のトークンを探す
+
+  * Look for either of _x_ or _y_
+  #J _x_または_y_というトークンを探す
+
+  * Look for _x_ followed by _y_
+  #J _x_のあとに_y_が続くトークンを探す
+
+  * Look for nothing
+  #J なにもしない
+
+* A [[HOP::Parser]] parser will be a function that takes a token array
+#J [[HOP::Parser]]のパーサはトークンの配列を受け取る関数にしよう
+
+  * It examines some tokens
+  #J いくつかのトークンを調べて
+
+  * If it likes what it sees, it constructs a value
+  #J 問題なさそうなら値を構築し
+
+  * Then it returns the value and the remaining tokens
+  #J その値と残りのトークンを返す
+
+  * Otherwise, it returns [[undef]]
+  #J 問題があるときは[[undef]]を返す
+----------------------------------------------------------------
+Basic parsers
+#J 基本のパーサ
+*************
+
+        expression [E[rarr]E] "(" expression ")" 
+                    | term ("+" expression | [C[nothing]C])
+
+* The simplest parser is the one that corresponds to [[nothing]]
+#J いちばん簡単なパーサは[[nothing]]の処理をするもの
+
+* It consumes no tokens and always succeeds:
+#J これはまったくトークンを消費せず、常に成功
+
+        sub nothing {
+          my $tokens = shift;
+          return (undef, $tokens);
+        }
+
+* The [[undef]] here is a dummy value
+#J ここの[[undef]]はダミーの値
+----------------------------------------------------------------
+Token parsers
+#J トークンのパーサ
+*************
+
+* The next simplest is a parser that looks for a particular token:
+#J 次に簡単なのは特定のトークンを探すパーサだ
+
+        sub lookfor_PLUS {
+          my $tokens = shift;
+          my $tok = first($tokens);
+          if (type($tok) eq "+") {
+            return ("+", rest($tokens));
+          } else {
+            return;           # failure
+          }
+        }
+
+        sub lookfor_NUMBER {
+          my $tokens = shift;
+          my $tok = first($tokens);
+          if (type($tok) eq "NUMBER") {
+            return ([C[value($tok)]C], rest($tokens));
+          } else {
+            return;           # failure
+          }
+        }
+
+* Note that the "value" returned by [[lookfor_NUMBER]] is the value of the number token it finds
+#J [[lookfor_NUMBER]]の返り値は見つかった数字トークンの値なので要注意
+----------------------------------------------------------------
+Token parsers
+#J トークンのパーサ
+*************
+
+* Rather than write 9 similar [[lookfor]] functions, we'll have another function build them as required:
+#J 似たような[[lookfor]]関数を9つも書くのはいやなので、関数をつくってくれる関数を用意しよう
+
+        sub lookfor {
+          my $target = shift;
+          my $parser = 
+            sub {
+              my $tokens = shift;
+              my $tok = first($tokens);
+              if (type($tok) eq [C[$target]C]) {
+                return (value($tok), rest($tokens));
+              } else {
+               return;           # failure
+              }
+            };
+          return $parser;
+        }
+
+* Now instead of [[lookfor_PLUS]] we just use [[lookfor("+")]]
+#J これで[[lookfor_PLUS]]のかわりに[[lookfor("+")]]と書けるし
+
+* Instead of [[lookfor_NUMBER]] we just use [[lookfor("NUMBER")]]
+#J [[lookfor_NUMBER]]ではなく[[lookfor("NUMBER")]]と書けばよくなった
+----------------------------------------------------------------
+
+Concatenation
+#J 結合
+*************
+
+* Let's pretend for a moment that [[atom]] has only this one rule:
+#J とりあえず[[atom]]の規則はこれひとつだけということにしておこう
+
+        atom [E[rarr]E] "FUNC" "(" expression ")"
+
+* We could write [[atom]] like this:
+#J そうすると、[[atom]]はこんな風になる
+
+        sub atom {
+          my $t1 = shift;
+          my ($expr, $t2, $t3, $t4, $t5);
+
+          if (   ($funcname, $t2) = lookfor("FUNC")->($t1)
+              && (undef,     $t3) = lookfor("(")->($t2) 
+              && ($expr,     $t4) = expression($t3)
+              && (undef,     $t5) = lookfor(")")->($t4)) {
+                my $val = ... $funcname ... $expr ...;
+                return ($val, $t5);
+          } else {
+                return;  # failure
+          }
+        }
+
+* But many other functions would also follow this pattern
+#J もっとも、ほかの関数もこのパターンになることが多い
+
+* So instead we'll write a function that assembles small parsers into big ones
+#J だから、小さなパーサをまとめる関数を書くことにしよう
+
+* Given parser functions _A_, _B_, etc.:
+#J _A_, _B_,... というパーサ関数があるときに
+
+        conc(_A_, _B_, ...)
+
+* Will return a parser function that looks for A, then B, etc.
+#J とすると A, B, ... と順に探してくれるようにするわけだ
+----------------------------------------------------------------
+
+Concatenation
+#J 結合
+*************
+
+        sub conc {
+          my @p = @_;
+          my $parser = sub {
+            my $tokens = shift;
+            my @results;
+            for my $p (@p) {    
+              my ($result, $t_new) = $p->($tokens) 
+                or return;   # failure
+              push @results, $result;
+              $tokens = $t_new;
+            }
+
+            # all parsers succeeded
+            return (\@results, $tokens);            
+          };
+          return $parser;
+        }
+
+* With this definition, [[atom]] becomes simply:
+#J この関数を使うと、[[atom]]はこんなに簡単になる
+
+        $atom = conc(lookfor("FUNC"),
+                     lookfor("("),
+                     $expression,
+                     lookfor(")"),
+                    );
+
+----------------------------------------------------------------
+
+Concatenation
+#J 結合
+*************
+
+* Similarly, the rule
+#J 同様に
+
+        expression [E[rarr]E] "(" expression ")"
+
+* Translates to:
+#J という規則もこう書ける
+
+        $expression = conc(lookfor("("),
+                           $expression,
+                           lookfor(")"),
+                          );
+
+* Oops, no, not quite
+#J おっと、いけない
+----------------------------------------------------------------
+
+Concatenation
+*************
+
+        $expression = conc(lookfor("("),
+                           $expression,
+                           lookfor(")"),
+                          );
+
+* We can't use [[$expression]] before we've defined it
+#J [[$expression]]を使うなら先に定義しておかないといけない
+
+* But we can pull a very sly trick
+#J もっとも、うまい手はある
+
+* We'll define a proxy parser, to postpone use of [[$expression]] until call time
+#J [[$expression]]の評価を実際に呼び出すときまで先送りするプロキシパーサを定義しておけばいい
+
+        my $expression;
+        my $EXPRESSION = sub { $expression->(@_) };
+
+        $expression = conc(lookfor("("),
+                           $EXPRESSION,
+                           lookfor(")"),
+                          );
+
+* By the time [[$expression]] is actually called, it will be completely defined
+#J 実際に[[$expression]]が呼ばれるときには定義が完了しているはずだ
+----------------------------------------------------------------
+
+Alternation
+#J 選択
+***********
+
+* Atoms come in three varieties, not just one:
+#J アトムは、本当はひとつではなく、3つのバリエーションがある
+
+        atom [E[rarr]E] NUMBER | VAR | function "(" expression ")"
+
+* So we need the [[atom]] parser to try these three different things
+#J だから[[atom]]パーサにもこの3つをそれぞれ試してもらう必要がある
+
+* It fails only if the upcoming tokens match none of them
+#J 失敗するのは、トークンがどれにもマッチしなかったときだけ
+
+* Something like this:
+#J こんな感じ
+
+        sub atom {
+          my $in = shift;
+          my ($result, $out);
+          my $alt3 = conc(lookfor("FUNC"), 
+                          lookfor("("), $EXPRESSION,  lookfor(")"),
+                         );
+
+          if (     ($result, $out) = lookfor("NUMBER")->($in)) {
+            return ($result, $out);
+          } elsif (($result, $out) = lookfor("VAR")->($in)) {
+            return ($result, $out);
+          } elsif (($result, $out) = $alt3->($in)) {
+            return ($result, $out);
+          } else {
+            return;
+          }
+        }
+
+* But again, many functions will follow this same pattern
+#J で、これもまた同じパターンになる関数が多いので
+
+* So instead we'll write a function that assembles small parsers into big ones
+#J 小さなパーサをまとめる関数を書くことにしよう
+
+* Given parser functions _A_, _B_, etc.:
+#J _A_, _B_,...というパーサ関数があるときに
+
+        alt(_A_, _B_, ...)
+
+* Will return a parser function that looks for A or for B, etc.
+#J とすると A, B, ... と順に探してくれるようにするわけだ
+----------------------------------------------------------------
+Alternation
+#J 選択
+***********
+
+        sub alt {
+          my @p = @_;
+          my $parser = sub {
+            my $in = shift;
+            for my $p (@p) {
+              if (my ($result, $out) = $p->($in)) {
+                return ($result, $out);
+              }
+            }
+            return;   # failure
+          };
+          return $parser;
+        }
+
+----------------------------------------------------------------
+
+Parsers
+#J パーサ
+*******
+
+* With this definition, a complete definition of [[atom]] is:
+#J この関数を使うと、[[atom]]の完全な定義はこうなる
+
+        $atom = alt(lookfor("NUMBER"),
+                    lookfor("VAR"),
+                    conc(lookfor("FUNC"),
+                         lookfor("("),
+                         $EXPRESSION,
+                         lookfor(")"),
+                        ));
+
+* Similarly, here's [[$factor]]:
+#J [[$factor]]もほとんど同じ
+
+     #  factor [E[rarr]E] atom ("^" NUMBER | nothing)
+
+     $factor = conc($ATOM, alt(conc(lookfor("^"), 
+                                    lookfor("NUMBER")),
+                               \￢hing));
+
+* Here's [[$term]]:
+#J [[$term]]はこう
+
+     #  term [E[rarr]E] factor ("*" term | nothing)
+
+     $term = conc($FACTOR, alt(conc(lookfor("*"), $TERM),
+                               \&nothing));
+
+----------------------------------------------------------------
+Parsers
+#J パーサ
+*******
+
+* Here's [[$expression]]:
+#J [[$expression]]はこう
+
+     # expression [E[rarr]E] "(" expression ")" 
+     #             | term ("+" expression | nothing)
+
+     $expression = alt(conc(lookfor("(")),
+                            $EXPRESSION,
+                            lookfor(")"),
+
+                       conc($TERM,
+                            alt(conc(lookfor("+"), $EXPRESSION),
+                                \&nothing));
+
+
+* This doesn't look great, but:
+#J だからどうしたという感じもするけれど
+
+  1. When you consider how much it's doing, it's amazingly brief, and
+  #J してくれる作業の量を思うと、おどろくほど短くなっているし
+
+  2. We can use operator overloading and rewrite it as:
+  #J 演算子のオーバーロードを使うとこんな風にも書き直せる
+
+      $expression = L("(") - $EXPRESSION - L(")")
+                  | $TERM - (L("+") - $EXPRESSION | $nothing);
+
+
+----------------------------------------------------------------
+
+Overloading
+#J オーバーロード
+***********
+
+      $expression = L("(") - $EXPRESSION - L(")")
+                  | $TERM - (L("+") - $EXPRESSION | $nothing);
+
+* This looks almost exactly like the grammar rule we're implementing
+#J ここまでするともうほとんど予定した文法規則通りになっている
+
+       expression [E[rarr]E] "(" expression ")" 
+                  | term ("+" expression | nothing)
+
+* It also looks a lot like a [[Parse::RecDescent]] specification
+#J [[Parse::RecDescent]]の仕様にもよく似ているけれど
+
+  * But it's actually Perl code, not a limited sub-language
+  #J こちらは純然たるPerlコード。限定的なサブ言語ではない
+
+* I'll use this notation from now on
+#J ここからはこの表記を使っていこう
+----------------------------------------------------------------
+Parsers
+#J パーサ
+*******
+
+* So far we've done a bunch of work to build a parser system
+#J さて、ここまであれこれとパーサシステムを組んできたわけだけれど
+
+* It has some modular, interchangeable parts
+#J いくつかモジュール化できる、互換性のある部分があった
+
+  * We can use these to manufacture all kinds of parsers
+  #J そういうのを使えばどんな種類のパーサでもつくれるけれど
+
+* But it's only gotten us to the same place that [[use Parse::RecDescent]] does
+#J それだけでは[[use Parse::RecDescent]]するのと変わらない
+
+* Is there any other benefit?
+#J ほかに利点はないのだろうか
+================================================================
+
+* Yes.
+#J もちろんある
+
+* [[Parse::RecDescent]] is what it is, and goes only as far as it goes
+#J [[Parse::RecDescent]]はクローズドだから、それ以上のことはできないけれど
+
+* Our system is only getting started
+#J こちらのシステムはこれからが本番だ
+----------------------------------------------------------------
+
+Optional items
+#J 省略できる項目
+**************
+
+* Regexes have a [[?]] notation that means an item is optional
+#J 正規表現には[[?]]という表記がある。そこはあってもなくてもいいという意味だ
+
+* We might want to say something like:
+#J 私たちのパーサもこんな風に書けたらよさそうだ
+
+     term [E[rarr]E] factor optional("*" term)
+
+* We can define [[optional]] quite easily:
+#J [[optional]]の定義はきわめて簡単
+
+        sub optional {
+          my $p = shift;
+          return alt($p, $nothing);
+        }
+
+* Now this:
+#J これで
+
+     $term = $FACTOR - (L("*") - $TERM | $nothing);
+
+* Becomes this:
+#J というのがこう書けるようになる
+
+     $term = $FACTOR - [C[optional]C](L("*") - $TERM);
+
+* [[Parse::RecDescent]] provides this with its [[(?)]] notation
+#J [[Parse::RecDescent]]なら[[(?)]]という表記になる
+
+* Similarly, we can implement [[repeat]]
+#J 同じようにすれば[[repeat]]も実装できる
+----------------------------------------------------------------
+
+Lists
+#J リスト
+*****
+
+* Here's something else that's common in programming languages
+#J これもプログラム言語ではおなじみのものだろう
+
+* Comma-separated expression lists
+#J カンマ区切りの式リスト
+
+* Or semicolon-separated statement blocks
+#J セミコロン区切りの文ブロック
+
+* Or ...
+#J あるいは
+
+      sub list_of {
+        my ($item, $separator) = @_;
+        $separator = lookfor("COMMA") unless defined $separator;
+        conc($item, repeat($separator, $item), optional($separator));
+      }
+
+* Now comma-separated lists:
+#J これでカンマ区切りのリストはこう書ける
+
+      $list = conc(lookfor("("),
+                   list_of($EXPRESSION),
+                   lookfor(")"));
+
+* Semicolon-separated statement blocks:
+#J セミコロン区切りの文ブロックならこうだ
+
+      $block = conc(lookfor("{"),
+                    list_of($STATEMENT, lookfor(";")),
+                    lookfor("}"));
+
+* We have now gone beyond [[Parse::RecDescent]]
+#J これで[[Parse::RecDescent]]は追い越したぞ
+----------------------------------------------------------------
+
+Labeled blocks
+#J ラベル付きブロック
+**************
+
+* In _Higher-Order Perl_, I build a drawing system
+#J 『Higher-Order Perl』では描画システムをつくった
+
+* The input language to the drawing system contains constructions like:
+#J このシステムの入力にはこんな制約をつけられるようにしてある
+
+        constraints { ... }
+
+* And:
+#J あるいは、こんな
+
+        define square extends rectangle { ... }
+
+* So I use an even higher-level parser constructor:
+#J ここではもっと高度なコンストラクタを使おう
+
+        sub labeled_block {
+          my ($header, $item, $separator) = @_;
+          $separator = lookfor(";") unless defined $separator;
+          conc($header, 
+               lookfor("{"), 
+               list_of($item, $separator),
+               lookfor("}"));
+        }
+
+* And define really complex parsers with it:
+#J そうすると、本当に複雑なパーサもこんな風に書ける
+
+        $constraint_block = 
+          labeled_block(L("CONSTRAINTS"), $constraint);
+
+        $definition = 
+          labeled_block($Definition_header, $declaration);
+
+----------------------------------------------------------------
+
+Operators
+#J 演算子
+*********
+
+* Parsing arithmetic-type expressions is not too uncommon
+#J 計算式の解析というのはそうめずらしくもない
+
+* _Higher-Order Perl_ develops an [[operator]] function
+#J 『Higher-Order Perl』では[[operator]]という関数をつくった
+
+* From this, one could build an [[expression_parser]] function:
+#J これを使うと、[[expression_parser]]関数をこのように書くことができる
+
+     $expression = 
+        expression_parser(
+            ATOM => $ATOM,
+
+            OPS => [[lookfor(['^']), sub { $_[0] ** $_[1] }, "right-assoc"],
+
+                    [lookfor(['*']), sub { $_[0] * $_[1] },
+                     lookfor(['/']), sub { $_[0] / $_[1] }],
+
+                    [lookfor(['+']), sub { $_[0] + $_[1] },
+                     lookfor(['-']), sub { $_[0] - $_[1] }],
+                   ],
+                   
+         );
+        
+* This little bit of code writes a function that parses an input like [[2 + 3 * 4]] and calculates the result (14)
+#J たったこれだけのコードで[[2 + 3 * 4]]という入力を解析して14という答えを返す関数ができるわけだ
+
+* It handles precedence, parentheses associativity...
+#J 優先順位とか括弧、結合法則も正しく扱える
+
+* For technical reasons, getting [[-]] and [[/]] to work requires some tricks
+#J 技術的な理由で、[[-]]と[[/]]を正しく動作させるにはちょっとしたトリックが必要
+
+  * These tricks tend to complicate the design of [[Parse::RecDescent]] parsers
+  #J [[Parse::RecDescent]]のパーサのデザインが複雑なのはそのせい
+
+* With [[HOP::Parser]], the complications are encapsulated inside of [[operator]]
+#J [[HOP::Parser]]では、その辺を[[operator]]の中に隠蔽している
+----------------------------------------------------------------
+New tools
+#J 新しいツール
+*********
+
+* We've built all this up just by gluing together a very few basic tools:
+#J ここまでいろいろつくってきたけれど、いずれもごくわずかな基本のツールを組み合わせただけ
+
+        lookfor()
+        conc()
+        alt()
+
+* But the tools themselves were simple
+#J ツールそのものはシンプルだった
+
+* If we needed some new tool, we could build it
+#J 新しいツールが必要になったら、つくればいい
+
+* For example, "look for _A_, but only if it doesn't also look like _B_":
+#J たとえば、「_A_が_B_でない場合のみ_A_を探す」ツールならこうだ
+
+        sub this_but_not_that {
+          my ($A, $B) = @_;
+          my $parser = sub {    
+            my $in = shift;
+            my ($res, $out) = $A->($in)
+                or return;
+#*          if ($B->($in)) { return; }
+            return ($res, $out);
+          };
+          return $parser;
+        }
+
+----------------------------------------------------------------
+New tools
+#J 新しいツール
+*********
+
+* Or "do what _A_ does, but only if the result satisfies some condition":
+#J 「結果が特定の条件を満たすときのみ_A_を実行する」ツールならこう
+
+        sub side_condition {
+          my ($A, $condition) = @_;
+          my $parser = sub {    
+            my $in = shift;
+            my ($res, $out) = $A->($in)
+                or return;
+#*          $condition->($res) or return;
+
+            return ($res, $out);
+          };
+        }
+
+----------------------------------------------------------------
+New tools
+#J 新しいツール
+*********
+
+* In _Higher-Order Perl_, I put the same tools to work parsing very different sorts of input
+#J 『Higher-Order Perl』では同じツールをまったく異なる種類の入力の解析に使っている
+
+* Example:  Take an outline:
+#J たとえば、アウトラインを取得する例
+
+        . Languages
+          . Functional
+            . Haskell
+          . Imperative
+            . C
+            . Fortran
+          . OO
+            . C++
+            . Smalltalk
+            . Simula
+
+* Read this, preserving the structure:
+#J これを解析して、構造を保存する
+
+        [ "Languages", 
+          [ "Functional", [ "Haskell" ]],
+          [ "Imperative", [ "C", "Fortran" ] ],
+          [ "OO", [ "C++", "Smalltalk", "Simula" ]]]
+
+* The same set of tools does many different jobs
+#J 同じツールでもいろんなことをさせられるわけだ
+----------------------------------------------------------------
+
+Open systems again
+#J オープンなシステムふたたび
+******************
+
+* Sorry to keep harping on this, but I think it's important
+#J くどくて申し訳ないけれど、やっぱり大事なことなのだ
+
+1. By providing a few interchangeable parts, we enable not only powerful parsers
+#J いくつか互換性のある部品を用意すると、強力なパーサをつくれるだけでなく
+
+   * But ways to build _tools_ to build _even more powerful_ parsers
+   #J 「もっと強力な」パーサをつくるための「道具」をつくれるようになる
+
+2. Since the tools themselves are simple, it's easy to make new ones
+#J ツールそのものはシンプルだから、新しいツールをつくるのも簡単
+
+   * A small amount of effort put into new tools pays off big
+   #J ちょっと頑張って新しいツールをつくれば大きな見返りがある
+
+* Functional programming style enables use of functions as modular components
+#J 関数プログラミングをすると関数をモジュールとして使える
+
+  * Functions like [[lookfor]] and [[conc]] manufacture other functions as needed
+  #J [[lookfor]]や[[conc]]のような関数があれば必要に応じてほかの関数をつくれる
+----------------------------------------------------------------
+
+#RTIMG# cover-med.jpg
+
+Higher-Order Perl
+*****************
+
+* My book is not like any other book about Perl
+#J これまでにまったく類のないPerl本
+
+  * It was published in 2005 by Morgan Kaufmann
+  #J 刊行は2005年、出版社はMorgan Kaufmann
+
+* It's a really good book  (http://hop.perl.plover.com/reviews.html)
+#J 本当にいい本なんですって
+
+* Chapter 8, on parsing, is 90 pages long
+#J 第8章の解析については90ページも割いている
+
+  * I had to leave out a lot of good stuff for this talk
+  #J 今回は割愛した部分もたくさん
+
+        http://hop.perl.plover.com/
+
+* For example, I completely omitted _backtracking_
+#J たとえば「バックトラッキング」についてはばっさり落とした
+
+  * This is a crucial matter
+  #J とても大事な話なんだけど
+----------------------------------------------------------------
+
+Thank You!
+#J ご静聴感謝!
+**********
+
+o Talk slides:
+#J スライド
+
+http://perl.plover.com/yak/parsing/
+
+o Example code:
+#J コード例
+
+http://hop.perl.plover.com/Examples/Chap8/
+
+o Any questions?
+#J ご質問は?
+----------------------------------------------------------------
+
+Bonus slides
+#J ボーナススライド
+************
+
+* If this talk were a DVD, this would be the "bonus features" section
+#J このトークがDVDになることがあったら「ボーナス」セクションに入れたいね
+
+* Or maybe "deleted scenes"
+#J あるいは「カットされたシーン」かな
+
+* Or perhaps "blooper reel"
+#J 「NG集」だったりして
+----------------------------------------------------------------
+
+Every program parses
+#J プログラムというのはパースするもの
+********************
+
+* Perl has a lot of features that let you ignore the fact that you're parsing
+#J Perlには解析しているという事実を忘れさせてくれる機能がたくさんついている
+
+* This is a rudimentary parser:
+#J 初歩中の初歩だけど、これもパーサだ
+
+        while (<$fh>) {
+          # do something with $_
+        }
+
+* This would be more obvious if the code were in C
+#J このコードをCで書いてみれば意味がわかるはず
+
+* As the input you're parsing becomes more complicated, the code becomes more elaborate
+#J 解析する入力が複雑になればなるほどコードもややこしくなっていく
+
+* At some point it may exceed your ability to keep up with ad-hoc mechanisms 
+#J すると、どこかで場当たり的な対応では追いつかなくなるときがくる
+
+* So we have parsing systems like [[Parse::RecDescent]]
+#J だからこそ[[Parse::RecDescent]]のような解析システムがあるわけだ
+----------------------------------------------------------------
+
+Lexing
+#J 字句解析
+******
+
+        my %builtin = (sin => 1, cos => 1, sqrt => 1);
+
+        sub make_tokens {
+          my $s = shift;
+          my @tokens;
+          my $lexer = sub {
+          TOP: {
+            return undef          if $s =~ m/\G\z/gxc;
+            return ["NUMBER", $1] if $s =~ m/\G (\d+) /gxc;
+            return $builtin{$1} ? ["FUNCTION", $1]
+                                : ["VAR", $1]
+                                  if $s =~ m/\G ([A-Za-z]\w*) /gxc;
+            return ["^"]          if $s =~ m/\G ( [C[ \^ | \*\* ]C] ) /gxc;
+            return ["+"]          if $s =~ m/\G \+ /gxc;
+            return ["*"]          if $s =~ m/\G [C[ \* ]C] /gxc;
+            return ["("]          if $s =~ m/\G \( /gxc;
+            return [")"]          if $s =~ m/\G \) /gxc;
+            redo TOP              if $s =~ m/\G \s+ /gxc;
+            die "Unknown character '$1' at ..." 
+                                  if $s =~ m/\G (.) /gxc;
+          }};
+          while (my $token = $lexer->()) {
+            push @tokens, $token;
+          }
+          return @tokens;
+        }
+
+* Notice how the lexer can recognize both [[^]] and [[**]] and eliminate the distinction
+#J レクサが[[^]]も[[**]]も認識しながら差を吸収しているところに注目
+
+* Also notice how [[**]] is lexed as a power operator, not as two multiplication signs
+#J [[**]]が2つの乗算記号ではなくべき乗の演算子として解析されているところにもかな
+----------------------------------------------------------------
+
+[[repeat]]
+**********
+
+* Regexes also have a [[*]] notation that means an item can be repeated
+#J 正規表現には[[*]]という表記もある。繰り返しの意味だ
+
+* For example, we might write
+#J たとえば、こんな風に書けるとよさそうだ
+
+        # term [E[rarr]E] factor repeat( "*" factor )
+        $term = $FACTOR - repeat(L("*") - $FACTOR);
+
+* It's not hard to express [[repeat]] with what we have already:
+#J [[repeat]]をこれまでのツールで表記するのも難しくはない
+
+        # repeat($p) is:
+
+        $p - repeat($p)  |  $nothing
+
+* But we can wrap this up as a function:
+#J でも、関数としてくくり出すこともできる
+
+        sub repeat {
+          my $p = shift;
+          my $repeat_p;
+          my $do_repeat_p = sub { $repeat_p->(@_) };  # proxy
+          $repeat_p = alt(conc($p, $do_repeat_p), $nothing);
+          return $repeat_p;
+        }
+
+* [[Parse::RecDescent]] provides this with its [[(s)]] notation
+#J [[Parse::RecDescent]]では[[(s)]]という表記だ
+----------------------------------------------------------------
+New tools
+#J 新しいツール
+*********
+
+* Or "do what _A_ does, but transform its result value somehow":
+#J 「_A_を実行する、ただし結果の値を変換する」ツールはこうなる
+
+        sub transform {
+          my ($A, $transform) = @_;
+          my $parser = sub {    
+            my $in = shift;
+            my ($res, $out) = $A->($in)
+                or return;
+            return ([C[$transform->($res)]C], $out);            
+          };
+        }
+
+----------------------------------------------------------------
+
+#SECTION#
+
+What is my book about?
+#J 『Higher-Order Perl』ってなに?
+**********************
+
+o If you pick up a book about Lisp, it will list Lisp's good features:
+#J Lispの本にはLispのいいところがたくさん書いてある
+  * Powerful built-in data structures
+  #J 強力なデータ構造が組み込まれていること
+  * Run-time access to symbol table
+  #J シンボルテーブルへのランタイムアクセス
+  * Functions can be constructed at runtime and used like data
+  #J 関数をランタイムに生成してデータのように扱えること
+  * Anonymous functions and closures
+  #J 無名関数とクロージャ
+  * Automatic storage management
+  #J 自動ストレージ管理
+  * Dynamic typing
+  #J 動的型付け
+  * Extensibility
+  #J 拡張性
+================================================================
+
+o One day I realized:
+#J ある日、気がついた
+
+  o "Hey, Perl has all those features too"
+  #J 「なんだ、Perl にも全部あるじゃないか」
+
+  o "Hey, C has _none_ of those features!"
+  #J 「なんだ、C にはひとつもないのか!」
+
+  o "Gosh, I guess Perl is a lot more like Lisp than like C"
+  #J 「なんてこった。PerlってのはCよりLispに近かったのか」
+
+o Conclusion: Lisp programmers know stuff that we could use
+#J 結論：Lispプログラマは参考になりそうなことをたくさん知っている
+
+  o To learn better ways to use Perl's good features, read books about Lisp
+  #J Perlの便利な機能を使いこなしたかったらLispの本を読めばいい
+
+o That is what I did
+#J その結果が『Higher-Order Perl』というわけ
+----------------------------------------------------------------
+
+----------------------------------------------------------------END
+.pre

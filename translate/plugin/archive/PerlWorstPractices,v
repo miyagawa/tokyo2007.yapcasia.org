@@ -1,0 +1,101 @@
+head	1.3;
+access;
+symbols;
+locks
+	root:1.3;
+comment	@# @;
+
+
+1.3
+date	2007.04.03.15.02.01;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.04.03.14.45.07;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.20.17.33.40;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@edit_address:122.209.5.205,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Apr%20%203%2015%3A02%3A01%202007,edit_unixtime:1175612521
+@
+text
+@Marty will do subtitling himself with his awesome Japanese skills.
+
+.pre
+> I will try to do my own subtitles.  Hopefully they will make more sense
+> than my talk :-)
+.pre
+
+----
+
+ええと… 僕は日本語が上手じゃない。手伝ってください。
+
+I need help with some things below.  There are 2 slides that I would like translated.  And then there is a problem with one word.
+
+----
+
+.pre
+Java was designed for stupid people
+
+(although you don't need to be stupid to use Java)
+.pre
+
+.pre
+Java はバカな人でも使えるように設計された言語
+
+(バカな人でなくても Java を使うことはできるけどね）
+.pre
+
+----
+
+.pre
+95% of all bugs are caused by variables.
+
+95% of all statistics are made up by the speaker.
+.pre
+
+.pre
+バグの95%は変数が原因である。
+
+この種の統計データの95%は捏造である。
+.pre
+
+
+----
+
+The word I need a good translation for is "poo", as in "don't step in the dog poo".  I don't think くそ is correct because that sound's a bit rude.  Maybe うんち.  I need a word that a Japanese child could say without getting in trouble.
+
+What about ウンコ? The key here is to use Katakana form. ウンコ usually means bullshit stuff. -- TatsuhikoMiyagawa
+@
+
+
+1.2
+log
+@edit_address:61.213.118.99,edit_by:MartyPauley,edit_time:Tue%20Apr%20%203%2014%3A45%3A07%202007,edit_unixtime:1175611507
+@
+text
+@d22 6
+d36 7
+d46 2
+@
+
+
+1.1
+log
+@edit_address:204.14.154.180,edit_by:TatsuhikoMiyagawa,edit_time:Tue%20Mar%2020%2017%3A33%3A40%202007,edit_unixtime:1174412020
+@
+text
+@d7 26
+@

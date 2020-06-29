@@ -1,0 +1,30 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.03.31.08.29.53;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:210.147.147.30,edit_by:vkgtaro,edit_by_icon:http%3A%2F%2Fsky.taro-web.com%2Fbnr_img%2Ftaro.jpg,edit_time:Sat%20Mar%2031%2008%3A29%3A52%202007,edit_unixtime:1175329792
+@
+text
+@I'm a web programmer and  more a nerd than a geek.
+
+http://sky.taro-web.com/bnr_img/taro.jpg
+
+* [http://sky.taro-web.com/]
+* [http://vkgtaro.vox.com/]
+@

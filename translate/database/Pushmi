@@ -1,0 +1,172 @@
+Translators: Kenichi Ishigaki
+
+.pre
+
+Pushmi
+    Subversion replication system based on SVK
+
+    Chia-liang Kao / 高嘉良 <clkao@clkao.org>
+
+    *Best Practical Solutions, LLC*
+
+Modern Software Development
+#J いまどきのソフトウェア開発
+
+    *   Test-driven.
+        #J テストドリブン
+
+    *   Geographically distributed.
+        #J 作業者が地理的に分散されている
+
+    *   Version control is crucial.
+        #J バージョン管理重要
+
+Subversion
+    *   Enterprise-standard for distributed development.
+        #J 企業標準の分散開発システム
+
+    *   Fixed CVS problems.
+        #J CVS時代の問題は解消してくれた
+
+    *   Branch is easy.
+        #J ブランチを切るのも簡単
+
+    *   However
+        #J ただし
+
+        *   Centralised.
+            #J 中央集権的
+
+        *   No good merge support.
+            #J マージの対応が不十分
+
+The Problem
+#J 問題は……
+    *   The Internet isn't as fast as we want it to be
+        #J いつでも高速な回線を使えるとは限らない
+
+    *   ... or isn't as reliable as we thought.
+        #J いつでも回線が信用できるとも限らない
+
+    *   and there can be...
+        #J 一寸先は闇
+
+Earthquakes
+#J 地震だっ!
+    1
+
+The Subversion Motto
+#J Subversionのモットー
+    *   Network is expensive
+        #J 回線は高い
+
+    *   Disks are cheap
+        #J ディスクは安い
+
+We think
+#J われわれのモットー
+    *   Network, Disks, CPUs are cheap
+        #J 回線もディスクもCPUも安くなっている
+
+    *   Developers are expensive
+        #J 高いのは開発者だ
+
+Why this matters?
+#J どうして?
+    *   Developers spent more time on the tools than development == BAD
+        #J 開発者が開発よりツールの操作に時間をとられる ＝ 悪
+
+    *   Single Point of Failure == BAD
+        #J 一箇所落ちたら全部が落ちる ＝ 悪
+
+    *   Developers Unable to Produce == WORSE
+        #J 開発者が作業できなくなる ＝ 悪・悪・悪
+
+The Solution
+#J 解決策
+    *   Pushmi creates replicas of master repository in branch offices.
+        #J Pushmiを使えばマスターリポジトリのレプリカを支社にも作れる
+
+    *   Transparent to the users.
+        #J ユーザは違いを気にしなくていい
+
+    *   NO change to existing infrastructure and process.
+        #J 既存のインフラやプロセスは変更不要
+
+    *   Too good to be true?
+        #J 話がうますぎる?
+
+Conflicts?
+#J 衝突が起こったら?
+    FAQ: How do you handle simultaneous commits from different slaves and
+    master?
+    #J FAQ: あちこちのスレーブやマスターから同時にコミットがあったらどうするの?
+
+    *   We don't.
+        #J どうもしないよ
+
+    *   The commits are relayed back to the master.
+        #J コミットはマスターにリレーバックする
+
+    *   It's essentially like users are committing directly, without going
+        through replicas.
+        #J ユーザにしてみればレプリカを通さず直接コミットしているようなもの
+
+    *   And Subversion guards the transaction cleanness for us.
+        #J トランザクションの整合性はSubversionがとってくれる
+
+The architecture
+#J Pushmiの構造
+    1
+
+Case Study
+#J ケーススタディ
+    A leading company in the game industry
+    #J ゲーム業界のリーディングカンパニー
+
+    *   70 offices around the world
+        #J 世界各地に70もの支社を持つ大企業
+
+    *   ... including Beijing, Saigon.
+        #J 北京やサイゴンにも支社があるんだけど
+
+    *   Some with very limited internet connection.
+        #J なかにはきわめて接続事情の悪いところがある
+
+    *   Large amount of graphical data.
+        #J 大量の画像データ
+
+    *   Users wait for "svn update" over slow and saturated network.
+        #J 回線はトロいしツマってるしでsvn updateにえらい時間がかかる
+
+Case Study (Cont.)
+#J ケーススタディ(続)
+    *   Eliminated 200ms+ latency for read-only operations from places like
+        Romania
+        #J Pushmiを使うと、読み込みに200ms以上も待たされるなんてことはなくなる
+
+    *   ... for update, viewing logs, diff, etc.
+        #J updateのときとか、ログや差分を見ているときとか
+
+    *   Commit performance is only slightly slower.
+        #J コミットのパフォーマンスはほんの少しだけ遅くなるけど
+
+    *   When master repository or VPN is down:
+        #J マスターリポジトリやVPNが落ちても
+
+        *   Developers can still work with read-only operations.
+            #J リポジトリに書き込まない作業ならできる
+
+        *   along with SVK, can also commits and perform merge later.
+            #J SVKを使えばコミットもできるし、あとでマージすることもできる
+
+Questions?
+Thank you
+#J ご質問は?
+        Available on code.bestpractical.com
+        #J コードはcode.bestpractical.comにあります
+
+        For support and consultancy, contact sales@bestpractical.com
+        #J サポートやコンサルティングはsales@bestpractical.comまで
+
+.pre

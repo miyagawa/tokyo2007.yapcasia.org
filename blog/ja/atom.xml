@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>YAPC::Asia 2007 Tokyo - April 4-5 2007 (Japanese)</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/" />
+    <link rel="self" type="application/atom+xml" href="http://tokyo2007.yapcasia.org/blog/ja/atom.xml" />
+   <id>tag:tokyo2007.yapcasia.org,2008:/blog/ja//14</id>
+    <link rel="service.post" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14" title="YAPC::Asia 2007 Tokyo - April 4-5 2007 (Japanese)" />
+    <updated>2008-02-25T00:14:37Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type 3.2</generator>
+ 
+<entry>
+    <title>YAPC::Asia 2008</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2008/02/yapcasia_2008.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2227" title="YAPC::Asia 2008" />
+    <id>tag:tokyo2007.yapcasia.org,2008:/blog/ja//14.2227</id>
+    
+    <published>2008-02-25T00:13:23Z</published>
+    <updated>2008-02-25T00:14:37Z</updated>
+    
+    <summary>YAPC::Asia 2008 のサイトはこちら。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p><a href="http://conferences.yapcasia.org/ya2008">YAPC::Asia 2008</a> のサイトはこちら。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>動画ファイルの公開を開始</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/04/post_9.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2214" title="動画ファイルの公開を開始" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2214</id>
+    
+    <published>2007-04-23T22:03:59Z</published>
+    <updated>2007-04-23T22:09:19Z</updated>
+    
+    <summary>YAPC::Asia 2007 のセッションの動画ファイルの公開を開始しました。すべてのセッションの動画は i-revo 特設サイト (WMV ストリーミング) または Google Video (Flash/DivX/MP4) にて閲覧できるようになっています（一部非公開のセッションを除く）。 また、YAPC::Asia 2007 サイト内の セッション詳細ページ に Google Video の Flash プレイヤーを埋め込んでありますので、タイムテーブル からみたいセッションを選んでブラウザ上で見ることも可能です。 Google Video からダウンロードできる MP4 (H264)ファイルの ビデオキャストフィード も用意しました。iPod や PSP などにダウンロード・同期してお楽しみいただけます。iTunes や Democracy などビデオキャストに対応したメディアプレイヤーにリンクを追加してください。 当日の録画、リッピング・エンコーディングの作業をしていただいた i-revo スタッフの皆様にこの場を借りて再度御礼申し上げます。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>YAPC::Asia 2007 のセッションの動画ファイルの公開を開始しました。すべてのセッションの動画は <a href="http://www.i-revo.jp/yapcasia/archive/01.html">i-revo 特設サイト (WMV ストリーミング)</a> または <a href="http://video.google.com/videosearch?q=yapc+asia+2007&amp;num=50&amp;so=1&amp;start=0">Google Video (Flash/DivX/MP4)</a> にて閲覧できるようになっています（一部非公開のセッションを除く）。</p>
+
+<p>また、YAPC::Asia 2007 サイト内の <a href="http://tokyo2007.yapcasia.org/sessions/">セッション詳細ページ</a> に Google Video の Flash プレイヤーを埋め込んでありますので、<a href="http://tokyo2007.yapcasia.org/sessions/">タイムテーブル</a> からみたいセッションを選んでブラウザ上で見ることも可能です。</p>
+
+<p>Google Video からダウンロードできる MP4 (H264)ファイルの <a href="http://tokyo2007.yapcasia.org/sessions/videocast.xml">ビデオキャストフィード</a> も用意しました。iPod や PSP などにダウンロード・同期してお楽しみいただけます。iTunes や Democracy などビデオキャストに対応したメディアプレイヤーにリンクを追加してください。</p>
+
+<p>当日の録画、リッピング・エンコーディングの作業をしていただいた <a href="http://www.i-revo.jp/yapcasia/">i-revo</a> スタッフの皆様にこの場を借りて再度御礼申し上げます。<br />
+</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Podcast feed is now ready!</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/04/podcast_feed_is_now_ready.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2212" title="Podcast feed is now ready!" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2212</id>
+    
+    <published>2007-04-10T07:56:38Z</published>
+    <updated>2007-04-20T00:01:17Z</updated>
+    
+    <summary>YAPC::Asia の音声録音データのダウンロードが可能になりました。RSS 2.0 Podcast フィード 形式でダウンロード可能です。128kbps の mp3 形式でエンコードしてありますので、iPod などのオーディオデバイスに転送して楽しむことができます。フィードには Creative Commons のライセンス条項もメタデータとして埋め込んでありますので、ライセンスに従ってご利用される際にはご確認ください。 フィード情報は Odeo にもインポートしてありますので、ブラウザ上でオーディオを聞いたり、ブログに埋め込んだりといったことも可能です。セッションのスライド とあわせてお楽しみください。 現在ビデオの公開を準備中です。準備が出来次第、i-revo および Google Video にて閲覧可能になる予定です。 録画・録音およびリッピングの作業を担当していただいた 津田ホール 担当者様、また i-revo (アイレボ) スタッフの皆様にこの場を借りて御礼申し上げます。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>YAPC::Asia の音声録音データのダウンロードが可能になりました。<a href="http://tokyo2007.yapcasia.org/sessions/index.xml">RSS 2.0 Podcast フィード</a> 形式でダウンロード可能です。128kbps の mp3 形式でエンコードしてありますので、iPod などのオーディオデバイスに転送して楽しむことができます。フィードには Creative Commons のライセンス条項もメタデータとして埋め込んでありますので、ライセンスに従ってご利用される際にはご確認ください。</p>
+
+<p>フィード情報は <a href="http://odeo.com/channel/376983/view">Odeo</a> にもインポートしてありますので、ブラウザ上でオーディオを聞いたり、ブログに埋め込んだりといったことも可能です。<a href="http://tokyo2007.yapcasia.org/wiki/?SlidesFromTalks">セッションのスライド</a> とあわせてお楽しみください。</p>
+
+<p>現在ビデオの公開を準備中です。準備が出来次第、<a href="http://www.i-revo.jp/yapcasia/">i-revo</a> および Google Video にて閲覧可能になる予定です。</p>
+
+<p>録画・録音およびリッピングの作業を担当していただいた <a href="http://www.tsudahall.com/">津田ホール</a> 担当者様、また <a href="http://www.i-revo.jp/">i-revo (アイレボ)</a> スタッフの皆様にこの場を借りて御礼申し上げます。<br />
+</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>開場は 9時を予定しています</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/04/_9.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2197" title="開場は 9時を予定しています" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2197</id>
+    
+    <published>2007-04-03T09:39:17Z</published>
+    <updated>2007-04-03T10:22:00Z</updated>
+    
+    <summary>いよいよ明日の開催となりましたが、1日目・2日目とも開場は9時を予定しています。ローソンチケットで購入した方はチケットをお持ちください。当日券の販売も行います。 津田ホールへのアクセスは 津田ホールサイト上の地図 を参照ください。JR千駄ヶ谷駅または東京メトロ大江戸線 国立競技場駅が最寄り駅となります。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>いよいよ明日の開催となりましたが、1日目・2日目とも開場は9時を予定しています。ローソンチケットで購入した方はチケットをお持ちください。当日券の販売も行います。</p>
+
+<p>津田ホールへのアクセスは <a href="http://tsudahall.com/THHP/annai.html">津田ホールサイト上の地図</a> を参照ください。JR千駄ヶ谷駅または東京メトロ大江戸線 国立競技場駅が最寄り駅となります。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>当日券販売します</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_8.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2195" title="当日券販売します" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2195</id>
+    
+    <published>2007-03-31T07:16:05Z</published>
+    <updated>2007-04-03T10:01:26Z</updated>
+    
+    <summary>おかげさまで前売り券が売り切れとなった YAPC::Asia ですが、会場と交渉の結果、さらに席を追加できることになりました。4/4 9:00 AM より当日券を 4,500円 (Tシャツ・ノベルティグッズ込み）にて販売予定です。 販売枚数は20枚程度を予定しています。当日券にて参加したい！という方は人数の確認のため team[at]yapcasia.org まで Subject: 当日券ほしい！ にて Email を送ってください。（希望人数が販売予定枚数を超えた場合、スタッフにて対応を検討します） UPDATE: 4/3 19:00 現在、Email をいただいた皆さんはすべて当日券での参加が可能です。個別に返信をいたしませんがご容赦ください。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>おかげさまで前売り券が売り切れとなった YAPC::Asia ですが、会場と交渉の結果、さらに席を追加できることになりました。4/4 9:00 AM より当日券を 4,500円 (Tシャツ・ノベルティグッズ込み）にて販売予定です。 </p>
+
+<p>販売枚数は20枚程度を予定しています。当日券にて参加したい！という方は人数の確認のため team[at]yapcasia.org まで Subject: 当日券ほしい！ にて Email を送ってください。（希望人数が販売予定枚数を超えた場合、スタッフにて対応を検討します）</p>
+
+<p><strong>UPDATE:</strong> 4/3 19:00 現在、Email をいただいた皆さんはすべて当日券での参加が可能です。個別に返信をいたしませんがご容赦ください。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Wiki の TypeKey 認証を任意にしました</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/03/wiki_typekey.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2192" title="Wiki の TypeKey 認証を任意にしました" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2192</id>
+    
+    <published>2007-03-29T21:17:50Z</published>
+    <updated>2007-03-29T21:23:23Z</updated>
+    
+    <summary>カンファレンスの終了する 4/5 まで、YAPC::Asia Wiki の TypeKey 認証を任意にしました。アカウントをお持ちの方は Identity を表示するためにログインすることができますが、ページの編集のために必須ではなくなりました。 Attendees や Planet ページの更新をお待ちしています。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>カンファレンスの終了する 4/5 まで、<a href="http://tokyo2007.yapcasia.org/wiki/">YAPC::Asia Wiki</a> の TypeKey 認証を任意にしました。アカウントをお持ちの方は Identity を表示するためにログインすることができますが、ページの編集のために必須ではなくなりました。</p>
+
+<p>Attendees や Planet ページの更新をお待ちしています。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Lightning Talks を公開しました</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/03/lightning_talks.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2188" title="Lightning Talks を公開しました" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2188</id>
+    
+    <published>2007-03-26T21:34:24Z</published>
+    <updated>2007-03-26T21:39:20Z</updated>
+    
+    <summary>Lightning Talks には8件の応募をいただき、すべて採用されました。リストは LightningTalks の Wiki ページで確認ください。 まだいくつかトーク枠に空きがありますので、〆切を数日延長したいと思います。5分間で話してみたいネタがある方は、専用フォーム より登録をお願いします。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>Lightning Talks には8件の応募をいただき、すべて採用されました。リストは <a href="http://tokyo2007.yapcasia.org/wiki/?LightningTalks">LightningTalks</a> の Wiki ページで確認ください。</p>
+
+<p>まだいくつかトーク枠に空きがありますので、〆切を数日延長したいと思います。5分間で話してみたいネタがある方は、<a href="http://shibuya.pm.org/register/yapc-papers">専用フォーム</a> より登録をお願いします。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>懇親会のサインアップを開始しました</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_7.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2186" title="懇親会のサインアップを開始しました" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2186</id>
+    
+    <published>2007-03-22T22:13:33Z</published>
+    <updated>2007-03-22T22:25:57Z</updated>
+    
+    <summary>昨年同様、今年も1日目 4/4 の晩に懇親会を予定しています。スポンサー様のご協力により、食事は無料で提供されますが、入場に際してはドリンク代として 1500円をいただきます。会場のキャパシティの都合上、Web からサインアップしていただいた方のみとさせていただきます。席の数に限りがありますので、お早めに参加登録をお願いします。 （スピーカーの方はすでにカウントされていますので、懇親会登録の必要はありません） 懇親会は 4/4 19:30 より ジョン万次郎 アトレ信濃町店 で行います。懇親会費用は、YAPC::Asia 会場受付にてお支払いいただく形になります。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>昨年同様、今年も1日目 4/4 の晩に懇親会を予定しています。スポンサー様のご協力により、食事は無料で提供されますが、入場に際してはドリンク代として 1500円をいただきます。会場のキャパシティの都合上、<a href="http://shibuya.pm.org/register/yapc-party-2007/">Web からサインアップ</a>していただいた方のみとさせていただきます。席の数に限りがありますので、お早めに参加登録をお願いします。</p>
+
+<p>（スピーカーの方はすでにカウントされていますので、懇親会登録の必要はありません）</p>
+
+<p>懇親会は 4/4 19:30 より <a href="http://r.gnavi.co.jp/g696442/">ジョン万次郎 アトレ信濃町店</a> で行います。懇親会費用は、YAPC::Asia 会場受付にてお支払いいただく形になります。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>ライトニングトーク募集開始</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_6.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2182" title="ライトニングトーク募集開始" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2182</id>
+    
+    <published>2007-03-19T02:03:25Z</published>
+    <updated>2007-03-20T00:39:41Z</updated>
+    
+    <summary>2日目のキーノート前に行われる Lightning Talks (ライトニングトーク) のスピーカーを募集します。5分間で何かしゃべりたいネタがある、という方は フォーム からご応募ください。応募の〆切は 3/26 23:59 （日本時間） です。 たくさんのご応募をお待ちしています。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>2日目のキーノート前に行われる Lightning Talks (ライトニングトーク) のスピーカーを募集します。5分間で何かしゃべりたいネタがある、という方は <a href="http://shibuya.pm.org/register/yapc-papers/"><strong>フォーム</strong></a> からご応募ください。応募の〆切は <strong>3/26 23:59 （日本時間）</strong> です。</p>
+
+<p>たくさんのご応募をお待ちしています。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>チケットは売り切れました</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/03/post_5.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2180" title="チケットは売り切れました" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2180</id>
+    
+    <published>2007-03-15T21:34:30Z</published>
+    <updated>2007-03-15T21:38:13Z</updated>
+    
+    <summary>おかげさまで 350 枚用意した YAPC::Asia 2007 のチケットはすべて売り切れとなりました。みなさまと会場でお会いするのを楽しみにしています。 カンファレンス用の Wiki サイト が立ち上がっています。カンファレンスについての情報を日々更新していますが、参加される方はぜひ Attendees に名前をご登録ください。自己紹介は日本語で書かれてもまったく問題ありません。Wiki スパム防止のため書き込みには TypeKey アカウントが必要になります。 また YAPC について書き込む予定のある Blog をお持ちの方は Planet のアグリゲートリストに追加をお願いします。こちらのページのURLをベースにアグリゲータを設置する予定です。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>おかげさまで 350 枚用意した YAPC::Asia 2007 のチケットはすべて売り切れとなりました。みなさまと会場でお会いするのを楽しみにしています。</p>
+
+<p>カンファレンス用の <a href="http://tokyo2007.yapcasia.org/wiki/">Wiki サイト</a> が立ち上がっています。カンファレンスについての情報を日々更新していますが、参加される方はぜひ <a href="http://tokyo2007.yapcasia.org/wiki/?Attendees">Attendees</a> に名前をご登録ください。自己紹介は日本語で書かれてもまったく問題ありません。Wiki スパム防止のため書き込みには <a href="http://www.typekey.com/">TypeKey</a> アカウントが必要になります。</p>
+
+<p>また YAPC について書き込む予定のある Blog をお持ちの方は <a href="http://tokyo2007.yapcasia.org/wiki/?Planet">Planet</a> のアグリゲートリストに追加をお願いします。こちらのページのURLをベースにアグリゲータを設置する予定です。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>チケット販売状況</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/02/post_4.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2174" title="チケット販売状況" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2174</id>
+    
+    <published>2007-02-27T20:18:00Z</published>
+    <updated>2007-02-28T06:26:45Z</updated>
+    
+    <summary>2/28 早朝（日本時間）時点で、300枚用意していたチケットが販売終了したことを確認しました。会場の座席数などを調整のうえ、50枚の追加販売を行う予定です。詳細はこちらのエントリにて更新します。 UPDATE: 明日 3/1 10:00 AM より50枚の追加販売を行います。先日と同じく こちらの URL またはローソンチケットで Lコード 38050 を入力して予約購入が可能です。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>2/28 早朝（日本時間）時点で、300枚用意していたチケットが販売終了したことを確認しました。会場の座席数などを調整のうえ、50枚の追加販売を行う予定です。詳細はこちらのエントリにて更新します。</p>
+
+<p><strong>UPDATE:</strong> 明日 3/1 10:00 AM より50枚の追加販売を行います。先日と同じく <a href="http://www2.lawsonticket.com/pc/P40/WM80.asp?SI=yap">こちらの URL</a> またはローソンチケットで Lコード 38050 を入力して予約購入が可能です。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>スケジュールとスピーカープロフィールを公開しました</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/02/post_3.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2172" title="スケジュールとスピーカープロフィールを公開しました" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2172</id>
+    
+    <published>2007-02-23T06:59:11Z</published>
+    <updated>2007-02-23T07:10:53Z</updated>
+    
+    <summary>スケジュールとスピーカープロフィールを公開しました。スケジュールは iCal フィードも出力しています( Kaminogoya君 サンクス！) ので、iCal や Sunbird, 30boxes, Google Calndar といったスケジューラに登録することも出来ます。 先日より発売開始したチケットの売れ行きは順調で、300枚用意したうちの200枚程度が売れているとの連絡を受けています。お悩みの方はぜひ、売り切れる前にチケットをお求めください。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p><a href="http://tokyo2007.yapcasia.org/sessions">スケジュール</a>と<a href="http://tokyo2007.yapcasia.org/speakers/">スピーカープロフィール</a>を公開しました。スケジュールは iCal フィードも出力しています( <a href="http://2xup.org/">Kaminogoya君</a> サンクス！) ので、iCal や Sunbird, 30boxes, Google Calndar といったスケジューラに登録することも出来ます。</p>
+
+<p>先日より発売開始したチケットの売れ行きは順調で、300枚用意したうちの200枚程度が売れているとの連絡を受けています。お悩みの方はぜひ、売り切れる前にチケットをお求めください。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>スピーカーとスポンサーが決定</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/02/post_2.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2166" title="スピーカーとスポンサーが決定" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2166</id>
+    
+    <published>2007-02-14T07:48:48Z</published>
+    <updated>2007-02-14T08:56:39Z</updated>
+    
+    <summary>YAPC::Asia 2007 Tokyo のスピーカーおよびスポンサーが決定しましたので、改めてイベント概要とともに告知します。 YAPC::Asia 2007 Tokyo 日時2007/04/04-05 (水-木) 9:30-18:00 会場津田ホール （東京、千駄ヶ谷） 料金4000円 (2日通し、Tシャツ込み) 主催YAPC::Asia 2007 委員会 / Shibuya Perl Mongers チケット販売ローソンチケット (2/16 10:00 AM より) 協賛いただいたスポンサーさまのリストは、本サイトのサイドバーにてご確認ください。 スピーカー Audrey Tang Mark Jason Dominus Jesse Vincent Ben Trott Brad Fitzpatrick Chia-liang...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>YAPC::Asia 2007 Tokyo のスピーカーおよびスポンサーが決定しましたので、改めてイベント概要とともに告知します。</p>
+
+<h3>YAPC::Asia 2007 Tokyo</h3>
+
+<p>
+<dl>
+<dt>日時</dt><dd>2007/04/04-05 (水-木) 9:30-18:00</dd>
+<dt>会場</dt><dd><a href="http://www.tsudahall.com/">津田ホール</a> （東京、千駄ヶ谷）</dd>
+<dt>料金</dt><dd>4000円 (2日通し、Tシャツ込み)</dd>
+<dt>主催</dt><dd>YAPC::Asia 2007 委員会 / <a href="http://shibuya.pm.org/">Shibuya Perl Mongers</a></dd>
+<dt>チケット販売</dt><dd><a href="http://www2.lawsonticket.com/pc/P40/WM80.asp?SI=yap">ローソンチケット</a> (2/16 10:00 AM より)</dd>
+</dl>
+</p>
+
+<p>協賛いただいたスポンサーさまのリストは、本サイトのサイドバーにてご確認ください。</p>
+
+<h3>スピーカー</h3>
+
+<ul>
+<li>Audrey Tang</li>
+<li>Mark Jason Dominus</li>
+<li>Jesse Vincent</li>
+<li>Ben Trott</li>
+<li>Brad Fitzpatrick</li>
+<li>Chia-liang Kao</li>
+<li>Ingy döt Net</li>
+<li>Dave Rolsky</li>
+<li>Jeff Kim</li>
+<li>Jonathan Rockway</li>
+<li>José Alves de Castro</li>
+<li>Kang-min Liu</li>
+<li>小飼弾</li>
+<li>Daisuke Maki</li>
+<li>Atsushi Kobayashi</li>
+<li>Emerson Mills</li>
+<li>伊藤直也</li>
+<li>Gosuke Miyashita</li>
+<li>奥一穂</li>
+<li>Kenichi Ishigaki</li>
+<li>Marty Pauley</li>
+<li>宮川達彦</li>
+<li>Tokuhiro Matsuno</li>
+<li>台場圭一</li>
+<li>大沢和宏</li>
+<li>竹迫良範</li>
+</ul>
+
+<p>概要およびスピーカーは予定です。当日まで予告なく変更・追加される可能性があります。セッションのタイトルやアブストラクトを含めたプログラムは 3月上旬に公開を予定しています。</p>
+
+<p>カンファレンスのオフィシャル言語は日本語および英語です。海外からのスピーカーのトークは、ほとんどが英語で行われる予定です。 4/4 (水) は 1 トラック、4/5 (木) は 2 トラックで行われ、4/4 のいくつかのトークには通訳あるいはスライド翻訳を用意する予定です。</p>
+]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>プレゼン募集を締め切りました</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/02/post_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2102" title="プレゼン募集を締め切りました" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2102</id>
+    
+    <published>2007-02-01T02:52:36Z</published>
+    <updated>2007-02-01T03:14:54Z</updated>
+    
+    <summary>1/31 23:59 UTC にて YAPC::Asia 2007 Tokyo のプレゼン募集を締め切りました。たくさんのご応募ありがとうございました。 実際にカンファレンスで用意できるトーク数の1.5倍を超える申し込みがありました。枠の都合上、いくつかのトークについては採用できないことが予想されますが、あらかじめご了承ください。本日よりスクリーニングを行い、結果は 2/14 までに Email にて通知いたします。 Lightning Talk (5分x 11個) の募集は 3月中旬から行います。今回チャンスを逃した方は、ぜひ次の機会にご応募ください。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>1/31 23:59 UTC にて YAPC::Asia 2007 Tokyo のプレゼン募集を締め切りました。たくさんのご応募ありがとうございました。</p>
+
+<p>実際にカンファレンスで用意できるトーク数の1.5倍を超える申し込みがありました。枠の都合上、いくつかのトークについては採用できないことが予想されますが、あらかじめご了承ください。本日よりスクリーニングを行い、結果は <strong>2/14</strong> までに Email にて通知いたします。</p>
+
+<p>Lightning Talk (5分x 11個) の募集は 3月中旬から行います。今回チャンスを逃した方は、ぜひ次の機会にご応募ください。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>プレゼン募集の〆切を 1/31 に変更しました</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/blog/ja/2007/01/_131.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=14/entry_id=2098" title="プレゼン募集の〆切を 1/31 に変更しました" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/blog/ja//14.2098</id>
+    
+    <published>2007-01-24T01:19:04Z</published>
+    <updated>2007-01-24T01:28:43Z</updated>
+    
+    <summary>プレゼン募集の〆切を 2月中旬とアナウンスしていましたが、タイムテーブル作成やチケット販売以降のスケジュールを円滑に進めるため、〆切時刻を 1/31 (水) 24:00 UTC に変更しました。トークへの応募を検討中の方は、お早めに 登録フォーム から応募をお願いします。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="cs" xml:base="http://tokyo2007.yapcasia.org/blog/ja/">
+        <![CDATA[<p>プレゼン募集の〆切を 2月中旬とアナウンスしていましたが、タイムテーブル作成やチケット販売以降のスケジュールを円滑に進めるため、〆切時刻を <strong>1/31 (水) 24:00 UTC</strong> に変更しました。トークへの応募を検討中の方は、お早めに <a href="http://shibuya.pm.org/register/yapc-papers/">登録フォーム</a> から応募をお願いします。</p>]]>
+        
+    </content>
+</entry>
+
+</feed> 
+

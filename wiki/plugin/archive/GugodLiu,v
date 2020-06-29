@@ -1,0 +1,35 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1;
+comment	@# @;
+
+
+1.1
+date	2007.01.17.04.11.16;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@edit_address:60.250.195.146,edit_by:gugod,edit_by_icon:http%3A%2F%2Fstatic.flickr.com%2F33%2F60969161_c4c4976003_t.jpg,edit_time:Wed%20Jan%2017%2004%3A11%3A16%202007,edit_unixtime:1169007076
+@
+text
+@http://static.flickr.com/33/60969161_c4c4976003_t.jpg
+
+I'm a freelancer living a small city called "Jhubei" in Taiwan, also the founder of [Chupei.pm http://chupei.pm.org/] (Chupei is the old official pinying of Jhubei.) I also started a cafe in Hsin-chu city called [OPCafé http://opcafe.net], and mostly stay there trying to be creative and productive. I have several nice ideas and projects to do, and many blogs (some of them have many co-authors) with all different purposes.
+
+* [gugod's blog http://gugod.org/blog/]
+* [OPCafé http://opcafe.net/] - A [Jemplate http://jemplate.net/] -powered coffee shop website, thanks to you, ingy.
+* [gugod's vox http://gugod.vox.com/]
+* [Bifty Project http://code.google.com/p/bifty/]
+* [Asynapse Project http://code.google.com/p/asynapse/]
+* [typopedia http://typopedia.blogspot.com/] - blogging about typos everywhere.
+* [absurdorama http://absurdorama.blogspot.com/] - blogging about absurdly wrong news reported.
+@

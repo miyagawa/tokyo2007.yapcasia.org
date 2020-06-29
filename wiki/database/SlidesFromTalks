@@ -1,0 +1,42 @@
+Upload your slides here.
+
+== April 4th
+
+* [http://bloghackers.net/~naoya/ppt/070404Perl_and_UNIX_Network_Programming.ppt Naoya Ito - Perl and UNIX Network Programming]
+* [http://pugs.blogs.com/talks/yapcasia2007-pugs.pdf Audrey Tang - Perl 6 Today]
+* [http://perl.plover.com/yak/parsing/ Mark Dominus - Higher-order parsing techniques]
+* [http://www.dan.co.jp/~dankogai/yapcasia2007/perli18n.html Dan Kogai - Perl I18N in 20 minutes]
+* [http://www.slideshare.net/miyagawa/how-we-build-vox/ Ben Trott - How we build Vox]
+* [http://blog.livedoor.jp/techblog/paper/YAPC-livedoor.pdf Tomohiro Ikebe - livedoor 2006-2007]
+* (Add yours)
+
+== April 5th
+
+* [http://www.dan.co.jp/~dankogai/yapcasia2007/perl6.html Dan Kogai - An Ordinary Perl 6 Guide]
+* [http://www.houseabsolute.com/presentations/patterns-in-perl/start.html Dave Rolsky - Patterns in Perl]
+* [http://danga.com/words/2007_yapc_asia/ Brad Fitzpatrick - LiveJournal scaling Story Time]
+* [http://www.slideshare.net/daiba/web-api Keiichi Daiba - web apiで遊び倒す]
+* [http://users.endeworks.jp/~daisuke/perl/YAPC2007-(Ab)%3Fusing%20Class-C3.ppt Daisuke Maki - (Ab)?using Class::C3]
+* [http://labs.cybozu.co.jp/blog/kazuho/archives/2007/04/Mylingual20070405pub.ppt Kazuho Oku - MyLingual]
+* [http://www.slideshare.net/miyagawa/writing-pluggable-software Tatsuhiko Miyagawa - Writing Pluggable Software] [http://blog.bulknews.net/mt/archives/pluggable-software.ppt (PPT)]
+* [http://svn.jifty.org/svn/jifty.org/jifty/trunk/doc/talks/yapc.asia.2007.txt Jesse Vincent - Domain Specific Languages]
+* [http://svn.jifty.org/svn/jifty.org/jifty/trunk/doc/talks/yapcasia2007-doxory.pdf Audrey Tang - Jifty Now!]
+* [http://tech.yappo.jp/docs/yapcasia2007tokyo/cli/ Kazuhiro Osawa - CLI meets Web Frameworks]
+* [http://tech.yappo.jp/docs/yapcasia2007tokyo/geo/ Kazuhiro Osawa - 自文書抽出日本的住所]
+* [http://mizzy.org/archives/2007/YAPC-Asia-2007-Assurer.pdf Gosuke Miyashita - Assurer - a server testing/monitoring framework]
+* [http://code.mfac.jp/ppt/nekokak/2007/04/YAPC-Asia%202007(DBIC).ppt Atsushi Kobayashi - DBIC]
+* [http://namazu.org/~takesako/slides/perl6-regex.ppt Yoshinori Takesako - s/ Perl5 Regular Expression / Perl6 Regex and Rule /mixes;]
+* [http://www.tcool.org/yapc/way_to_the_napc.pdf Kenichi Ishigaki - Way to the NAPC]
+* [http://code.mfac.jp/trac/file/talks/tokuhirom/yapcasia2007/seminar.txt Tokuhiro Matsuno - CDBI to DBIC]
+* [http://www.chosec.com/talks/yapc_asia_2007.pdf Jeff Kim - Inside Net::Amazon::EC2]
+* [http://www.jrock.us/yapcasia2007/takahashi.xul?data=catalyst.txt jrockway - Catalyst]
+* [http://www.jrock.us/yapcasia2007/takahashi.xul?data=dbix-class.txt jrockway - Intro to DBIx::Class]
+* Lightning Talks
+** [http://www.infomarks.co.jp/yapc2007/ Yappo - Device::USB::MissileLaunchers (live)]
+** [http://perl.plover.com/yak/debruijn/ Mark Dominus - Debugging the de Bruijn Sequence]
+** [http://ma.la/files/yapcasia2007/ mala - RSS Auto-Discovery from browser history]
+** [http://code.mfac.jp/ppt/nekokak/2007/04/YAPC-Asia%202007(LT%20Perlbal).ppt Atsushi Kobayashi - Perlbal Selector]
+** [http://spidernomic.thilosophy.com/ Thilo Planz - Spidernomic]
+** [http://blog.nomadscafe.jp/archives/expect_ssh.pdf kazeburo - Expect]
+** [http://www.jrock.us/yapcasia2007/takahashi.xul?data=angerwhale.txt jrockway - Angerwhale]
+* (Add yours)

@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/YapcAsia" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/YapcAsiaJa" />
+<title>YAPC::Asia 2007 Tokyo</title>
+<style>
+body,input { font-size: 12px; font-family: trebuchet MS }
+input { background-color: #fff }
+#title { font-size: 50px; text-align: center }
+#body { text-align: center }
+.photos { width: 800 }
+.photo { float: left; margin: 10; text-align: center }
+.photo img { height: 160; width: 240 }
+.date { font-size: 1.5em }
+</style>
+</head>
+<body>
+
+<h1 id="title">YAPC::Asia 2007 Tokyo</h1>
+
+<div id="body">
+
+<p class="date">Apr 4-5, 2007<br /><a href="http://www.tsudahall.com/">Tsuda Hall</a>, Tokyo</p>
+
+<p>[% IF lang == 'en' %]YAPC is going to strike Tokyo again![% ELSE %]YAPC の興奮がまた東京にやってくる！[% END %]</p>
+
+<p>[% IF lang == 'en' %]Subscribe to the Blog[% ELSE %]カンファレンスBlog[% END %]: <a href="http://tokyo2007.yapcasia.org/blog/">English</a> / <a href="http://tokyo2007.yapcasia.org/blog/ja/">Japanese</a></p>
+
+<div class="photos">
+
+<div class="photo"><img src="http://static.flickr.com/37/120634380_a938af103b_m.jpg" /></div>
+<div class="photo"><img src="http://static.flickr.com/38/119636858_a61a79004b_m.jpg" /></div>
+<div class="photo"><img src="http://static.flickr.com/53/119845904_7ce241d199_m.jpg" /></div>
+<!-- div class="photo"><img src="http://static.flickr.com/19/120518213_7d514bccaf_m.jpg" /></div>
+<div class="photo"><img src="http://static.flickr.com/1/122328953_27ea66a0df_m.jpg" /></div>
+<div class="photo"><img src="http://static.flickr.com/19/120634083_2e35433726_m.jpg" /></div -->
+
+</div>
+<div style="clear:both"></div>
+
+<p><a href="http://groups.google.com/group/yapcasia?hl=[% lang %]">[% IF lang == "en" %]Subscribe to the newsletter[% ELSE %]ニュースレターに登録すると[% END %]</a>[% IF lang == "en" %], and we'll send you an announcement once we figure out the date and venue etc.[% ELSE %]、最新情報を Email でお知らせします。[% END %]</p>
+
+<form action="http://groups.google.com/group/yapcasia/boxsubscribe">
+<input type="hidden" name="hl" value="[% lang %]" />
+Email: <input type="text" name="email" size="32" />
+<input type="submit" value="[% IF lang == "en" %]Subscribe[% ELSE %]登録[% END %]" />
+</form>
+
+<p>[% IF lang == "en" %]Want to be a sponsor for YAPC::Asia? Drop us a line to <i>chair[at]shibuya.pm.org</i>[% ELSE %]スポンサーをご希望の企業の方は、<i>team[at]yapcasia.org</i> までご一報ください。[% END %]</p>
+
+</div>
+
+</body>
+</html>
+

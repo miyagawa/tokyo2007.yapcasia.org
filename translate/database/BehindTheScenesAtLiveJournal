@@ -1,0 +1,793 @@
+Translators: Daisuke Maki, Atsushi Kato, Makoto Nozaki
+
+.pre
+(p.1)
+
+LiveJournal: Behind The ScenesScaling Storytime
+
+April 2007 
+ 
+
+
+Brad Fitzpatrick
+
+brad@danga.com 
+
+
+danga.com / livejournal.com / sixapart.com 
+ 
+
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA. 
+
+http://www.danga.com/words/
+---------------
+(p.2)
+
+LiveJournal Overview
+
+* college hobby project, Apr 1999
+#J 大学時代のお遊びプロジェクト
+
+* 4-in-1:
+
+  - blogging
+  #J ブログ
+
+  - forums
+  #J フォーラム
+
+  - social-networking (“friends”)
+  #J SNS (友達)
+
+  - aggregator: “friends page” + RSS/Atom
+  #J RSS/Atomアグレゲーター
+
+* 10M+ accounts
+#J ユーザーは１０００万人強
+
+* Open Source!
+#J もちろんオープンソースで作成！
+
+  - server,
+
+  - infrastructure,
+
+  - original clients,
+
+  - ...
+------------------
+(p.3)
+
+Stuff we've built...
+#J こんなものも作りました：
+
+* memcached
+
+  - distributed caching
+  #J 分散型キャッシングフレームワーク
+
+* MogileFS
+
+  - distributed filesystem
+  #J 分散型ファイルシステム
+
+* Perlbal
+
+  - HTTP load balancer & web server
+  #J HTTPロードバランサー＆Web サーバー
+
+* gearman
+
+  - LB/HA/coalescing low-latency function call “router” 
+
+* TheSchwartz
+
+  - reliable, async job dispatch system
+  #J 非同期ジョブ管理システム
+
+* djabberd
+
+  - the mod_perl/qpsmtpd of XMPP/Jabber servers
+
+* .....
+
+* OpenID
+
+* ....
+-------------------
+(p.4)
+
+LiveJournal Backend: Today
+#J 今のLiveJournalのおおまかな構成
+
+Roughly.
+
+(fig., no need to translate)
+
+User DB Cluster 1
+
+uc1a
+
+uc1b 
+
+
+User DB Cluster 2
+
+uc2a
+
+uc2b 
+
+
+User DB Cluster 3
+
+uc3a
+
+uc3b 
+
+
+User DB Cluster N
+
+ucNa
+
+ucNb 
+
+
+Job Queues (xN)
+
+jqNa
+
+jqNb 
+ 
+
+
+Memcached
+
+mc4
+
+mc3
+
+mc2
+
+mc12
+
+...
+
+mc1
+
+mod_perl
+
+web4
+
+web3
+
+web2
+
+web50
+
+...
+
+web1
+
+BIG-IP
+
+bigip2
+
+bigip1
+
+perlbal (httpd/proxy)
+
+proxy4
+
+proxy3
+
+proxy2
+
+proxy5
+
+proxy1
+
+Global Database
+
+slave1 
+
+
+master_a
+
+master_b
+
+slave2
+
+...
+
+slave5 
+
+
+MogileFS Database 
+
+
+mog_a
+
+mog_b
+
+Mogile Trackers
+
+tracker2
+
+tracker1
+
+Mogile Storage Nodes
+
+...
+
+sto2
+
+sto8
+
+sto1 
+
+net.
+
+djabberd
+
+djabberd
+
+djabberd
+
+gearmand
+
+gearmand1
+
+gearmandN 
+
+“workers”
+
+gearwrkN
+
+theschwkN 
+
+slave1
+
+slaveN 
+--------------------
+(p.5)
+
+The plan...
+
+* Refer to previous presentations for more detail...
+
+* Questions anytime!
+
+* Part I:
+
+  -quick scaling history
+
+* Part II:
+
+  - explain all our software
+
+  - explain all the parts! 
+--------------------
+(p.6)
+
+Part I: Quick Scaling History
+#J スケーラビリティとの闘い：その歴史
+--------------------
+(p.7)
+
+Quick Scaling History
+
+* 1 server to hundreds...
+#J 1台のサーバが数百台に増えるまで
+--------------------
+(p.8)
+
+One Server
+#J サーバ1台
+
+* Simple: 
+#J 構造は単純
+
+(fig.)
+--------------------
+(p.9)
+
+Two Servers 
+#J サーバ2台
+
+(fig.)
+--------------------
+(p.10)
+
+Two Servers - Problems
+#J サーバを2台にしたときの問題
+
+* Two single points of failure
+#J * どっちが落ちても全部が落ちる
+
+* No hot or cold spares
+#J * 予備の機械がない
+
+* Site gets slow again.
+#J * ユーザが増えるとまた遅くなる
+
+  - CPU-bound on web node
+ #J -webサーバがCPUを食う
+
+  - need more web nodes...
+ #J -もっとwebサーバが必要
+
+--------------------
+(p.11)
+
+Four Servers
+#J サーバ4台
+
+* 3 webs, 1 db
+ #J * webサーバ3台、データベース1台
+
+* Now we need to load-balance! 
+ #J * 負荷分散をしよう
+
+(fig.)
+--------------------
+(p.12)
+
+Four Servers - Problems
+#J サーバを4台にしたときの問題
+
+* Now I/O bound...
+#J * 今度はI/Oに時間がかかる
+
+  - ... how to use another database?
+#J - データベースを増やそう
+
+--------------------
+(p.13)
+
+Five Servers
+#J サーバ5台
+
+  introducing MySQL replication
+#J MySQLのレプリケーションを使ってみよう
+
+* We buy a new database server
+#J * 新しいDBサーバを買う
+
+* MySQL replication
+#J * MySQLのレプリケーション
+
+* Writes to DB (master)
+#J * データの書き込みはマスタDB1台へ
+
+* Reads from both 
+#J * データの読み込みは2台から
+
+(fig.)
+----------------------
+(p.14)
+
+More Servers
+#J サーバの数が増えていく
+
+(fig.)
+
+Chaos!
+#J わけがわからない
+----------------------
+(p.15)
+
+Where we're at....
+#J 現状
+
+(fig., no need to translate)
+
+mod_perl
+
+web4
+
+web3
+
+web2
+
+web12
+
+...
+
+web1
+
+BIG-IP
+
+bigip2
+
+bigip1
+
+mod_proxy
+
+proxy3
+
+proxy2
+
+proxy1
+
+Global Database
+
+slave1
+
+slave2
+
+...
+
+slave6 
+
+master 
+
+net.
+----------------------
+(p.16)
+
+Problems with Architecture
+  or,“This don't scale...”
+#J 構造的な問題（スケーラビリティがたりない）
+
+* DB master is SPOF
+#J DBのマスタが落ちるともうだめ
+
+* Adding slaves doesn't scale well...
+#J * スレーブを足してもあまり意味がない
+
+  - only spreads reads, not writes! 
+#J - 読み込みだけ分散、書き込みは分散しない
+
+(fig., maybe no need to translate)
+
+w/ 1 server
+
+500 reads/s
+
+200 writes/s
+
+w/ 2 servers
+
+250 reads/s 
+
+200 write/s
+
+250 reads/s 
+
+200 write/s
+
+--------------------
+(p.17)
+
+Eventually...
+#J やがて
+
+* databases eventual only writing 
+#J データベースは書き込みでいっぱいっぱい
+
+(fig., no need to translate)
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400
+
+write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s 
+
+400 write/s
+
+3 reads/s 
+
+400 write/s
+
+3 r/s
+-------------------
+(p.18)
+
+Spreading Writes
+#J 書き込みの分散
+
+* Our database machines already did RAID
+#J * DBの機械はRAID装備
+
+* We did backups
+#J * バックアップもとっている
+
+* So why put user data on 6+ slave machines? (~12+ disks)
+#J * ユーザのデータは6台以上のスレーブにコピーがある
+#J  ディスク12個以上
+
+  - overkill redundancy
+#J - 冗長すぎ
+
+  - wasting time writing everywhere!
+#J - 全部のディスクに書く時間ももったいない
+------------------
+(p.19)
+
+Partition your data!
+#J データを分割しよう
+
+* Spread your databases out, into “roles”
+
+  - roles that you never need to join between
+#J - それぞれが独立したデータを保持
+
+    + different users
+#J + たとえば違うユーザを違うDBに
+
+    + or accept you'll have to join in app
+#J + 完全に独立させられないときはアプリケーション側で吸収
+
+* Each user assigned to a cluster number
+#J * 各ユーザにクラスタ番号を割り振る
+
+* Each cluster has multiple machines
+#J * 各クラスタを複数の機械で構成
+
+  - writes self-contained in cluster (writing to 2-3 machines, not 6)
+#J - クラスタの中の2、3台に書き込み（6台ではなくなった）
+
+------------------
+(p.20)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob'
+
+-------------------
+(p.21)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2
+--------------------
+(p.22)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2 
+
+SELECT .... FROM ... WHERE userid=839 ... 
+-------------------
+(p.23)
+
+User Clusters 
+#J ユーザ別のクラスタの例
+
+(fig., no need to translate)
+
+SELECT userid, clusterid FROM user WHERE user='bob' 
+
+userid: 839
+
+clusterid: 2
+
+SELECT .... FROM ... WHERE userid=839 ... 
+
+OMG i like totally hate my parents they just dont understand me and i h8 the world omg lol rofl *! :^-^^;
+
+
+add me as a friend!!!
+#J 親なんか嫌いだww 友達に加えてね
+
+---------------------
+(p.24)
+
+Details
+#J 詳細
+
+* per-user numberspaces
+#J * ユーザごとに新たな番号を振る
+
+  - don't use AUTO_INCREMENT
+#J - MySQLのAUTO_INCREMENTは使わない
+
+  - PRIMARY KEY (user_id, thing_id)
+
+  - so:
+
+* Can move/upgrade users 1-at-a-time:
+#J * 移動・変更はユーザごとにできる
+
+  - per-user “readonly” flag
+#J - ユーザごとにreadonlyフラグを立てる
+
+  - per-user “schema_ver” property
+#J - ユーザごとにschema_verを記録
+
+  - user-moving harness
+#J - ユーザの移動をするしくみ
+
+    + job server that coordinates, distributed long-lived user-mover clients who ask for tasks
+#J + 負荷の高いクライアントをからユーザを移動させるジョブサーバをつくる
+
+  - balancing disk I/O, disk space
+#J - ディスクI/Oやディスク容量を均衡にできる
+
+-----------------------
+(p.25)
+
+Shared Storage
+  (SAN, SCSI, DRBD...)
+#J 共用ディスク（SAN、SCSI、DRBD）
+
+* Turn pair of InnoDB machines into a cluster
+#J * InnoDBを使った機械のペアをクラスタ化
+
+  - looks like 1 box to outside world. floating IP.
+#J - 外からは1台に見える。ひとつのIPが機械間を移動
+
+* One machine at a time running fs / MySQL
+#J * 1台のみFSとMySQLを運用
+
+* Heartbeat to move IP, {un,}mount filesystem, {stop,start} mysql
+#J * HeartbeatをもとにIPを移動、ファイルシステムの{アン,}マウント、{stop, start} mysql
+
+* No special schema considerations
+#J * 特別にスキーマを設計したりしなくてよい
+
+* MySQL 4.1 w/ binlog sync/flush options
+#J * MySQL 4.1でbinlog sync/flushのオプションで運用
+
+  - good
+#J - いい感じ
+
+  - The cluster can be a master or slave as well
+#J - クラスタはマスタにもスレーブにもなれる
+--------------------
+(p.26)
+
+Shared Storage: DRBD
+#J DRBD
+
+* Linux block device driver
+#J Linux上のブロックデバイスドライバ
+
+  - “Network RAID 1”
+#J - ネットワーク上のRAID 1と呼ばれる
+
+  - Shared storage without sharing!
+#J - 共有ディスクではなくデータを共有
+
+  - sits atop another block device
+#J - ブロックデバイスの上で動作
+
+  - syncs w/ another machine's block device
+#J - ほかの機械のブロックデバイスへミラー
+
+    + cross-over gigabit cable ideal. network is faster than random writes on your disks.
+#J + クロスオーバ・ギガビットケーブルが理想。ネットワークはディスクへのランダム書き込みより速い
+
+* InnoDB on DRBD: HA MySQL!
+#J * InnoDBとDRBDの組み合わせ：MySQLのHA
+  - can hang slaves off floater IP
+#J - スレーブを浮動するIPの上に置ける
+
+---------------------
+(p.27)
+
+MySQL Clustering Options:Pros & Cons
+#J MySQLのクラスタリングの方法いろいろ・長所と短所
+
+* no magic bullet
+#J * 特効薬はない
+
+  - Master/slave
+
+  - Master/master
+
+  - DRBD
+
+  - MySQL Cluster
+
+  - ....
+
+* lots of options!
+#J * やり方はたくさん
+
+  - :)
+
+  - :(
+
+---------------------
+(p.28)
+
+Part II: Our Software...
+---------------------
+(p.29)
+
+Caching
+
+* caching's key to performance
+#J キャッシュこそがパフォーマンスの鍵
+
+  - store result of a computation or I/O for quicker future access
+  #J 計算やI/Oを走らせた後の結果を保存してあとで使う
+
+* Where to cache?
+#J どこでキャッシュすべきか？
+
+  - mod_perl caching
+
+    + memory waste (address space per apache child)
+    #J mod_perl上のキャッシュはメモリの無駄使い
+
+  - shared memory
+
+    + limited to single machine, same with Java/C#/Mono
+    #J 共有メモリは１台のマシン上でしか共有できない
+
+  - MySQL query cache
+
+    + flushed per update, small max size
+    #J MySQLはアップデート毎にディスクI/Oが走るし、容量の限界が小さい
+
+  - HEAP tables
+
+    + fixed length rows, small max size
+    #J メモりヒープテーブルは固定長、容量の限界が小さい
+.pre
+
+Continues to BehindTheScenesAtLiveJournal2

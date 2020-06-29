@@ -1,0 +1,43 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2;
+comment	@# @;
+
+
+1.2
+date	2007.03.20.16.01.44;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.20.15.59.12;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@edit_address:61.213.80.135,edit_by:hiratara,edit_by_icon:,edit_time:Tue%20Mar%2020%2016%3A01%3A44%202007,edit_unixtime:1174406504
+@
+text
+@I'm just a fan of Perl. 
+
+[http://d.hatena.ne.jp/hiratara/]
+
+[http://codezine.jp/a/authorlist.aspx?auid=336]
+@
+
+
+1.1
+log
+@edit_address:61.213.80.135,edit_by:hiratara,edit_by_icon:,edit_time:Tue%20Mar%2020%2015%3A59%3A12%202007,edit_unixtime:1174406352
+@
+text
+@d2 4
+@

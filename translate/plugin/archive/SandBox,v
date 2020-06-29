@@ -1,0 +1,2076 @@
+head	1.3;
+access;
+symbols;
+locks
+	miyagawa:1.3;
+comment	@# @;
+
+
+1.3
+date	2007.03.30.00.02.50;	author miyagawa;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.03.30.00.02.30;	author miyagawa;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.29.23.05.48;	author miyagawa;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Fri%20Mar%2030%2000%3A02%3A50%202007,edit_unixtime:1175212970
+@
+text
+@.pre
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+----------------
+Persistent Connection Woes
+
+* connections = threads = memory
+
+  - My pet peeve:
+
+    + want connection/thread distinction in MySQL!
+
+    + w/ max-runnable-threads tunable
+
+* max threads
+
+  - limit max memory/concurrency
+
+* DBD::Gofer + Gearman
+
+  - Ask
+
+* Data::ObjectDriver + Gearman
+
+.pre
+@
+
+
+1.2
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Fri%20Mar%2030%2000%3A02%3A30%202007,edit_unixtime:1175212950
+@
+text
+@d22 980
+@
+
+
+1.1
+log
+@edit_address:204.9.178.253,edit_by:TatsuhikoMiyagawa,edit_time:Thu%20Mar%2029%2023%3A05%3A48%202007,edit_unixtime:1175209548
+@
+text
+@d23 1021
+@

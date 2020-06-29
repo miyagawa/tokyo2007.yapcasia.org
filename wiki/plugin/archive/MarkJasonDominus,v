@@ -1,0 +1,72 @@
+head	1.3;
+access;
+symbols;
+locks
+	root:1.3;
+comment	@# @;
+
+
+1.3
+date	2007.02.10.04.08.47;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.02.10.04.08.00;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.02.09.14.38.36;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@edit_address:216.158.52.119,edit_by:MJDominus,edit_by_icon:http%3A%2F%2Fperl.plover.com%2Fpics%2Ftpc%2Fplacido2-m.jpg,edit_time:Sat%20Feb%2010%2004%3A08%3A47%202007,edit_unixtime:1171080527
+@
+text
+@=== Mark Jason Dominus (陶敏修, 도민수)
+
+http://perl.plover.com/pics/tpc/placido2-s.jpg
+
+Mark is head of software engineering at the [http://www.genomics.upenn.edu/ Penn Genomics Institute].  He is the author of the book /[http://hop.perl.plover.com/ Higher-Order Perl]/.
+
+Mark has been programming since 1977, and in Perl  since
+1992.   He is an occasional contributor to the Perl core, and is the
+author of the `Memoize`, `Text::Template`, and `Tie::File` modules, and the `perlreftut` man page.  
+
+From 1999-2001 Mark was the managing editor of  [http://www.perl.com/ www.perl.com].  He was a columnist for [http://www.tpj.com/ The Perl Journal] for several years.  Most of his articles for
+TPJ have been reprinted
+in /Computer Science and Perl Programming: Best of the Perl Journal/. Mark's other Perl-related articles have appeared in magazines such as /Wired/ and /IEEE Software/.
+
+Since 1998 Mark has been a professional Perl trainer.  In
+addition to speaking at conferences like YAPC, he has given training courses
+for large companies and organizations, including Morgan Stanley, IBM,
+Bristol-Myers Squibb, and British Telecom.
+@
+
+
+1.2
+log
+@edit_address:216.158.52.119,edit_by:MJDominus,edit_by_icon:http%3A%2F%2Fperl.plover.com%2Fpics%2Ftpc%2Fplacido2-m.jpg,edit_time:Sat%20Feb%2010%2004%3A08%3A00%202007,edit_unixtime:1171080480
+@
+text
+@d1 1
+a1 1
+Mark Jason Dominus (陶敏修, 도민수)
+@
+
+
+1.1
+log
+@edit_address:158.130.13.34,edit_by:MJDominus,edit_by_icon:,edit_time:Fri%20Feb%20%209%2014%3A38%3A36%202007,edit_unixtime:1171031916
+@
+text
+@d3 2
+@

@@ -1,0 +1,60 @@
+
+File Attachments For:
+<a href="[% script_name %]?[% page_name %]">[% page_uri %]</a>
+<br />
+
+[% IF self.file_count > 0 %]
+<br />
+<form   method="post" 
+        action="[% script_name %]" >
+<input  type="hidden" 
+        name="action" 
+        value="attachments_delete">
+<input  type="hidden" 
+        name="page_name" 
+        value="[% page_uri %]">
+<table  class="attachments">
+<tr>
+<th class="delete">Delete?</th>
+<th class="file">File</th>
+<th class="size">Size</th>
+<th class="date">Uploaded On</th>
+</tr>
+[% FOR file = self.files %]
+<tr>
+<td class="delete"><input type="checkbox" name="delete_these_files" value="[% file.name %]"></td>
+<td class="file"><a href="[% file.href %]">[% file.name %]</a></td>
+<td class="size">[% file.size %]</td>
+<td class="date">[% file.date %]</td>
+[% IF file.thumbnail %]
+<td class="thumb"><a href="[% file.href %]"><img src="[% file.thumbnail %]" border="0" width="80" height="80" alt="[% file.name %]"></a></td>
+[% END %]
+</tr>
+[% END %]
+<tr>
+<td colspan="99">
+<input type="submit" name="Delete" value="Delete">
+</td>
+</tr>
+</table>
+</form>
+[% END %]
+<br />
+<form  method="post" 
+       action="[% script_name %]" 
+       enctype="multipart/form-data" >
+<input type="hidden" 
+       name="action" 
+       value="attachments_upload">
+<input type="hidden" name="page_name" value="[% page_uri %]">
+File
+<input type="file" 
+       name="uploaded_file" 
+       size="40" 
+       maxlength="80" />
+<input type="submit" 
+       name="Upload" 
+       value="Upload">
+</form>
+<p style="color: red;font-size: larger "> [% self.display_msg %]</p>
+<!-- END attachments_content -->

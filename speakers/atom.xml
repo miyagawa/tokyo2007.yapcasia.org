@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>YAPC::Asia 2007 Tokyo Speakers</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/" />
+    <link rel="self" type="application/atom+xml" href="http://tokyo2007.yapcasia.org/speakers/atom.xml" />
+   <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15</id>
+    <link rel="service.post" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15" title="YAPC::Asia 2007 Tokyo Speakers" />
+    <updated>2007-03-19T16:33:43Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type 3.2</generator>
+ 
+<entry>
+    <title>Tomohiro Ikebe</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/tomohiro_ikebe_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2131" title="Tomohiro Ikebe" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2131</id>
+    
+    <published>2007-02-14T02:12:06Z</published>
+    <updated>2007-03-19T16:33:43Z</updated>
+    
+    <summary>株式会社ライブドア所属 若者との飲み会では体がついていかなくなってきてるのを実感する今日この頃です。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>株式会社ライブドア所属<br />
+若者との飲み会では体がついていかなくなってきてるのを実感する今日この頃です。<br />
+</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Yoshinori Takesako</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/yoshinori_takesako_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2130" title="Yoshinori Takesako" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2130</id>
+    
+    <published>2007-02-13T23:39:17Z</published>
+    <updated>2007-02-21T00:13:52Z</updated>
+    
+    <summary>Shibuya Perl Mongers二代目リーダーにして、ppencodeの作者。座右の銘は「いかにコードを書かずして問題を解決するか」。はじめてのパソコンはFM TOWNS。いきなりi386の32bit世代。広島市立大学情報科学部在学中、外資系コンピュータメーカの子会社でソフトウェア開発の現場を経験。独立系ITベンチャーにて大企業向けmod_perlパッケージソフトの開発に従事し、2005年よりサイボウズ・ラボ株式会社に入社。Namazu for Win32、Plagger、Ajaja のコミッターでもある。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>Shibuya Perl Mongers二代目リーダーにして、ppencodeの作者。座右の銘は「いかにコードを書かずして問題を解決するか」。はじめてのパソコンはFM TOWNS。いきなりi386の32bit世代。広島市立大学情報科学部在学中、外資系コンピュータメーカの子会社でソフトウェア開発の現場を経験。独立系ITベンチャーにて大企業向けmod_perlパッケージソフトの開発に従事し、2005年よりサイボウズ・ラボ株式会社に入社。Namazu for Win32、Plagger、Ajaja のコミッターでもある。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Kazuhiro Osawa</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/kazuhiro_osawa_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2129" title="Kazuhiro Osawa" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2129</id>
+    
+    <published>2007-02-13T23:39:06Z</published>
+    <updated>2007-02-21T08:51:23Z</updated>
+    
+    <summary>インフォマークス株式会社で会社員をしながらYappoという検索サイトを10年運営している。CatalystとSledgeを元にしたSoozyというWebフレームワークを開発する傍ら、最近では静的コンテンツ量産ツールDishuberをデブサミ2007にて発表した。好きな曲は&quot;マジデ&quot;キスする5秒前。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>インフォマークス株式会社で会社員をしながらYappoという検索サイトを10年運営している。CatalystとSledgeを元にしたSoozyというWebフレームワークを開発する傍ら、最近では静的コンテンツ量産ツールDishuberをデブサミ2007にて発表した。好きな曲は"マジデ"キスする5秒前。<br />
+ </p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Kei-ichi Daiba</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/keiichi_daiba_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2128" title="Kei-ichi Daiba" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2128</id>
+    
+    <published>2007-02-13T23:38:56Z</published>
+    <updated>2007-02-21T10:42:40Z</updated>
+    
+    <summary>最近は幽霊PMになっているTokyo.pmのメンバです．最近はVoIP関係で食べてます...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>最近は幽霊PMになっているTokyo.pmのメンバです．最近はVoIP関係で食べてます</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Naoya Ito</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/naoya_ito.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2127" title="Naoya Ito" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2127</id>
+    
+    <published>2007-02-13T23:38:44Z</published>
+    <updated>2007-02-14T02:02:15Z</updated>
+    
+    <summary></summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        
+        
+    </content>
+</entry>
+<entry>
+    <title>Tokuhiro Matsuno</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/tokuhiro_matsuno.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2126" title="Tokuhiro Matsuno" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2126</id>
+    
+    <published>2007-02-13T23:38:31Z</published>
+    <updated>2007-02-21T08:49:51Z</updated>
+    
+    <summary>株式会社モバイルファクトリー所属。「コードをかけばなんでもできる」がモットー。うそ。いまかんがえました。...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>株式会社モバイルファクトリー所属。「コードをかけばなんでもできる」がモットー。うそ。いまかんがえました。</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Tatsuhiko Miyagawa</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/tatsuhiko_miyagawa.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2125" title="Tatsuhiko Miyagawa" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2125</id>
+    
+    <published>2007-02-13T23:38:24Z</published>
+    <updated>2007-02-14T02:05:36Z</updated>
+    
+    <summary>Tatsuhiko Miyagawa is a perl hacker living in San Francisco, CA and working on Vox in Six Apart. He&apos;s the founder of Shibuya Perl Mongers and the organizers lead for YAPC::Asia 2006 and 2007....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>Tatsuhiko Miyagawa is a perl hacker living in San Francisco, CA and working on Vox in Six Apart. He's the founder of Shibuya Perl Mongers and the organizers lead for YAPC::Asia 2006 and 2007.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Marty Pauley</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/marty_pauley_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2124" title="Marty Pauley" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2124</id>
+    
+    <published>2007-02-13T23:38:14Z</published>
+    <updated>2007-02-21T18:59:53Z</updated>
+    
+    <summary>Marty is a Hacker and GNU Guerrilla. He recently moved to Japan to work as a sysadmin. He likes playing with Perl and breaking Linux machines....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>Marty is a Hacker and GNU Guerrilla.  He recently moved to Japan to work as a sysadmin.  He likes playing with Perl and breaking Linux machines.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Kenichi Ishigaki</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/kenichi_ishigaki.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2123" title="Kenichi Ishigaki" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2123</id>
+    
+    <published>2007-02-13T23:38:04Z</published>
+    <updated>2007-03-13T01:09:45Z</updated>
+    
+    <summary>Kenichi Ishigaki, also known as charsbar and tcool, is a freelance translator/programmer. He maintains a ppm repository for ActivePerl for Win32, and several other websites on cocktails and classical latin, to name a few....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>Kenichi Ishigaki, also known as charsbar and tcool, is a freelance translator/programmer. He maintains a ppm repository for ActivePerl for Win32, and several other websites on cocktails and classical latin, to name a few.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Kazuho Oku</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/kazuho_oku.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2122" title="Kazuho Oku" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2122</id>
+    
+    <published>2007-02-13T23:37:57Z</published>
+    <updated>2007-02-22T08:02:20Z</updated>
+    
+    <summary>As a developer of the web browser Palmscape (a web browser for Palm OS), his main focus is in introducing new methods of communication to end users, by hacking the web browser and the HTTP protocol....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>As a developer of the web browser Palmscape (a web browser for Palm OS), his main focus is in introducing new methods of communication to end users, by hacking the web browser and the HTTP protocol.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Kang-min Liu</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/kangmin_liu.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2121" title="Kang-min Liu" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2121</id>
+    
+    <published>2007-02-13T23:37:50Z</published>
+    <updated>2007-02-21T12:41:18Z</updated>
+    
+    <summary>I&apos;m a freelancer living a small city called &quot;Jhubei&quot; in Taiwan, also the founder of Chupei.pm (Chupei is the old official pinying of Jhubei.) I also started a cafe in Hsin-chu city called OPCafé, and mostly stay there trying to...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>I'm a freelancer living a small city called "Jhubei" in Taiwan, also the founder of Chupei.pm (Chupei is the old official pinying of Jhubei.) I also started a cafe in Hsin-chu city called OPCafé, and mostly stay there trying to be creative and productive. I have several nice ideas and projects to do, and many blogs (some of them have many co-authors) with all different purposes.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Jonathan Rockway</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/jonathan_rockway.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2119" title="Jonathan Rockway" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2119</id>
+    
+    <published>2007-02-13T23:37:06Z</published>
+    <updated>2007-03-03T03:58:37Z</updated>
+    
+    <summary>Jonathan Rockway is just another perl hacker from Chicago, IL. He&apos;s a core Catalyst developer and is currently writing the first Catalyst book....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>Jonathan Rockway is just another perl hacker from Chicago, IL.  He's a core Catalyst developer and is currently writing the first Catalyst book.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Jeff Kim</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/jeff_kim_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2118" title="Jeff Kim" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2118</id>
+    
+    <published>2007-02-13T23:36:59Z</published>
+    <updated>2007-02-21T15:11:10Z</updated>
+    
+    <summary>Jeff Kim is a Perl Hacker currently living in New York City. He operates in a freelance / consultanty sort of way....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>Jeff Kim is a Perl Hacker currently living in New York City.  He operates in a freelance / consultanty sort of way.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Gosuke Miyashita</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/gosuke_miyashita.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2117" title="Gosuke Miyashita" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2117</id>
+    
+    <published>2007-02-13T23:36:49Z</published>
+    <updated>2007-02-20T11:50:30Z</updated>
+    
+    <summary>株式会社paperboy&amp;co. 技術責任者（別名技術系何でも屋）。Catalyst をベースとしたウェブAPI の開発をメインでやってましたが、最近はネットワークやサーバまわりなど、幅広く仕事してます。ドクターペッパー大好き。 Gosuke Miyashita is a sysadmin in paperboy&amp;co.He worked in developing web apis based on Catalyst and is recently working on servers and networks widley.He loves Dr.Pepper....</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>株式会社paperboy&co. 技術責任者（別名技術系何でも屋）。Catalyst をベースとしたウェブAPI の開発をメインでやってましたが、最近はネットワークやサーバまわりなど、幅広く仕事してます。ドクターペッパー大好き。</p>
+
+<p>Gosuke Miyashita is a sysadmin in paperboy&co.He worked in developing web apis based on Catalyst and is recently working on servers and networks widley.He loves Dr.Pepper.</p>]]>
+        
+    </content>
+</entry>
+<entry>
+    <title>Emerson Mills</title>
+    <link rel="alternate" type="text/html" href="http://tokyo2007.yapcasia.org/speakers/emerson_mills_1.html" />
+    <link rel="service.edit" type="application/atom+xml" href="http://blog.bulknews.net/mt3/mt-atom.cgi/weblog/blog_id=15/entry_id=2116" title="Emerson Mills" />
+    <id>tag:tokyo2007.yapcasia.org,2007:/speakers//15.2116</id>
+    
+    <published>2007-02-13T23:36:41Z</published>
+    <updated>2007-02-19T03:34:53Z</updated>
+    
+    <summary>Emerson Mills is a long time Perl developer at Amazon.com and Amazon.co.jp, working on projects like Amazon&apos;s mobile website in Japan. Currently he is the web services evangelist for Japan. He lives in nishi-tokyo and when not playing with Perl...</summary>
+    <author>
+        <name>miyagawa</name>
+        <uri>http://blog.bulknews.net/mt/</uri>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="http://tokyo2007.yapcasia.org/speakers/">
+        <![CDATA[<p>Emerson Mills is a long time Perl developer at Amazon.com and Amazon.co.jp, working on projects like Amazon's mobile website in Japan. Currently he is the web services evangelist for Japan. He lives in nishi-tokyo and when not playing with Perl or linux, enjoys riding bicycles and cooking. </p>]]>
+        
+    </content>
+</entry>
+
+</feed> 
+

@@ -1,0 +1,60 @@
+NOTE TO TRANSLATORS:
+
+The slide manuscript is in the "Attachments" section of this page.
+
+I am going to run this through my slide-generating software when I am done.
+To make this easy on me, please change something like this:
+
+.pre
+#SECTION#
+
+Parsing 
+*******
+
+* _Parsing_ is the process of taking an unstructured input
+
+  * Such as a sequence of characters
+
+* and turning it into a data structure
+.pre
+
+To something like this:
+
+.pre
+#SECTION#
+
+#J#  構文解析とは
+
+Parsing 
+*******
+
+#J#  構文解析というのは構造化されていない入力、
+
+* _Parsing_ is the process of taking an unstructured input
+
+#J#  つまり、たとえばただの文字列とかを
+
+  * Such as a sequence of characters
+
+#J#  構造化されたデータ、
+
+* and turning it into a data structure
+.pre
+
+
+* Text in [[double brackets]] is typewriter font
+* Text in _underscores_ is italics
+* Text in *stars* is boldface
+* #lines that begin with hash signs are processing directives
+
+----------------------------------------------------------------
+
+Email mjd@plover.com if you have any questions.
+
+Thanks. Thanks.  -- 陶敏修.
+
+----------------------------------------------------------------
+
+For editing/reviewing purpose:
+
+[PerlProgrammingRepairShop1]

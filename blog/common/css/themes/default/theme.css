@@ -1,0 +1,456 @@
+@charset "utf-8";
+
+body {
+  background: white url(images/body-background.png) left bottom repeat-x;
+}
+
+a {
+  color: #5383c3;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #5654A2;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+
+div#container {
+  background: transparent url(images/container-background.png) left top repeat-x;
+}
+
+div#header h1 {
+  width: 400px;
+  height: 88px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background: transparent url(images/date.png) right top no-repeat;
+}
+
+ul.speakers {
+  width: 650px;
+  margin: 0 0 0 50px;
+  padding: 0;
+}
+
+ul.speakers li {
+  margin-right: 10px;
+}
+
+ul.speakers li a {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+ul.speakers li a span {
+  display: none;
+  text-decoration: none;
+  font-size: 90%;
+}
+
+div#infomation, 
+div#information {
+  padding: 1.2em 0 30px 0;
+  /* background-color: #f8f4e6 white; */
+  background: white url(images/infomation-background.jpg) left bottom repeat-x;
+}
+
+div#infomation img,
+div#information img {
+  float: left;
+  margin: 0 0.8em 0.5em 0;
+}
+
+div#infomation h2, 
+div#information h2 {
+  margin-bottom: 0.5em;
+  font-size: 125%;
+}
+
+div#event ul {
+  margin: 0;
+  padding: 0;
+}
+
+div#event ul li {
+  list-style-type: none;
+  margin-bottom: 0.2em;
+}
+
+p#countdown {
+  clear: both;
+  height: 50px;
+  line-height: 50px;
+  margin: 0; 
+  padding: 0;
+  background: transparent url(images/countdown-badge.png) right bottom no-repeat;
+  text-align: center;
+  font-family: monospace;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+ul#navigation {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  height: 20px;
+}
+
+ul#navigation li {
+  height: 50px;
+  line-height: 20px;
+  padding: 0 1em;
+}
+
+ul#navigation li a {
+  color: #2b2b2b;
+  height: 50px;
+  line-height: 50px;
+}
+
+ul#navigation li.here a, 
+body.speakers ul#navigation li.speakers a,  
+body.sessions ul#navigation li.sessions a {
+  font-weight: bold;
+}
+
+ul#navigation li a:hover,
+ul#navigation li.here a, 
+body.speakers ul#navigation li.speakers a, 
+body.sessions ul#navigation li.sessions a {
+  background: transparent url(images/tower-icon.png) center top no-repeat;
+}
+
+ul#navigation:hover li.here a {
+  background-image: none;
+}
+
+ul#navigation:hover li a:hover {
+  background-image: url(images/tower-icon.png);
+}
+
+div#content {
+  padding: 20px 0;
+  background: white url(images/content-background.jpg) left top repeat-x;
+}
+
+div#content div.entry {
+  margin-bottom: 3em;
+}
+
+body.index div#content h2,
+ul.entry-nav {
+  margin: 0 0 1em;
+  padding: 0;
+  font-size: 100%;
+}
+
+div#content div.datetime {
+  float: left;
+  width: 3.5em;
+  margin: 0 0.5em 1.5em 0;
+  padding: 0;
+  border: 1px solid;
+  border-color: #ddd #2b2b2b #2b2b2b #ddd;
+  background: white url(images/datetime-bacground.png) right bottom no-repeat;
+}
+
+div#content div.datetime span {
+  display: block;
+  line-height: 1.0;
+  padding: 0.2em 0;
+  text-align: center;
+}
+
+div#content div.datetime span.month {
+  background-color: #F02932;
+  color: white;
+  text-transform: uppercase;
+}
+
+div#content div.datetime span.date {
+  font-weight: bold;
+  font-size: 180%;
+}
+
+div#content h3, 
+body.speakers div#content h2, 
+body.sessions div#content h2, 
+body#individual div#content h2 {
+  font-size: 120%;
+  margin: 0;
+}
+
+body.speakers div#content h2, 
+body.sessions div#content h2 {
+  margin-bottom: 1em;
+}
+
+div#content h3 a, 
+body.speakers div#content h2 a, 
+body.sessions div#content h2 a, 
+body#individual div#content h2 a {
+  color: #2b2b2b;
+  font-weight: bold;
+}
+
+div#content h3 a:hover, 
+body.speakers div#content h2 a:hover, 
+body.sessions div#content h2 a:hover, 
+body#individual div#content h2 a:hover {
+  color: #2b2b2b;
+}
+
+ul.meta {
+  margin: 0;
+  padding: 0;
+}
+
+ul.meta li {
+  font-size: 85%;
+}
+
+ul.ical li {
+  margin: 0 1em;
+}
+
+ul.more {
+  clear: both;
+}
+
+ul.more li {
+  list-style-type: none;
+  text-align: right;
+}
+
+div#content p {
+  clear: both;
+}
+
+div#content div.vcard img {
+  float: left;
+  margin: 0 0.8em 1.5em 0;
+}
+
+div#content div.vcard ul {
+  margin: 0;
+  padding: 0;
+}
+
+div#content div.vcard ul li {
+  list-style-type: none;
+}
+
+div#content div.vcard div.sessions {
+  clear: both;
+}
+
+div#content div.vcard div.sessions ul { 
+  margin: 1.5em 0 2em 2em;
+}
+
+div#content div.vcard div.sessions ul li { 
+  list-style-type: circle;
+  margin:0 0 0.5em 0;
+}
+
+div#content div.vcard p {
+  clear: both;
+}
+
+ul.writeback {
+  text-align: right;
+}
+
+ul.writeback li {
+  margin-left: 1.5em;
+}
+
+div.feedback {
+  margin-top: 3em;
+}
+
+div.feedback h3 {
+  font-weight: bold;
+}
+
+dl.comment,
+dl.trackback {
+  margin: 0.8em 0 0;
+  padding: 0.5em 0.8em 0;
+  border: 1px solid #a6a5c4;
+  background-color: #EEF7F8;
+}
+
+dl.comment:hover, 
+dl.trackback:hover {
+  background-color: white;
+}
+
+dl.comment dt,
+dl.trackback dt {
+  margin: 0 0 0.5em;
+  padding: 0;
+  border: 0;
+}
+
+dl.trackback dt cite {
+  display: block;
+  margin: 0;
+  text-align: right;
+}
+
+dl.comment dt span.datetime,
+dl.trackback dt span.datetime {
+  margin-left: 1em;
+  color: #757E8A;
+  font-size: 95%;
+}
+
+dl.comment dd,
+dl.trackback dd {
+  margin: 0;
+  padding: 0 0 0 1em;
+}
+
+dl.comment dd p,
+dl.trackback dd p {
+  margin-bottom: 0.5em;
+}
+
+div#trackback p#pingurl {
+  padding: 2em 1.2em;
+}
+
+div#trackback p#pingurl input {
+  width: 25em;
+}
+
+form#comment-form {
+  margin: 2em 0;
+}
+
+form#comment-form fieldset {
+  margin: 0;
+  padding: 1.2em;
+}
+
+form#comment-form fieldset dl {
+  margin: 0;
+  padding: 0;
+}
+
+form#comment-form fieldset dl dt {
+  margin: 0.2em 0 0 0;
+  padding: 0;
+}
+
+form#comment-form fieldset dl dd {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+form#comment-form fieldset dl dd textarea {
+  width: 450px;
+  height: 150px;
+}
+
+form#comment-form fieldset div {
+  width: 450px;
+  text-align: right;
+}
+
+form#comment-form fieldset div input {
+  width: 8em;
+}
+
+div#sponsors {
+  padding-top: 1em;
+  background: white url(images/rounded-top-260.jpg) center top no-repeat;
+}
+
+div#sponsors h2 {
+  display: none;
+}
+
+div#sponsors div.section h3 {
+  height: 50px;
+  line-height: 50px;
+  background: white url(images/sponsors-title-background.jpg) center no-repeat;
+  font-size: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+div#sponsors div.section ul {
+  margin: 30px 0;
+  padding: 0;
+}
+
+div#sponsors div.section ul li {
+  list-style-type: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div#menu {
+  padding-top: 160px;
+  background: #bbbbbb url(images/menu-background.jpg) left top repeat-x;
+  min-height: 200px;
+  color: black;
+}
+
+div#menu a {
+  color: black;
+  text-decoration: underline;
+}
+
+div#menu a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+div#menu div.section h2 {
+  font-size: 125%;
+  font-weight: bold;
+}
+
+div#menu div.section li {
+  list-style-type: square;
+  color: white;
+}
+
+.timetable { border: none; }
+.timetable th { font-weight: bold; border: none; }
+td.hour { 
+  border: none;
+  background: #ddd;
+  height: 20px;
+  padding: 0.2em;
+}
+
+.room { 
+  width: 400px;
+}
+
+.session {
+  width: 400px;
+  border-style: solid;
+  border-width: 1px 0 0;
+  border-color: #ccc;
+  padding: 0 1em;
+}
+
+.empty {
+  border: none;
+  font-size: 11px;
+  background: #ddd;
+  padding: 0 1em;
+  text-align: center;
+  vertical-align: middle;
+}

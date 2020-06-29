@@ -1,0 +1,1166 @@
+Perl Programming Repair Shop Part I
+
+.pre
+Perl Program Repair Shop
+************************
+
+#HTML# <img src="bigmed-sigils.gif" align=right>
+
+Mark Dominus ([E[#38518]E][E[#25935]E][E[#20462]E])
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Plover Systems Co.
+++++++++++++++++++
+
+     mjd@plover.com
+
+YAPC::Asia 2007 Edition
++++++++++++++++++++++++
+
+v0.3 (March, 2007)
+++++++++++++++++++
+
+#J# スライドはこちら
+
+* Slides at:
+
+        http://pic.plover.com/slides/YAPC-flags/
+
+#J# 添削したコードはこちら
+
+* Example code is at:
+
+        http://perl.plover.com/flagbook/yak/YAPC/MonAlert-1.pm [R[BEFORE]R]
+        http://perl.plover.com/flagbook/yak/YAPC/MonAlert-2.pm [G[AFTER]G]
+
+
+----------------------------------------------------------------
+
+#J# 今日のテーマ
+
+What is the book about?
+***********************
+
+#J# プログラムやモジュールというのは信じられないほど無駄が多いものだ
+
+* Most programs and modules are incredibly overwritten
+
+#J# 50～100%も余分だなんてことはザラにある
+
+* Typically by 50-100%  (!!!)
+
+----------------------------------------------------------------
+
+#J# 今日のテーマ
+
+What is the book about?
+***********************
+
+#J# 最初に思いついたコードを書く
+
+* Programmers write the first thing that comes into their heads
+
+#J# それはかまわない
+
+* That's OK
+
+#J# ただし、あとで編集してきれいにした方がいい
+
+* But you should make an editing pass afterwards to clean it up
+
+#J# たいていの人がハマる、本当によくある間違いというのが何十個かあるのだ
+
+* There are a couple of dozen really common mistakes most people make
+
+#J# 見ればすぐにわかるし、直すのも簡単
+
+* They are easy to recognize and easy to repair
+
+#J# でも、そんな間違いを直すだけで「劇的に」コードはよくなる
+
+* Even if you fix just these errors, you code becomes _drastically_ better
+
+#J# この話はそのためのケーススタディだ
+
+* It's a book of case studies of how to do this
+
+----------------------------------------------------------------
+
+
+#RTIMG# redflag2
+
+#J# 赤旗
+
+Red Flags
+*********
+
+#J# ここでいう赤旗というのは最適とは言えないかもしれないコードに見られる特徴のこと
+
+* A red flag is a visible sign in the code that something might be suboptimal
+
+================================================================
+
+#J# *注意*: あくまでも「かもしれない」だ
+
+* *Notice*: [R[might be]R]
+
+#J# *注意*: 「最適とは言えない」だけ。「間違っている」わけではない
+
+* *Notice*: [R[suboptimal]R], not [R[wrong]R]
+
+================================================================
+
+#J# 絶対に間違っていると言っているわけでは「ない」
+
+* It is _not_ a sure sign that something is wrong
+
+#J# 断じて違うのでお間違えなく
+
+  * NOT NOT NOT NOT
+
+================================================================
+
+#J# ただ、立ち止まって、よく考えてほしい
+
+* Instead, it's a sign that you should pause and reflect
+
+#J# 「本当にこれが最適な書き方なんだろうか」
+
+  * Ask, "is this really written in the best way?"
+
+#J# (いくつか)別のやり方で書いて
+
+  * Try to write it a different way (or two, or three)
+
+#J# 比べて、どちらがいいか評価してから
+
+  * Compare and evaluate
+
+#J# 判断しよう
+
+  * Decide
+
+#J# 「たぶん」別のバージョンでコードを書き換えることになるはずだ
+
+* And then _perhaps_ replace the code with a different version
+----------------------------------------------------------------
+
+#J# あらかじめ感謝!
+
+Thanks!
+*******
+
+#J# 世界中の人がコードを添削してほしいと送ってきてくれる
+
+* People all around the world are sending me code to look at
+
+#J# UsenetやPerlMonks、CPANからもたくさん例を取った
+
+* I also get a lot from Usenet, PerlMonks, CPAN
+
+#J# 今日取り上げる例は特に悪いというわけではない
+
+* Today's example is not unusually bad
+
+#J# 話すのにちょうどいい長さだから
+
+* I chose it because it was about the right length for the talk
+
+#J# そして、本当によくある、ありふれた例だから選んだだけ
+
+* Also because it is such a typical and mundane example
+----------------------------------------------------------------
+
+#LTIMG# Scream-narrow.jpg
+
+#J# これはひどい
+
+Horrors
+*******
+
+#J# でも、中には怖いもの見たさに来てくれた人もいるはず
+
+* However, I know some of you came here to see horrors
+
+#J# だから、別の人が書いたプログラムなんだけど、ほんの一部だけ紹介しよう
+
+* So I'll just show you this little bit of someone else's program:
+================================================================
+
+        my $q = join('!', @$p);
+        $q =~ /^(.*)!(.*)$/;
+        my $sorted_key = $1;
+        my $unique_key = $2;
+
+#J# これ、何か見落としているんだろうかと悩んだ箇所のひとつなんだけれど
+
+* This is one of those blocks that makes me wonder what I am missing
+
+#RTIMG# redflag
+
+#J# たぶん単に「2歩進んで1歩下がっている」だけなんだろう
+
+* But it's probably just [R[Taking two steps forward and one step back]R]
+================================================================
+
+#J# [[@$p]]の要素が2つだけなら、こうした方がいい
+
+* If [[@$p]] has only two elements, I suggest instead:
+
+        my ($sorted_key, $unique_key) = @$p;
+
+#J# そうでないなら、こんな感じになるのかな
+
+* Otherwise, perhaps something like:
+
+        my @_p = @$p;
+        my $unique_key = pop @_p;        # Last item
+        my $sorted_key = join "!", @_p;  # The rest of the items
+
+----------------------------------------------------------------
+
+#J# 話をもとに戻すと
+
+Back to our story...
+********************
+
+#J# 今日のサンプルコードには2つのバージョンがある
+
+* You have two versions of today's code
+
+#J# お題はOracleのサーバログを解析する小さなプログラム
+
+* It's a small program to analyze the Oracle server logs
+
+#J# 関心のある部分だけを抽出するという
+
+  * Extract items of interest
+
+#J# 実によくあるPerlアプリケーションだ
+
+* A pretty typical application of Perl  
+
+#J# [[MonAlert-1.pm]]は「修正前」のバージョン
+
+* [[MonAlert-1.pm]] is the "before" version
+
+#J# コードは188行ほど
+
+  * About 188 lines of code
+
+#J# [[MonAlert-2.pm]]は「修正後」のバージョン
+
+* [[MonAlert-2.pm]] is the "after" version
+
+#J# コードは126行ほど
+
+  * About 126 lines of code
+
+#J# この行数には、コメントや空白、中括弧の類は*一切*含めていない
+
+* Line counts *never* include comments, whitespace, curly braces, etc.
+
+#J# 裏で何かしているわけではないことはお約束しておこう
+
+  * I promise nothing underhanded is going on here
+----------------------------------------------------------------
+
+#J# 方針
+
+Strategy
+********
+
+#J# 私が添削するときはふつうこうする
+
+* Usually, the way I look at these things is:
+
+#J# 全体を見てパッと目につくところがないか確認する
+
+  1. Glance over the program and see if anything jumps out
+
+#J# 最初から最後まで飛ばしながら見ていく
+
+  2. Make a longer pass, top to bottom
+
+#J# 自分でコードを書いているなら
+
+* If you're the author:
+
+#J# コードを書くたびにざっと見直してほしい
+
+  * Make a quick pass over each bit of code...
+
+#J# 書いた直後にね
+
+  * _Just after you write it_
+
+#J# 私が注意するようなところに気をつけて
+
+* Try to notice the same things I notice
+
+#J# 同じようにきれいにしてみよう
+
+* Try to apply the same kind of cleanups
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+#J# ざっと見て最初に気になったのがこれ
+
+* The first thing I noticed in my quick pass was:
+
+       303        sub SplitDate {
+            ...
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       314           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       315           elsif ( $mnt eq 'Mar'){$mt = 3 } 
+       316           elsif ( $mnt eq 'Apr'){$mt = 4 } 
+       317           elsif ( $mnt eq 'May'){$mt = 5 } 
+       318           elsif ( $mnt eq 'Jun'){$mt = 6 } 
+       319           elsif ( $mnt eq 'Jul'){$mt = 7 } 
+       320           elsif ( $mnt eq 'Aug'){$mt = 8 } 
+       321           elsif ( $mnt eq 'Sep'){$mt = 9 } 
+       322           elsif ( $mnt eq 'Oct'){$mt = 10 } 
+       323           elsif ( $mnt eq 'Nov'){$mt = 11 } 
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# なにしろ世界最大の赤旗ものだから目立つのだ
+
+* This jumps out because it is the World's Biggest Red Flag
+
+#RTIMG# redflag
+
+#J# コードの繰り返し
+
+* [R[Repeated code]R]
+----------------------------------------------------------------
+
+#J# コンピュータプログラミングの大原則
+
+#TITLE# The Cardinal Rule of Computer Programming
+
+#HTML# <p align=center><font>The Cardinal Rule of Computer Programming</font></p>
+
+#J# コードを繰り返すのは間違っている
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# なぜか
+
+* Why?
+
+#J# 無駄だからだ
+
+* Because it is _wasteful_
+
+#J# プログラマはコードこそが製品だと思いがち
+
+* Programmers like to think of code as their product
+
+#J# そうではないんだ――製品は「機能」の方なのである
+
+* It's not---The product is _functionality_
+
+#J# コードというのは重荷でしかない
+
+* Code is a _liability_
+
+#J# コードが倍になったら、読むのにかかる時間も倍
+
+* Twice as much code takes twice as long to read
+
+#J# バグる可能性も倍
+
+* Twice as many chances for bugs
+
+#J# テストにかかる時間も倍
+
+* Twice as long to test
+
+#J# それでいて機能が倍になるなんてことはない
+
+* But the functionality is much less than twice in these cases
+
+#J# David AdlerによるとBlack and Deckerはこんなことを言っているそうだ
+#J# 人がうちの製品を買うのは0.5インチのドリルがほしいからではない
+#J# 0.5インチの穴を開けたいからだ
+
+### David Adler says that Black and Decker says:
+### People don't buy our products because they want a 1/2 inch drill, they
+### buy our products because they want a 1/2 inch hole.
+
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# コードを繰り返すとメンテナンスのときに問題が起こる
+
+* Repeated code creates maintenance problems
+
+#J# かならず誰かが一部だけ直して、ほかを直さないせいで
+
+* Someone is sure to change one part but not the other part
+
+#J# バグることになるのだ
+
+* Then you have a bug
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# コードの繰り返しは書く方もうんざりする
+
+* Repeated code is boring to write
+
+#J# 同じコードを書いているときに頭を働かせ続けるのは大変
+
+* It's hard to keep your brain engaged while writing it
+
+#J# だから、ミスってわけがわからなくなってしまいがち
+
+* It's easy to make a mistake and mess it up
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#J# コードの繰り返しは読む方も大変
+
+* Repeated code is hard to read
+
+#J# 同じようなものが続くと、本当は同じじゃないのに気づかず読み飛ばしてしまう
+
+* The eye skips past similar cases without noticing they are not the same
+
+#IMG# blot
+
+#J# 本当にわけがわからなくなっているときは気づかないもの
+
+* If you do mess up, you are likely not to notice
+
+#J# [[SplitDate]]にはひとつバグがある
+
+* [[SplitDate]] has a bug
+
+#J# *みなさんは*気づけただろうか?
+
+* Did *you* notice it?
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#TITLE# Repeated Code is a Mistake
+
+#J# コードの繰り返しはバグの温床
+
+Repeated Code Harbors Bugs
+**************************
+
+     Subject: routine on each value
+     Message-ID: <u1v5l1cf8qtv26@corp.supernews.com>
+     
+     if($match) {
+         (($rank = @ranks[0]) && ($percent = "1%")) if $value == 1;
+         (($rank = @ranks[1]) && ($percent = "2%")) if $value == 2;
+         (($rank = @ranks[2]) && ($percent = "3%")) if $value == 3;
+         (($rank = @ranks[3]) && ($percent = "4%")) if $value == 4;
+         (($rank = @ranks[4]) && ($percent = "5%")) if $value == 5;
+         (($rank = @ranks[5]) && ($percent = "6%")) if $value == 6;
+         (($rank = @ranks[5]) && ($percent = "7%")) if $value == 7;
+         (($rank = @ranks[6]) && ($percent = "8%")) if $value == 8;
+         (($rank = @ranks[7]) && ($percent = "9%")) if $value == 9;
+         (($rank = @ranks[8]) && ($percent = "10%")) if $value == 10;
+     }
+
+#J# 何人かの人はこれをこんな風に「修正」した
+
+* Several people 'corrected' this to:
+
+     if ($match) {
+       $rank = $ranks[$value-1];
+       $percent = "$value%";
+     }        
+
+#J# もともとのコードが壊れていたというか、直したものが壊れているというか
+
+* Either the original code was broken, or the corrections were broken
+
+#J# どこかに、バグがある
+
+* Somewhere, there was a bug
+
+#J# Perlコミュニティの仕事としてはあまりほめられたものではない
+
+* Not a very impressive showing by the Perl community
+----------------------------------------------------------------
+
+#J# コードを繰り返すのは間違っている
+
+#HTML# <p align=center><font size="+4" color=red>Repeated Code is a Mistake</font></p>
+
+#TITLE# Repeated Code is a Mistake
+
+#J# コードの繰り返しはほとんどの場合なくすことができる
+
+* It is nearly always possible to eliminate repeated code
+
+#J# 「あらゆる」プログラミング言語のほぼ「あらゆる」機能は、コードの繰り返しを避けるためのものだ
+
+* Almost _every_ feature of _every_ programming language is an attempt to prevent repeated code
+
+#J# ささやかなところでは、[[$x->{q} += $y]]。これは、[[$x->{q} = $x->{q} + $y]]のかわりだ
+
+* Tiny example: [[$x->{q} += $y]] instead of [[$x->{q} = $x->{q} + $y]]
+
+#J# もう少し大きなところでは、スコープの小さな変数がそう
+
+* Larger example: Small-scope variables
+
+#J# もっと大きなところでは、[[while]] や [[for]]のループ
+
+* Larger still: [[while]] and [[for]] loops
+
+#J# さらに大きくなると、サブルーチン
+
+* Larger: Subroutines
+
+#J# さらに大きくなると、オブジェクト指向の継承
+
+* Larger: Object-oriented inheritance
+
+#J# さらに大きくなると、モジュール
+
+* Larger: Modules
+
+#J# さらに大きくなると、パイプ
+
+* Larger: Pipes
+
+#J# 大がかりなものとしては共有ライブラリがそう
+
+* Huge: Shared libraries
+
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+#J# この例の場合はテーブルを使うのが正しいアプローチ
+
+* In this case, the right approach is to use a table
+
+#J# これを
+
+* This:
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       314           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+       315           elsif ( $mnt eq 'Mar'){$mt = 3 } 
+       316           elsif ( $mnt eq 'Apr'){$mt = 4 } 
+       317           elsif ( $mnt eq 'May'){$mt = 5 } 
+       318           elsif ( $mnt eq 'Jun'){$mt = 6 } 
+       319           elsif ( $mnt eq 'Jul'){$mt = 7 } 
+       320           elsif ( $mnt eq 'Aug'){$mt = 8 } 
+       321           elsif ( $mnt eq 'Sep'){$mt = 9 } 
+       322           elsif ( $mnt eq 'Oct'){$mt = 10 } 
+       323           elsif ( $mnt eq 'Nov'){$mt = 11 } 
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# こうする
+
+* Becomes this:
+
+        my %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                   May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                   Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+        $mt = $m2n{$mnt};
+
+#J# これで13行（そう、13行あったのだ）が4行になった
+
+* 13 lines (yes, 13) become 4
+----------------------------------------------------------------
+
+[[SplitDate]]
+*************
+
+#J# ここにはもうひとつ問題になりそうな箇所がある
+
+* There's another possible problem here
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+           ...
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# [[else]]節がないのだ
+
+* There's no [[else]] clause
+
+#RTIMG# redflag
+
+#J# 'if'～'elsif'のあとに'else'がない
+
+* [R[Missing 'else' after 'if'-'elsif' series]R]
+
+#J# こういうのを書くときはいつでも自問してほしい
+
+* Whenever you write one, ask yourself:
+
+#J# 「どれにもあてはまらなかったらどうしよう」
+
+  * [G[What if none of the cases were true?]G]
+
+----------------------------------------------------------------
+#J# [[else]]がない
+
+Missing [[else]]
+****************
+
+       312           if ( $mnt eq 'Jan'){ $mt = 1 }
+       313           elsif ( $mnt eq 'Feb'){$mt = 2 } 
+           ...
+       324           elsif ( $mnt eq 'Dec'){$mt = 12 };
+
+#J# 「そんなことはありえない」と思うこともあるだろう
+
+* Sometimes the answer is "That can't happen"
+
+#J# でも、実際には「ありえない」はずのことが次から次へと起こるのだ
+
+* But there's "can't happen" and then there's "can't happen"
+
+#J# この場合、「ありえない」と言えるのは
+
+* In this case, it "can't happen"...
+
+#J# 入力がおかしかったり解析に失敗していないときだけ
+
+  * _Unless_ the input was malformed or misparsed
+
+#J# だから、追加しておこう
+
+* So add:
+
+#*      else { die "Date '$sdat' has malformed month; aborting!" }
+
+#J# ハッシュテーブルを使って書くとこうなる
+
+* In the hash table formulation, this becomes:
+
+        my %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                   May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                   Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+        $mt = $m2n{$mnt} [C[|| die "Date '$sdat'..."]C];
+
+----------------------------------------------------------------
+[[SplitDate]]
+*************
+
+#J# これでこの関数はこんな風になった
+
+* The function now looks like this:
+
+     303  sub SplitDate {
+     304        
+     305     # Wed Jul 27 17:07:45 2005
+     306        
+     307     my $sdat = shift ;
+     308     my $mt ;
+     309        
+     310     my ( $dt, $mnt, $dn, $drest, $yr) = split /\s+/, $sdat ;
+     311     my ( $hr, $mi, $sec ) = split /:/, $drest ;
+     
+             %m2n = (Jan => 1, Feb =>  2, Mar =>  3, Apr =>  4,
+                     May => 5, Jun =>  6, Jul =>  7, Aug =>  8,
+                     Sep => 9, Oct => 10, Nov => 11, Dec => 12);
+             $mt = $m2n{$mnt} || die "Date '$sdat' malformed";
+     
+     325         
+     326   #-D   print "THe year is $yr The month is $mt the hour $hr minute $mi and second $sec The day is $dt\n";
+     327        
+     328     return $yr, $mt, $dn, $hr, $mi, $sec ;
+     329        
+     330  }
+
+----------------------------------------------------------------
+
+#J# コメント
+
+Comments
+********
+
+     303  sub SplitDate {
+     304        
+     305     # Wed Jul 27 17:07:45 2005
+     306        
+     307     my $sdat = shift ;
+     308     my $mt ;
+     309        
+     310     my ( $dt, $mnt, $dn, $drest, $yr) = split /\s+/, $sdat ;
+     311     my ( $hr, $mi, $sec ) = split /:/, $drest ;
+
+#J# コメントは見通しの悪いコードの言い訳になっていることが多すぎる
+
+* All too often, comments are used as a crutch to excuse unclear code
+
+#J# だからコメントには愛憎半ばする思いがある
+
+* I have a love-hate relationship with comments
+
+#J# でも、このコメントは「いい」
+
+* But I _love_ this comment
+
+#J# 実に簡潔で中身がある
+
+* It's extremely concise and informative
+
+#J# このコメントがなかったらそのあとのコードはチェックのしようがない
+
+* Without it, it's impossible to check the following code
+
+#J# 変数名の解読にも苦労させられるだろう
+
+  * And difficult to decipher the variable names
+
+#J# このコメントがあるおかげで見通しがよくなっている
+
+* But with it, everything is clear
+
+#J# コードを磨けばなくせるコメントもあるけれど
+
+* Some comments can be obviated by polishing up the code
+
+#J# これは違う
+
+  * But not this one
+
+----------------------------------------------------------------
+[[SplitDate]]
+*************
+
+#J# 私ならこんなスペースの使い方はしない
+
+* I wouldn't have done the whitespace the way it is
+
+#J# でも、それはどうでもいい
+
+  * But it's not important
+
+#J# デバッグメッセージの見せ方も変えるだろう
+
+* I would have formatted the debugging message differently
+
+#J# でも、それもどうでもいい
+
+  * But it's not important
+
+#J# この関数で私がもうひとつだけ変えるとしたら、ささやかなことだけれど
+
+* The only other change I would make to this function is trivial:
+
+#J# 308行目を削って
+
+* Eliminate line 308:
+
+     308     my $mt ;
+
+#J# [[my]]の宣言を実際に使われているところに移す
+
+* Put the [[my]] declaration at the place it is used:
+
+     [C[my]C] $mt = $m2n{$mnt} || die "Date '$sdat' malformed";
+
+#J# これでこの関数は（19行から）9行になった
+
+* With this final change, the function is 9 lines long (down from 19)
+
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+#J# [[GetDateNow]]関数は71行目から145行目まで続いているが
+
+* The function [[GetDateNow]] spans lines 71[E[ndash]E]145
+
+#J# 空白だけの行が39行もある
+
+* But there are only 39 lines of whitespace
+
+#J# これは読みづらい
+
+* I find that makes it hard to read
+
+#J# 1画面に収めることもできたはずなのに
+
+* It could have fit in one screenful
+
+#J# 2画面にまたがってしまう
+
+  * But it's spread out over two
+
+#J# 私ならこれからお見せするように空行を省略する
+
+* I'll abbreviate the blank lines in what follows
+----------------------------------------------------------------
+
+[[GetDateNow]]
+**************
+
+#J# この関数がまず間違っているのはカレンダーの計算の仕方だ
+
+* The first thing wrong with this function is the way it does calendar arithmetic
+
+         98           my $datev = `date '+%a %b %e %m %Y'` ;
+        100            print "The date is $datev\n";
+        101
+        102          my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+        104          my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+        105
+        106          $daynum = $d ;
+        108          my $wday = Day_of_Week( $y, $m, $d ) ;
+        110          my $day2 = Day_of_Week_to_Text( $wday ) ;
+        112          my $m2 = Month_to_Text ($m) ;
+        114          $day = substr( $day2, 0, 3 ) ;
+        116          $mon = substr( $m2, 0, 3 ) ;
+
+#J# いろんなことをしているが
+
+* This is a lot of work
+
+#J# ここの計算はほとんど必要ない
+
+* The work is mostly unnecessary
+
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+#J# 日付には3つの書式がある
+
+* There are three formats for dates
+
+#J# 書式Aは、人間には意味不明だが計算は簡単というもの
+
+* Format A is unreadable, but is easy to calculate with:
+
+        1080891516    # Seconds since 1970
+
+#J# 書式Cは、人間には読みやすいが計算のときには役に立たない
+
+* Format C is human-readable, but useless for calculations:
+
+        Fri Apr  2 02:38:36 2004
+
+#J# 書式Bはその折衷案
+
+* Format B is partway between:
+
+        (36, 38, 2, 2, 4, 2004)
+
+#J# でも、書式Bは変だ
+
+* Funny thing about format B:
+
+#J# 計算するにしても表示するにしてもイマイチ
+
+  * It is mediocre for both calculation _and_ for display!
+
+#J# 実際には書式Aから書式Cに、あるいはその逆に変換するときくらいしか役に立たない
+
+  * It's really only useful for converting from A to C or back again
+
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+        A        1080891516
+        B        (36, 38, 2, 2, 4, 2004)
+        C        Fri Apr  2 02:38:36 2004
+
+#J# もうひとつ覚えておいた方がいいことがある
+
+* Another thing to remember:
+
+#J# A [E[rarr]E] B [E[rarr]E] C は簡単 (下流への変換)
+
+  * A [E[rarr]E] B [E[rarr]E] C         [G[Easy]G]      ("downstream")
+#J# C [E[rarr]E] B [E[rarr]E] A は困難 (上流への変換)
+
+  * C [E[rarr]E] B [E[rarr]E] A         [R[Difficult]R] ("upstream")
+
+#J# 中でも C [E[rarr]E] B は特にむずかしい
+
+    * (C [E[rarr]E] B is by far the hardest of all)
+
+#IMG# upstream.jpg
+
+#J# だから、内部的な日付情報はなるべく書式Aの形で持つようにしたい
+
+* So you want to store dates internally in form A whenever possible
+
+#J# ぎりぎりまで書式Aの形で持ち続けて
+
+* Keep them in form A as long as possible
+
+#J# 書式Aのまま計算をして
+
+* Calculate with form A
+
+#J# どうしても必要なところでだけ書式Cに変換しよう
+
+* Convert to form C only when you have to
+
+----------------------------------------------------------------
+
+#J# 日付の計算、虎の巻
+
+Date calculation cheat sheet
+****************************
+
+        A        1080891516
+        B        (36, 38, 2, 2, 4, 2004)
+        C        Fri Apr  2 02:38:36 2004
+
+#J# なるべく書式Aを使うこと
+
+* Use format A whenever possible
+
+#J# 書式Aの値を取得するときは[[time()]]を使う
+
+  * To get it, call [[time()]]
+
+#J# 書式AをBに変換するときは[[localtime()]]や[[gmtime()]]を使おう
+
+* Use [[localtime()]] and [[gmtime()]] to convert A [E[rarr]E] B
+
+#J# 書式BからCに変換するときは[[POSIX::strftime()]]だ
+
+* Use [[POSIX::strftime()]] to convert B [E[rarr]E] C
+
+#J# 上流への変換は避けよう
+
+* Try not to convert upstream
+
+#J# [[Date::Parse]]や[[Date::Calc]]は河を遡上するための階段のようなものだ
+
+  * [[Date::Parse]] and [[Date::Calc]] are like fish ladders
+
+#J# あれば上流にさかのぼっていくことはできるが
+
+  * They permit upstream movement
+
+#J# だからといって簡単にさかのぼれるようになるわけではない
+
+  * That doesn't mean they make it easy
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+#J# [[GetDateNow]]の一部を再掲する
+
+* Here's part of [[GetDateNow]]:
+
+         98           my $datev = `date '+%a %b %e %m %Y'` ;
+        100            print "The date is $datev\n";
+        101
+        102          my ($dy, $mth, $dd, $md, $yd ) = split/\s+/, $datev ;
+        104          my ($y, $m, $d) = Add_Delta_Days( $yd, $md, $dd, -$value) ;
+        105
+        106          $daynum = $d ;
+        108          my $wday = Day_of_Week( $y, $m, $d ) ;
+        110          my $day2 = Day_of_Week_to_Text( $wday ) ;
+        112          my $m2 = Month_to_Text ($m) ;
+        114          $day = substr( $day2, 0, 3 ) ;
+        116          $mon = substr( $m2, 0, 3 ) ;
+
+#J# この作者はUnixの[[date]]プログラムを呼ぶという大きなミスをしている
+
+* The author makes a big mistake by calling the Unix [[date]] program
+
+#J# これは人間が読みやすい日付（書式C）を返してくるものだ
+
+* This returns a human-readable date (format C)
+
+#J# ここでミスをしているから、挽回するのに8行ものコードと
+
+* Recovering from this mistake requires 8 lines of code 
+
+#J# 複雑な[[Date::Calc]]モジュールが必要になる
+
+  * And the complex [[Date::Calc]] module
+
+#J# おかげで書式Bの要素を求めるのにえらい苦労をさせられるし
+
+* He has to work hard to get the format B components
+
+#J# いずれにしても[[Date::Calc]]が返す値は書式がいけない
+
+  * And then [[Date::Calc]] returns the stuff in the wrong format anyway
+
+#J# 書式Aを使えばこんなに簡単になる
+
+* Using format A makes this all easy
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+     my $date = time() - $value * 86400;                     # Format A
+     my ($wday, $daynum) = (localtime($date))[6,3];          # A [E[rarr]E] B
+     my $day = strftime("%a", localtime($date));             # B [E[rarr]E] C
+     my $mon = strftime("%b", localtime($date));             # B [E[rarr]E] C
+     $pattern = "$day\\s+$mon\\s+$daynum" ;                  # B [E[rarr]E] C
+
+#J# [[time()]]は書式Aの日付を返す
+
+* [[time()]] returns the format A date
+
+#J# これなら計算は簡単だ
+
+  * It's easy to calculate with
+
+#J# 曜日や月、日は[[localtime]]で取得する
+
+* Then we get the day-of-week, month, and day components with [[localtime]]
+
+#J# 最後に[[POSIX::strftime]]で[[5]]を[["Fri"]]に、[[9]]を[["Sep"]]に変換している
+
+* Finally, [[POSIX::strftime]] converts [[5]] to [["Fri"]] and [[9]] to [["Sep"]]
+
+#J# 実はさらに切り詰めることも可能だ
+
+* In fact, we can trim this still more:
+
+     my $date = time() - $value * 86400;                     # Format A
+     my $pattern = strftime "[C[%a]C]\\s+[C[%b]C]\\s+[C[%d]C]", localtime($date);
+
+#J# 実はこれはちょっとウソ。%dはいささか不正確だ。書いてある通りにするなら
+#J# 1桁の日付は1文字にしないといけない。ただし、これは間違いなくバグだろう
+
+### XXX Fib here--%d is not quite correct, because as written, $pattern
+### gets a 1-character daynum if possible.  But this was surely a bug.
+#J# これで10行が2行になった
+
+* 10 lines become 2
+
+----------------------------------------------------------------
+
+#J# 日付の計算
+
+Date calculations
+*****************
+
+#J# 今度は[[else]]ブロックの方も同じようにしておこう
+
+* Now I wanted to do a corresponding thing in the [[else]] block:
+
+     123     } else {
+     125        my $dfmt = `date '+%a %b %e'` ;
+     127       ( $day, $mon, $daynum ) = split /\s+/, $dfmt ;
+     129       $pattern = "$day\\s+$mon\\s+$daynum" ;
+
+こうなる
+
+* This becomes:
+
+             } else {
+                my $date = time();
+                my $pattern = strftime "%a\\s+%b\\s+%e", localtime($date);
+
+#J# その下も同じように修正する必要がある
+
+* We also need to make some corresponding changes farther down:
+
+     133     my $tmpfilealrt = "alert_$daynum\_$day\_$mon.log" ;
+
+#J# こう
+
+* This becomes:
+
+             my $tmpfilealrt = strftime("alert_%e_%a_%m.log", localtime($date));
+
+#J# 次の行はまったく使われていないから削除してもいいだろう
+
+* This next line is never used, so we can eliminate it:
+
+     136     my $dpattern = "$day\\s+$mon\\s+$daynum" ;
+
+
+----------------------------------------------------------------
+[[GetDateNow]]
+**************
+
+#J# この関数の最後にはまたこんなのがある
+
+* The bottom part of the function still has:
+
+      my $errdate  = `date '+%d%m%Y'` ;
+      chomp ($errdate) ;
+     
+      my $errorfile = "day_alrt_err_" . "$errdate.log" ;
+     
+      my $reportfile = "day_alrt_rep" . "$errdate.log" ;
+
+#J# これでは過去の履歴を調べているときに日付が無視されてしまう
+
+* Notice that this disregards the looking-into-the-past value
+
+#J# バグだろうか? 仕様だろうか?
+
+  * Bug?  Or feature?
+
+#J# 私はバグだと「思う」
+
+  * I _think_ it's a bug
+
+#J# バグだとしたら、こうしよう
+
+* If so, use:
+
+      my $errdate = strftime("%d%m%Y", localtime($date));
+
+#J# 仕様なら、こうだ
+
+* If not:
+
+      my $errdate = strftime("%d%m%Y", localtime());
+
+----------------------------------------------------------------
+.pre
+
+[PerlProgrammingRepairShop2]

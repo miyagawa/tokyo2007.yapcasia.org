@@ -1,0 +1,11 @@
+# Put all local overrides/modifications to the config/* files in this
+# file. Do not modify any of the files under the config/ directory as
+# they will be overwritten by subsequent upgrades to Kwiki modules.
+# See: http://www.kwiki.org/?ChangingConfigDotYaml
+#
+site_title: YAPC::Asia 2007
+logo_image: palm90.png
+users_class: Kwiki::Users::TypeKey
+tk_token:    pIP85xqmwm2l37HOgBrA
+script_name: http://tokyo2007.yapcasia.org/wiki/
+google_maps_api_key: ABQIAAAA8RGXatIZkNkx3u0uF9McwBS9Kdllxm5Pd3NRE0KMIvNfA7Y-ZhROvCC17Vd5RuUF1cRFwzp_hNLn8w

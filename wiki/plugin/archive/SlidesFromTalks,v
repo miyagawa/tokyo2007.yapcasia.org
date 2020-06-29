@@ -1,0 +1,568 @@
+head	1.35;
+access;
+symbols;
+locks
+	root:1.35;
+comment	@# @;
+
+
+1.35
+date	2007.04.25.00.18.54;	author root;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2007.04.25.00.06.41;	author root;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2007.04.16.09.28.25;	author root;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2007.04.11.05.45.08;	author root;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2007.04.11.02.29.08;	author root;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2007.04.11.02.27.12;	author root;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2007.04.10.05.05.48;	author root;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2007.04.09.06.31.59;	author root;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2007.04.09.06.31.06;	author root;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2007.04.07.06.21.10;	author root;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2007.04.07.02.41.24;	author root;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2007.04.07.02.13.37;	author root;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2007.04.06.12.24.31;	author root;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2007.04.06.06.20.08;	author root;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2007.04.06.03.38.24;	author root;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2007.04.06.03.20.30;	author root;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2007.04.06.02.21.11;	author root;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2007.04.05.15.13.29;	author root;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.04.05.14.18.07;	author root;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.04.05.14.10.59;	author root;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.04.05.13.51.38;	author root;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.04.05.11.30.57;	author root;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.04.05.09.19.14;	author root;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.04.05.07.59.11;	author root;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.04.05.06.52.20;	author root;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.04.05.06.38.05;	author root;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.04.05.06.36.49;	author root;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.04.05.06.16.30;	author root;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.04.05.06.15.14;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.04.05.05.41.56;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.04.05.04.20.59;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.04.05.04.17.58;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.04.04.19.56.56;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.04.04.13.31.55;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.04.04.09.33.06;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.35
+log
+@edit_address:65.167.67.16,edit_by:jrockway,edit_by_icon:,edit_time:Wed%20Apr%2025%2000%3A18%3A54%202007,edit_unixtime:1177460334
+@
+text
+@Upload your slides here.
+
+== April 4th
+
+* [http://bloghackers.net/~naoya/ppt/070404Perl_and_UNIX_Network_Programming.ppt Naoya Ito - Perl and UNIX Network Programming]
+* [http://pugs.blogs.com/talks/yapcasia2007-pugs.pdf Audrey Tang - Perl 6 Today]
+* [http://perl.plover.com/yak/parsing/ Mark Dominus - Higher-order parsing techniques]
+* [http://www.dan.co.jp/~dankogai/yapcasia2007/perli18n.html Dan Kogai - Perl I18N in 20 minutes]
+* [http://www.slideshare.net/miyagawa/how-we-build-vox/ Ben Trott - How we build Vox]
+* [http://blog.livedoor.jp/techblog/paper/YAPC-livedoor.pdf Tomohiro Ikebe - livedoor 2006-2007]
+* (Add yours)
+
+== April 5th
+
+* [http://www.dan.co.jp/~dankogai/yapcasia2007/perl6.html Dan Kogai - An Ordinary Perl 6 Guide]
+* [http://www.houseabsolute.com/presentations/patterns-in-perl/start.html Dave Rolsky - Patterns in Perl]
+* [http://danga.com/words/2007_yapc_asia/ Brad Fitzpatrick - LiveJournal scaling Story Time]
+* [http://www.slideshare.net/daiba/web-api Keiichi Daiba - web apiで遊び倒す]
+* [http://users.endeworks.jp/~daisuke/perl/YAPC2007-(Ab)%3Fusing%20Class-C3.ppt Daisuke Maki - (Ab)?using Class::C3]
+* [http://labs.cybozu.co.jp/blog/kazuho/archives/2007/04/Mylingual20070405pub.ppt Kazuho Oku - MyLingual]
+* [http://www.slideshare.net/miyagawa/writing-pluggable-software Tatsuhiko Miyagawa - Writing Pluggable Software] [http://blog.bulknews.net/mt/archives/pluggable-software.ppt (PPT)]
+* [http://svn.jifty.org/svn/jifty.org/jifty/trunk/doc/talks/yapc.asia.2007.txt Jesse Vincent - Domain Specific Languages]
+* [http://svn.jifty.org/svn/jifty.org/jifty/trunk/doc/talks/yapcasia2007-doxory.pdf Audrey Tang - Jifty Now!]
+* [http://tech.yappo.jp/docs/yapcasia2007tokyo/cli/ Kazuhiro Osawa - CLI meets Web Frameworks]
+* [http://tech.yappo.jp/docs/yapcasia2007tokyo/geo/ Kazuhiro Osawa - 自文書抽出日本的住所]
+* [http://mizzy.org/archives/2007/YAPC-Asia-2007-Assurer.pdf Gosuke Miyashita - Assurer - a server testing/monitoring framework]
+* [http://code.mfac.jp/ppt/nekokak/2007/04/YAPC-Asia%202007(DBIC).ppt Atsushi Kobayashi - DBIC]
+* [http://namazu.org/~takesako/slides/perl6-regex.ppt Yoshinori Takesako - s/ Perl5 Regular Expression / Perl6 Regex and Rule /mixes;]
+* [http://www.tcool.org/yapc/way_to_the_napc.pdf Kenichi Ishigaki - Way to the NAPC]
+* [http://code.mfac.jp/trac/file/talks/tokuhirom/yapcasia2007/seminar.txt Tokuhiro Matsuno - CDBI to DBIC]
+* [http://www.chosec.com/talks/yapc_asia_2007.pdf Jeff Kim - Inside Net::Amazon::EC2]
+* [http://www.jrock.us/yapcasia2007/takahashi.xul?data=catalyst.txt jrockway - Catalyst]
+* [http://www.jrock.us/yapcasia2007/takahashi.xul?data=dbix-class.txt jrockway - Intro to DBIx::Class]
+* Lightning Talks
+** [http://www.infomarks.co.jp/yapc2007/ Yappo - Device::USB::MissileLaunchers (live)]
+** [http://perl.plover.com/yak/debruijn/ Mark Dominus - Debugging the de Bruijn Sequence]
+** [http://ma.la/files/yapcasia2007/ mala - RSS Auto-Discovery from browser history]
+** [http://code.mfac.jp/ppt/nekokak/2007/04/YAPC-Asia%202007(LT%20Perlbal).ppt Atsushi Kobayashi - Perlbal Selector]
+** [http://spidernomic.thilosophy.com/ Thilo Planz - Spidernomic]
+** [http://blog.nomadscafe.jp/archives/expect_ssh.pdf kazeburo - Expect]
+** [http://www.jrock.us/yapcasia2007/takahashi.xul?data=angerwhale.txt jrockway - Angerwhale]
+* (Add yours)
+@
+
+
+1.34
+log
+@edit_address:65.167.67.16,edit_by:jrockway,edit_by_icon:,edit_time:Wed%20Apr%2025%2000%3A06%3A41%202007,edit_unixtime:1177459601
+@
+text
+@d32 2
+a33 2
+* [http://www.jrock.us/yapcasia2007/takahashi.xul?data=catalyst.txt Catalyst]
+* [http://www.jrock.us/yapcasia2007/takahashi.xul?data=dbix-class.txt Intro to DBIx::Class]
+d41 1
+a41 1
+** [http://www.jrock.us/yapcasia2007/takahashi.xul?data=angerwhale.txt Angerwhale]
+@
+
+
+1.33
+log
+@edit_address:202.229.44.118,edit_by:k.daiba,edit_by_icon:,edit_time:Mon%20Apr%2016%2009%3A28%3A25%202007,edit_unixtime:1176715705
+@
+text
+@d32 2
+d41 1
+@
+
+
+1.32
+log
+@edit_address:218.45.26.125,edit_by:dohyun,edit_by_icon:,edit_time:Wed%20Apr%2011%2005%3A45%3A08%202007,edit_unixtime:1176270308
+@
+text
+@d18 1
+a18 1
+* [http://s3.amazonaws.com/yapcasia2007tokyo/webapi.pdf Keiichi Daiba - web apiで遊び倒す]
+@
+
+
+1.31
+log
+@edit_address:61.115.119.141,edit_by:tokuhirom,edit_by_icon:,edit_time:Wed%20Apr%2011%2002%3A29%3A08%202007,edit_unixtime:1176258548
+@
+text
+@d31 1
+@
+
+
+1.30
+log
+@edit_address:61.115.119.141,edit_by:tokuhirom,edit_by_icon:,edit_time:Wed%20Apr%2011%2002%3A27%3A12%202007,edit_unixtime:1176258432
+@
+text
+@d30 1
+a30 1
+* [http://code.mfac.jp/trac/file/talks/tokuhirom/yapcasia2007/seminar.txt - CDBI to DBIC]
+@
+
+
+1.29
+log
+@edit_address:124.32.114.226,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Tue%20Apr%2010%2005%3A05%3A48%202007,edit_unixtime:1176181548
+@
+text
+@d30 1
+@
+
+
+1.28
+log
+@edit_address:124.32.114.226,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Apr%20%209%2006%3A31%3A59%202007,edit_unixtime:1176100319
+@
+text
+@d10 1
+@
+
+
+1.27
+log
+@edit_address:124.32.114.226,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Mon%20Apr%20%209%2006%3A31%3A05%202007,edit_unixtime:1176100265
+@
+text
+@d20 1
+a20 1
+* [http://blog.bulknews.net/mt/archives/pluggable-software.ppt Tatsuhiko Miyagawa - Writing Pluggable Software]
+@
+
+
+1.26
+log
+@edit_address:122.209.5.205,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Sat%20Apr%20%207%2006%3A21%3A10%202007,edit_unixtime:1175926870
+@
+text
+@d9 1
+@
+
+
+1.25
+log
+@edit_address:220.150.112.84,edit_by:tcool,edit_by_icon:,edit_time:Sat%20Apr%20%207%2002%3A41%3A24%202007,edit_unixtime:1175913684
+@
+text
+@d34 1
+@
+
+
+1.24
+log
+@edit_address:222.151.159.30,edit_by:,edit_by_icon:,edit_time:Sat%20Apr%20%207%2002%3A13%3A37%202007,edit_unixtime:1175912017
+@
+text
+@d27 1
+a27 1
+* [http://www.tcool.org/yapc/way_to_the_napc.pps Kenichi Ishigaki - Way to the NAPC (pps)]
+@
+
+
+1.23
+log
+@edit_address:203.131.201.195,edit_by:tcool,edit_by_icon:,edit_time:Fri%20Apr%20%206%2012%3A24%3A31%202007,edit_unixtime:1175862271
+@
+text
+@d33 1
+@
+
+
+1.22
+log
+@edit_address:203.112.24.226,edit_by:takesako,edit_by_icon:,edit_time:Fri%20Apr%20%206%2006%3A20%3A08%202007,edit_unixtime:1175840408
+@
+text
+@d27 1
+@
+
+
+1.21
+log
+@edit_address:202.229.44.118,edit_by:,edit_by_icon:,edit_time:Fri%20Apr%20%206%2003%3A38%3A24%202007,edit_unixtime:1175830704
+@
+text
+@d26 1
+@
+
+
+1.20
+log
+@edit_address:202.229.44.118,edit_by:,edit_by_icon:,edit_time:Fri%20Apr%20%206%2003%3A20%3A30%202007,edit_unixtime:1175829630
+@
+text
+@d16 1
+a16 1
+* [http://s3.amazonaws.com/yapcasia2007tokyo/webapi.pdf?torrent Keiichi Daiba - web apiで遊び倒す]
+@
+
+
+1.19
+log
+@edit_address:124.32.114.226,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Fri%20Apr%20%206%2002%3A21%3A11%202007,edit_unixtime:1175826071
+@
+text
+@d16 1
+a16 1
+* [http://s3.amazonaws.com/yapcasia2007tokyo/webapi.pdf Keiichi Daiba - web apiで遊び倒す]
+@
+
+
+1.18
+log
+@edit_address:122.209.5.205,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Apr%20%205%2015%3A13%3A28%202007,edit_unixtime:1175786008
+@
+text
+@d25 1
+d30 1
+@
+
+
+1.17
+log
+@edit_address:202.231.68.11,edit_by:MJDominus,edit_by_icon:http%3A%2F%2Fperl.plover.com%2Fpics%2Ftpc%2Fplacido2-m.jpg,edit_time:Thu%20Apr%20%205%2014%3A18%3A07%202007,edit_unixtime:1175782687
+@
+text
+@d25 4
+a28 2
+* [http://www.infomarks.co.jp/yapc2007/ Yappo - Device::USB::MissileLaunchers (live)]
+* [http://perl.plover.com/yak/debruijn/ Mark Dominus - Debugging the de Bruijn Sequence]
+@
+
+
+1.16
+log
+@edit_address:220.110.142.38,edit_by:Yappo,edit_by_icon:,edit_time:Thu%20Apr%20%205%2014%3A10%3A59%202007,edit_unixtime:1175782259
+@
+text
+@d26 1
+@
+
+
+1.15
+log
+@edit_address:210.194.208.138,edit_by:mizzy,edit_by_icon:http%3A%2F%2Fmizzy.org%2Fimg%2Fme.jpg,edit_time:Thu%20Apr%20%205%2013%3A51%3A38%202007,edit_unixtime:1175781098
+@
+text
+@d25 1
+@
+
+
+1.14
+log
+@edit_address:220.156.77.201,edit_by:daisuke_maki,edit_by_icon:,edit_time:Thu%20Apr%20%205%2011%3A30%3A57%202007,edit_unixtime:1175772657
+@
+text
+@d24 1
+@
+
+
+1.13
+log
+@edit_address:124.41.7.58,edit_by:Yappo,edit_by_icon:,edit_time:Thu%20Apr%20%205%2009%3A19%3A14%202007,edit_unixtime:1175764754
+@
+text
+@d17 1
+@
+
+
+1.12
+log
+@edit_address:124.41.7.58,edit_by:jessevincent,edit_by_icon:,edit_time:Thu%20Apr%20%205%2007%3A59%3A11%202007,edit_unixtime:1175759951
+@
+text
+@d21 2
+@
+
+
+1.11
+log
+@edit_address:124.41.7.58,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Apr%20%205%2006%3A52%3A20%202007,edit_unixtime:1175755940
+@
+text
+@d19 2
+@
+
+
+1.10
+log
+@edit_address:124.41.7.58,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Apr%20%205%2006%3A38%3A05%202007,edit_unixtime:1175755085
+@
+text
+@d18 1
+@
+
+
+1.9
+log
+@edit_address:124.41.7.58,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Apr%20%205%2006%3A36%3A48%202007,edit_unixtime:1175755008
+@
+text
+@d8 1
+d13 1
+@
+
+
+1.8
+log
+@edit_address:221.113.212.91,edit_by:,edit_by_icon:,edit_time:Thu%20Apr%20%205%2006%3A16%3A30%202007,edit_unixtime:1175753790
+@
+text
+@d15 1
+@
+
+
+1.7
+log
+@edit_address:221.113.212.91,edit_by:,edit_by_icon:,edit_time:Thu%20Apr%20%205%2006%3A15%3A14%202007,edit_unixtime:1175753714
+@
+text
+@d14 1
+a14 1
+*[http://s3.amazonaws.com/yapcasia2007tokyo/webapi.pdf Keiichi Daiba - web apiで遊び倒す]
+@
+
+
+1.6
+log
+@edit_address:219.98.203.230,edit_by:MJDominus,edit_by_icon:http%3A%2F%2Fperl.plover.com%2Fpics%2Ftpc%2Fplacido2-m.jpg,edit_time:Thu%20Apr%20%205%2005%3A41%3A56%202007,edit_unixtime:1175751716
+@
+text
+@d14 1
+@
+
+
+1.5
+log
+@edit_address:219.98.203.230,edit_by:autarch,edit_by_icon:,edit_time:Thu%20Apr%20%205%2004%3A20%3A58%202007,edit_unixtime:1175746858
+@
+text
+@d7 1
+@
+
+
+1.4
+log
+@edit_address:219.98.203.230,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Thu%20Apr%20%205%2004%3A17%3A58%202007,edit_unixtime:1175746678
+@
+text
+@d11 1
+@
+
+
+1.3
+log
+@edit_address:122.209.5.205,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Apr%20%204%2019%3A56%3A56%202007,edit_unixtime:1175716616
+@
+text
+@d11 1
+@
+
+
+1.2
+log
+@edit_address:122.209.5.205,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Apr%20%204%2013%3A31%3A55%202007,edit_unixtime:1175693515
+@
+text
+@d6 1
+@
+
+
+1.1
+log
+@edit_address:124.41.7.58,edit_by:miyagawa,edit_by_icon:http%3A%2F%2Fbulknews.typepad.com%2FP506iC0003735833.jpg,edit_time:Wed%20Apr%20%204%2009%3A33%3A06%202007,edit_unixtime:1175679186
+@
+text
+@d5 1
+@

@@ -1,0 +1,38 @@
+== !YAPC::Asia 2007 Translators Wiki
+
+This wiki was setup with the objective for us Japanese volunraty !YAPC::Asia translators to collaborate on translating English talks so that we can make most of the talks easier for attendees to understand.
+
+== How-To
+
+Speakers: paste your manuscript (slides text portion) as plain text on the Wiki page. Include the format you'd like translators to annotate.
+
+Translators: [http://tokyo2007.yapcasia.org/translate/index.cgi?action=user_preferences Set your username first] and edit the manuscript to add Japanese translation. You're welcome to fix someone else's mistakes.
+
+To avoid duplicate efforts, announce on speakers mailing list before starting to translate the whole talk. Or you can update the Wiki page adding "Translator: your name (working)" on the top.
+
+!!! Kwiki doesn't have an auto-save feature and if there's a conflict your edit may be lost without actually saving it. *Always use Firefox or your offline text editor to edit the translation* !!!
+
+=== Talks @ Tsuda Hall
+
+Talks in the main "Tsuda Hall" needs to be fully subtitled (or live interpreted) by someone responsible. Here is the list of the talks.
+
+* [KwikiAndTheSymlink] Ingy dot Net
+* [HigherOrderParsingTechniques] Mark Jason Dominus
+* [EverythingVox] Ben Trott
+* [PerlWorstPractices] Marty Pauley
+* [Perl6Today] Audrey Tang
+* [PerlProgrammingRepairShop] Mark Jason Dominus
+* [DebuggingtheDeBruijnSequence] Mark Jason Dominus
+
+=== Other talks
+
+Other talks in T101+102 room are not necessarily translated, but voluntary translators will be welcomed to work on them. 
+
+* [BehindTheScenesAtLiveJournal] Brad Fitzpatrick
+* [Pushmi] clkao
+* [DomainSpecificLanguagesInPerl] Jesse Vincent
+* (Add your talk here)
+
+=== Misc
+
+* SandBox

@@ -1,0 +1,1044 @@
+head	1.7;
+access;
+symbols;
+locks
+	root:1.7;
+comment	@# @;
+
+
+1.7
+date	2007.04.03.16.45.30;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.04.03.15.41.04;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.04.03.14.18.22;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.04.03.05.48.05;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.04.03.01.40.46;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.04.03.01.40.25;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.03.30.00.31.00;	author miyagawa;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@edit_address:122.208.43.29,edit_by:deq,edit_time:Tue%20Apr%20%203%2016%3A45%3A30%202007,edit_unixtime:1175618730
+@
+text
+@From Ingy's email:
+.pre
+>I got my slides done finally. Over 24 hours before my talk. This is surely a
+>record for me.
+>
+>Anyway I need some translation. I put the talk in my SVN repos. Check it out
+>here:
+>
+>    http://svn.kwiki.org/kwiki/trunk/extras/talks/KwikiAndTheSymlink
+>
+>Whoever translates I will give a password to commit it back into svn.
+>
+>Cheers, Ingy
+.pre
+
+.pre
+----
+presentation_topic: Kwiki
+presentation_title: Kwiki and the Symlink
+presentation_place: YAPC::Tokyo
+presentation_date: April 4, 2007
+author_name: Ingy do"t Net
+author_email: ingy@@cpan.org
+----
+Welcome To YAPC
+# YAPCへようこそ
+Let Insanity BEGIN
+# 狂気のはじまり
+PERL In The House Yo
+# PERLがやってきたヨ
+----
+WELCOME TO YAPC
+# YAPCへようこそ
+LET INSANITY BEGIN
+# 狂気のはじまり
+PERL IN THE HOUSE YO
+# PERLがやってきたヨ
+----
+Ingy 2.0
+# Ingyが2.0になった
+Kwiki 2.0 as Well
+# Kwikiも2.0
+orz hackers
+----
+Kwiki to Japan
+# Kwikiを日本へ
+Ingy Shows 2.0 Stuff
+# Ingyが2.0を見せます
+A Topic for Spring
+# この春の話題だよ
+----
+Haiku is OK
+# 俳句もいいけど
+But Ingy Likes Limericks
+# Ingyは5行詩のほうが好き
+Please Let Me Explain
+# 説明しよう
+----
+The Poetry Known as Haiku
+# 俳句は
+Leaves a hacker with too much to do.
+# ハッカーには難しい
+  The minding of syllables...
+# 文字数の制約がきつい
+I'd rather watch kill-a-bills.
+# Kill Billを見るほうが楽しい
+Kill Bill has far better Kung Fu.
+# Kill Billのほうがずっといいカンフーだ
+----
+Ingy dot Net was a man,
+# Ingy dot Netは
+Who hacked on weird plan after plan.
+# 次から次へとおかしなものをハックしてきた
+  As hard as he tried,
+# がんばってるんだけど
+  His ideas always died.
+# 失敗続き
+But at least he is big in Japan.
+# とりあえず日本では有名になったけれどね
+----
+There once was a hacker named Ingy
+# むかしIngyというハッカーがいた
+That darned YAPC wiki was his thingy.
+# 使いづらいYAPCのwikiはIngyの書いたもの
+  He went to Japan,
+# 来日したときには
+  And he got a great tan...
+# 思い切り日焼けして
+When they sent him back home in a dingy.
+# 薄汚い我が家に帰ってきた
+----
+This Ingy it often was said,
+# Ingyはよく
+Would hack all day in his bed.
+# 一日中ベッドの中でハックしていると言われていた
+  But the harder he hacked,
+# しかし、一生懸命ハックするほどに
+  The weirder and whacked
+# 変になったりだめになったり
+Were his h@@><. zomg orz.
+# それがIngyクオリティ。ZOH MY GOD.  orz.
+----
+...
+----
+* Sometimes old stuff is the best stuff
+# 古いものが一番いいということがある
+* Maybe it's not shiny anymore
+# 新しいものと違って輝いてはいないけれど
+* But a little polishing goes a long way
+# 少し磨けばずっと使える
+* And then you just call it 2.0!
+# そういうものを2.0と呼んでしまおう
+
+Last Year I Made Two Big Upgrades...
+# 去年Ingyは大規模バージョンアップを2つ行った
+----
+== Ingy 2.0
+# Ingy 2.0
+Brian Ingerson
+# Brian Ingerson
+Legally Ingy dot Net
+# Ingy dot Netが正式な姓名に
+Old is New Again
+# 古いものがまた新しく
+----
+* In September I changed my name legally to "Ingy dot Net"
+# 9月に、自分の名前を正式に「Ingy dot Net」にした
+* Ingy is my first name
+# Ingyがファーストネームで
+* "dot Net" is my last name
+# 「dot Net」が姓
+* "dot" is *not* my middle name
+# 「dot」がミドルネームというわけではない
+----
+{image: legal.jpg}
+----
+* But "Ingy dot Net" is not my "real" name
+# だが、「Ingy dot Net」が本当の本名だというわけではない
+* My real name is *Ingy do"t Net*
+# 本当の名前は「Ingy do"t Net」
+* But the US Government is ASCII only
+# だがアメリカ政府はASCIIしかわからない
+* Well more like EBCDIC only
+# EBCDICだけ、といったほうが正しいかも
+----
+== Degrade Gracefully
+# 潔くダウングレード
+* Ingy 2.0 degrades gracefully
+# というわけで潔くダウングレードした
+* In a fully compliant environment it is Ingy do"t Net
+# 環境が対応していればIngy do"t Netが正しい
+* In reality it takes many forms
+# 実世界ではいろいろに表記される
+----
+INGY DOT NET
+----
+{image: passport.jpg}
+----
+DOTNET, INGY
+----
+IngyDotNet
+----
+== Non Graceful Degradation
+# だめなダウングレードもある
+* Sometimes things just go wrong
+# なにかがうまくいかないことがままある
+* 
+----
+Ingy d?t Net
+----
+Ingy dt Net
+----
+Ingy D Net
+----
+Ingy.Net
+----
+Ingy Net
+----
++orz!!
+----
+Thank you Mr. Net
+----
+== Kwiki 2.0
+
+There once was a project called Kwiki,
+# 以前Kwikiというプロジェクトがあった
+Whose maintenance proved to be tricky.
+# メンテのやりにくさは折り紙つき
+  To make the thing go,
+# 前進するため
+  They tacked on "2.0".
+# 「2.0」をつけた
+And now it's one heck of a wiki.
+# いまではすごいwikiになった
+----
+== Kwiki 1.0
+
+Kwiki is to Wiki
+# WikiにとってのKwikiは
+as Perl is to Programming
+# プログラミングにとってのPerl
+
+* Kwiki is not so much about being a wiki
+# Kwikiはwikiそのものというわけではない
+* Kwiki is all about being a Lego set
+# Kwikiはつまりはレゴ
+* Kwiki is about being easy and fun to play with
+# Kwikiはやさしく楽しく遊べる
+* Kwiki is about a community
+# Kwikiはコミュニティ
+----
+== Kwiki 1.0
+
+* Kwiki was a successful CPAN Project
+# KwikiはCPANのプロジェクトとして成功した
+* > 150 CPAN Dists - `Kwiki-*`
+# Kwiki-*というディストリビューションは150以上
+
+----
+== Kwiki 1.0
+
+* Kwiki-0.38 was released April 2005
+# バージョン0.38は2005年4月リリース
+* But Kwiki was too stable
+# Kwikiは超安定していた
+* Stable == Dead
+# 安定＝死亡
+
+----
+== Kwiki 1.0
+
+* But being dead is not always bad
+# 死亡即ち悪、だとは限らない
+* Because you can then be reborn
+# 生まれ変わらせられるから
+* Enter Kwiki 2.0
+# Kwiki2.0の登場
+
+----
+== K2
+
+{image: k2.jpg}
+
+----
+== Kwiki 2.0
+
+* In December 2006 I decided to make Kwiki come back to life
+# 2006年12月、Kwikiにまた生命を吹き込もうと思った
+* I started a new brand new kwiki.org wiki
+# kwiki.orgで新しいwikiをはじめた
+* I set up a Trac for project planning
+# プランニングのためにTracをセットアップし
+* I started a new svn repo
+# 新しいsvnのレポジトリを作り
+* I gave all the #kwiki people commit bits
+# #kwikiの人すべてにコミット権をあげた
+----
+== No CPAN
+# CPANから独立
+* I decided to move away from CPAN for a while
+# 当面CPANは使わないことにした
+* The Kwiki on CPAN is at a stable state
+# CPANにあるKwikiは安定したバージョン
+* Why muck with it?
+# それをわざわざ汚すことはない
+* Hacking on SVN is agile
+# SVNでのハックは速くできる
+----
+== Kwiki Problems
+# Kwikiの問題
+* Too Many Modules to Install
+# モジュールのインストールが多すぎ
+* Kwiki is Slowie
+# Kwikiは遅すぎ
+* No Documentation
+# ドキュメントがない
+* Too many plugins to choose from
+# プラグインの取捨選択が大変
+* Some bad abstractions
+# 抽象化の仕方も変
+
+----
+== Kwiki 2.0 Focus
+# Kwiki 2.0のねらい
+* Too Many Modules to Install
+# モジュールのインストールが多すぎ
+** Make Kwiki Easy To Install
+# インストールを簡単にしよう
+* Kwiki is Slowie
+# Kwikiは遅すぎ
+** Make Kwiki Faster
+# 速くしよう
+* No Documentation
+# ドキュメントがない
+** Document Kwiki
+# ドキュメントを書こう
+* Too many plugins to choose from
+# プラグインの取捨選択が大変
+** Kwiki Flavors
+# Kwikiフレーバー
+* Some bad abstractions
+# 抽象化の仕方が変
+** Kwiki::Boot - TMTOWTDI
+# Kwiki::Boot - TMTOWTDI
+
+----
+== Kwiki Installation
+# Kwikiのインストール
+* Kwiki 2.0 currently comes with over 500 perl modules.
+# Kwiki 2.0はいまのところ500以上のモジュールを使う
+* It takes < 1 minute to install!
+# でもインストールは1分もかからない
+
+----
+== Kwiki Software Installation Instructions
+# Kwikiのインストール方法
+
+    > svn checkout http://svn.kwiki.org/kwiki/trunk ~/src/kwiki
+    > export PATH=~/src/kwiki/bin:$PATH
+
+* That's it.
+# これだけ
+* You get *Spork* for free!
+# Sporkもおまけについてくる
+----
+== Kwiki Wiki Creation Instructions
+# Wikiの作成方法
+
+    > kwiki -new ~/Sites/my-wiki
+
+    > vim ~/Sites/my-wiki/plugins
+    > kwiki -update ~/Sites/my-wiki
+
+    > kwiki -start ~/Sites/my-wiki
+
+----
+== Kwiki Software Upgrade Instructions
+# バージョンアップの方法
+    > svn up
+
+----
+== The Great Kwiki Source Code Reorg
+# ソースコードの再編成
+
+* I gathered all the Kwiki source code:
+# Kwikiの全ソースコードを集めた
+** All Old SVN Kwiki modules - in separate author directories
+# 古いSVNのモジュール群（開発者それぞれのディレクトリに入っているもの）
+** All CPAN Kwiki modules
+# CPANのKwikiモジュール群
+** Some Kwiki hacks lying around on various machines
+# いろいろなマシンに散らばっているコードも拾い
+* I grabbed all the CPAN modules that Kwiki uses
+# Kwikiが使うCPANモジュールも全部持ってきた
+* I stole some modules from Socialtext
+# 一部のモジュールはSocialtextから拝借
+----
+== Enter the Symlink
+# Symlinkの世界へ
+
+* All 500 modules are "preinstalled".
+# この500のモジュールは「プレインストール」してある
+* I made a `lib` tree with symlinks to all the modules in place
+# libの下にツリーを作り、このモジュール群へのsymlinkを作った
+* Kwiki knows where to find this huge module tree
+# Kwikiはどこにこの巨大モジュール群のツリーがあるか知っているので
+* Installing Kwiki has zero dependencies
+# Kwikiのインストールは依存関係がない
+* Installing Kwiki has zero impact on your system
+# Kwikiをインストールしてもシステムは壊れない
+* It is pretty much guaranteed to work
+# 動作は保証つき
+
+----
+== Win32 and Perl
+# Win32とPerl
+
+* Symlinks don't work on MSWin32 (Windows)
+# symlinkはMSWin32（Windows）では動かない
+* Neither does Kwiki
+# だからKwikiも動かない
+* Kwiki is a server app
+# Kwikiはサーバ側アプリケーション
+* Unix is for servers
+# Unixもサーバ側OS
+* Also Kwiki requires Perl 5.8.3
+# KwikiはPerl 5.8.3が必要
++* Why make life so hard?
+# 面倒
+* No CPAN, No old Perl, No Windows == EASY!
+# CPANも古いPerlもWindowsもみんな忘れよう==万歳！
+
+----
+== Kwiki is Kwiker
+# Kwikiはクイックな動作をするようになった
+* Ingy wrote Kwiki::Cache::Formatter
+# IngyがKwiki::Cache::Formatterを書き
+* Miyagawa wrote Kwiki::FastCGI
+# MiyagawaさんがKwiki::FastCGIを書いた
+----
+== Kwiki::FastCGI
+
+* FastCGI Rocks!
+# FastCGIはすごい
+
+== Kwiki::FastCGI
+
+----
+index.cgi
+
+    use Kwiki::Boot;
+    Kwiki::Boot->debug->boot->kwiki->process;
+
++index.fcgi
+
+    use Kwiki::Boot;
+    use CGI::Fast;
+    while ( my $cgi = CGI::Fast->new ) {
+        Kwiki::Boot->debug->boot->kwiki->process;
+    }
+
+----
+== Kwiki Documentation - Doolittle
+# Kwikiのドキュメント：Doolittle
+
+* http://doolittle.kwiki.org
+* Kwiki::Doolittle::Formatter
+** Kwiki::Formatter:Pod
+* Pull all POD out of each module
+# 各モジュールに入っているPODをすべて抽出
+* Symlink into a bi Kwiki database of documentation
+# Kwikiの文書庫へSymlinkする
+
+----
+== Kwiki Flavors
+# Kwikiフレーバー
+
+* There are too many Kwiki plugins
+# プラグインありすぎ
+* Which ones do you want to start with?
+# 最初にどれを使えばいいの
+* Kwiki Flavors are prebuilt configurations
+# Kwikiフレーバーとはあらかじめビルドされた設定の数々
+* You can start with a known flavor
+# はじめは有名なフレーバーを使えばよい
+* And then customize it
+# で、後からカスタマイズする
+* You can save your own flavors
+# その結果は新たにフレーバーとして保存できるし
+* Kwiki flavors are inheritable
+# フレーバーの継承もできる
+
+----
+== Kwiki Configuration Inheritance
+# 設定の継承
+
+* In Kwiki 2.0, Kwiki installations form an inheritance chain.
+#Kwiki 2.0ではインストールをすれば継承の連鎖ができる
+* The following files are inherited:
+# 継承されるファイルの一覧：
+** plugins
+# プラグイン
+** config
+# 設定
+** template
+# テンプレート
+** css
+# CSS
+** javascript
+# javascript
+** theme
+# テーマ
+* Your kwiki inherits from a flavor, which inherits from a base.
+# Kwikiはフレーバーを継承し、フレーバーはオリジナルを継承する
+* You can make subwikis which inherit from your wiki
+# 自分のWikiを継承した子Wikiも作れる
+
+----
+== Kwiki Configuration Inheritance
+# Kwikiの設定の継承
+
+* Inheritance is all done with symlinks.
+# 継承はすべてsymlinkで実現される
+* Every level has `www/__` symlink.
+# すべてのレベルには`www/__`というsymlinkがある
+* `href="www/__/__/css/formatter.css"`
+* Kwiki::Paths knows how to find everything
+# Kwiki::Pathsはファイルを見つける方法を知っている
+
+----
+== Kwiki::Boot
+
+* Kwiki has a certain core set of plugins
+# Kwikiは中核のプラグインをもっている
+* The Kwiki process depends on those plugins
+# Kwikiのプロセスはこれに依存
+* How do I change those core things?
+# どうやってこれを変更する？
+** Without breaking existing Kwiki sites
+# 既存のKwikiサイトを壊すことなく
+----
+== Kwiki::Boot
+
+* I put all the startup code in Kwiki::Boot::V1
+# スタートアップのコードは全部Kwiki::Boot::V1に入れておく
+* Then I can write Kwiki::Boot::V2 to do new stuff
+# これで新しいのをKwiki::Boot::V2に入れられる
+** V2 sets up a different set of core plugins
+# V2はまた別の中核のプラグインをセットアップ
+* The Flavors stuff is all V2
+# フレーバーはすべてV2へ
+* You can write your own Kwiki::Boot module
+# 自分で自前のKwiki::Bootモジュールを書いてもいい
+
+----
+== Kwiki::Boot
+
+* How do you switch to a different Boot module?
+# ブートモジュールの切り替えはどうするか
+* KWIKI_BOOT=V2
+
+    KWIKI_BOOT=V2 kwiki -new ~/Sites/my-wiki
+
+* After `-new`, environment vars are cached in `kwiki.env`
+# -newをつけると環境変数がkwiki.envにキャッシュされる
+
+----
+== Spork
+
+* These slides were done using Spork
+# このスライドはSporkで書いてある
+* The Spork project is related to Kwiki
+# SporkはKwikiの関連プロジェクト
+* They both inherit from Spoon
+# 両方ともSpoonから継承
+** A Spork ISA Spoon
+# SporkはSpoon
+* Spork is now moved into K2
+# SporkはK2に移動した
+* So if you install Kwiki 2.0, then:
+# だから、Kwiki 2.0をインストールしたら
+
+    spork -new KwikiAndTheSymlink
+
+----
+== Future Kwiki Plans
+# これからの計画
+
+* Implement MediaWiki with Kwiki
+# KwikiでMediaWikiを実現
+* Completely Customizable Formatter
+# どこまでもカスタマイズ自由なフォーマッタ
+** Make your own markup
+# 自分でマークアップを定義
+* Get everything back to CPAN
+# またCPANに返す
+----
+The END Draweth Nigh.
+# もうすぐ終わり
+Kwiki Loves You. Love Her Back.
+# Kwikiはみなさんを愛している。みなさんもKwikiをかわいがってあげてください
+Have You A Question?
+# ご質問は？
+.pre
+@
+
+
+1.6
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Tue%20Apr%20%203%2015%3A41%3A04%202007,edit_unixtime:1175614864
+@
+text
+@d122 1
+a122 1
+# Ingy dot Nameが正式な姓名に
+d274 1
+a274 1
+# Kwikiは遅い
+@
+
+
+1.5
+log
+@edit_address:206.230.48.34,edit_by:nozaki,edit_time:Tue%20Apr%20%203%2014%3A18%3A22%202007,edit_unixtime:1175609902
+@
+text
+@d22 1
+a22 1
+author_name: Ingy döt Net
+d30 1
+a30 1
+# PERLがやってきた
+d37 1
+a37 1
+# PERLがやってきた
+d50 1
+a50 1
+# 春の話題
+d73 1
+a73 1
+# 変わった計画をたててハックする人で
+d75 1
+a75 1
+# がんばって試みるたびに
+d77 1
+a77 1
+# いつも失敗したけれど
+d79 1
+a79 1
+# とりあえず日本では有名になった
+d84 1
+a84 1
+# YAPCの使えないwikiはIngyの書いたもの
+d86 1
+a86 1
+# Ingyは来日し
+d88 1
+a88 1
+# 日焼けして
+d90 1
+a90 1
+# 薄汚くなって帰ってきた
+d93 1
+a93 1
+# Ingyは
+d99 1
+a99 1
+#変になったりだめになったり
+d101 1
+a101 1
+#ZOH MY GOD.  orz.
+d124 1
+a124 1
+# 古いものが新しく
+d139 2
+a140 2
+* My real name is *Ingy döt Net*
+# 本当の名前は「Ingy döt Net」
+d150 2
+a151 2
+* In a fully compliant environment it is Ingy döt Net
+# 環境が対応していればIngy döt Netが正しい
+d237 1
+a237 1
+# Kwiki2.0へ
+d280 1
+a280 1
+# ???
+d284 1
+a284 1
+# Kwiki 2.0の焦点
+d290 1
+a290 1
+# Kwikiは遅い
+d302 1
+a302 1
+# ???
+d348 1
+a348 1
+# 古いSVNのモジュール群（開発者ごとのディレクトリへ）
+d379 1
+a379 1
+# symlinkはMSWin32（Windows）にはない
+d381 1
+a381 1
+# Kwikiも動かない
+d399 1
+a399 1
+# MiyagawaがKwiki::FastCGIを書いた
+d474 1
+a474 1
+Kwikiはフレーバーを継承し、フレーバーはオリジナルから継承される
+d476 1
+a476 1
+# Wikiから継承した子Wikiも作れる
+d500 1
+a500 1
+# Kwikiのサイトを壊すことなく
+d505 1
+a505 1
+# スタートアップのコードは全部Kwiki::Boot::V1に入れた
+d507 1
+a507 1
+# 新しいものはKwiki::Boot::V2に入れる
+d513 1
+a513 1
+# ユーザが自分でKwiki::Bootモジュールを書ける
+d519 1
+a519 1
+# ブートモジュールをV1からV2にどうやって変えるか
+d525 1
+a525 1
+# -newをつけると環境変数はkwiki.envにキャッシュされる
+d541 1
+a541 1
+# なので、もしKwiki 2.0をインストールしたなら
+d552 1
+a552 1
+# カスタマイズの自由なフォーマッタ
+d559 1
+a559 1
+# 終わりが近い
+d561 1
+a561 1
+# Kwikiはみなさんを愛している。愛し返してください
+@
+
+
+1.4
+log
+@edit_address:64.119.92.4,edit_by:nozaki,edit_time:Tue%20Apr%20%203%2005%3A48%3A05%202007,edit_unixtime:1175579285
+@
+text
+@d22 1
+a22 1
+author_name: Ingy d�t Net
+d82 1
+a82 1
+# むかしむかしIngyというハッカーがいた
+d139 2
+a140 2
+* My real name is *Ingy d�t Net*
+# 本当の名前は「Ingy d�t Net」
+d150 2
+a151 2
+* In a fully compliant environment it is Ingy d�t Net
+# 環境が対応していればIngy d�t Netが正しい
+d186 1
+a186 1
+# むかしKwikiというプロジェクトがあった
+d432 1
+a432 1
+# Kwikiの文書庫からSymlink
+@
+
+
+1.3
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Tue%20Apr%20%203%2001%3A40%3A46%202007,edit_unixtime:1175564446
+@
+text
+@d22 1
+a22 1
+author_name: Ingy döt Net
+d26 1
+d28 1
+d30 1
+d33 1
+d35 1
+d37 1
+d40 1
+d42 1
+d46 1
+d48 1
+d50 1
+d53 1
+d55 1
+d57 1
+d60 1
+d62 1
+d64 3
+a66 1
+  I'd rather watch kill-a-bills.
+d68 1
+d71 1
+d73 1
+d75 1
+d77 1
+d79 1
+d82 1
+d84 1
+d86 1
+d88 1
+d90 1
+d93 1
+d95 1
+d97 1
+d99 1
+d101 1
+d106 1
+d108 1
+d110 1
+d112 1
+d115 1
+d118 1
+a118 1
+
+d120 1
+d122 1
+d124 1
+d127 1
+d129 1
+d131 1
+d133 1
+d138 3
+a140 1
+* My real name is *Ingy döt Net*
+d142 1
+d144 1
+d147 1
+d149 3
+a151 1
+* In a fully compliant environment it is Ingy döt Net
+d153 1
+d164 1
+d166 1
+d186 1
+d188 1
+d190 1
+d192 1
+d194 1
+d199 1
+d201 1
+d204 1
+d206 1
+d208 1
+d210 1
+d215 1
+d217 1
+d223 1
+d225 1
+d227 1
+d233 1
+d235 1
+d237 1
+d248 1
+d250 1
+d252 1
+d254 1
+d256 1
+a256 1
+
+d259 1
+a259 1
+
+d261 1
+d263 1
+d265 1
+d267 1
+a267 1
+
+d270 1
+a270 1
+
+d272 1
+d274 1
+d276 1
+d278 1
+d280 1
+d284 1
+a284 1
+
+d286 1
+d288 1
+d290 1
+d292 1
+d294 1
+d296 1
+d298 1
+d300 1
+d302 1
+d304 1
+d308 1
+a308 1
+
+d310 1
+d312 1
+d316 1
+d322 1
+d324 1
+d327 1
+d338 1
+a338 1
+
+d343 1
+d346 1
+d348 1
+d350 1
+d352 1
+d354 1
+d356 1
+a356 1
+
+d359 1
+d362 1
+d364 1
+d366 1
+d368 1
+d370 1
+d372 1
+d376 1
+d379 1
+d381 1
+d383 1
+d385 1
+d387 1
+d389 1
+d391 1
+d395 1
+a395 1
+
+d397 1
+d399 1
+a399 1
+
+d404 3
+d424 1
+d430 1
+d432 1
+d436 1
+d439 1
+d441 1
+d443 1
+d445 1
+d447 1
+d449 1
+d451 1
+d455 1
+d458 1
+d460 1
+d462 1
+d464 1
+d466 1
+d468 1
+d470 1
+d472 1
+d474 1
+d476 1
+d480 1
+d483 1
+d485 1
+d488 1
+d494 1
+d496 1
+d498 1
+d500 1
+a500 1
+
+d505 1
+d507 1
+d509 1
+d511 1
+d513 1
+d519 1
+d525 1
+d531 1
+d533 1
+d535 1
+d537 1
+d539 1
+d541 1
+d547 1
+d550 1
+d552 1
+d554 1
+d556 1
+a556 1
+
+d559 1
+d561 1
+d563 1
+@
+
+
+1.2
+log
+@edit_address:220.150.112.84,edit_by:KenichiIshigaki,edit_time:Tue%20Apr%20%203%2001%3A40%3A25%202007,edit_unixtime:1175564425
+@
+text
+@d2 1
+a2 1
+
+d14 1
+@
+
+
+1.1
+log
+@edit_address:71.216.176.58,edit_by:IngyDotNet,edit_time:Fri%20Mar%2030%2000%3A30%3A59%202007,edit_unixtime:1175214659
+@
+text
+@d1 122
+d124 89
+d214 173
+a386 5
+  There once was a hacker named Ingy,
+  Who wrote some crap wiki-like thingy.
+    He went to Japan,
+    And got a great tan,
+  Went they sent him to sea in a dingy.
+@

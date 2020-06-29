@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName Wiki
+AuthUserFile /vh/tokyo2007.yapcasia.org/htdocs/translate/.htpasswd
+Require valid-user
